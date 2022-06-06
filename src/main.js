@@ -70,14 +70,14 @@ mapedData.forEach(element => {
     const weigthPokemon = document.createTextNode(element.weight);
     createdParagraph1.appendChild(weigthPokemon);
 
-    
-    
 
 
 
-    
 
-    
+
+
+
+   
 
 
     //console.log(element);
