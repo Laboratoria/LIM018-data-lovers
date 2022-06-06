@@ -1,9 +1,9 @@
-import { example } from './data.js';
+import { sortData } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+console.log(data);
 
 //data.pokemon;
 //section
@@ -66,3 +66,6 @@ mapedData.forEach(element => {
 
     //console.log(element);
 });
+
+//ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
+console.log(sortData(data,'name','asc'))
