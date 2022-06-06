@@ -28,14 +28,11 @@ const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 
 export const filterData = (data, condition) => {
   if(types.includes(condition)) {
-    var result = data.filter( pokemon => pokemon.type.includes(condition) )
-    return result 
+    return data.filter( pokemon => pokemon.type.includes(condition) )
   } else if (generations.includes(condition)) {
-    var result = data.filter( pokemon => pokemon.generation.name.includes(condition) )
-    return result
+    return data.filter( pokemon => pokemon.generation.name.includes(condition) )
   } else if (eggs.includes(condition)) {
-    var result = data.filter( pokemon => pokemon.egg.includes(condition) )
-    return result
+    return data.filter( pokemon => pokemon.egg.includes(condition) )
   } else {
     return 'error'
   }

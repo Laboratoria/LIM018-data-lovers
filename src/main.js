@@ -70,4 +70,4 @@ mapedData.forEach(element => {
 //ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
 //console.log(sortData(data,'weaknesses','desc'))
 
-//console.log(filterData(data.pokemon, '7 km'))
+console.log(filterData(data.pokemon, '7 km'))
