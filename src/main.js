@@ -1,15 +1,9 @@
-//import { example } from './data.js';
+import {filterData, sortData} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-import {filterData, sortData} from './data.js';
 
-
-console.log(filterData(data.pokemon, '7 km'))
-console.log(sortData(data.pokemon, filterData, 'asc'))
-
-//console.log(example, data);
-console.log(example, data);
+console.log(data);
 
 //data.pokemon;
 //section
@@ -27,7 +21,7 @@ const mapedData = datosPokemon.map((itemPokemon)=>{
  }
 })
 
-console.log(mapedData)
+//console.log(mapedData)
 
 mapedData.forEach(element => {
     //divcard
@@ -70,15 +64,10 @@ mapedData.forEach(element => {
     const weigthPokemon = document.createTextNode(element.weight);
     createdParagraph1.appendChild(weigthPokemon);
 
-
-
-
-
-
-
-
-   
-
-
     //console.log(element);
 });
+
+//ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
+//console.log(sortData(data,'weaknesses','desc'))
+
+//console.log(filterData(data.pokemon, '7 km'))
