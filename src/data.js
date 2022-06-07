@@ -1,4 +1,5 @@
 // estas funciones son de ejemplo
+//import data from './data/pokemon/pokemon.js';
 
 export const sortData = (data,sortBy,sortOrder) => {
   let arrayOrder;
@@ -15,12 +16,12 @@ export const sortData = (data,sortBy,sortOrder) => {
       return data.pokemon.sort((a, b)=> a.weaknesses.length - b.weaknesses.length)
     }else if(sortBy==='weaknesses' && sortOrder === 'desc'){
       return  data.pokemon.sort((a, b)=> b.weaknesses.length - a.weaknesses.length)
-    } 
+    }
 };
 
 
 //filtrar datos por tipo, generación y egg
-const types = [ 'poison', 'fire', 'normal', "fire", 'flying', 'dragon', 
+const types = [ 'poison', 'fire', 'normal', "fire", 'flying', 'dragon',
 'water', 'dark', 'ice', 'steel', 'bug', 'psychic', 'steel',
 'ground', 'electric', 'fighting', 'rock','ghost', 'dragon','fairy']
 const generations = ['kanto', 'johto']
@@ -34,6 +35,6 @@ export const filterData = (data, condition) => {
   } else if (eggs.includes(condition)) {
     return data.filter( pokemon => pokemon.egg.includes(condition) )
   } else {
-    return 'error'
+    return data
   }
 };

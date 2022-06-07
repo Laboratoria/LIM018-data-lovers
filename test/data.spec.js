@@ -1,7 +1,9 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterData } from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
 
+//import {data} from '../src/data/pokemon/pokemon.js'
 
-describe('example', () => {
+/* describe('example', () => {
   it('is a function', () => {
     expect(typeof example).toBe('function');
   });
@@ -10,14 +12,14 @@ describe('example', () => {
     expect(example()).toBe('example');
   });
 });
+ */
 
-
-describe('anotherExample', () => {
+describe('filterData', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterData).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('dbería retornar solo fire para `types.fire`', () => {
+    expect(filterData(data.pokemon, 'fire')).toBe('objects');
   });
 });

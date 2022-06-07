@@ -3,7 +3,7 @@ import {filterData, sortData} from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(data);
+//console.log(data);
 
 //data.pokemon;
 //section
@@ -69,5 +69,6 @@ mapedData.forEach(element => {
 
 //ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
 //console.log(sortData(data,'weaknesses','desc'))
-
-console.log(filterData(data.pokemon, '7 km'))
+//console.log(filterData(data.pokemon, 'fire'))
+sortData(data,'weaknesses','desc')
+filterData(data.pokemon, 'fire')
