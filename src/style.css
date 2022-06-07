@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+#info-pokemon-section, .title-pokemon{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+  padding: 10px;
+  justify-items: stretch;
+  align-content: stretch;
+}
+
+
+.title-pokemon {
+    position: relative;
+    background: #F2F2F2;
+    border-radius: 22px;
+    padding-top: 9%;
+    z-index: 10;
+    margin-top: 3%;
+}
+.container,img{
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.title-pokemon, h2, p{
+  align-items: center;
+  flex-direction: column;
+  margin-top: 7%;
+  align-items: center;
+}
