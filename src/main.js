@@ -3,28 +3,10 @@ import {filterData, sortData, mapedData} from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(data);
-
 //data.pokemon;
 
 //section
 const infoPokemonSection = document.getElementById('info-pokemon-section')
-
-const dataPokemon=data.pokemon;
-
-//map solo para mapear los datos  pedidos en la historia
-const mapedData = dataPokemon.map((itemPokemon)=>{
- return {
-    num:itemPokemon.num,
-    name:itemPokemon.name,
-    img:itemPokemon.img,
-    heigth:itemPokemon.size.height,
-    weight:itemPokemon.size.weight
- }
-})
-
-//console.log(mapedData)
-
 
 mapedData.forEach(element => {
     //divcard

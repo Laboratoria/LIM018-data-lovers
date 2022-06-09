@@ -47,6 +47,7 @@ export const mapedData = (data) => {
       heigth: itemPokemon.size.height,
       weight: itemPokemon.size.weight
     }
-  
   });
 }
+
+
