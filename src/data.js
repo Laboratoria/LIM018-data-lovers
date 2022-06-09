@@ -1,5 +1,4 @@
 // estas funciones son de ejemplo
-//import data from './data/pokemon/pokemon.js';
 
 export const sortData = (data,sortBy,sortOrder) => {
   let arrayOrder;
@@ -21,20 +20,42 @@ export const sortData = (data,sortBy,sortOrder) => {
 
 
 //filtrar datos por tipo, generación y egg
-const types = [ 'poison', 'fire', 'normal', "fire", 'flying', 'dragon',
-'water', 'dark', 'ice', 'steel', 'bug', 'psychic', 'steel',
-'ground', 'electric', 'fighting', 'rock','ghost', 'dragon','fairy']
+const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
+'water', 'dark', 'ice', 'steel', 'bug', 'psychic','ground', 
+'electric', 'fighting', 'rock','ghost','fairy']
 const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
+const pokemonsRarety = ['legendary', 'mythic']
 
 export const filterData = (data, condition) => {
   if(types.includes(condition)) {
-    return data.filter( pokemon => pokemon.type.includes(condition) )
+    return data.pokemon.filter( pokemon => pokemon.type.includes(condition) )
   } else if (generations.includes(condition)) {
-    return data.filter( pokemon => pokemon.generation.name.includes(condition) )
+    return data.pokemon.filter( pokemon => pokemon.generation.name.includes(condition) )
   } else if (eggs.includes(condition)) {
-    return data.filter( pokemon => pokemon.egg.includes(condition) )
+    return data.pokemon.filter( pokemon => pokemon.egg.includes(condition) )
+  } else if(pokemonsRarety.includes(condition)) {
+    return data.pokemon.filter(pokemon => pokemon["pokemon-rarity"].includes(condition));
   } else {
     return data
   }
 };
+
+export const mapedData = (data) => {
+  return data.map((itemPokemon)=>{
+    return {
+        num:itemPokemon.num,
+        name:itemPokemon.name,
+        img:itemPokemon.img,
+        heigth:itemPokemon.size.height,
+        weight:itemPokemon.size.weight,
+    }
+})};
+
+
+/* export const computeStats = (data) => {
+  const poisonType = data.filter(pokemon => pokemon.type.includes('poison')).length
+  const dataLength = data.length
+  let result = (poisonType/dataLength) * 100
+  return Math.round(result)+'%'
+}; */

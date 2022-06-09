@@ -20,6 +20,6 @@ describe('filterData', () => {
   });
 
   it('dbería retornar solo fire para `types.fire`', () => {
-    expect(filterData(data.pokemon, 'fire')).toBe('objects');
+    expect(filterData(data, 'fire')).toBe('array');
   });
 });

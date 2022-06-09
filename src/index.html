@@ -6,7 +6,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="info-pokemon-section"></section>
+
+    <section class="filters" >
+      <select class="type" name="Type">
+        <option disabled selected>Type</option>
+         <option value="poison" >Poison</option>
+         <option value="fire">Fire</option>
+         <option value="normal">Normal</option>
+         <option value="flying">Flying</option>
+         <option value="dragon">Dragon</option>
+         <option value="water">Water</option>
+         <option value="dark">Dark</option>
+         <option value="ice">Ice</option>
+         <option value="steel">Steel</option>
+         <option value="bug">Bug</option>
+         <option value="psychic">Psychic</option>
+         <option value="electric">Electric</option>
+         <option value="fighting">Fighting</option>
+         <option value="rock">Rock</option>
+         <option value="ghost">Ghost</option>
+         <option value="fairy">Fairy</option>
+      </select>
+      
+      <select class="generations" name="Generation">
+        <option disabled selected>Generations</option>
+         <option value="kanto">Kanto</option>
+         <option value="johto">Johto</option>
+      </select>
+
+      <select class="eggs" name="Eggs">
+        <option disabled selected>Eggs</option>
+         <option value="2 km">2 km</option>
+         <option value="5 km">5 km</option>
+         <option value="7 km">7 km</option>
+         <option value="10 km">10 km</option>
+      </select>
+
+     <!--  <div>
+        <label>
+          Multi-select
+          <input mbsc-input id="my-input" data-dropdown="true" data-tags="true" /> 
+        </label>-->
+
+        <!-- <select class="orderCamp" name="Order" multiple>
+          <option value="name">Name</option>
+          <option value="weaknesses">Weaknesses</option>
+        </select> 
+
+        <select class="order" name="Order" multiple>
+          <option value="asc" selected>Asc</option>
+          <option value="desc">Desc</option>
+          <option value="name">Name</option>
+          <option value="weaknesses">Weaknesses</option>
+        </select >
+      </div>
+ -->
+    </section>
+
+    <section id="info-pokemon-section" class="pokemones"></section>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>

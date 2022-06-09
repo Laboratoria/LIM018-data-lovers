@@ -1,4 +1,5 @@
-import {filterData, sortData} from './data.js';
+//import { styleDisabled } from 'htmlhint';
+import {filterData, sortData, mapedData} from './data.js';
 
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
@@ -8,27 +9,19 @@ import data from './data/pokemon/pokemon.js';
 
 //data.pokemon;
 
-//section
-const infoPokemonSection = document.getElementById('info-pokemon-section')
+//sectio
 
-const dataPokemon=data.pokemon;
+const infoPokemonSection = document.getElementById('info-pokemon-section');
+const selectType = document.querySelector('.type');
+const selectGeneration = document.querySelector('.generations');
+const selectEggs = document.querySelector('.eggs')
+const selectOrder = document.querySelector('.order');
+//const selectOrderCamp = document.querySelector('.orderCamp');
 
-//map solo para mapear los datos  pedidos en la historia
-const mapedData = dataPokemon.map((itemPokemon)=>{
- return {
-    num:itemPokemon.num,
-    name:itemPokemon.name,
-    img:itemPokemon.img,
-    heigth:itemPokemon.size.height,
-    weight:itemPokemon.size.weight
- }
-})
-
-//console.log(mapedData)
-
-
-mapedData.forEach(element => {
-    //divcard
+/*console.log(selectOrder)*/
+const showElements = (data) => {
+    console.log(data)
+    data.forEach((element) => {
     const divCardPokemon=document.createElement('div');
 
     //class title-pokemon    
@@ -76,13 +69,42 @@ mapedData.forEach(element => {
     //pokemon-weigth
     const weigthPokemon = document.createTextNode(element.weight);
     createdParagraph3.appendChild(weigthPokemon);
-    //console.log(element);
+    })
+};
 
-});
+showElements(mapedData(data.pokemon));
+
+const  filterAndShow = (e) => {
+    let elements = mapedData(filterData(data, e.target.value ));
+    console.log(elements)
+    while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+    }
+    return showElements(elements)
+}
+
+selectType.addEventListener('change',  function(e){ filterAndShow(e) })
+
+selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
+
+selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
+
+/* selectOrder.forEach((e) => {
+    e.addEventListener('change', function(e) {
+        console.log(e.target.value)
+    })
+}) */
 
 
+
+/* selectOrderCamp.addEventListener('change', function(e){
+
+    let order = e.target.value;
+        let camp = e.target.value;
+        console.log(sortData(data, camp, order))
+}) */
 //ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
-//console.log(sortData(data,'weaknesses','desc'))
+//console.log(sortData(data.pokemon,'name','desc'))
 
-//console.log(filterData(data.pokemon, '7 km'))
-
+//console.log(filterData(data.pokemon, 'legendary'))
+//console.log(computeStats(data.pokemon))
