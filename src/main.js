@@ -10,7 +10,23 @@ console.log(data);
 //section
 const infoPokemonSection = document.getElementById('info-pokemon-section')
 
-mapedData(data).forEach(element => {
+const dataPokemon=data.pokemon;
+
+//map solo para mapear los datos  pedidos en la historia
+const mapedData = dataPokemon.map((itemPokemon)=>{
+ return {
+    num:itemPokemon.num,
+    name:itemPokemon.name,
+    img:itemPokemon.img,
+    heigth:itemPokemon.size.height,
+    weight:itemPokemon.size.weight
+ }
+})
+
+//console.log(mapedData)
+
+
+mapedData.forEach(element => {
     //divcard
     const divCardPokemon=document.createElement('div');
 
