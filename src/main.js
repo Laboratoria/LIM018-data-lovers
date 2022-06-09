@@ -1,4 +1,4 @@
-import {filterData, sortData} from './data.js';
+import {filterData, sortData, mapedData} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -10,22 +10,7 @@ console.log(data);
 //section
 const infoPokemonSection = document.getElementById('info-pokemon-section')
 
-const dataPokemon=data.pokemon;
-
-//map solo para mapear los datos  pedidos en la historia
-const mapedData = dataPokemon.map((itemPokemon)=>{
- return {
-    num:itemPokemon.num,
-    name:itemPokemon.name,
-    img:itemPokemon.img,
-    heigth:itemPokemon.size.height,
-    weight:itemPokemon.size.weight
- }
-})
-
-//console.log(mapedData)
-
-mapedData.forEach(element => {
+mapedData(data).forEach(element => {
     //divcard
     const divCardPokemon=document.createElement('div');
 
@@ -76,8 +61,3 @@ mapedData.forEach(element => {
     createdParagraph3.appendChild(weigthPokemon);
     //console.log(element);
 });
-
-//ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
-//console.log(sortData(data,'weaknesses','desc'))
-
-console.log(filterData(data.pokemon, '7 km'))

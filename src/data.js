@@ -37,3 +37,16 @@ export const filterData = (data, condition) => {
     return 'error'
   }
 };
+
+
+export const mapedData = (data) => {
+  return data.pokemon.map((itemPokemon) => {
+    return {
+      name: itemPokemon.name,
+      img: itemPokemon.img,
+      heigth: itemPokemon.size.height,
+      weight: itemPokemon.size.weight
+    }
+  
+  });
+}
