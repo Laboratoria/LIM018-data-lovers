@@ -1,15 +1,7 @@
-//import { styleDisabled } from 'htmlhint';
 import {filterData, sortData, mapedData} from './data.js';
-
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-
-//console.log(data);
-
-//data.pokemon;
-
-//sectio
 
 const infoPokemonSection = document.getElementById('info-pokemon-section');
 const selectType = document.querySelector('.type');
