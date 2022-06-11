@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <img src="images/img-header1.png"/>
+      <h1>Pokedéx</h1>
+      <img src="images/img-header2.png"/>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" class="input-search" placeholder="Search by ..." />
+      <input type="image" class="img-search" src="images/search.svg" >
+    </div>
 
     <section class="filters" >
       <select class="type" name="Type">
@@ -43,12 +53,8 @@
       </select>
 
      <!--  <div>
-        <label>
-          Multi-select
-          <input mbsc-input id="my-input" data-dropdown="true" data-tags="true" /> 
-        </label>-->
 
-        <!-- <select class="orderCamp" name="Order" multiple>
+        <select class="orderCamp" name="Order" multiple>
           <option value="name">Name</option>
           <option value="weaknesses">Weaknesses</option>
         </select> 
@@ -61,10 +67,21 @@
         </select >
       </div>
  -->
+    <button class="clean-button" >Limpiar</button>
     </section>
 
     <section id="info-pokemon-section" class="pokemones"></section>
     <div id="root"></div>
+    <footer>
+      <img src="images/img-footer.png"/>
+      <div class="develop-info">
+        <p>Está página fue creada por</p>
+        <p>@deleina</p>
+        <p>@bellasacc</p>
+        <p>@camotito0</p>
+      </div>
+      <img src="images/img-footer2.png"/>
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

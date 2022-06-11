@@ -1,35 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto:wght@300;400&display=swap');
+
 *{
   box-sizing: border-box;
 }
-#info-pokemon-section, .title-pokemon{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 12px;
-  padding: 10px;
-  justify-items: stretch;
-  align-content: stretch;
+
+@font-face {
+  font-family: Pokemon-Hollow;
+  font-family: Pokemon-Solid;
+  src: url(images/Pokemon-Hollow.ttf);
+  src: url(images/Pokemon-Solid.ttf);
 }
 
-
-.title-pokemon {
-    position: relative;
-    background: #F2F2F2;
-    border-radius: 22px;
-    padding-top: 9%;
-    z-index: 10;
-    margin-top: 3%;
+body {
+  background: #2A304F;
+  background-image: url(images/img-back.png) ;
+  position: relative; 
 }
-.container,img{
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 295px;
+}
+
+footer {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+}
+
+h1 {
+  font-family: Pokemon-Solid;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 140px;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  text-align: center;
+  letter-spacing: 0.02em;
+  -webkit-text-stroke: 8px #2F6AB3;
+  color: #FFCB08;
+  mix-blend-mode: normal;
+  margin-top: -10px;
 }
 
+#info-pokemon-section {
+  display: grid;
+  grid-template-columns: repeat(6, 222px);
+  grid-gap: 80px;
+  padding: 10px;
+  justify-content: center;
+  margin-top: 70px;
+}
 
-.title-pokemon, h2, p{
+.title-pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 222px;
+
+    background: #495487;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+}
+.container {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-top: 7%;
+}
+.container > img{
+  width: 140px;
+  height: 160px;
+  margin-top: -55px;
+  filter: drop-shadow(0px 1.9797px 7.42386px #000000);
+}
+
+.title-pokemon > h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+  margin-top: -5px;
+}
+
+.pokemon-num {
+  color: #FFFFFF;
+  margin-top: -5px;
+}
+
+.tittle-contain {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: -15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+}
+
+.value-contain {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: -15px;
+  margin-bottom: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #DEBF6C;
+}
+
+.develop-info {
+  display: flex;
   align-items: center;
+  font-family: 'Pokemon Solid';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 35px;
+  gap: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+}
+
+.filters {
+  display: flex;
+  gap: 105px;
+  margin-left: 80px;
+  margin-top: 35px;
+}
+
+.type, .generations, .eggs {
+  width: 196px;
+  height: 38px;
+
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+
+
+  color: #2A304F;
+}
+
+.clean-button {
+  width: 196px;
+  height: 44px;
+
+  background: #495487;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  color: #FFFFFF;
+  margin-left: 605px;
+}
+
+.clean-button:hover {
+  border: 1px solid transparent;
+  background-color: #FFFFFF;
+  color: #2A304F;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-left: 80px;
+  width: 400px;
+  height: 38px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  border-color: none;
+}
+
+.input-search {
+  width: 360px;
+  height: 33px;
+  outline: none;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  background: transparent;
 }
