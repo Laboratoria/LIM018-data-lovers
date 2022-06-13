@@ -115,16 +115,23 @@ selectOrder.addEventListener('change',()=>{
 })
 
 selectOrderCamp.addEventListener('change',()=>{
-    selectOrder.value = 'forma'
+    selectOrder.value = 'order-direction'
 })
 
 inputSearch.addEventListener('input', function(e){
   let iText = e.target.value.toLowerCase();
+ /* let search = sortData(data.pokemon,'name','asc')
+  search = mapedData(search).filter(poke=> poke.name.indexOf(iText) !== -1)
+      while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+      }
+  showElements(search)  */
+
   const search = mapedData(data.pokemon).filter(poke=> poke.name.indexOf(iText) !== -1)
       while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
       }
-  showElements(search)
+  showElements(search);
 })
 
 
