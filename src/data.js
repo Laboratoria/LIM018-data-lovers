@@ -7,13 +7,14 @@ export const sortData = (data,sortBy,sortOrder) => {
         if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
         return 0;
     })
+
     if(sortBy === 'name' && sortOrder === 'asc'){
-      return arrayOrder
-    }else if(sortBy==='name' && sortOrder === 'desc'){
-      return arrayOrder.reverse()
+      return arrayOrder;
+    }else if(sortBy === 'name' && sortOrder === 'desc'){
+      return arrayOrder.reverse();
     }else if(sortBy === 'weaknesses' && sortOrder === 'asc'){
       return data.pokemon.sort((a, b)=> a.weaknesses.length - b.weaknesses.length)
-    }else if(sortBy==='weaknesses' && sortOrder === 'desc'){
+    }else if(sortBy === 'weaknesses' && sortOrder === 'desc'){
       return  data.pokemon.sort((a, b)=> b.weaknesses.length - a.weaknesses.length)
     }
 };
@@ -26,6 +27,7 @@ const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
 const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 const pokemonsRarety = ['legendary', 'mythic']
+
 
 export const filterData = (data, condition) => {
   if(types.includes(condition)) {

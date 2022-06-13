@@ -11,6 +11,8 @@ const inputSearch = document.querySelector('.input-search');
 //const selectOrderCamp = document.querySelector('.orderCamp');
 //const selectOrder = document.querySelector('.order');
 
+
+//mostrar elementos 
 const showElements = (data) => {
     data.forEach((element) => {
     const divCardPokemon=document.createElement('div');
@@ -90,6 +92,8 @@ const showElements = (data) => {
     })
 };
 
+
+//mostrar elementos de busqueda 
 const showSearchElements = (pokemon) => {
     const divCardPokemon=document.createElement('div');
 
@@ -167,8 +171,11 @@ const showSearchElements = (pokemon) => {
     divWP2.classList.add('value-contain')
 }
 
+
 showElements(mapedData(data.pokemon));
 
+
+//filtrar y mostrar
 const  filterAndShow = (e) => {
     let elements = mapedData(filterData(data, e.target.value ));
     while (infoPokemonSection.firstChild) {
@@ -183,6 +190,8 @@ selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
 
 selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
 
+
+//buscador
 inputSearch.addEventListener('input', function(e){
     let iText = e.target.value.toLowerCase();
       mapedData(data.pokemon).map((poke)=> {
