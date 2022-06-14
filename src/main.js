@@ -8,20 +8,20 @@ const selectType = document.querySelector('.type');
 const selectGeneration = document.querySelector('.generations');
 const selectEggs = document.querySelector('.eggs')
 const inputSearch = document.querySelector('.input-search');
-//const selectOrderCamp = document.querySelector('.orderCamp');
-//const selectOrder = document.querySelector('.order');
+const selectOrderCamp = document.querySelector('.order-camp');
+const selectOrder = document.querySelector('.order');
 
 
 //mostrar elementos 
 const showElements = (data) => {
-    data.forEach((element) => {
+  data.forEach((element) => {
     const divCardPokemon=document.createElement('div');
 
-    //class title-pokemon    
+  //class title-pokemon    
     divCardPokemon.classList.add('title-pokemon');
     infoPokemonSection.appendChild(divCardPokemon);
 
-    //div-creado-para img
+  //div-creado-para img
     const createdDiv = document.createElement('div');
     createdDiv.classList.add('container');
     divCardPokemon.appendChild(createdDiv);
@@ -89,7 +89,7 @@ const showElements = (data) => {
     divWP2.appendChild(createdParagraph2)
     divWP2.appendChild(createdParagraph3)
     divWP2.classList.add('value-contain')
-    })
+  });
 };
 
 
@@ -191,22 +191,37 @@ selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
 selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
 
 
-//buscador
+selectOrder.addEventListener('change',()=>{
+    const dataOrder = sortData(data.pokemon,selectOrderCamp.value,selectOrder.value);
+    while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+    }
+    showElements(mapedData(dataOrder))
+})
+
+selectOrderCamp.addEventListener('change',()=>{
+    selectOrder.value = 'order-direction'
+})
+
 inputSearch.addEventListener('input', function(e){
-    let iText = e.target.value.toLowerCase();
-      mapedData(data.pokemon).map((poke)=> {
-        if(poke.name.indexOf(iText) !== -1) {
-          while (infoPokemonSection.firstChild) {
-            infoPokemonSection.removeChild(infoPokemonSection.firstChild);
-          }
-          showSearchElements(poke)
-        }
-      })
+  let iText = e.target.value.toLowerCase();
+ /* let search = sortData(data.pokemon,'name','asc')
+  search = mapedData(search).filter(poke=> poke.name.indexOf(iText) !== -1)
+      while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+      }
+  showElements(search)  */
+
+  const search = mapedData(data.pokemon).filter(poke=> poke.name.indexOf(iText) !== -1)
+      while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+      }
+  showElements(search);
 })
 
 
 //ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
-//console.log(sortData(data.pokemon,'name','desc'))
+//console.log(sortData(data.pokemon,'name','asc'))
 
 //console.log(filterData(data.pokemon, 'legendary'))
 //console.log(computeStats(data.pokemon))
