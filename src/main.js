@@ -10,168 +10,92 @@ const selectGeneration = document.querySelector('.generations');
 const selectEggs = document.querySelector('.eggs')
 const inputSearch = document.querySelector('.input-search');
 const mainPage = document.querySelector('.main-page');
+const selectOrderCamp = document.querySelector('.order-camp');
+const selectOrder = document.querySelector('.order');
+
 
 const showElements = (data) => {
-    data.forEach((element) => {
-    //const aRedirectPokemon = document.createElement('a')
-    const divCardPokemon=document.createElement('div');
+  data.forEach((element) => {
+  
+  const divCardPokemon = document.createElement('div');
 
-    //Div into Ancle
-   // divCardPokemon.appendChild(aRedirectPokemon)
+  //class title-pokemon    
+  divCardPokemon.classList.add('title-pokemon');
+  infoPokemonSection.appendChild(divCardPokemon);
 
-    //class title-pokemon    
-    divCardPokemon.classList.add('title-pokemon');
-    infoPokemonSection.appendChild(divCardPokemon);
+  //div-creado-para img
+  const createdDiv = document.createElement('div');
+  createdDiv.classList.add('container');
+  divCardPokemon.appendChild(createdDiv);
 
-    //div-creado-para img
-    const createdDiv = document.createElement('div');
-    createdDiv.classList.add('container');
-    divCardPokemon.appendChild(createdDiv);
+  //img-creado
+  const createImg = document.createElement('img');
+  createImg.src = element.img
+  createdDiv.appendChild(createImg);
 
-    //img-creado
-    const createImg = document.createElement('img');
-    createImg.src = element.img
-    createdDiv.appendChild(createImg);
+  //parrafo-creado-para numero de pokemon
+  const createdParagraph1 = document.createElement('p');
+  divCardPokemon.appendChild(createdParagraph1);
+  createdParagraph1.classList.add("pokemon-num");
 
-    //parrafo-creado-para numero de pokemon
-    const createdParagraph1 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph1);
-    createdParagraph1.classList.add("pokemon-num");
+  //pokemon-numero
+  const numPokemon = document.createTextNode(element.num);
+  createdParagraph1.appendChild(numPokemon);
 
-    //pokemon-numero
-    const numPokemon = document.createTextNode(element.num);
-    createdParagraph1.appendChild(numPokemon);
+  //h2title
+  const h2title = document.createElement('h2');
+  divCardPokemon.appendChild(h2title);
+  h2title.classList.add('nameP')
 
-    //h2title
-    const h2title = document.createElement('h2');
-    divCardPokemon.appendChild(h2title);
-    h2title.classList.add('nameP')
+  const divWP = document.createElement('div');
+  divCardPokemon.appendChild(divWP);
 
-    const divWP = document.createElement('div');
-    divCardPokemon.appendChild(divWP);
+  const divWP2 = document.createElement('div');
+  divCardPokemon.appendChild(divWP2);
 
-    const divWP2 = document.createElement('div');
-    divCardPokemon.appendChild(divWP2);
+  const heigthP = document.createElement('p');
+  divCardPokemon.appendChild(heigthP);
 
-    const heigthP = document.createElement('p');
-    divCardPokemon.appendChild(heigthP);
+  const weigthP = document.createElement('p');
+  divCardPokemon.appendChild(weigthP);
 
-    const weigthP = document.createElement('p');
-    divCardPokemon.appendChild(weigthP);
+  const heigthTittle = document.createTextNode('Heigth')
+  heigthP.appendChild(heigthTittle)
 
-    const heigthTittle = document.createTextNode('Heigth')
-    heigthP.appendChild(heigthTittle)
+  const weigthTittle = document.createTextNode('Weigth')
+  weigthP.appendChild(weigthTittle)
 
-    const weigthTittle = document.createTextNode('Weigth')
-    weigthP.appendChild(weigthTittle)
+  divWP.appendChild(heigthP)
+  divWP.appendChild(weigthP)
+  divWP.classList.add('tittle-contain')
 
-    divWP.appendChild(heigthP)
-    divWP.appendChild(weigthP)
-    divWP.classList.add('tittle-contain')
+  //titulo pokemon
+  const titlePokemon = document.createTextNode(element.name)
+  h2title.appendChild(titlePokemon);
 
-    //titulo pokemon
-    const titlePokemon = document.createTextNode(element.name)
-    h2title.appendChild(titlePokemon);
+  //parrafo-creado-para heigth-pokemon
+  const createdParagraph2 = document.createElement('p');
+  divCardPokemon.appendChild(createdParagraph2);
 
-    //parrafo-creado-para heigth-pokemon
-    const createdParagraph2 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph2);
+  //pokemon-heigth
+  const heigthPokemon=document.createTextNode(element.heigth);
+  createdParagraph2.appendChild(heigthPokemon);
+  
+  //parrafo-creado-para weigth-pokemon
+  const createdParagraph3 = document.createElement('p');
+  divCardPokemon.appendChild(createdParagraph3);
 
-    //pokemon-heigth
-    const heigthPokemon=document.createTextNode(element.heigth);
-    createdParagraph2.appendChild(heigthPokemon);
-    
-    //parrafo-creado-para weigth-pokemon
-    const createdParagraph3 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph3);
+  //pokemon-weigth
+  const weigthPokemon = document.createTextNode(element.weight);
+  createdParagraph3.appendChild(weigthPokemon);
 
-    //pokemon-weigth
-    const weigthPokemon = document.createTextNode(element.weight);
-    createdParagraph3.appendChild(weigthPokemon);
-
-    divWP2.appendChild(createdParagraph2)
-    divWP2.appendChild(createdParagraph3)
-    divWP2.classList.add('value-contain')
-    })
-};
-
-const showSearchElements = (pokemon) => {
-    const divCardPokemon=document.createElement('div');
-
-    //class title-pokemon    
-    divCardPokemon.classList.add('title-pokemon');
-    infoPokemonSection.appendChild(divCardPokemon);
-
-    //div-creado-para img
-    const createdDiv = document.createElement('div');
-    createdDiv.classList.add('container');
-    divCardPokemon.appendChild(createdDiv);
-
-    //img-creado
-    const createImg = document.createElement('img');
-    createImg.src = pokemon.img
-    createdDiv.appendChild(createImg);
-
-    //parrafo-creado-para numero de pokemon
-    const createdParagraph1 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph1);
-    createdParagraph1.classList.add("pokemon-num");
-
-    //pokemon-numero
-    const numPokemon = document.createTextNode(pokemon.num);
-    createdParagraph1.appendChild(numPokemon);
-
-    //h2title
-    const h2title = document.createElement('h2');
-    divCardPokemon.appendChild(h2title);
-    h2title.classList.add('nameP')
-
-    const divWP = document.createElement('div');
-    divCardPokemon.appendChild(divWP);
-
-    const divWP2 = document.createElement('div');
-    divCardPokemon.appendChild(divWP2);
-
-    const heigthP = document.createElement('p');
-    divCardPokemon.appendChild(heigthP);
-
-    const weigthP = document.createElement('p');
-    divCardPokemon.appendChild(weigthP);
-
-    const heigthTittle = document.createTextNode('Heigth')
-    heigthP.appendChild(heigthTittle)
-
-    const weigthTittle = document.createTextNode('Weigth')
-    weigthP.appendChild(weigthTittle)
-
-    divWP.appendChild(heigthP)
-    divWP.appendChild(weigthP)
-    divWP.classList.add('tittle-contain')
-
-    //titulo pokemon
-    const titlePokemon = document.createTextNode(pokemon.name)
-    h2title.appendChild(titlePokemon);
-
-    //parrafo-creado-para heigth-pokemon
-    const createdParagraph2 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph2);
-
-    //pokemon-heigth
-    const heigthPokemon=document.createTextNode(pokemon.heigth);
-    createdParagraph2.appendChild(heigthPokemon);
-    
-    //parrafo-creado-para weigth-pokemon
-    const createdParagraph3 = document.createElement('p');
-    divCardPokemon.appendChild(createdParagraph3);
-
-    //pokemon-weigth
-    const weigthPokemon = document.createTextNode(pokemon.weight);
-    createdParagraph3.appendChild(weigthPokemon);
-
-    divWP2.appendChild(createdParagraph2)
-    divWP2.appendChild(createdParagraph3)
-    divWP2.classList.add('value-contain')
+  divWP2.appendChild(createdParagraph2)
+  divWP2.appendChild(createdParagraph3)
+  divWP2.classList.add('value-contain')
+  });
 }
+
+allInfoPokemon.style.display = 'none';
 
 showElements(mapedData(data.pokemon));
 
@@ -189,16 +113,32 @@ selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
 
 selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
 
+selectOrder.addEventListener('change',()=>{
+    const dataOrder = sortData(data.pokemon,selectOrderCamp.value,selectOrder.value);
+    while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+    }
+    showElements(mapedData(dataOrder))
+})
+
+selectOrderCamp.addEventListener('change',()=>{
+    selectOrder.value = 'order-direction'
+})
+
 inputSearch.addEventListener('input', function(e){
-    let iText = e.target.value.toLowerCase();
-      mapedData(data.pokemon).map((poke)=> {
-        if(poke.name.indexOf(iText) !== -1) {
-          while (infoPokemonSection.firstChild) {
-            infoPokemonSection.removeChild(infoPokemonSection.firstChild);
-          }
-          showSearchElements(poke)
-        }
-      })
+  let iText = e.target.value.toLowerCase();
+ /* let search = sortData(data.pokemon,'name','asc')
+  search = mapedData(search).filter(poke=> poke.name.indexOf(iText) !== -1)
+      while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+      }
+  showElements(search)  */
+
+  const search = mapedData(data.pokemon).filter(poke=> poke.name.indexOf(iText) !== -1)
+      while (infoPokemonSection.firstChild) {
+        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
+      }
+  showElements(search);
 })
 
 const styleforTypes = (e, campo) => {
@@ -373,8 +313,7 @@ const showAllInfoPoke = (pokemon) => {
   div13.classList.add('pokemon-type')
   div12.classList.add('types')
   div13.appendChild(typeTag)
-/*   navPage.appendChild(typeTag);
- */
+
   pokemon.type.forEach((e) => {
     const type = document.createElement('div');
     const typeContent = document.createTextNode(e.toUpperCase());
@@ -572,34 +511,6 @@ const showAllInfoPoke = (pokemon) => {
   div11.appendChild(tableTagTwo)
   sectPage.appendChild(div11);
 
-/*   "evolution": {
-    "candy": "caterpie candy",
-    "next-evolution": [{
-      "num": "011",
-      "name": "metapod",
-      "candy-cost": "12",
-      "next-evolution": [{
-        "num": "012",
-        "name": "butterfree",
-        "candy-cost": "50"
-      }]
-    }]
-  } */
-
-/*   "evolution": {
-    "candy": "caterpie candy",
-    "next-evolution": [{
-      "num": "012",
-      "name": "butterfree",
-      "candy-cost": "50"
-    }],
-    "prev-evolution": [{
-      "num": "010",
-      "name": "caterpie",
-      "candy-cost": "12"
-    }]
-  } */
-
   //num
   //name
   //candy
@@ -659,18 +570,6 @@ const showAllInfoPoke = (pokemon) => {
     type: 'bar',
     data: data,
     options: {}
-   /*  options: {
-      plugins: {
-          title: {
-              display: true,
-              text: 'Poke Stats',
-              Chart: {
-                defaults :{
-                  color: '#FFFFFF'
-                }
-              } 
-          }
-      } */
   };
 
   const myChart = new Chart(
@@ -692,8 +591,9 @@ pokeCard.forEach(card => {
     data.pokemon.map(p => {
       if(p.name.includes(x)) {
         mainPage.style.display= 'none';
+        allInfoPokemon.style.display = 'block';
         showAllInfoPoke(p)
       }
     })
   })
-})
+});
