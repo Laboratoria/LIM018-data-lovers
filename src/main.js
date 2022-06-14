@@ -4,16 +4,20 @@ import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 const infoPokemonSection = document.getElementById('info-pokemon-section');
+const allInfoPokemon = document.querySelector('.pokemon');
 const selectType = document.querySelector('.type');
 const selectGeneration = document.querySelector('.generations');
 const selectEggs = document.querySelector('.eggs')
 const inputSearch = document.querySelector('.input-search');
-//const selectOrderCamp = document.querySelector('.orderCamp');
-//const selectOrder = document.querySelector('.order');
+const mainPage = document.querySelector('.main-page');
 
 const showElements = (data) => {
     data.forEach((element) => {
+    //const aRedirectPokemon = document.createElement('a')
     const divCardPokemon=document.createElement('div');
+
+    //Div into Ancle
+   // divCardPokemon.appendChild(aRedirectPokemon)
 
     //class title-pokemon    
     divCardPokemon.classList.add('title-pokemon');
@@ -41,6 +45,7 @@ const showElements = (data) => {
     //h2title
     const h2title = document.createElement('h2');
     divCardPokemon.appendChild(h2title);
+    h2title.classList.add('nameP')
 
     const divWP = document.createElement('div');
     divCardPokemon.appendChild(divWP);
@@ -119,6 +124,7 @@ const showSearchElements = (pokemon) => {
     //h2title
     const h2title = document.createElement('h2');
     divCardPokemon.appendChild(h2title);
+    h2title.classList.add('nameP')
 
     const divWP = document.createElement('div');
     divCardPokemon.appendChild(divWP);
@@ -195,9 +201,499 @@ inputSearch.addEventListener('input', function(e){
       })
 })
 
+const styleforTypes = (e, campo) => {
+  if(e ==='fire'){campo.classList.add('fire')}
+  else if (e === 'ice'){campo.classList.add('ice')}
+  else if (e === 'flying'){campo.classList.add('flying')}
+  else if (e === 'psychic'){campo.classList.add('psychic')}
+  else if (e === 'poison'){campo.classList.add('poison')}
+  else if (e === 'normal'){campo.classList.add('normal')}
+  else if (e === 'dragon'){campo.classList.add('dragon')}
+  else if (e === 'water'){campo.classList.add('water')}
+  else if (e === 'dark'){campo.classList.add('dark')}
+  else if (e === 'steel'){campo.classList.add('steel')}
+  else if (e === 'bug'){campo.classList.add('bug')}
+  else if (e === 'ground'){campo.classList.add('ground')}
+  else if (e === 'electric'){campo.classList.add('electric')}
+  else if (e === 'fighting'){campo.classList.add('fighting')}
+  else if (e === 'rock'){campo.classList.add('rock')}
+  else if (e === 'ghost'){campo.classList.add('ghost')}
+  else if (e === 'fairy'){campo.classList.add('fairy')}
+  else if (e === 'grass'){campo.classList.add('grass')}
+}
 
-//ordenando de forma ascedente por nombre de pokemon, por el momento se muestra en consola
-//console.log(sortData(data.pokemon,'name','desc'))
+const showAllInfoPoke = (pokemon) => {
+  // main
+  const mainPage = document.createElement('main');
+  mainPage.classList.add('main-allInfoPokemon')
+  //nav
+  const navPage = document.createElement('nav');
+  //section
+  const sectPage = document.createElement('section');
+  sectPage.classList.add('info-section')
+  //poke-img
+  const pokeImg = document.createElement('img');
+  pokeImg.classList.add('pokemon-img')
+  pokeImg.src = pokemon.img;
+  navPage.appendChild(pokeImg)
 
-//console.log(filterData(data.pokemon, 'legendary'))
-//console.log(computeStats(data.pokemon))
+  //poke-name
+  const pokeName = document.createElement('h1');
+  const name = document.createTextNode('N° '+pokemon.num+' '+pokemon.name);
+  pokeName.classList.add('pokemon-name');
+  pokeName.appendChild(name);
+  // header
+  const headerPage = document.createElement('header');
+  headerPage.classList.add('header-allInfoPokemon')
+  headerPage.appendChild(pokeName)
+  allInfoPokemon.appendChild(headerPage);
+
+
+  //poke-about
+  const aboutTag = document.createElement('h3');
+  const aboutName = document.createTextNode('About: ');
+  const pokeAbout = document.createElement('p');
+  const about = document.createTextNode(pokemon.about);
+  pokeAbout.classList.add('pokemon-about');
+  aboutTag.classList.add('pokemon-sect')
+  aboutTag.appendChild(aboutName);
+  pokeAbout.appendChild(about);
+  allInfoPokemon.appendChild(aboutTag);
+  allInfoPokemon.appendChild(pokeAbout)
+
+  // div
+  const div1 = document.createElement('div');
+ 
+  div1.classList.add('about')
+  div1.appendChild(aboutTag)
+  div1.appendChild(pokeAbout)
+  sectPage.appendChild(div1);
+
+  //div2
+  const div2 = document.createElement('div');
+  //poke-generation
+  const generationTag = document.createElement('h3');
+  const generationName = document.createTextNode('Generation: ');
+  const pokeGeneration = document.createElement('p');
+  const generation = document.createTextNode(pokemon.generation.name);
+  generationTag.appendChild(generationName);
+  pokeGeneration.appendChild(generation);
+  div2.classList.add('pokemon-generation')
+  div2.appendChild(generationTag)
+  div2.appendChild(pokeGeneration)
+
+  //div3
+  const div3 = document.createElement('div');
+  //poke-size
+  const sizeTag = document.createElement('h3');
+  const sizeName = document.createTextNode('Size: ');
+  const size = document.createElement('ul');
+  const sizeH = document.createElement('li');
+  const sizeW = document.createElement('li');
+  const height = document.createTextNode('Height: '+pokemon.size.height)
+  const weight = document.createTextNode('Weight: '+pokemon.size.weight)
+  size.appendChild(sizeH);
+  size.appendChild(sizeW);
+  sizeH.appendChild(height);
+  sizeW.appendChild(weight);
+  sizeTag.appendChild(sizeName);
+  div3.classList.add('pokemon-size')
+  div3.appendChild(sizeTag);
+  div3.appendChild(size);
+
+  //div4
+  const div4 = document.createElement('div');
+  div4.classList.add('container-gs')
+  div4.appendChild(div2);
+  div4.appendChild(div3);
+
+
+
+  sectPage.appendChild(div4);
+
+  //poke-weaknesses
+  const div5 = document.createElement('div');
+  const div6 = document.createElement('div');
+  const weaknessesTag = document.createElement('h3');
+  const weaknessesName = document.createTextNode('Weaknesses: ');
+
+  div6.classList.add('weaknesses');
+  div5.classList.add('pokemon-weaknesses');
+  weaknessesTag.appendChild(weaknessesName);
+  div5.appendChild(weaknessesTag)
+
+  pokemon.weaknesses.forEach((e) => {
+    const weakness = document.createElement('div');
+    const weaknesses = document.createTextNode(e.toUpperCase());
+
+    styleforTypes(e, weakness);
+
+    div6.appendChild(weakness)
+    weakness.appendChild(weaknesses);
+})
+
+    div5.appendChild(div6);
+
+
+  //poke-resistant
+  const div7 = document.createElement('div');
+  const div8 = document.createElement('div');
+  const div9 = document.createElement('div');
+  const resistantTag = document.createElement('h3');
+  const resistantName = document.createTextNode('Resistant to: ');
+
+  div7.classList.add('pokemon-resistant');
+  resistantTag.appendChild(resistantName);
+
+  pokemon.resistant.forEach((e) => {
+    const resistants = document.createElement('div');
+    const resistant = document.createTextNode(e.toUpperCase());
+
+    styleforTypes(e, resistants);
+
+    div7.appendChild(resistants)
+    resistants.appendChild(resistant);
+  })
+
+  div9.classList.add('pokemon-rw');
+  div7.classList.add('resistants');
+  div8.appendChild(resistantTag);
+  div8.appendChild(div7);
+  div9.appendChild(div5)
+  div9.appendChild(div8)
+  sectPage.appendChild(div9);
+
+  //poke-type
+  const div12 = document.createElement('div');
+  const div13 = document.createElement('div');
+  const typeTag = document.createElement('h3');
+  const typeName = document.createTextNode('Type: ');
+
+  typeTag.appendChild(typeName);
+  div13.classList.add('pokemon-type')
+  div12.classList.add('types')
+  div13.appendChild(typeTag)
+/*   navPage.appendChild(typeTag);
+ */
+  pokemon.type.forEach((e) => {
+    const type = document.createElement('div');
+    const typeContent = document.createTextNode(e.toUpperCase());
+
+    styleforTypes(e, type);
+
+    type.appendChild(typeContent);
+    div12.appendChild(type)
+  })
+
+  div13.appendChild(div12)
+  navPage.appendChild(div13);
+
+
+  //poke-egg
+  const div14 = document.createElement('div');
+  const eggTag = document.createElement('h3');
+  const eggName = document.createTextNode('Egg: ');
+  const egg = document.createElement('p');
+  const eggContent = document.createTextNode(pokemon.egg);
+  egg.appendChild(eggContent);
+  eggTag.appendChild(eggName);
+
+  div14.classList.add('pokemon-egg')
+  div14.appendChild(eggTag);
+  div14.appendChild(egg);
+  navPage.appendChild(div14);
+
+  //poke-buddy-distance
+  const div15 = document.createElement('div');
+  const pokeBuddyDistanceTag = document.createElement('h3');
+  const pokeBuddyDistanceName = document.createTextNode('Buddy-distance-km: ');
+  const buddyDistance = document.createElement('p');
+  const pokeBuddyDistance = document.createTextNode(pokemon['buddy-distance-km']+'km');
+  buddyDistance.appendChild(pokeBuddyDistance);
+  pokeBuddyDistanceTag.appendChild(pokeBuddyDistanceName);
+
+  div15.classList.add('pokemon-buddy-distance')
+  div15.appendChild(pokeBuddyDistanceTag)
+  div15.appendChild(buddyDistance)
+  navPage.appendChild(div15);
+
+  //poke-encounter
+  const div16 = document.createElement('div');
+  const pokeEncounterTag = document.createElement('h3');
+  const pokeEncounterName = document.createTextNode('Encounter: ');
+  const encounter = document.createElement('ul');
+  const pokeBaseFleeRate = document.createElement('li');
+  const pokeBaseCaptureRate = document.createElement('li');
+  const baseFleeRate = document.createTextNode('Base-flee-rate: '+pokemon.encounter["base-flee-rate"])
+  const baseCaptureRate = document.createTextNode('Base-capture-rate: '+pokemon.encounter["base-capture-rate"])
+  pokeBaseFleeRate.appendChild(baseFleeRate);
+  pokeBaseCaptureRate.appendChild(baseCaptureRate);
+  encounter.appendChild(pokeBaseFleeRate);
+  encounter.appendChild(pokeBaseCaptureRate);
+  pokeEncounterTag.appendChild(pokeEncounterName);
+
+  div16.classList.add('pokemon-encounter')
+  div16.appendChild(pokeEncounterTag)
+  div16.appendChild(encounter)
+
+  navPage.appendChild(div16);
+
+  //poke-quick-move
+  const div10 = document.createElement('div');
+  const tableName1 = document.createElement('h3');
+  const nameContent = document.createTextNode('Quick move: ');
+  const tableTag = document.createElement('table');
+  const firstTrTag = document.createElement('tr');
+  const firstThTag = document.createElement('th');
+  const secondThTag = document.createElement('th');
+  const thirdThTag = document.createElement('th');
+  const fourThTag = document.createElement('th');
+  const fiveThTag = document.createElement('th');
+  const firstThTagContent = document.createTextNode('Name');
+  const secondThTagContent = document.createTextNode('Type');
+  const thirdThTagContent = document.createTextNode('Base damage');
+  const fourThTagContent = document.createTextNode('Energy');
+  const fiveThTagContent = document.createTextNode('Move duration seg');
+
+  tableName1.appendChild(nameContent)
+  firstThTag.appendChild(firstThTagContent);
+  secondThTag.appendChild(secondThTagContent);
+  thirdThTag.appendChild(thirdThTagContent);
+  fourThTag.appendChild(fourThTagContent);
+  fiveThTag.appendChild(fiveThTagContent);
+
+  firstTrTag.appendChild(firstThTag);
+  firstTrTag.appendChild(secondThTag);
+  firstTrTag.appendChild(thirdThTag);
+  firstTrTag.appendChild(fourThTag);
+  firstTrTag.appendChild(fiveThTag);
+
+  tableTag.appendChild(firstTrTag);
+
+ pokemon['quick-move'].forEach((e) => {
+    const thirdtTrTag = document.createElement('tr');
+    const firstTdTag = document.createElement('td');
+    const secondTdTag = document.createElement('td');
+    const thirdTdTag = document.createElement('td');
+    const fourTdTag = document.createElement('td');
+    const fiveTdTag = document.createElement('td');
+
+    const firstTdTagContent = document.createTextNode(e['name']);
+    const secondTdTagContent = document.createTextNode(e['type']);
+    const thirdTdTagContent = document.createTextNode(e['base-damage']);
+    const fourTdTagContent = document.createTextNode(e['energy']);
+    const fiveTdTagContent = document.createTextNode(e['move-duration-seg']);
+
+    firstTdTag.appendChild(firstTdTagContent);
+    secondTdTag.appendChild(secondTdTagContent);
+    thirdTdTag.appendChild(thirdTdTagContent);
+    fourTdTag.appendChild(fourTdTagContent);
+    fiveTdTag.appendChild(fiveTdTagContent);
+
+    thirdtTrTag.appendChild(firstTdTag);
+    thirdtTrTag.appendChild(secondTdTag);
+    thirdtTrTag.appendChild(thirdTdTag);
+    thirdtTrTag.appendChild(fourTdTag);
+    thirdtTrTag.appendChild(fiveTdTag);
+
+    tableTag.appendChild(thirdtTrTag);
+  })
+
+  div10.appendChild(tableName1);
+  div10.appendChild(tableTag);
+  sectPage.appendChild(div10);
+
+  //poke-special-attack
+  const div11 = document.createElement('div');
+  const tableName2 = document.createElement('h3');
+  const nameContent2 = document.createTextNode('Special attack: ');
+  const tableTagTwo = document.createElement('table');
+  const tableTBody = document.createElement('tbody');
+  const secondTrTagSA = document.createElement('tr');
+  const firstThTagSA = document.createElement('th');
+  const secondThTagSA = document.createElement('th');
+  const thirdThTagSA = document.createElement('th');
+  const fourThTagSA = document.createElement('th');
+  const fiveThTagSA = document.createElement('th');
+  const firstThTagSaContent = document.createTextNode('Name');
+  const secondThTagSaContent = document.createTextNode('Type');
+  const thirdThTagSaContent = document.createTextNode('Base damage');
+  const fourThTagSaContent = document.createTextNode('Energy');
+  const fiveThTagSaContent = document.createTextNode('Move duration seg');
+
+  tableName2.appendChild(nameContent2);
+  firstThTagSA.appendChild(firstThTagSaContent);
+  secondThTagSA.appendChild(secondThTagSaContent);
+  thirdThTagSA.appendChild(thirdThTagSaContent);
+  fourThTagSA.appendChild(fourThTagSaContent);
+  fiveThTagSA.appendChild(fiveThTagSaContent);
+
+  secondTrTagSA.appendChild(firstThTagSA);
+  secondTrTagSA.appendChild(secondThTagSA);
+  secondTrTagSA.appendChild(thirdThTagSA);
+  secondTrTagSA.appendChild(fourThTagSA);
+  secondTrTagSA.appendChild(fiveThTagSA);
+
+  tableTagTwo.classList.add('styled-table')
+
+  tableTagTwo.appendChild(secondTrTagSA);
+
+  pokemon['special-attack'].forEach((e) => {
+    const fourtTrTag = document.createElement('tr');
+    const firstTdTag = document.createElement('td');
+    const secondTdTag = document.createElement('td');
+    const thirdTdTag = document.createElement('td');
+    const fourTdTag = document.createElement('td');
+    const fiveTdTag = document.createElement('td');
+
+    const firstTdTagContent = document.createTextNode(e['name']);
+    const secondTdTagContent = document.createTextNode(e['type']);
+    const thirdTdTagContent = document.createTextNode(e['base-damage']);
+    const fourTdTagContent = document.createTextNode(e['energy']);
+    const fiveTdTagContent = document.createTextNode(e['move-duration-seg']);
+
+    firstTdTag.appendChild(firstTdTagContent);
+    secondTdTag.appendChild(secondTdTagContent);
+    thirdTdTag.appendChild(thirdTdTagContent);
+    fourTdTag.appendChild(fourTdTagContent);
+    fiveTdTag.appendChild(fiveTdTagContent);
+
+    fourtTrTag.appendChild(firstTdTag);
+    fourtTrTag.appendChild(secondTdTag);
+    fourtTrTag.appendChild(thirdTdTag);
+    fourtTrTag.appendChild(fourTdTag);
+    fourtTrTag.appendChild(fiveTdTag);
+
+    tableTBody.appendChild(fourtTrTag);
+    tableTagTwo.appendChild(tableTBody);
+  })
+
+  div11.appendChild(tableName2)
+  div11.appendChild(tableTagTwo)
+  sectPage.appendChild(div11);
+
+/*   "evolution": {
+    "candy": "caterpie candy",
+    "next-evolution": [{
+      "num": "011",
+      "name": "metapod",
+      "candy-cost": "12",
+      "next-evolution": [{
+        "num": "012",
+        "name": "butterfree",
+        "candy-cost": "50"
+      }]
+    }]
+  } */
+
+/*   "evolution": {
+    "candy": "caterpie candy",
+    "next-evolution": [{
+      "num": "012",
+      "name": "butterfree",
+      "candy-cost": "50"
+    }],
+    "prev-evolution": [{
+      "num": "010",
+      "name": "caterpie",
+      "candy-cost": "12"
+    }]
+  } */
+
+  //num
+  //name
+  //candy
+
+  //poke-evolution
+ /*  const containerEvolution =  document.createElement('div');
+  const imgPoke = document.createElement('img');
+  imgPoke.src = pokemon.img ;
+  const candyTag = document.createElement('p');
+  const candy = document.createTextNode(pokemon.evolution['candy']);
+  /* console.log(candy)
+ */
+  //next-evolution
+  const containerNextEvolution =  document.createElement('div');
+  const imgNextoke = document.createElement('img');
+  const imgPokemones = pokemon.evolution
+
+ /*  const poke = data.filter(p => p.includes(imgPokemones))
+  imgNextoke.src = poke.img ;
+  console.log(imgPokemones)
+   */
+  //poke-stats
+  /* const divStats = document.querySelector('pokemon-stats');
+  const statsTag = document.createElement('h3')
+  const statsContent = document.createTextNode('Stats: ');
+  statsTag.appendChild(statsContent)
+  divStats.appendChild(statsTag); */
+  const labels = [
+    'Base Attack',
+    'Base Defense',
+    'Base Stamina',
+    'Max CP',
+    'Max HP',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Stats',
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(255, 175, 204)',
+        'rgb(202, 255, 191)'
+      ],
+      pointBackgroundColor: "#a7281a",
+      pointBorderColor: "#fff",
+      borderColor: 'rgb(255, 255, 255)',
+      data: [pokemon['stats']['base-attack'], pokemon['stats']['base-defense'], 
+      pokemon['stats']['base-stamina'], pokemon['stats']['max-cp'], 
+      pokemon['stats']['max-hp']],
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+   /*  options: {
+      plugins: {
+          title: {
+              display: true,
+              text: 'Poke Stats',
+              Chart: {
+                defaults :{
+                  color: '#FFFFFF'
+                }
+              } 
+          }
+      } */
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+  mainPage.appendChild(navPage);
+  mainPage.appendChild(sectPage);
+  allInfoPokemon.appendChild(mainPage);
+  
+}
+
+const pokeCard = document.querySelectorAll('.nameP')
+
+pokeCard.forEach(card => {
+  card.addEventListener('click', e => {
+    let x = e.target.textContent;
+    data.pokemon.map(p => {
+      if(p.name.includes(x)) {
+        mainPage.style.display= 'none';
+        showAllInfoPoke(p)
+      }
+    })
+  })
+})
