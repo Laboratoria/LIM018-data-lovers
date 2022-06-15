@@ -192,7 +192,7 @@ selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
 
 
 selectOrder.addEventListener('change',()=>{
-    const dataOrder = sortData(data.pokemon,selectOrderCamp.value,selectOrder.value);
+    const dataOrder = sortData(data.pokemon, selectOrderCamp.value, selectOrder.value);
     while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
     }

@@ -17,7 +17,7 @@ export const sortData = (data,sortBy,sortOrder) => {
 //filtrar datos por tipo, generación y egg
 const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
 'water', 'dark', 'ice', 'steel', 'bug', 'psychic','ground', 
-'electric', 'fighting', 'rock','ghost','fairy']
+'electric', 'fighting', 'rock','ghost','fairy', 'grass']
 const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 const pokemonsRarety = ['legendary', 'mythic']
@@ -47,11 +47,3 @@ export const mapedData = (data) => {
         weight:itemPokemon.size.weight,
     }
 })};
-
-
-/* export const computeStats = (data) => {
-  const poisonType = data.filter(pokemon => pokemon.type.includes('poison')).length
-  const dataLength = data.length
-  let result = (poisonType/dataLength) * 100
-  return Math.round(result)+'%'
-}; */
