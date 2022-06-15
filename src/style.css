@@ -14,14 +14,7 @@
   font-family: Pokemon-Hollow;
   src: url(images/Pokemon-Hollow.ttf);
 }
-
-/* html,body {
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  position: absolute;
-} */
-
+/*
 body {
   margin: 0px;
   padding: 0px;
@@ -56,8 +49,7 @@ h3 {
 
   color: #EDEAFF;
 }
-
-
+/*
 .page-name {
   font-family: Pokemon-Solid;
   font-style: normal;
@@ -95,4 +87,513 @@ h3 {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > img{
+  width: 140px;
+  height: 160px;
+  margin-top: -55px;
+  filter: drop-shadow(0px 1.9797px 7.42386px #000000);
+}
+
+.types-name {
+  display: flex;
+  align-items: end;
+  margin-top: -12px;
+}
+
+.types-name > h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+}
+
+.circle-types {
+  display: flex;
+  align-items: baseline;
+}
+
+.pokemon-num {
+  color: #FFFFFF;
+  margin-top: -5px;
+}
+
+.tittle-contain {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: -15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+}
+
+.value-contain {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: -15px;
+  margin-bottom: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #DEBF6C;
+}
+
+.develop-info {
+  display: flex;
+  align-items: center;
+  font-family: 'Pokemon Solid';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 35px;
+  gap: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+}
+
+.filters {
+  display: flex;
+  gap: 30px;
+  margin-left: 110px;
+  margin-top: 35px;
+}
+
+.type, .generations, .eggs, .order-camp, .order {
+  width: 150px;
+  height: 38px;
+
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  outline: none;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+ identical to box height 
+
+
+  color: #2A304F;
+}
+
+.clean-button {
+  width: 196px;
+  height: 44px;
+
+  background: #495487;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  color: #FFFFFF;
+  margin-left: 10px;
+margin-left: 80px;}
+
+.clean-button:hover {
+  border: 1px solid transparent;
+  background-color: #FFFFFF;
+  color: #2A304F;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-left: 110px;
+  width: 400px;
+  height: 38px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  border-color: none;
+}
+
+.input-search {
+  width: 360px;
+  height: 33px;
+  outline: none;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  background: transparent;
+}
+
+.nameP:hover {
+  cursor: pointer;
+  color: #DEBF6C;
+}
+
+ all info pokemon section
+ 
+
+.main-allInfoPokemon {
+  display: flex;
+  gap: 40px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+ background-color: #DEBF6C; 
+ 
+  width: 35%;
+  height: 100%;
+  border-right: 1px #FFFFFF solid;
+}
+
+.header-allInfoPokemon {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+}
+
+.pokemon-name {
+  font-family: Pokemon-Hollow;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 84px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.pokemon-img {
+  width: 337px;
+  height: 325px;
+  margin-left: 30px;
+  margin-top: -90px;
+  filter: drop-shadow(0px 5.43448px 20.3793px #000000);
+}
+
+.pokemon-stats {
+  width: 325px;
+  height: 295px;
+  position: absolute;
+  margin-top: 560px;
+  margin-left: 40px;
+}
+
+.about {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.pokemon-about {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+
+}
+
+.pokemon-type {
+  display: flex;
+  margin-left: 40px;
+  gap: 20px;
+  flex-direction: column;
+  margin-bottom: 250px;
+}
+
+.types {
+  display: flex;
+  gap: 25px;
+}
+
+.pokemon-generation {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-generation > p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+.pokemon-size {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-size > ul  {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  gap: 60px;
+  
+  color: #FFFFFF;
+}
+
+.container-gs {
+  display: flex;
+  gap: 90px;
+}
+
+.pokemon-rw {
+  display: flex;
+  gap: 50px;
+}
+
+.pokemon-resistant {
+  display: flex;
+  gap: 15px;
+}
+
+.pokemon-weaknesses {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.weaknesses {
+  display: grid;
+  grid-template-columns: repeat(3, 111px);
+  gap: 15px;
+  margin-top: -14px;
+}
+
+.resistants {
+  display: grid;
+  grid-template-columns: repeat(3, 111px);
+  gap: 15px;
+}
+
+.pokemon-egg, .pokemon-buddy-distance {
+  display: flex;
+  align-items: baseline;
+  margin-left: 40px;
+  gap: 25px;
+}
+
+.pokemon-egg, .pokemon-buddy-distance > p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+}
+
+.pokemon-encounter {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.pokemon-encounter > ul {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+}
+
+.fire,.ice, .flying, .psychic, .poison,
+.normal, .dragon, .water ,.dark,
+.steel, .bug, .ground, .electric,
+.fighting, .rock, .ghost, .fairy, .grass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 111px;
+  height: 33px;
+  border-radius: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.fire {
+  background: #FB8A6D;
+  color: #662116;
+}
+
+.ice {
+  background: #54BFD8;
+  color: #276A85;
+}
+
+.flying {
+  background: #7BDFDB;
+  color: #046B5A;
+}
+
+.psychic {
+  background: #EB9DDB;
+  color: #681E65;
+}
+
+.poison {
+  background: #A398F8;
+  color: #343C63;
+}
+
+.normal {
+  background: #A1ACAE;
+  color: #3D4F60;
+}
+
+.dragon {
+  background: #E95571;
+  color: #5F0A19;
+}
+
+.water {
+  background: #7CDCF2;
+  color: #0F7199;
+}
+
+.ground {
+  background: #BF8B6E;
+  color: #59331D;
+}
+
+.electric {
+  background: #F2DE7C;
+  color: #8B5C00;
+}
+
+.fighting {
+  background: #FFA561;
+  color: #7E380C;
+}
+
+.rock {
+  background: #7F9496;
+  color: #213536;
+}
+
+.fairy {
+  background: #DC93F6;
+  color: #83379E;
+}
+
+.grass {
+  background: #B7E899;
+  color: #3F5D20;
+}
+
+.dark {
+  background: #8d99ae;
+  color: #2b2d42;
+}
+
+.steel {
+  background: #AAAAAA;
+  color: #46494C;
+}
+
+.bug {
+  background: #FF7096;
+  color: #841230;
+}
+
+.ghost {
+  background: #1F7A8C;
+  color: #022B3A;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: 'Inter';
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background: #495487;
+  width: 80%;
+  color: #ffffff;
+}
+
+th {
+  text-align: initial;
+}
+tr:hover {
+  background-color: #f3f3f3;
+  color: #2A304F;
+  text-align: justify;
+}
+
+table th, td {
+  padding: 12px 15px;
+}
+
+td, th {
+  border: 1px solid #2A304F;;
+}
+*/
+
+
+
 
