@@ -236,13 +236,6 @@ selectOrderCamp.addEventListener('change',()=>{
 
 inputSearch.addEventListener('input', function(e){
   let iText = e.target.value.toLowerCase();
- /* let search = sortData(data.pokemon,'name','asc')
-  search = mapedData(search).filter(poke=> poke.name.indexOf(iText) !== -1)
-      while (infoPokemonSection.firstChild) {
-        infoPokemonSection.removeChild(infoPokemonSection.firstChild);
-      }
-  showElements(search)  */
-
   const search = mapedData(data.pokemon).filter(poke=> poke.name.indexOf(iText) !== -1)
       while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
@@ -782,17 +775,15 @@ const showAllInfoPoke = (pokemon) => {
   
 }
 
-/* const pokeCard = document.querySelectorAll('.nameP')
- */
-pokeCard.forEach(card => {
-  card.addEventListener('click', e => {
-    let x = e.target.textContent;
-    data.pokemon.map(p => {
-      if(p.name.includes(x)) {
-        mainPage.style.display= 'none';
-        allInfoPokemon.style.display = 'block';
-        showAllInfoPoke(p)
-      }
-    })
-  })
+
+infoPokemonSection.addEventListener('click', e => {
+  e.preventDefault();
+  if(e.target.classList.contains("nameP")){
+    let x = e.target.innerText;
+    const p = data.pokemon.filter(p =>p.name.includes(x))
+    mainPage.style.display= 'none';
+    allInfoPokemon.style.display = 'block';
+    showAllInfoPoke(p[0]);
+  }
+    
 });
