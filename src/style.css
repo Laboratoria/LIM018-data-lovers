@@ -15,13 +15,6 @@
   src: url(images/Pokemon-Hollow.ttf);
 }
 
-/* html,body {
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  position: absolute;
-} */
-
 body {
   margin: 0px;
   padding: 0px;
@@ -56,7 +49,6 @@ h3 {
 
   color: #EDEAFF;
 }
-
 
 .page-name {
   font-family: Pokemon-Solid;
@@ -95,11 +87,13 @@ h3 {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
 }
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container > img{
   width: 140px;
   height: 160px;
@@ -107,7 +101,13 @@ h3 {
   filter: drop-shadow(0px 1.9797px 7.42386px #000000);
 }
 
-.title-pokemon > h2 {
+.types-name {
+  display: flex;
+  align-items: end;
+  margin-top: -12px;
+}
+
+.types-name > h2 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -116,7 +116,11 @@ h3 {
   letter-spacing: 0.02em;
 
   color: #FFFFFF;
-  margin-top: -5px;
+}
+
+.circle-types {
+  display: flex;
+  align-items: baseline;
 }
 
 .pokemon-num {
@@ -327,7 +331,6 @@ nav {
   gap: 15px;
 }
 
-
 .pokemon-about {
   font-family: 'Inter';
   font-style: normal;
@@ -351,6 +354,7 @@ nav {
   display: flex;
   gap: 25px;
 }
+
 .pokemon-generation {
   display: flex;
   flex-direction: column;
@@ -373,6 +377,7 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 .pokemon-size > ul  {
   font-family: 'Inter';
   font-style: normal;
@@ -384,7 +389,6 @@ nav {
   
   color: #FFFFFF;
 }
-
 
 .container-gs {
   display: flex;
@@ -460,6 +464,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   width: 111px;
   height: 33px;
   border-radius: 16px;
@@ -584,6 +589,7 @@ tr:hover {
 table th, td {
   padding: 12px 15px;
 }
+
 td, th {
   border: 1px solid #2A304F;;
 }

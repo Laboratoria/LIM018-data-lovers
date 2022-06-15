@@ -13,7 +13,6 @@ export const sortData = (data,sortBy,sortOrder) => {
     }
 };
 
-
 //filtrar datos por tipo, generación y egg
 const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
 'water', 'dark', 'ice', 'steel', 'bug', 'psychic','ground', 
@@ -44,5 +43,6 @@ export const mapedData = (data) => {
         img:itemPokemon.img,
         heigth:itemPokemon.size.height,
         weight:itemPokemon.size.weight,
+        type:itemPokemon.type,
     }
 })};
