@@ -1,7 +1,6 @@
 # Data Lovers
 
-Grupo: 
-
+CAMBIOS 16
 
 ## Índice
 
