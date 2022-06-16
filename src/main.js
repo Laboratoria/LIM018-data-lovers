@@ -109,104 +109,14 @@ const showElements = (data) => {
 }
 
 const circleTypes = (e, campo) => {
-  if(e ==='fire'){
     const imgC = document.createElement('img');
-    imgC.src = 'images/circle-fire.png'
+    imgC.src = `images/circle-${e}.png`
     campo.appendChild(imgC);
-  }
-  else if (e === 'ice'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-ice.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'flying'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-flying.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'psychic'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-psychic.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'poison'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-poison.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'normal'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-normal.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'dragon'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-dragon.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'water'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-water.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'dark'){
-    const imgC = document.createElement('img');
-     imgC.src = 'images/circle-dark.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'steel'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-steel.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'bug'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-bug.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'ground'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-ground.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'electric'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-electric.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'fighting'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-fighting.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'rock'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-rock.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'ghost'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-ghost.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'fairy'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-fairy.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'grass'){
-    const imgC = document.createElement('img');
-    imgC.src = 'images/circle-grass.png'
-    campo.appendChild(imgC);
-  }
 }
 
 allInfoPokemon.style.display = 'none';
 
 showElements(mapedData(data.pokemon));
-
-const pokeCard = document.querySelectorAll('.nameP')
-
 
 const  filterAndShow = (e) => {
     let elements = mapedData(filterData(data, e.target.value ));
@@ -244,114 +154,10 @@ inputSearch.addEventListener('input', function(e){
 })
 
 const styleforTypes = (e, campo) => {
-  if(e ==='fire'){
-    campo.classList.add('fire')
+    campo.classList.add(e)
     const imgC = document.createElement('img');
-    imgC.src = 'images/fire.png'
+    imgC.src = `images/${e}.png`
     campo.appendChild(imgC);
-  }
-  else if (e === 'ice'){
-    campo.classList.add('ice')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/ice.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'flying'){
-    campo.classList.add('flying')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/flying.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'psychic'){
-    campo.classList.add('psychic')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/psychic.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'poison'){
-    campo.classList.add('poison')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/poison.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'normal'){
-    campo.classList.add('normal')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/normal.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'dragon'){
-    campo.classList.add('dragon')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/dragon.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'water'){
-    campo.classList.add('water')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/water.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'dark'){
-    campo.classList.add('dark')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/dark.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'steel'){
-    campo.classList.add('steel')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/steel.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'bug'){
-    campo.classList.add('bug')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/bug.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'ground'){
-    campo.classList.add('ground')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/ground.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'electric'){
-    campo.classList.add('electric')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/electric.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'fighting'){
-    campo.classList.add('fighting')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/fighting.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'rock'){
-    campo.classList.add('rock')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/rock.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'ghost'){
-    campo.classList.add('ghost')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/ghost.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'fairy'){
-    campo.classList.add('fairy')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/fairy.png'
-    campo.appendChild(imgC);
-  }
-  else if (e === 'grass'){
-    campo.classList.add('grass')
-    const imgC = document.createElement('img');
-    imgC.src = 'images/grass.png'
-    campo.appendChild(imgC);
-  }
 }
 
 const showAllInfoPoke = (pokemon) => {
@@ -774,7 +580,6 @@ const showAllInfoPoke = (pokemon) => {
   allInfoPokemon.appendChild(mainPage);
   
 }
-
 
 infoPokemonSection.addEventListener('click', e => {
   e.preventDefault();
