@@ -2,6 +2,8 @@
 
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
@@ -15,6 +17,205 @@
   src: url(images/Pokemon-Hollow.ttf);
 }
 
+body {
+  background: #2A304F;
+  background-image: url(images/img-back.png) ;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+
+.page-name {
+  font-family: Pokemon-Solid;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 140px;
+  letter-spacing: 0.04em;
+  -webkit-text-stroke: 8px #2F6AB3;
+  color: #FFCB08;
+  margin: -20px 0 0;
+}
+
+.input-search {
+  width: 360px;
+  height: 33px;
+  outline: none;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  background: transparent;
+}
+    
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin: 60px;
+  width: 400px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 60px;
+    gap: 15px;
+}
+
+.type, .generations, .eggs, .order-camp, .order {
+  width: 120px;
+  height: 38px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2A304F;
+}
+
+
+.pokemon-section{
+  display: flex;
+  margin: 60px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 70px;
+}
+
+.title-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    background: #495487;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 15%);
+    border-radius: 30px;
+}
+
+.container > img{
+  width: 140px;
+  height: 160px;
+  margin-top: -55px;
+  filter: drop-shadow(0px 1.9797px 7.42386px #000000);
+}
+
+.pokemon-num {
+  color: #FFFFFF;
+  margin-top: -5px;
+}
+
+.value-contain {
+  display: flex;
+  align-items: baseline;
+  gap: 35px;
+  margin: 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #DEBF6C;
+    
+}
+
+.types-name {
+  display: flex;
+  align-items: end;
+  margin-top: -12px;
+}
+
+.tittle-contain {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.title-pokemon > h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.8477px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.develop-info{
+  display: flex;
+  gap: 20px;
+  font-family: Pokemon-Solid;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+}
+
+.clean-button {
+  width: 120px;
+  height: 38px;
+  background: #495487;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  color: #FFFFFF;
+}
+
+.clean-button:hover {
+  border: 1px solid transparent;
+  background-color: #FFFFFF;
+  color: #2A304F;
+  transform: scale(1.05);
+  will-change: transform;
+}
+/*
 body {
   margin: 0px;
   padding: 0px;
@@ -49,7 +250,7 @@ h3 {
 
   color: #EDEAFF;
 }
-
+/*
 .page-name {
   font-family: Pokemon-Solid;
   font-style: normal;
@@ -114,7 +315,6 @@ h3 {
   font-size: 18px;
   line-height: 17px;
   letter-spacing: 0.02em;
-
   color: #FFFFFF;
 }
 
@@ -140,7 +340,6 @@ h3 {
   line-height: 17px;
   text-align: center;
   letter-spacing: 0.02em;
-
   color: #FFFFFF;
 }
 
@@ -199,7 +398,7 @@ h3 {
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  /* identical to box height */
+ identical to box height 
 
 
   color: #2A304F;
@@ -223,8 +422,7 @@ h3 {
   border: none;
   color: #FFFFFF;
   margin-left: 10px;
-/*  margin-left: 80px;
- */}
+margin-left: 80px;}
 
 .clean-button:hover {
   border: 1px solid transparent;
@@ -268,8 +466,8 @@ h3 {
   color: #DEBF6C;
 }
 
-/* all info pokemon section
- */
+ all info pokemon section
+ 
 
 .main-allInfoPokemon {
   display: flex;
@@ -279,8 +477,8 @@ h3 {
 nav {
   display: flex;
   flex-direction: column;
-/*  background-color: #DEBF6C; 
- */
+ background-color: #DEBF6C; 
+ 
   width: 35%;
   height: 100%;
   border-right: 1px #FFFFFF solid;
@@ -593,3 +791,8 @@ table th, td {
 td, th {
   border: 1px solid #2A304F;;
 }
+*/
+
+
+
+

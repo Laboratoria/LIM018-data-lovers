@@ -4,80 +4,91 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
   <body>
+      <header class="header">
+        <img  class="img-header" src="images/img-header1.png"/>
+        <h1 class="page-name">Pokedéx</h1>
+        <img class="img-header" src="images/img-header2.png"/>
+      </header>
+
   <main class="main-page">
-    <header>
-      <img src="images/img-header1.png"/>
-      <h1 class="page-name">Pokedéx</h1>
-      <img src="images/img-header2.png"/>
-    </header>
 
-    <div class="search-bar">
-      <input type="text" class="input-search" placeholder="Search by ..." />
-      <input type="image" class="img-search" src="images/search.svg" >
-    </div>
+      <div class="search-bar">
+        <input type="text" class="input-search" placeholder="Search by ..." />
+        <input type="image" class="img-search" src="images/search.svg" >
+      </div>
 
-    <section class="filters" >
-      <select class="type" name="Type">
-        <option disabled selected>Type</option>
-         <option value="poison" >Poison</option>
-         <option value="fire">Fire</option>
-         <option value="normal">Normal</option>
-         <option value="flying">Flying</option>
-         <option value="dragon">Dragon</option>
-         <option value="water">Water</option>
-         <option value="dark">Dark</option>
-         <option value="ice">Ice</option>
-         <option value="steel">Steel</option>
-         <option value="bug">Bug</option>
-         <option value="psychic">Psychic</option>
-         <option value="electric">Electric</option>
-         <option value="fighting">Fighting</option>
-         <option value="rock">Rock</option>
-         <option value="ghost">Ghost</option>
-         <option value="fairy">Fairy</option>
-         <option value="grass">Grass</option>
-      </select>
-      
-      <select class="generations" name="Generation">
-        <option disabled selected>Generations</option>
-         <option value="kanto">Kanto</option>
-         <option value="johto">Johto</option>
-      </select>
+  <!--filtros-->
+      <section class="filters" >
+        <select class="type" name="Type">
+          <option disabled selected>Type</option>
+          <option value="poison" >Poison</option>
+          <option value="fire">Fire</option>
+          <option value="normal">Normal</option>
+          <option value="flying">Flying</option>
+          <option value="dragon">Dragon</option>
+          <option value="water">Water</option>
+          <option value="dark">Dark</option>
+          <option value="ice">Ice</option>
+          <option value="steel">Steel</option>
+          <option value="bug">Bug</option>
+          <option value="psychic">Psychic</option>
+          <option value="electric">Electric</option>
+          <option value="fighting">Fighting</option>
+          <option value="rock">Rock</option>
+          <option value="ghost">Ghost</option>
+          <option value="fairy">Fairy</option>
+          <option value="grass">Grass</option>
+        </select>
 
-      <select class="eggs" name="Eggs">
-        <option disabled selected>Eggs</option>
-         <option value="2 km">2 km</option>
-         <option value="5 km">5 km</option>
-         <option value="7 km">7 km</option>
-         <option value="10 km">10 km</option>
-      </select>
+  <!--generaciones-->
+        <select class="generations" name="Generation">
+          <option disabled selected>Generations</option>
+          <option value="kanto">Kanto</option>
+          <option value="johto">Johto</option>
+        </select>
 
-      <select class="order-camp" name="Order-for">
-        <option disabled selected>Order By</option>
-        <option value="name">Name</option>
-        <option value="weaknesses">Weaknesses</option>
-      </select> 
+  <!--huevos-->
+        <select class="eggs" name="Eggs">
+          <option disabled selected>Eggs</option>
+          <option value="2 km">2 km</option>
+          <option value="5 km">5 km</option>
+          <option value="7 km">7 km</option>
+          <option value="10 km">10 km</option>
+        </select>
 
-      <select class="order" name="Order">
-        <option disabled selected value="order-direction">Order Direction</option>
-        <option value="asc">Asc</option>
-        <option value="desc">Desc</option>
-      </select >
+        <select class="order-camp" name="Order-for">
+          <option disabled selected>Order By</option>
+          <option value="name">Name</option>
+          <option value="weaknesses">Weaknesses</option>
+        </select> 
 
-    <button class="clean-button" >Limpiar</button>
+        <select class="order" name="Order">
+          <option disabled selected value="order-direction">Order Direction</option>
+          <option value="asc">Asc</option>
+          <option value="desc">Desc</option>
+        </select >
+
+      <button class="clean-button" >Limpiar</button>
     </section>
 
-    <section id="info-pokemon-section" class="pokemones"></section>
-  </main>
+    <section id="info-pokemon-section" class="pokemon-section pokemones"></section>
+  
+  
     <section class="pokemon">
       <div class="pokemon-stats">
         <h3>Stats: </h3>
         <canvas id="myChart"></canvas>
       </div>
     </section>
+    </main>
+    
     <!-- <div id="root"></div> -->
+
+  
     <footer>
       <img src="images/img-footer.png"/>
       <div class="develop-info">
