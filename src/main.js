@@ -10,7 +10,10 @@ const selectEggs = document.querySelector('.eggs')
 const inputSearch = document.querySelector('.input-search');
 const selectOrderCamp = document.querySelector('.order-camp');
 const selectOrder = document.querySelector('.order');
-
+const allInfoPokemon = document.querySelector('.pokemon');
+const filters = document.querySelector('.filters');
+const header = document.querySelector('.header');
+const searchBar = document.querySelector('.search-bar');
 
 //mostrar elementos 
 const showElements = (data) => {
@@ -50,6 +53,7 @@ const showElements = (data) => {
     h2title.classList.add('nameP');
     divTittleType.appendChild(h2title);
     divCardPokemon.appendChild(divTittleType);
+    divTittleType.classList.add('title-type')
 
     const divWP = document.createElement('div');
     divCardPokemon.appendChild(divWP);
@@ -116,6 +120,8 @@ const  filterAndShow = (e) => {
     return showElements(elements)
 }
 
+
+
 selectType.addEventListener('change',  function(e){ filterAndShow(e) })
 
 selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
@@ -134,6 +140,7 @@ selectOrder.addEventListener('change',()=>{
 selectOrderCamp.addEventListener('change',()=>{
     selectOrder.value = 'order-direction'
 })
+
 
 inputSearch.addEventListener('input', function(e){
   let iText = e.target.value.toLowerCase();
@@ -160,7 +167,7 @@ const styleforTypes = (e, campo) => {
 
 const showAllInfoPoke = (pokemon) => {
   // main
-  const mainPage = document.createElement('main');
+  const mainPage = document.createElement('section');
   mainPage.classList.add('main-allInfoPokemon')
   //nav
   const navPage = document.createElement('nav');
@@ -175,14 +182,18 @@ const showAllInfoPoke = (pokemon) => {
 
   //poke-name
   const pokeName = document.createElement('h1');
-  const name = document.createTextNode('N° '+pokemon.num+' '+pokemon.name);
+  const name = document.createTextNode(`N° ${pokemon.num} ${pokemon.name}`);
   pokeName.classList.add('pokemon-name');
   pokeName.appendChild(name);
+  allInfoPokemon.appendChild(pokeName);
+
+
+  
   // header
-  const headerPage = document.createElement('header');
+  /*const headerPage = document.createElement('header');
   headerPage.classList.add('header-allInfoPokemon')
   headerPage.appendChild(pokeName)
-  allInfoPokemon.appendChild(headerPage);
+  allInfoPokemon.appendChild(headerPage);*/
 
 
   //poke-about
@@ -196,7 +207,6 @@ const showAllInfoPoke = (pokemon) => {
   pokeAbout.appendChild(about);
   allInfoPokemon.appendChild(aboutTag);
   allInfoPokemon.appendChild(pokeAbout)
-
   // div
   const div1 = document.createElement('div');
  
@@ -581,12 +591,14 @@ const showAllInfoPoke = (pokemon) => {
 
 infoPokemonSection.addEventListener('click', e => {
   e.preventDefault();
-  if(e.target.classList.contains("nameP")){
+  if (e.target.classList.contains("nameP")) {
     let x = e.target.innerText;
-    const p = data.pokemon.filter(p =>p.name.includes(x))
-    mainPage.style.display= 'none';
-    allInfoPokemon.style.display = 'block';
+    const p = data.pokemon.filter(p => p.name.includes(x))
+    header.style.display = 'none';
+    filters.style.display = 'none';
+    searchBar.style.display = 'none';
+    infoPokemonSection.style.display = 'none';
+    //allInfoPokemon.style.display = 'flex';
     showAllInfoPoke(p[0]);
   }
-    
 });
