@@ -21,8 +21,9 @@ const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 const pokemonsRarety = ['legendary', 'mythic']
 
+
 export const filterData = (data, condition) => {
-  if(types.includes(condition)) {
+  if(types.includes(condition)) { 
     return data.pokemon.filter( pokemon => pokemon.type.includes(condition) )
   } else if (generations.includes(condition)) {
     return data.pokemon.filter( pokemon => pokemon.generation.name.includes(condition) )
