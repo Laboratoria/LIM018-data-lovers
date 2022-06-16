@@ -1,7 +1,6 @@
 # Data Lovers
 
-Grupo: 
-prueba 2222
+alpppp
 
 
 ## Índice
