@@ -170,7 +170,7 @@ const showAllInfoPoke = (pokemon) => {
   const mainPage = document.createElement('section');
   mainPage.classList.add('main-allInfoPokemon')
   //nav
-  const navPage = document.createElement('nav');
+  const navPage = document.createElement('section');
   //section
   const sectPage = document.createElement('section');
   sectPage.classList.add('info-section')
@@ -252,9 +252,6 @@ const showAllInfoPoke = (pokemon) => {
   div4.classList.add('container-gs')
   div4.appendChild(div2);
   div4.appendChild(div3);
-
-
-
   sectPage.appendChild(div4);
 
   //poke-weaknesses
@@ -443,7 +440,7 @@ const showAllInfoPoke = (pokemon) => {
 
     tableTag.appendChild(thirdtTrTag);
   })
-
+  div10.classList.add('padding-table');
   div10.appendChild(tableName1);
   div10.appendChild(tableTag);
   sectPage.appendChild(div10);
@@ -512,7 +509,7 @@ const showAllInfoPoke = (pokemon) => {
     tableTBody.appendChild(fourtTrTag);
     tableTagTwo.appendChild(tableTBody);
   })
-
+  div11.classList.add('padding-table');
   div11.appendChild(tableName2)
   div11.appendChild(tableTagTwo)
   sectPage.appendChild(div11);
@@ -530,9 +527,9 @@ const showAllInfoPoke = (pokemon) => {
   /* console.log(candy)
  */
   //next-evolution
-  const containerNextEvolution =  document.createElement('div');
+ /*  const containerNextEvolution =  document.createElement('div');
   const imgNextoke = document.createElement('img');
-  const imgPokemones = pokemon.evolution
+  const imgPokemones = pokemon.evolution */
 
  /*  const poke = data.filter(p => p.includes(imgPokemones))
   imgNextoke.src = poke.img ;
@@ -544,7 +541,7 @@ const showAllInfoPoke = (pokemon) => {
   const statsContent = document.createTextNode('Stats: ');
   statsTag.appendChild(statsContent)
   divStats.appendChild(statsTag); */
-  const labels = [
+  /* const labels = [
     'Base Attack',
     'Base Defense',
     'Base Stamina',
@@ -581,7 +578,7 @@ const showAllInfoPoke = (pokemon) => {
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
-  );
+  ); */
 
   mainPage.appendChild(navPage);
   mainPage.appendChild(sectPage);
