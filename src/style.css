@@ -111,6 +111,13 @@ body {
     border-radius: 30px;
 }
 
+.title-pokemon:hover {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
 .container > img{
   width: 140px;
   height: 160px;

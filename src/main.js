@@ -10,6 +10,10 @@ const selectEggs = document.querySelector('.eggs')
 const inputSearch = document.querySelector('.input-search');
 const selectOrderCamp = document.querySelector('.order-camp');
 const selectOrder = document.querySelector('.order');
+const allInfoPokemon = document.querySelector('.pokemon');
+const filters = document.querySelector('.filters');
+const header = document.querySelector('.header');
+const searchBar = document.querySelector('.search-bar');
 
 
 //mostrar elementos 
@@ -48,6 +52,7 @@ const showElements = (data) => {
     //h2title
     const h2title = document.createElement('h2');
     h2title.classList.add('nameP');
+    divTittleType.classList.add('title-type')
     divTittleType.appendChild(h2title);
     divCardPokemon.appendChild(divTittleType);
 
@@ -178,11 +183,13 @@ const showAllInfoPoke = (pokemon) => {
   const name = document.createTextNode('N° '+pokemon.num+' '+pokemon.name);
   pokeName.classList.add('pokemon-name');
   pokeName.appendChild(name);
-  // header
+  allInfoPokemon.appendChild(pokeName);
+  
+  /* // header
   const headerPage = document.createElement('header');
   headerPage.classList.add('header-allInfoPokemon')
   headerPage.appendChild(pokeName)
-  allInfoPokemon.appendChild(headerPage);
+  allInfoPokemon.appendChild(headerPage); */
 
 
   //poke-about
@@ -584,7 +591,10 @@ infoPokemonSection.addEventListener('click', e => {
   if(e.target.classList.contains("nameP")){
     let x = e.target.innerText;
     const p = data.pokemon.filter(p =>p.name.includes(x))
-    mainPage.style.display= 'none';
+    header.style.display= 'none';
+    filters.style.display= 'none';
+    searchBar.style.display= 'none';
+    infoPokemonSection.style.display= 'none';
     allInfoPokemon.style.display = 'block';
     showAllInfoPoke(p[0]);
   }
