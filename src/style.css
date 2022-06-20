@@ -1,0 +1,67 @@
+/*cards de fims*/
+body{
+  background-color:#E7E1C9;
+}
+
+h1
+ {
+  font-family: 'Indie Flower',cursive;
+  position: absolute;
+  font-size: 95px;
+  left: 862px;
+  line-height: 80%;
+  top: 40px;
+ 
+
+}
+p
+{
+  font-family:'Comic Neue';
+  display: flex;
+  left: 559px;
+  font-size: 25px;
+  line-height: 45px;
+}
+.encabezado2{
+
+}
+
+.nav{
+
+}
+
+.secondImage{
+  /* float:right; */
+  width: 400px;
+  height: 113.15px;
+  left: 787px;
+  top: 9px;
+
+}
+.boxFilms{
+  width: 100%;
+  height: 78px;
+  background: #8D876F;
+}
+
+.cards{
+  
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  padding: 20px 20px 20px 60px;
+  margin: 20px auto;
+  width: 65%; 
+}
+/*seccion de filter*/
+.filter{
+    background-color:#d9d9d9;
+    border-radius: 30px;
+    float:left;
+    margin: 20px;
+    padding: 0px 30px 20px 30px;
+    width: 261px;
+    height: 247px;
+}
+    
+    
