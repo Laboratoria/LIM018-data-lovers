@@ -612,7 +612,7 @@ infoPokemonSection.addEventListener('click', e => {
     showAllInfoPoke(p[0]);
     const backArrow = document.querySelector('.back-arrow')
 
-    backArrow.addEventListener('click', e => {
+    backArrow.addEventListener('click', function() {
       allInfoPokemon.style.display = 'none';
       infoPokemonSection.style.display = 'flex';
       header.style.display = 'flex';

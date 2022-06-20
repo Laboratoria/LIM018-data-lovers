@@ -24,13 +24,13 @@ const pokemonsRarety = ['legendary', 'mythic']
 
 export const filterData = (data, condition) => {
   if(types.includes(condition)) { 
-    return data.pokemon.filter( pokemon => pokemon.type.includes(condition) )
+    return data.filter( pokemon => pokemon.type.includes(condition) )
   } else if (generations.includes(condition)) {
-    return data.pokemon.filter( pokemon => pokemon.generation.name.includes(condition) )
+    return data.filter( pokemon => pokemon.generation.name.includes(condition) )
   } else if (eggs.includes(condition)) {
-    return data.pokemon.filter( pokemon => pokemon.egg.includes(condition) )
+    return data.filter( pokemon => pokemon.egg.includes(condition) )
   } else if(pokemonsRarety.includes(condition)) {
-    return data.pokemon.filter(pokemon => pokemon["pokemon-rarity"].includes(condition));
+    return data.filter(pokemon => pokemon["pokemon-rarity"].includes(condition));
   } else {
     return data
   }

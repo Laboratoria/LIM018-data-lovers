@@ -1,5 +1,5 @@
-export default {
-  "pokemon": [{
+export const dataTest = [
+  {
     "num": "001",
     "name": "bulbasaur",
     "generation": {
@@ -48,6 +48,29 @@ export default {
       "egg": "2 km",
     },
     {
+    "num": "005",
+    "name": "charmeleon",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/005.png",
+    "size": {
+      "height": "1.09 m",
+      "weight": "19.0 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "fire"
+    ],
+    "weaknesses": [
+      "water",
+      "ground",
+      "rock"
+    ],
+    "egg": "not in eggs",
+    },
+    {
       "num": "007",
       "name": "squirtle",
       "generation": {
@@ -68,5 +91,204 @@ export default {
         "grass"
       ],
       "egg": "2 km",
-  }]
-}
+    },
+    {
+      "num": "152",
+      "name": "chikorita",
+      "generation": {
+        "num": "generation ii",
+        "name": "johto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/152.png",
+      "size": {
+        "height": "0.89 m",
+        "weight": "6.4 kg"
+      },
+      "pokemon-rarity": "normal",
+      "type": [
+        "grass"
+      ],
+      "weaknesses": [
+        "fire",
+        "ice",
+        "poison",
+        "flying"
+      ],
+      "egg": "2 km",
+    },
+    {
+      "num": "153",
+      "name": "bayleef",
+      "generation": {
+        "num": "generation ii",
+        "name": "johto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/153.png",
+      "size": {
+        "height": "1.19 m",
+        "weight": "15.8 kg"
+      },
+      "pokemon-rarity": "normal",
+      "type": [
+        "grass"
+      ],
+      "weaknesses": [
+        "fire",
+        "ice",
+        "poison",
+        "flying"
+      ],
+      "egg": "not in eggs",
+    },
+
+]
+
+export const filterByType = [
+  {
+    "num": "004",
+    "name": "charmander",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/004.png",
+    "size": {
+      "height": "0.61 m",
+      "weight": "8.5 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "fire"
+    ],
+    "weaknesses": [
+      "water",
+      "ground",
+      "rock"
+    ],
+    "egg": "2 km",
+  },
+  {
+    "num": "005",
+    "name": "charmeleon",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/005.png",
+    "size": {
+      "height": "1.09 m",
+      "weight": "19.0 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "fire"
+    ],
+    "weaknesses": [
+      "water",
+      "ground",
+      "rock"
+    ],
+    "egg": "not in eggs",
+  },
+]
+
+export const filterByGeneration = [
+  {
+    "num": "152",
+    "name": "chikorita",
+    "generation": {
+      "num": "generation ii",
+      "name": "johto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/152.png",
+    "size": {
+      "height": "0.89 m",
+      "weight": "6.4 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "grass"
+    ],
+    "weaknesses": [
+      "fire",
+      "ice",
+      "poison",
+      "flying"
+    ],
+    "egg": "2 km",
+  },
+  {
+    "num": "153",
+    "name": "bayleef",
+    "generation": {
+      "num": "generation ii",
+      "name": "johto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/153.png",
+    "size": {
+      "height": "1.19 m",
+      "weight": "15.8 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "grass"
+    ],
+    "weaknesses": [
+      "fire",
+      "ice",
+      "poison",
+      "flying"
+    ],
+    "egg": "not in eggs",
+  },
+]
+
+export const filterByEgg = [
+  {
+    "num": "005",
+    "name": "charmeleon",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/005.png",
+    "size": {
+      "height": "1.09 m",
+      "weight": "19.0 kg"
+    },
+    "pokemon-rarity": "normal",
+    "type": [
+      "fire"
+    ],
+    "weaknesses": [
+      "water",
+      "ground",
+      "rock"
+    ],
+    "egg": "not in eggs",
+    },
+    {
+      "num": "153",
+      "name": "bayleef",
+      "generation": {
+        "num": "generation ii",
+        "name": "johto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/153.png",
+      "size": {
+        "height": "1.19 m",
+        "weight": "15.8 kg"
+      },
+      "pokemon-rarity": "normal",
+      "type": [
+        "grass"
+      ],
+      "weaknesses": [
+        "fire",
+        "ice",
+        "poison",
+        "flying"
+      ],
+      "egg": "not in eggs",
+    },
+]
