@@ -89,16 +89,16 @@ const showElements = (data) => {
     divCardPokemon.appendChild(createdParagraph2);
 
     //pokemon-heigth
-    const heigthPokemon=document.createTextNode(element.heigth);
-    createdParagraph2.appendChild(heigthPokemon);
+    const heightPokemon=document.createTextNode(element.height);
+    createdParagraph2.appendChild(heightPokemon);
     
     //parrafo-creado-para weigth-pokemon
     const createdParagraph3 = document.createElement('p');
     divCardPokemon.appendChild(createdParagraph3);
 
     //pokemon-weigth
-    const weigthPokemon = document.createTextNode(element.weight);
-    createdParagraph3.appendChild(weigthPokemon);
+    const weightPokemon = document.createTextNode(element.weight);
+    createdParagraph3.appendChild(weightPokemon);
 
     divWP2.appendChild(createdParagraph2)
     divWP2.appendChild(createdParagraph3)

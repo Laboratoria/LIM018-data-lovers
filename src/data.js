@@ -45,7 +45,7 @@ export const mapedData = (data) => {
         num:itemPokemon.num,
         name:itemPokemon.name,
         img:itemPokemon.img,
-        heigth:itemPokemon.size.height,
+        height:itemPokemon.size.height,
         weight:itemPokemon.size.weight,
         type:itemPokemon.type,
     }
