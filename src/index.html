@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Studio Ghibli</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+ <header id="header" class="header">
+    <h1 id="header__h1">BIENVENIDOS <spam class="titulo"></spam> </h1>
+    <p class="header__p">Bienvenides a la fanpage de Studio Ghibli donde encontrarás la información de sus peliculas y
+      personajes en spanglish.<br>Creada para ustedes con todo el cariño y respeto que se merece este estudio y sus fans de les cual formamos parte.</p>
+   <button type="submit" id="listaPeliculas" class="lista-peliculas" >PELICULAS</button>
+  </header>
+
+  <main  id="contenedorPaginas" class="contenedor-paginas">
+    <h2 id="peliculasAnimadas" class= "peliculas-animadas">PELICULAS ANIMADAS </h2>
+    <div class="main__filtersAndCount">
+     <div class="filters">
+      <select id="filtersDirector" class="filters-director">
+          <option selected value="all">Director</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+          <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+        </select>
+        <select id="filtersProducer" class="filters-producer">
+          <option selected value="all">Productor</option>
+          <option value="0">Isao Takahata</option>
+          <option value="1">Toshio Suzuki</option>
+          <option value="2">Toru Hara</option>
+          <option value="3">Hayao Miyazaki</option>
+          <option value="4">Yoshiaki Nishimura</option>
+        </select>
+       <select id="filtersYear" class="filters-year">
+          <option value="0">Antiguo</option>
+          <option value="1">Reciente</option>
+        </select>
+        <select id="filtersAz" class="filters-Az">
+          <option value="0">A-Z</option>
+          <option value="1">Z-A </option>
+        </select>
+      </div>
+    </div>
+
+    <section>
+     <div id="containerFilms" class="container-films"></div>
+    </section>
+
+
+    <div class="contenedor">
+
+    </div>
+  </main>
+
+  <footer id="footer">
+    <p></p>
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
