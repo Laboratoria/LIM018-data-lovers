@@ -125,7 +125,7 @@ const  filterAndShow = (e) => {
 }}
 
 
-
+//eventos del filtrado
 selectType.addEventListener('change',  function(e){ filterAndShow(e) })
 
 selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
