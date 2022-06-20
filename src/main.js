@@ -180,16 +180,27 @@ const showAllInfoPoke = (pokemon) => {
   pokeImg.classList.add('pokemon-img')
   pokeImg.src = pokemon.img;
   navPage.appendChild(pokeImg)
+  // arrow-img
+  const arrowLeft = document.createElement('img');
+  pokeImg.classList.add('pokemon-img')
+  arrowLeft.src = `images/arrow-left.svg` ;
 
+  //divNameArrow
+  const divNameArrow = document.createElement('div');
+  const divArrow = document.createElement('div');
+  divArrow.classList.add('back-arrow')
+  divArrow.appendChild(arrowLeft)
   //poke-name
   const pokeName = document.createElement('h1');
   const name = document.createTextNode(`N° ${pokemon.num} ${pokemon.name}`);
   pokeName.classList.add('pokemon-name');
   pokeName.appendChild(name);
-  allInfoPokemon.appendChild(pokeName);
+  divNameArrow.classList.add('pokemon-header')
+  divNameArrow.appendChild(divArrow);
+  divNameArrow.appendChild(pokeName)
+  allInfoPokemon.appendChild(divNameArrow)
 
 
-  
   // header
   /*const headerPage = document.createElement('header');
   headerPage.classList.add('header-allInfoPokemon')
@@ -587,6 +598,7 @@ const showAllInfoPoke = (pokemon) => {
   
 }
 
+
 infoPokemonSection.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.classList.contains("nameP")) {
@@ -598,5 +610,15 @@ infoPokemonSection.addEventListener('click', e => {
     infoPokemonSection.style.display = 'none';
     //allInfoPokemon.style.display = 'flex';
     showAllInfoPoke(p[0]);
+    const backArrow = document.querySelector('.back-arrow')
+
+    backArrow.addEventListener('click', e => {
+      allInfoPokemon.style.display = 'none';
+      infoPokemonSection.style.display = 'flex';
+      header.style.display = 'flex';
+      filters.style.display = 'flex';
+      searchBar.style.display = 'flex';
+    })
   }
 });
+

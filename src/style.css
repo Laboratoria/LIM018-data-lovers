@@ -270,7 +270,25 @@ h3 {
   padding: 20px;
 }
 
-.pokemon-name {
+.back-arrow img{
+  width: 50px;
+  position: absolute;
+  left: 30px;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  top: 40px; 
+}
+.back-arrow img:hover{
+  cursor: pointer;
+}
+.pokemon-header {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.pokemon-header h1 {
   font-family: Pokemon-Hollow;
   font-style: normal;
   font-weight: 400;
@@ -282,7 +300,6 @@ h3 {
 
 .main-allInfoPokemon {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 40px;
   margin: 50px 0px;
 }
@@ -523,6 +540,7 @@ td, th {
   background: #1F7A8C;
   color: #022B3A;
 }
+
 
 /* media-queries */
 /* media de tablet */
