@@ -1,26 +1,30 @@
-import { filterData } from '../src/data.js';
-import data from './pokemon';
+import { 
+ // sortData, 
+  filterData,
+ // mapedData 
+} from '../src/data.js';
+import { dataTest, filterByType, filterByGeneration, filterByEgg } from './pokemon';
 
-//import {data} from '../src/data/pokemon/pokemon.js'
-
-/* describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
- */
-
-describe('filterData', () => {
-  it('is a function', () => {
+// test para filterData
+describe('filtrar por tipo de elemento', () => {
+  it('debería ser una función', () => {
     expect(typeof filterData).toBe('function');
   });
-  console.log(data)
-  const newArray = filterData(data, 'fire');
-  it('dbería retornar solo fire para `types.fire`', () => {
-    expect(newArray[0].name).toBe('charmander');
+
+  it('dataTest debería retornar un objeto', () => {
+    expect(typeof dataTest).toBe('object');
   });
+
+  it('filterData debería retornar los pokemones tipo `fire`', () => {
+    expect(filterData(dataTest, 'fire')).toEqual(filterByType);
+  });
+
+  it('filterData debería retornar los pokemones de generación `johto`', () => {
+    expect(filterData(dataTest, 'johto')).toEqual(filterByGeneration);
+  });
+
+  it('filterData debería retornar los pokemones con egg `not in eggs`', () => {
+    expect(filterData(dataTest, 'not in eggs')).toEqual(filterByEgg);
+  });
+
 });
