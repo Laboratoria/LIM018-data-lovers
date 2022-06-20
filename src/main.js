@@ -1,7 +1,16 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-consle 
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import { filterDataDirector} from './data.js';
+//import jsondata from './data/ghibli/ghibli.js';
 
-console.log(example, data);
+
+
+
+
+
+
+
+
+
+
+
+
+
