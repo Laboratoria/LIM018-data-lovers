@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
-</html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ghibli lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Indie+Flower&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="encabezado">
+    <header>
+      <img src="images/Totoro encabezado.png" alt="Encabezado">
+      <h1>GHIBLI</h1>
+      <h2>lovers</h2>
+      <nav> <a href=”#”>INICIO</a>
+        <a href=>PELICULAS</a>
+        <a href=”#”>CREADORES</a>
+        <a href=”#”>PERSONAJES</a>
+        <a href=”#”>CRIATURAS</a>
+        <input type="search" name="buscador">
+      </nav>
+    </header>
+  </section>
+
+  <section class="inicio">
+    <div><img src="images/logoGhibli.jpg" alt="Ghibli logo"></div>
+    <div>
+      <p>Studio Ghibli スタジオジブリ, es un estudio japonés de animación, considerado por la crítica especializada y muchos
+        cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad. <br> El estudio es conocido
+        por sus largometrajes animados y también ha producido varios cortometrajes, comerciales de televisión y una
+        película
+        para televisión. Fue fundado el 15 de junio de 1985 por los directores Hayao Miyazaki e Isao Takahata y el
+        productor
+        Toshio Suzuki , después del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984). </p>
+    </div>
+  </section>
+
+  <hr id="peliculas">
+  <section class="encabezado">
+    <header>
+      <img id="encabezado2" src="images/Totoro encabezado.png" alt="Encabezado">
+      <h1>GHIBLI</h1>
+      <h2>lovers</h2>
+      <nav>
+        <a href=”#”>INICIO</a>
+        <a href=”#”>PELICULAS</a>
+        <a href=”#”>CREADORES</a>
+        <a href=”#”>PERSONAJES</a>
+        <a href=”#”>CRIATURAS</a>
+        <input type="search" name="buscador">
+        <input type="button" Buscar>
+      </nav>
+    </header>
+  </section>
+
+  <section class="peliculas">
+    <nav>
+      <h2>Ordenar por:</h2>
+      <input type="checkbox" name="filtros" value="Popularidad">Popularidad <br>
+      <input type="checkbox" name="filtros" value="A-Z">A-Z<br>
+      <input type="checkbox" name="filtros" value="Z-A">Z-A<br>
+      <input type="checkbox" name="filtros" value="Más antiguo">Más antiguo<br>
+      <input type="checkbox" name="filtros" value="Menos antiguo">Menos antiguo
+    </nav>
+
+    <main class="posters">
+      <h2>Peliculas</h2>
+
+      <div class="cards" id="filmCards">
+
+      </div>
+
+    </main>
+
+  </section>
+
+  <section id="Creadores">
+  </section>
+
+  <footer>
+    Created by Fiorella Amaya & Angelica Lopez
+  </footer>
