@@ -274,7 +274,7 @@ h3 {
 }
 .main-allInfoPokemon {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   gap: 40px;
   margin: 50px 0px;
 }
@@ -322,6 +322,7 @@ h3 {
   left: 4%;
   top:80%;
 }
+
 /* Estilos para lado derecho de la informacion */
 .about {
   padding: 10px;
