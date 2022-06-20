@@ -1,12 +1,20 @@
 
 
+/*import { example } from './data.js';
+// import data from './data/lol/lol.js';
+consle 
+import data from './data/pokemon/pokemon.js';
+// import data from './data/rickandmorty/rickandmorty.js';*/
+
+
+//Importaciones
 import {filterByDirector} from './data.js';
 import data from "./data/ghibli/ghibli.js";
 const containerFilms = document.getElementById("containerFilms");
 
 
     
-// Filtrado de películas por director
+// Mostrar Filtrado por director
 const selectDirectors = document.getElementById("filtersDirector");
 selectDirectors.addEventListener("change", () => {
   let directors = selectDirectors.value;
@@ -15,6 +23,33 @@ selectDirectors.addEventListener("change", () => {
 })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let dataFilms;git 
 fetch('./data/ghibli/ghibli.json')
 .then(studio => studio.json())
@@ -25,6 +60,7 @@ fetch('./data/ghibli/ghibli.json')
   const filmsCards = document.getElementById('filmsCards')
   posters.forEach(poster => {
   filmsCards.innerHTML += `<img src="${poster}" alt="imagen">`
+  })})
 
   import { filterDataDirector} from './data.js';
 //import jsondata from './data/ghibli/ghibli.js';

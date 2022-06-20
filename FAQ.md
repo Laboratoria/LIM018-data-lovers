@@ -1,6 +1,5 @@
-# FAQ 
+# FAQ preguntas frecuente
 
-abajo (preguntas frecuentes)
 
 - [Diferencia entre array y objetos](https://youtu.be/mJJloQY7A8Y)
 - [¿Cómo agrego una nueva propiedad a un objeto?](https://youtu.be/mJJloQY7A8Y?t=236)
