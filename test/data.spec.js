@@ -1,5 +1,5 @@
 import { filterData } from '../src/data.js';
-import data from '../src/data/pokemon/pokemon.js';
+import data from './pokemon';
 
 //import {data} from '../src/data/pokemon/pokemon.js'
 
@@ -18,8 +18,9 @@ describe('filterData', () => {
   it('is a function', () => {
     expect(typeof filterData).toBe('function');
   });
-
+  console.log(data)
+  const newArray = filterData(data, 'fire');
   it('dbería retornar solo fire para `types.fire`', () => {
-    expect(filterData(data, 'fire')).toBe('array');
+    expect(newArray[0].name).toBe('charmander');
   });
 });
