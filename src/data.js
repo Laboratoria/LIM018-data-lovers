@@ -21,6 +21,7 @@ const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 const pokemonsRarety = ['legendary', 'mythic']
 
+
 //funcion que filtra typo generacion y egg
 export const filterData = (data, condition) => {
   if(types.includes(condition)) { 
