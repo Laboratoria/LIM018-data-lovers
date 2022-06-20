@@ -1,5 +1,5 @@
-// estas funciones son de ejemplo
 
+//funcion que Ordena por nombre y de manera ascedente y descendente.
 export const sortData = (data,sortBy,sortOrder) => {
   let arrayOrder = [...data];
    if(sortBy === 'name' && sortOrder === 'asc'){
@@ -22,6 +22,7 @@ const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
 const pokemonsRarety = ['legendary', 'mythic']
 
 
+//funcion que filtra typo generacion y egg
 export const filterData = (data, condition) => {
   if(types.includes(condition)) { 
     return data.filter( pokemon => pokemon.type.includes(condition) )
@@ -36,6 +37,8 @@ export const filterData = (data, condition) => {
   }
 };
 
+
+//funcion mapedData retorna  elementos de la data 
 export const mapedData = (data) => {
   return data.map((itemPokemon)=>{
     return {

@@ -3,6 +3,7 @@ import {filterData, sortData, mapedData} from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
+//referencia al DOM
 const infoPokemonSection = document.getElementById('info-pokemon-section');
 const selectType = document.querySelector('.type');
 const selectGeneration = document.querySelector('.generations');
@@ -15,7 +16,7 @@ const filters = document.querySelector('.filters');
 const header = document.querySelector('.header');
 const searchBar = document.querySelector('.search-bar');
 
-//mostrar elementos 
+// funcion que muestra elementos 
 const showElements = (data) => {
   data.forEach((element) => {
     const divCardPokemon=document.createElement('div');
@@ -48,7 +49,8 @@ const showElements = (data) => {
     element.type.forEach((e) => {
       circleTypes(e, divTittleType);
     })
-    //h2title
+
+    //h2 title
     const h2title = document.createElement('h2');
     h2title.classList.add('nameP');
     divTittleType.classList.add('title-type')
@@ -104,6 +106,7 @@ const showElements = (data) => {
   });
 };
 
+//añadiendo imagenes e iconos para type y circle y funcionalidad para identificar tipos
 const circleTypes = (e, campo) => {
     const imgC = document.createElement('img');
     imgC.src = `images/circle-${e}.png`
@@ -112,14 +115,14 @@ const circleTypes = (e, campo) => {
 
 showElements(mapedData(data.pokemon));
 
-//filtrar y mostrar
+
+//implementando funcion filter con el DOM
 const  filterAndShow = (e) => {
     let elements = mapedData(filterData(data, e.target.value ));
     while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
-    }
     return showElements(elements)
-}
+}}
 
 
 
@@ -166,6 +169,7 @@ const styleforTypes = (e, campo) => {
     campo.appendChild(imgC);
 }
 
+//vista allInfoPokemon
 const showAllInfoPoke = (pokemon) => {
   // main
   const mainPage = document.createElement('section');
@@ -599,6 +603,7 @@ const showAllInfoPoke = (pokemon) => {
 }
 
 
+//mostrar informacion del pokemon
 infoPokemonSection.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.classList.contains("nameP")) {
