@@ -393,7 +393,6 @@ table {
   margin: 25px 0;
   font-size: 0.9em;
   font-family: 'Inter';
-  min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   background: #495487;
   width: 90%;
@@ -526,9 +525,8 @@ td, th {
 }
 
 /* media-queries */
-
+/* media de tablet */
 @media (max-width: 860px) and (orientation:portrait) {
- /*  body{background: orange;} */
   header img {
     width: 80px;
     height: 80px;
@@ -558,17 +556,64 @@ td, th {
   }
 
   @media (max-width: 560px) and (orientation:portrait) {
-    .header {
-      margin: 0 30px;
-    }
-    header img {
-      width: 80px;
-      height: 80px;
-    }
-    .page-name {
-      font-size: 60px;
-      -webkit-text-stroke:4px #2F6AB3;
-    }
+  .header {
+    margin: 0 30px;
+  }
+  header img {
+    width: 80px;
+    height: 80px;
+  }
+  .page-name {
+    font-size: 60px;
+    -webkit-text-stroke:4px #2F6AB3;
+  }
   }
 
+}
+
+/* media de mobile */
+@media (max-width: 414px) and (orientation:portrait) {
+  h3 {
+    font-size: 20px;
+  }
+  .header {
+    margin: 10px;
+  }
+  .main-allInfoPokemon {
+    margin-left: 30px;
+  }
+  .pokemon-name{
+    font-size: 40px;
+    text-align: center;
+  }
+  .pokemon-egg, .pokemon-buddy-distance > p {
+    font-size: 18px;
+  }
+  .pokemon-encounter > ul {
+    font-size: 18px;
+  }
+  .pokemon-about {
+    font-size: 18px;
+  }
+  table {
+    font-size:10px;
+    width: 45%;
+  }
+  .pokemon-generation > p {
+    font-size: 18px;
+  }
+  .pokemon-size > ul  {
+    font-size: 18px;
+  }
+  .develop-info {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .input-search {
+    width: 270px;
+  }
+  .search-bar {
+    margin: 40px 60px;
+    width: 300px;
+  }
 }
