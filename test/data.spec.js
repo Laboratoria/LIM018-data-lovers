@@ -1,9 +1,9 @@
 import { 
  // sortData, 
   filterData,
- // mapedData 
+  mapedData
 } from '../src/data.js';
-import { dataTest, filterByType, filterByGeneration, filterByEgg } from './pokemon';
+import { dataTest, filterByType, filterByGeneration, filterByEgg, basicInfo} from './pokemon';
 
 // test para filterData
 describe('filtrar por tipo de elemento', () => {
@@ -28,3 +28,18 @@ describe('filtrar por tipo de elemento', () => {
   });
 
 });
+
+
+describe('mapedData', () => {
+  it('mapedData deberia ser una funcion', () =>{
+    expect(typeof mapedData).toBe('function')
+  });
+
+  it('mapedData deberia retornar un objeto', ()=> {
+    expect(typeof basicInfo).toBe('object')
+  })
+
+  it('mapedData deberia retornar informacion basica', () => {
+    expect(mapedData(dataTest)).toEqual(basicInfo)
+  })
+})
