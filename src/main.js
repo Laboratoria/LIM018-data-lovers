@@ -26,5 +26,3 @@ const verpeliculas = () =>{
   containerFilms.style.display = "block";
 }
 botonPeliculas.addEventListener('click', verpeliculas);
-
-
