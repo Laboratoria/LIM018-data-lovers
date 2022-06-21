@@ -6,21 +6,26 @@
   <meta name="viewport" content="width=device-width">
   <title>Studio Ghibli</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2? family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
- <header id="header" class="header">
+  <header id="header" class="header-h">
     <h1 id="header__h1">BIENVENIDOS <spam class="titulo"></spam> </h1>
     <p class="header__p">Bienvenides a la fanpage de Studio Ghibli donde encontrarás la información de sus peliculas y
       personajes en spanglish.<br>Creada para ustedes con todo el cariño y respeto que se merece este estudio y sus fans de les cual formamos parte.</p>
-   <button type="submit" id="listaPeliculas" class="lista-peliculas" >PELICULAS</button>
+    <img class ="imgportada" src="/src/imagenes/studio-ghibli-hayao-miyazaki-1080x609.jpeg" alt="pantalón"/>
+    <button type="submit" id="listaPeliculas" class="lista-peliculas" >PELICULAS</button>
   </header>
 
   <main  id="contenedorPaginas" class="contenedor-paginas">
+    <section><img  class="portada" src="/src/imagenes/portadaghibli_Mesa de trabajo 1.png" alt="new collection" /></section>
     <h2 id="peliculasAnimadas" class= "peliculas-animadas">PELICULAS ANIMADAS </h2>
     <div class="main__filtersAndCount">
-     <div class="filters">
-      <select id="filtersDirector" class="filters-director">
+      <div class="filters">
+        <select id="filtersDirector" class="filters-director">
           <option selected value="all">Director</option>
           <option value="Hayao Miyazaki">Hayao Miyazaki</option>
           <option value="Gorō Miyazaki">Gorō Miyazaki</option>
@@ -29,6 +34,7 @@
           <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
           <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
         </select>
+
         <select id="filtersProducer" class="filters-producer">
           <option selected value="all">Productor</option>
           <option value="0">Isao Takahata</option>
@@ -37,10 +43,12 @@
           <option value="3">Hayao Miyazaki</option>
           <option value="4">Yoshiaki Nishimura</option>
         </select>
-       <select id="filtersYear" class="filters-year">
+
+        <select id="filtersYear" class="filters-year">
           <option value="0">Antiguo</option>
           <option value="1">Reciente</option>
         </select>
+
         <select id="filtersAz" class="filters-Az">
           <option value="0">A-Z</option>
           <option value="1">Z-A </option>
@@ -49,13 +57,14 @@
     </div>
 
     <section>
-     <div id="containerFilms" class="container-films"></div>
+     <div id="containerFilms" class="container-films"> </div>
+
     </section>
 
 
     <div class="contenedor">
-
     </div>
+
   </main>
 
   <footer id="footer">
