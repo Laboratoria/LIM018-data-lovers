@@ -19,7 +19,7 @@ const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
 'electric', 'fighting', 'rock','ghost','fairy', 'grass']
 const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
-const pokemonsRarety = ['legendary', 'mythic', 'normal']
+const pokemonsRarity = ['legendary', 'mythic', 'normal']
 
 
 //funcion que filtra typo generacion y egg
@@ -30,10 +30,8 @@ export const filterData = (data, condition) => {
     return data.filter( pokemon => pokemon.generation.name.includes(condition) )
   } else if (eggs.includes(condition)) {
     return data.filter( pokemon => pokemon.egg.includes(condition) )
-  } else if(pokemonsRarety.includes(condition)) {
+  } else if(pokemonsRarity.includes(condition)) {
     return data.filter(pokemon => pokemon["pokemon-rarity"].includes(condition));
-  } else {
-    return data
   }
 };
 
@@ -45,7 +43,7 @@ export const mapedData = (data) => {
         num:itemPokemon.num,
         name:itemPokemon.name,
         img:itemPokemon.img,
-        heigth:itemPokemon.size.height,
+        height:itemPokemon.size.height,
         weight:itemPokemon.size.weight,
         type:itemPokemon.type,
     }
