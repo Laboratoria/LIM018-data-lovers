@@ -7,7 +7,8 @@ import data from './data/pokemon/pokemon.js';
 const infoPokemonSection = document.getElementById('info-pokemon-section');
 const selectType = document.querySelector('.type');
 const selectGeneration = document.querySelector('.generations');
-const selectEggs = document.querySelector('.eggs')
+const selectEggs = document.querySelector('.eggs');
+const selectRarity = document.querySelector('.rarity');
 const inputSearch = document.querySelector('.input-search');
 const selectOrderCamp = document.querySelector('.order-camp');
 const selectOrder = document.querySelector('.order');
@@ -132,6 +133,7 @@ selectGeneration.addEventListener('change', function(e){ filterAndShow(e) })
 
 selectEggs.addEventListener('change',  function(e){ filterAndShow(e) })
 
+selectRarity.addEventListener('change',  function(e){ filterAndShow(e) })
 
 selectOrder.addEventListener('change',()=>{
     const dataOrder = sortData(data.pokemon, selectOrderCamp.value, selectOrder.value);

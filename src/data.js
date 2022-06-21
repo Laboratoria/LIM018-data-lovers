@@ -19,7 +19,7 @@ const types = [ 'poison', 'fire', 'normal', 'flying', 'dragon',
 'electric', 'fighting', 'rock','ghost','fairy', 'grass']
 const generations = ['kanto', 'johto']
 const eggs = ['2 km', '5 km', '7 km', '10 km', 'not in eggs']
-const pokemonsRarety = ['legendary', 'mythic']
+const pokemonsRarety = ['legendary', 'mythic', 'normal']
 
 
 //funcion que filtra typo generacion y egg
