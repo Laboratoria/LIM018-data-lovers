@@ -1,9 +1,9 @@
 import { 
- // sortData, 
+  sortData, 
   filterData,
   mapedData
 } from '../src/data.js';
-import { dataTest, filterByType, filterByGeneration, filterByEgg, basicInfo} from './pokemon';
+import { dataTest, filterByType, filterByGeneration, filterByEgg, basicInfo, orderByNameAsc, orderByNameDesc, orderByLenghtWeaknessesAsc, orderByLenghtWeaknessesDesc} from './pokemon';
 
 // test para filterData
 describe('filtrar por tipo de elemento', () => {
@@ -42,4 +42,25 @@ describe('mapedData', () => {
   it('mapedData deberia retornar informacion basica', () => {
     expect(mapedData(dataTest)).toEqual(basicInfo)
   })
+});
+
+describe('sortData', () => {
+  it('sortData deberia ser una funcion', () => {
+    expect(typeof sortData).toBe('function');
+  });
+  it('sortData deberia retornar un objeto', () => {
+    expect(typeof orderByNameAsc).toBe('object');
+  });
+  it('sortData deberia retornar una arreglo ordenado por nombre de manera ascendente', () => {
+    expect(sortData(dataTest,'name','asc')).toEqual(orderByNameAsc);
+  });
+  it('sortData deberia retornar una arreglo ordenado por nombre de manera descendente', () => {
+    expect(sortData(dataTest,'name','desc')).toEqual(orderByNameDesc);
+  });
+  it('sortData deberia retornar una arreglo ordenado por nombre de manera ascendente', () => {
+    expect(sortData(dataTest,'weaknesses','asc')).toEqual(orderByLenghtWeaknessesAsc);
+  });
+  it('sortData deberia retornar una arreglo ordenado por nombre de manera descendente', () => {
+    expect(sortData(dataTest,'weaknesses','desc')).toEqual(orderByLenghtWeaknessesDesc);
+  });
 })
