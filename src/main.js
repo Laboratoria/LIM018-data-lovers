@@ -1,7 +1,16 @@
-import { filterByDirector} from './data.js';
+import {filterByDirector} from './data.js';
 //import jsondata from './data/ghibli/ghibli.js';
 
+//mostrar pagina de bienvenida y boton peliculas
+const btnpeliculas = document.getElementById("listaPeliculas");
+const header = document.getElementById('header');
+const contenedorPaginas = document.getElementById('contenedorPaginas');
 
+btnpeliculas.addEventListener("click", () => {
+  header.className = "disabled";
+  contenedorPaginas.className = "enabled";
+ 
+});
 
 
   fetch ('./data/ghibli/ghibli.json')
