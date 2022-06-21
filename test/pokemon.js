@@ -140,6 +140,54 @@ export const dataTest = [
       ],
       "egg": "not in eggs",
     },
+    {
+      "num": "144",
+      "name": "articuno",
+      "generation": {
+        "num": "generation i",
+        "name": "kanto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/144.png",
+      "size": {
+        "height": "1.70 m",
+        "weight": "55.4 kg"
+      },
+      "pokemon-rarity": "legendary",
+      "type": [
+        "ice",
+        "flying"
+      ],
+      "weaknesses": [
+        "fire",
+        "electric",
+        "rock",
+        "steel"
+      ],
+      "egg": "not in eggs",
+    },
+    {
+      "num": "145",
+      "name": "zapdos",
+      "generation": {
+        "num": "generation i",
+        "name": "kanto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/145.png",
+      "size": {
+        "height": "1.60 m",
+        "weight": "52.6 kg"
+      },
+      "pokemon-rarity": "legendary",
+      "type": [
+        "electric",
+        "flying"
+      ],
+      "weaknesses": [
+        "ice",
+        "rock"
+      ],
+      "egg": "not in eggs",
+    },
 
 ]
 
@@ -291,4 +339,103 @@ export const filterByEgg = [
       ],
       "egg": "not in eggs",
     },
+    {
+      "num": "144",
+      "name": "articuno",
+      "generation": {
+        "num": "generation i",
+        "name": "kanto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/144.png",
+      "size": {
+        "height": "1.70 m",
+        "weight": "55.4 kg"
+      },
+      "pokemon-rarity": "legendary",
+      "type": [
+        "ice",
+        "flying"
+      ],
+      "weaknesses": [
+        "fire",
+        "electric",
+        "rock",
+        "steel"
+      ],
+      "egg": "not in eggs",
+    },
+    {
+      "num": "145",
+      "name": "zapdos",
+      "generation": {
+        "num": "generation i",
+        "name": "kanto"
+      },
+      "img": "https://www.serebii.net/pokemongo/pokemon/145.png",
+      "size": {
+        "height": "1.60 m",
+        "weight": "52.6 kg"
+      },
+      "pokemon-rarity": "legendary",
+      "type": [
+        "electric",
+        "flying"
+      ],
+      "weaknesses": [
+        "ice",
+        "rock"
+      ],
+      "egg": "not in eggs",
+    },
+]
+
+export const filterByRarity = [
+  {
+    "num": "144",
+    "name": "articuno",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/144.png",
+    "size": {
+      "height": "1.70 m",
+      "weight": "55.4 kg"
+    },
+    "pokemon-rarity": "legendary",
+    "type": [
+      "ice",
+      "flying"
+    ],
+    "weaknesses": [
+      "fire",
+      "electric",
+      "rock",
+      "steel"
+    ],
+    "egg": "not in eggs",
+  },
+  {
+    "num": "145",
+    "name": "zapdos",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "img": "https://www.serebii.net/pokemongo/pokemon/145.png",
+    "size": {
+      "height": "1.60 m",
+      "weight": "52.6 kg"
+    },
+    "pokemon-rarity": "legendary",
+    "type": [
+      "electric",
+      "flying"
+    ],
+    "weaknesses": [
+      "ice",
+      "rock"
+    ],
+    "egg": "not in eggs",
+  },
 ]

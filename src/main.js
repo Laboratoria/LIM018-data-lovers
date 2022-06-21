@@ -118,7 +118,7 @@ showElements(mapedData(data.pokemon));
 
 //implementando funcion filter con el DOM
 const  filterAndShow = (e) => {
-    let elements = mapedData(filterData(data, e.target.value ));
+    let elements = mapedData(filterData(data.pokemon, e.target.value ));
     while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
     return showElements(elements)
