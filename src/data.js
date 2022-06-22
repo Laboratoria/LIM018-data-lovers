@@ -6,4 +6,3 @@ export const filterByDirector = (data, nameDirector) => {
   return filmsDirector;
 };
 
-
