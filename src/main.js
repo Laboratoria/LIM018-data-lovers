@@ -1,6 +1,5 @@
 import { filterByDirector} from './data.js';
 
-
 fetch ('./data/ghibli/ghibli.json')
 .then(response => response.json())
 .then(data => {
