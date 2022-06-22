@@ -1,4 +1,4 @@
-import { filterDataDirector} from './data.js';
+/*import { filterDataDirector} from './data.js';
 //import jsondata from './data/ghibli/ghibli.js';
 
 // jalondo la data del json
@@ -42,4 +42,4 @@ contenedor.innerHTML+=card
 
 
 console.log(datadirector)
-})
+})*/
