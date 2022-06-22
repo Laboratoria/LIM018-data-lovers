@@ -92,6 +92,37 @@ main h2{
   text-align: center;
 }
 
+.lista-peliculas { 
+  font-family: 'Barlow', cursive;
+  align-items: center;
+  text-align: center;
+  width:150px;
+  padding: 8px;
+  background: #f5dd0c;
+  /*box-shadow: -4px 4px 14px rgba(204, 45, 45, 0.6);*/
+  border-radius: 90px;
+  cursor: pointer;
+  border: 1px dashed rgb(224, 224, 235);
+  font-size: 18px;
+  
+}
+.lista-peliculas:hover{
+  background: #f8b863;
+  align-items: center;
+}
+
+.contenedor-paginas {
+  display: none;
+}
+
+.enabled {
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
+=======
 .filters-producer{
   margin-left: 10px;
   margin-right: 10px;
