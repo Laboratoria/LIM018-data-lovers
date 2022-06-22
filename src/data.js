@@ -1,9 +1,7 @@
 
 //movie es elparametro q voy a iterar
 //FILTAR POR DIRECTOR
-export const filterByDirector = (data, nameDirector) => {
-  const filmsDirector = data.filter(movie => movie.director == nameDirector);
-  return filmsDirector;
-};
-
-
+export function filterByDirector (data, filtersDirector) {
+  return data.filter(films => films.director == filtersDirector);
+  
+}
