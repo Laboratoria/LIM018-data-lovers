@@ -1,7 +1,7 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterByDirector } from '../src/data.js';
 
 
-describe('example', () => {
+describe(filterByDirector, () => {
   it('is a function', () => {
     expect(typeof example).toBe('function');
   });

@@ -1,4 +1,5 @@
 import { filterByDirector} from './data.js';
+import data from './data/ghibli/ghibli.js';
 
 
 fetch ('./data/ghibli/ghibli.json')
@@ -26,3 +27,13 @@ const verpeliculas = () =>{
   containerFilms.style.display = "block";
 }
 botonPeliculas.addEventListener('click', verpeliculas);
+
+ // filtrar por director
+
+const filtersDirector = document.getElementById("filtersDirector");
+filtersDirector.addEventListener("change", () => {
+  const myMovies =(filterByDirector(data.films,filtersDirector.value))
+  myMovies.forEach(film => {
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+  })
+})
