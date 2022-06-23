@@ -1,31 +1,22 @@
-import { filterByDirector, orderAz } from './data.js';
+import {filterByDirector} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+//console.log(data)
 
- /* importando datos JSON
- fetch ('./data/ghibli/ghibli.json')
-   .then(response => response.json())
-   .then(data => {
-    let containerFilms =document.getElementById('containerFilms');
-    data.films.forEach(film => {
-      containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
-    });
-  })
-   .catch(err =>console.log (err))*/
+//************************************************************************************
+//mostrar pagina de bienvenida y boton peliculas
+const btnpeliculas = document.getElementById("listaPeliculas");
+const header = document.getElementById('header');
+const contenedorPaginas = document.getElementById('contenedorPaginas');
 
-// ocultando y mostrando (funcionalidad del boton peliculas)
-const portada = document.querySelector('.header-h');
-const botonPeliculas = document.querySelector('.lista-peliculas');
-const containerFilms = document.querySelector('.contenedor-paginas');
+btnpeliculas.addEventListener("click", () => {
+  header.className = "disabled";
+  contenedorPaginas.className = "enabled";
 
-const verpeliculas = () =>{
-  portada.style.display = "none";
-  containerFilms.style.display = "block";
-}
-botonPeliculas.addEventListener('click', verpeliculas);
+});
 
- // filtrar por director
-
+//***********************************************************
+//filtar data por director
 const filtersDirector = document.getElementById("filtersDirector");
 filtersDirector.addEventListener("change", () => {
   const myMovies =(filterByDirector(data.films,filtersDirector.value))
@@ -34,11 +25,23 @@ filtersDirector.addEventListener("change", () => {
   })
 })
 
-// ORDENANDO DE LA A a la Z
+//******************************************************************************
+//llamar data y mostrar catalogo
+  fetch ('./data/ghibli/ghibli.json')
+   .then(response => response.json())
+   .then(data => {
+    let containerFilms =document.getElementById('containerFilms');
+    data.films.forEach(film => {
+      containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+    });
+  })
+   .catch(err =>console.log (err))
 
-const filtersAz = document.querySelector('.filters-Az');
 
-filtersAz.addEventListener('change', ()=>{
 
-})
-console.log(orderAz(data.films))
+
+
+
+
+
+
