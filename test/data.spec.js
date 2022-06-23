@@ -1,9 +1,16 @@
+import { sortData, filterData, mapedData } from '../src/data.js';
 import { 
-  sortData, 
-  filterData,
-  mapedData
-} from '../src/data.js';
-import { dataTest, filterByType, filterByGeneration, filterByEgg, filterByRarity, basicInfo, orderByNameAsc, orderByNameDesc,  orderByLenghtWeaknessesAsc, orderByLenghtWeaknessesDesc} from './pokemon';
+  dataTest, 
+  filterByType, 
+  filterByGeneration, 
+  filterByEgg, 
+  filterByRarity, 
+  basicInfo, 
+  orderByNameAsc, 
+  orderByNameDesc,  
+  orderByLenghtWeaknessesAsc, 
+  orderByLenghtWeaknessesDesc
+} from './pokemon';
 
 // test para filterData
 describe('filterData', () => {

@@ -50,3 +50,51 @@ export const mapedData = (data) => {
 })};
 
 
+//computeStats
+export const computeStats = (data) => {
+  let valueStab = data.map(element => {
+   return element['special-attack'].map((e) => {
+      if( element.type.includes(e.type)) {
+        //40*50% + 40 = 40x0.5 + 40 = 40 (0.5 +1) = 40 *1.5
+        const bonusDamage = e['base-damage'] * 1.2
+        //console.log(element.name + ' ' + e.name + ' ' + e.type + ' ' + bonusDamage )
+        return bonusDamage;
+      } else {
+        return e['base-damage']
+      }
+    })
+  });
+
+  let valueDps = data.map(pokemon => {
+   return pokemon['special-attack'].map((e) => {
+     return parseFloat(e['base-damage'] / e['move-duration-seg']).toFixed(1)
+    })
+  })
+
+ let valueEps = data.map(pokemon => {
+    return pokemon["special-attack"].map((e) => {
+      //console.log(e.energy / e['move-duration-seg'])
+      return parseFloat(e.energy / e['move-duration-seg']).toFixed(1)
+     })
+   })
+
+  const Stats = {
+    stab: valueStab,
+    dps: valueDps,
+    eps: valueEps
+  }
+  return Stats 
+
+}
+
+/* 40*20% + 40 = 40x0.2 + 40 = 40 (0.2 +1) = 40 *1.5
+55*50% + 55 = 55* 0.5 + 55 = 55(0.) */
+
+/* Su traducción es Bono por ataque del mismo tipo, lo que quiere decir que los Pokémon, al utilizar un movimiento ofensivo que corresponda con alguno de sus tipos, será potenciado.
+
+¿Cuánto se potencia? En un 50% */
+/* 
+Charmander (Pokémon tipo fuego) utiliza Ascuas (Movimiento tipo fuego, cuya potencia base es de 40) aumentará su potencia base en un 50%, es decir:
+
+40 * 1.5 = 60 */
+
