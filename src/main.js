@@ -1,4 +1,4 @@
-import {filterData, sortData, mapedData} from './data.js';
+import { filterData, sortData, mapedData} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -16,6 +16,8 @@ const allInfoPokemon = document.querySelector('.pokemon');
 const filters = document.querySelector('.filters');
 const header = document.querySelector('.header');
 const searchBar = document.querySelector('.search-bar');
+
+
 
 // funcion que muestra elementos 
 const showElements = (data) => {
@@ -458,6 +460,7 @@ const showAllInfoPoke = (pokemon) => {
 
     tableTag.appendChild(thirdtTrTag);
   })
+
   div10.classList.add('padding-table');
   div10.appendChild(tableName1);
   div10.appendChild(tableTag);
@@ -531,6 +534,10 @@ const showAllInfoPoke = (pokemon) => {
   div11.appendChild(tableName2)
   div11.appendChild(tableTagTwo)
   sectPage.appendChild(div11);
+
+
+  //
+
 
   //num
   //name
@@ -628,4 +635,6 @@ infoPokemonSection.addEventListener('click', e => {
     })
   }
 });
+
+//computeStats
 

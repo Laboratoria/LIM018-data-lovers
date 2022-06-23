@@ -48,3 +48,5 @@ export const mapedData = (data) => {
         type:itemPokemon.type,
     }
 })};
+
+
