@@ -1,6 +1,3 @@
-
-import { filterData, sortData, mapedData} from './data.js';
-=======
 import {filterData, sortData, mapedData, computeStats} from './data.js';
 
 // import data from './data/lol/lol.js';
@@ -513,6 +510,7 @@ const showAllInfoPoke = (pokemon) => {
 
   tableTagTwo.appendChild(secondTrTagSA);
   let dta = computeStats(data.pokemon)
+  //console.log(dta);
 
   pokemon['special-attack'].forEach((e) => {
     const fourtTrTag = document.createElement('tr');
@@ -521,6 +519,7 @@ const showAllInfoPoke = (pokemon) => {
     const thirdTdTag = document.createElement('td');
     const fourTdTag = document.createElement('td');
     const fiveTdTag = document.createElement('td');
+
 
     const firstTdTagContent = document.createTextNode(e['name']);
     const secondTdTagContent = document.createTextNode(e['type']);
