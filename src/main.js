@@ -1,22 +1,19 @@
-import { filterByDirector} from './data.js';
+import { filterByDirector, orderAz } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-fetch ('./data/ghibli/ghibli.json')
-.then(response => response.json())
-.then(data => {
- let containerFilms =document.getElementById('containerFilms');
 
- data.films.forEach(film => {
+ /* importando datos JSON
+ fetch ('./data/ghibli/ghibli.json')
+   .then(response => response.json())
+   .then(data => {
+    let containerFilms =document.getElementById('containerFilms');
+    data.films.forEach(film => {
+      containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+    });
+  })
+   .catch(err =>console.log (err))*/
 
-   containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
- });
-
- console.log(data)
-}
-)
-.catch(err =>console.log (err))
-
-
+// ocultando y mostrando (funcionalidad del boton peliculas)
 const portada = document.querySelector('.header-h');
 const botonPeliculas = document.querySelector('.lista-peliculas');
 const containerFilms = document.querySelector('.contenedor-paginas');
@@ -36,3 +33,12 @@ filtersDirector.addEventListener("change", () => {
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
   })
 })
+
+// ORDENANDO DE LA A a la Z
+
+const filtersAz = document.querySelector('.filters-Az');
+
+filtersAz.addEventListener('change', ()=>{
+
+})
+console.log(orderAz(data.films))
