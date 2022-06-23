@@ -509,23 +509,19 @@ const showAllInfoPoke = (pokemon) => {
   tableTagTwo.classList.add('styled-table')
 
   tableTagTwo.appendChild(secondTrTagSA);
-  let dta = computeStats(data.pokemon)
-  //console.log(dta);
 
-  pokemon['special-attack'].forEach((e) => {
+  computeStats(pokemon).forEach(e => {
     const fourtTrTag = document.createElement('tr');
     const firstTdTag = document.createElement('td');
     const secondTdTag = document.createElement('td');
     const thirdTdTag = document.createElement('td');
     const fourTdTag = document.createElement('td');
     const fiveTdTag = document.createElement('td');
-
-
-    const firstTdTagContent = document.createTextNode(e['name']);
-    const secondTdTagContent = document.createTextNode(e['type']);
-    const thirdTdTagContent = document.createTextNode(e['base-damage']);
-    const fourTdTagContent = document.createTextNode(e['energy']);
-    const fiveTdTagContent = document.createTextNode(e['move-duration-seg']);
+    const firstTdTagContent = document.createTextNode(e.name);
+    const secondTdTagContent = document.createTextNode(e.type);
+    const thirdTdTagContent = document.createTextNode(e.stab);
+    const fourTdTagContent = document.createTextNode(e.dps);
+    const fiveTdTagContent = document.createTextNode(e.eps);
 
     firstTdTag.appendChild(firstTdTagContent);
     secondTdTag.appendChild(secondTdTagContent);
@@ -541,7 +537,9 @@ const showAllInfoPoke = (pokemon) => {
 
     tableTBody.appendChild(fourtTrTag);
     tableTagTwo.appendChild(tableTBody);
+
   })
+  
   div11.classList.add('padding-table');
   div11.appendChild(tableName2)
   div11.appendChild(tableTagTwo)
