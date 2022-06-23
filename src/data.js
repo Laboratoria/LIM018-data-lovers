@@ -11,6 +11,7 @@ export const sortData = (data,sortBy,sortOrder) => {
     }else if(sortBy==='weaknesses' && sortOrder === 'desc'){
       return  arrayOrder.sort((a, b)=> b.weaknesses.length - a.weaknesses.length)
     }
+    return data;
 };
 
 //filtrar datos por tipo, generación y egg
@@ -33,6 +34,7 @@ export const filterData = (data, condition) => {
   } else if(pokemonsRarity.includes(condition)) {
     return data.filter(pokemon => pokemon["pokemon-rarity"].includes(condition));
   }
+  return data;
 };
 
 
