@@ -1,4 +1,4 @@
-import {filterData, sortData, mapedData} from './data.js';
+import {filterData, sortData, mapedData, computeStats} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -17,6 +17,8 @@ const filters = document.querySelector('.filters');
 const header = document.querySelector('.header');
 const searchBar = document.querySelector('.search-bar');
 
+//console.log(computeStats(data.pokemon))
+//randomPokemon(data.pokemon)
 // funcion que muestra elementos 
 const showElements = (data) => {
   data.forEach((element) => {
@@ -120,10 +122,15 @@ showElements(mapedData(data.pokemon));
 //implementando funcion filter con el DOM
 const  filterAndShow = (e) => {
     let elements = mapedData(filterData(data.pokemon, e.target.value ));
-    while (infoPokemonSection.firstChild) {
+
+   /*  while (infoPokemonSection.firstChild) {
         infoPokemonSection.removeChild(infoPokemonSection.firstChild);
     return showElements(elements)
-}}
+    }  */
+
+    infoPokemonSection.innerHTML = "";
+    return showElements(elements)
+}
 
 
 //eventos del filtrado
@@ -146,7 +153,6 @@ selectOrder.addEventListener('change',()=>{
 selectOrderCamp.addEventListener('change',()=>{
     selectOrder.value = 'order-direction'
 })
-
 
 inputSearch.addEventListener('input', function(e){
   let iText = e.target.value.toLowerCase();
@@ -477,9 +483,9 @@ const showAllInfoPoke = (pokemon) => {
   const fiveThTagSA = document.createElement('th');
   const firstThTagSaContent = document.createTextNode('Name');
   const secondThTagSaContent = document.createTextNode('Type');
-  const thirdThTagSaContent = document.createTextNode('Base damage');
-  const fourThTagSaContent = document.createTextNode('Energy');
-  const fiveThTagSaContent = document.createTextNode('Move duration seg');
+  const thirdThTagSaContent = document.createTextNode('STAB');
+  const fourThTagSaContent = document.createTextNode('DPS');
+  const fiveThTagSaContent = document.createTextNode('EPS');
 
   tableName2.appendChild(nameContent2);
   firstThTagSA.appendChild(firstThTagSaContent);
@@ -497,6 +503,7 @@ const showAllInfoPoke = (pokemon) => {
   tableTagTwo.classList.add('styled-table')
 
   tableTagTwo.appendChild(secondTrTagSA);
+  let dta = computeStats(data.pokemon)
 
   pokemon['special-attack'].forEach((e) => {
     const fourtTrTag = document.createElement('tr');
