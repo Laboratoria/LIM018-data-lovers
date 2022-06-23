@@ -1,4 +1,4 @@
-import {filterByDirector} from './data.js';
+import {filterByDirector, filterByProducer} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 //console.log(data)
@@ -15,27 +15,45 @@ btnpeliculas.addEventListener("click", () => {
  
 });
 
-//***********************************************************
-//filtar data por director
-const filtersDirector = document.getElementById("filtersDirector");
-filtersDirector.addEventListener("change", () => {
-  const myMovies =(filterByDirector(data.films,filtersDirector.value))
-  myMovies.forEach(film => {
-    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
-  })
-})
-
 //******************************************************************************
 //llamar data y mostrar catalogo
-  fetch ('./data/ghibli/ghibli.json')
-   .then(response => response.json())
-   .then(data => { 
-    let containerFilms =document.getElementById('containerFilms');
-    data.films.forEach(film => {
-      containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
-    });
-  })
-   .catch(err =>console.log (err))
+
+fetch ('./data/ghibli/ghibli.json')
+.then(response => response.json())
+.then(data => { 
+ let containerFilms =document.getElementById('containerFilms');
+ data.films.forEach(film => {
+   containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+ });
+})
+.catch(err =>console.log (err))
+
+//***********************************************************
+
+const filtersDirector = document.getElementById("filtersDirector");
+const filtersProducer = document.getElementById("filtersProducer");
+
+
+//filtar data por director
+filtersDirector.addEventListener("change", () => {
+  const myMovies =(filterByDirector(data.films,filtersDirector.value))
+  containerFilms.innerHTML = "";
+  myMovies.forEach(film => {
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+  })})
+
+//filtar data por productor
+filtersProducer.addEventListener("change", () => {
+  const myMoviesPro =(filterByProducer(data.films,filtersProducer.value))
+  containerFilms.innerHTML = "";
+  myMoviesPro.forEach(film => {
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+  })})
+ 
+
+
+
+
 
 
 
