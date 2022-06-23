@@ -23,7 +23,9 @@ selectPersonajes.addEventListener("change", function (event) {
         personajes.forEach(function (personaje){
             
             //personaje.name
-            content.insertAdjacentHTML("beforeend", `${personaje.name} <br />`)
+
+            let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
+            content.insertAdjacentHTML("beforeend", html)
         })
     }
 
