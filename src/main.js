@@ -1,4 +1,6 @@
-import {filterByDirector, filterByProducer} from './data.js';
+
+import {filterByDirector, filterByProduce, rorderAz, orderZa} from './data.js';
+
 import data from './data/ghibli/ghibli.js';
 
 //console.log(data)
@@ -12,8 +14,10 @@ const contenedorPaginas = document.getElementById('contenedorPaginas');
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
- 
+  const videoportada = document.getElementById('videoportada');
+  videoportada.pause();
 });
+
 
 //******************************************************************************
 //llamar data y mostrar catalogo
@@ -35,11 +39,14 @@ const filtersProducer = document.getElementById("filtersProducer");
 
 
 //filtar data por director
+const filtersDirector = document.getElementById("filtersDirector");
+
 filtersDirector.addEventListener("change", () => {
-  const myMovies =(filterByDirector(data.films,filtersDirector.value))
+  const myMovies =orderAz(filterByDirector(data.films,filtersDirector.value))
   containerFilms.innerHTML = "";
   myMovies.forEach(film => {
-    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" > <p> "${film.title}"</p>
+    <p>Año: "${film.release_date}"</p> <p>Director: "${film.director}"</p> <p>Productor: "${film.producer}"</p> ` ;
   })})
 
 //filtar data por productor
@@ -50,16 +57,27 @@ filtersProducer.addEventListener("change", () => {
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
   })})
  
+/****************************** */
+//ORDENAR DE  A a la z
 
 
+const ordersAz = document.querySelector('.filters-Az');
 
+ordersAz.addEventListener('change', (event) =>{
 
+  let ordenar;
+  if (event.target.value === "A-Z"){
 
+    ordenar = orderAz(data.films)
+  }
+  else {
+    ordenar= orderZa(data.films)
+  }
+  containerFilms.innerHTML = "";
+  ordenar.forEach(film=>{
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+  })
 
-
-
-
-
-
+})
 
 
