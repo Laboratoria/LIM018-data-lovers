@@ -1,15 +1,24 @@
-.menus {
+#menuPrincipal {
+   
     display: flex;
+    justify-content: space-around;
     width: 100%;
-    justify-content: center;
     gap: 2rem;
+    font-size: 36px;
 }
-.name{
+
+.desplegable {
+    font-size: 20px;
+    align-items: center;
+    width: 150px;
+}
+
+.name {
     display: flex;
     justify-content: center;
  }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background: url(rickmorty.jpg);   

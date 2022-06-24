@@ -18,23 +18,31 @@
             />
         </div>
       </header>
-      <nav>
-        <div class="search">
-          <input id="buscador" type="search" placeholder="busca aqui.." />
-        </div>
-        <div class="menus">
-          <div class="menu">
-            <select id="selectPersonajes">
+
+      <nav id="containerMenu">
+        <div id="menuPrincipal" class="desplegable">
+          <div>
+            <div class="buscador" >
+              <input id="buscador" type="search" placeholder="busca aqui.." />
+              <img src="img_lupa.png" alt="">
+            </div> 
+            <div>
+              
+            </div>  
+          </div>
+
+          <div class="personajes">
+            <select id="selectPersonajes" class="desplegable">
               <option value="" selected>Personajes</option>
               <option value="ah">A-H</option>
               <option value="jp">J-P</option>
               <option value="qz">Q-Z</option>
             </select>
-          </div>
+          </div> 
 
-          <div class="menu">
-            <select id="selectepisodios">
-              <option value="" selected>episodios</option>
+          <div class="episodios">
+            <select id="selectEpisodios" class="desplegable">
+              <option value="" selected>Episodios</option>
               <option value="Episodio-1">Episodio 1</option>
               <option value="Episodio-2">Episodio 2</option>
               <option value="Episodio-3">Episodio 3</option>
@@ -67,16 +75,17 @@
               <option value="Episodio-30">Episodio 30</option>
               <option value="Episodio-31">Episodio 31</option>
             </select>
-          </div>
+          </div> 
 
-          <div class="menu">
-            <select id="selectEspecie">
+          <div class="especie">
+            <select id="selectEspecie" class="desplegable">
               <option value="" selected>Especie</option>
              <option value="Humano">Humano</option>
              <option value="Alien">Alien</option>
              <option value="Todos">Todos</option>
         </div>
       </nav>
+
       <div class="container">
         <div id="content">
           contenido del home
