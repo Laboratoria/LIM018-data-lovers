@@ -1,4 +1,6 @@
-import {filterByDirector, orderAz, orderZa} from './data.js';
+
+import {filterByDirector, filterByProduce, rorderAz, orderZa} from './data.js';
+
 import data from './data/ghibli/ghibli.js';
 
 //console.log(data)
@@ -19,17 +21,23 @@ btnpeliculas.addEventListener("click", () => {
 
 //******************************************************************************
 //llamar data y mostrar catalogo
-  fetch ('./data/ghibli/ghibli.json')
-   .then(response => response.json())
-   .then(data => {
-    let containerFilms =document.getElementById('containerFilms');
-    data.films.forEach(film => {
-      containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
-    });
-  })
-   .catch(err =>console.log (err))
+
+fetch ('./data/ghibli/ghibli.json')
+.then(response => response.json())
+.then(data => { 
+ let containerFilms =document.getElementById('containerFilms');
+ data.films.forEach(film => {
+   containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+ });
+})
+.catch(err =>console.log (err))
 
 //***********************************************************
+
+const filtersDirector = document.getElementById("filtersDirector");
+const filtersProducer = document.getElementById("filtersProducer");
+
+
 //filtar data por director
 const filtersDirector = document.getElementById("filtersDirector");
 
@@ -39,10 +47,16 @@ filtersDirector.addEventListener("change", () => {
   myMovies.forEach(film => {
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" > <p> "${film.title}"</p>
     <p>Año: "${film.release_date}"</p> <p>Director: "${film.director}"</p> <p>Productor: "${film.producer}"</p> ` ;
-
   })})
 
-
+//filtar data por productor
+filtersProducer.addEventListener("change", () => {
+  const myMoviesPro =(filterByProducer(data.films,filtersProducer.value))
+  containerFilms.innerHTML = "";
+  myMoviesPro.forEach(film => {
+    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+  })})
+ 
 /****************************** */
 //ORDENAR DE  A a la z
 
@@ -66,16 +80,4 @@ ordersAz.addEventListener('change', (event) =>{
 
 })
 
-/****************************** *
-//ORDENAR DE  Z A LA A
 
-const ordersZa = document.querySelector('.filters-Az');
-
-ordersZa.addEventListener('change', () =>{
-
-  const ordenar2 = (orderAz(data.films,ordersZa.value))
-
-  ordenar2.forEach(film=>{
-    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
-  })
-})*/
