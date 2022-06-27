@@ -16,6 +16,8 @@
 .name {
     display: flex;
     justify-content: center;
+    width:100%;
+    height: 90%;
  }
 
 body {
@@ -25,4 +27,17 @@ body {
     background-size: 100%;
     background-position: flex; 
     font-family: sans-serif;
+}
+.lupa{
+width: 10%;
+height: 10%; 
+
+}
+#buscador{
+width: 325px;
+height: 30px;
+font-size: 20px;
+}
+.buscador{
+    text-align: center;
 }
