@@ -12,7 +12,7 @@ export function filterByProducer (data, filtersProducer) {
   return data.filter(films => films.producer == filtersProducer);
 }
 
-
+// ordenar AZ
 export function orderAz (data){
   return data.sort(( a , b ) => {
     if (a.title < b.title){
@@ -25,6 +25,7 @@ export function orderAz (data){
   })
 }
 
+// ORDENAR ZA
 export function orderZa (data){
   return data.sort(( a , b ) => {
     if (a.title < b.title){
@@ -36,4 +37,20 @@ export function orderZa (data){
     return 0;
   })
 }
+// ORDENAR POR AÑO
+export const sortBy = (data,filtersYear)=>{
+  let sortYears = data.sort((a,b) => {
+  if(filtersYear === "Antiguo") {
+   (a.release_date < b.release_date)
+     return -1;
+  } 
+  else{
+    (a.release_date > b.release_date)
+    return 1;
+  }
 
+  }); 
+  return sortYears;
+  
+}
+console.log(sortBy)
