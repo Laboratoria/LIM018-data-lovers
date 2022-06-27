@@ -26,6 +26,8 @@ selectPersonajes.addEventListener("change", function (event) {
 
             let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
             content.insertAdjacentHTML("beforeend", html)
+
+            
         })
     }
 
