@@ -1,5 +1,5 @@
 
-import {filterByDirector, filterByProduce, rorderAz, orderZa} from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -39,8 +39,6 @@ const filtersProducer = document.getElementById("filtersProducer");
 
 
 //filtar data por director
-const filtersDirector = document.getElementById("filtersDirector");
-
 filtersDirector.addEventListener("change", () => {
   const myMovies =orderAz(filterByDirector(data.films,filtersDirector.value))
   containerFilms.innerHTML = "";
