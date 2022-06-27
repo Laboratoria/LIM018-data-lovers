@@ -37,20 +37,25 @@ export function orderZa (data){
     return 0;
   })
 }
-// ORDENAR POR AÑO
-export const sortBy = (data,filtersYear)=>{
-  let sortYears = data.sort((a,b) => {
-  if(filtersYear === "Antiguo") {
-   (a.release_date < b.release_date)
+// ORDENAR POR AÑO ASCENDENTE
+export function sortByAsc (data) {
+  return data.sort(( a , b ) => {
+   if (a.release_date < b.release_date){
+     return 1;
+    } 
+   if(a.release_date > b.release_date){
      return -1;
-  } 
-  else{
-    (a.release_date > b.release_date)
-    return 1;
-  }
-
-  }); 
-  return sortYears;
-  
+   }
+  }) 
 }
-console.log(sortBy)
+// ORDENAR POR AÑO DESCENDENTE
+export function sortByDesc (data) {
+  return data.sort(( a , b ) => {
+   if (a.release_date > b.release_date){
+     return 1;
+    } 
+   if(a.release_date < b.release_date){
+     return -1;
+   }
+  }) 
+}

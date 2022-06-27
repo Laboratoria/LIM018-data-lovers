@@ -1,5 +1,5 @@
 
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortBy} from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -34,29 +34,23 @@ fetch ('./data/ghibli/ghibli.json')
 .catch(err =>console.log (err))
 
 //***********************************************************
-
 const filtersDirector = document.getElementById("filtersDirector");
 const filtersProducer = document.getElementById("filtersProducer");
-
-
-//filtar data por director
+//filtar data por director****************************************
 filtersDirector.addEventListener("change", () => {
   const myMovies =orderAz(filterByDirector(data.films,filtersDirector.value))
   containerFilms.innerHTML = "";
   myMovies.forEach(film => {
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >` ;
   })})
-
-//filtar data por productor
+//filtar data por productor*****************************************
 filtersProducer.addEventListener("change", () => {
   const myMoviesPro =(filterByProducer(data.films,filtersProducer.value))
   containerFilms.innerHTML = "";
   myMoviesPro.forEach(film => {
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
   })})
- 
-/****************************** */
-//ORDENAR DE  A a la z
+//ORDENAR DE  A a la z***********************************************
 const ordersAz = document.querySelector('.filters-Az');
 ordersAz.addEventListener('change', (event) =>{
   let ordenar;
@@ -71,17 +65,15 @@ ordersAz.addEventListener('change', (event) =>{
     containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
   })
 })
-
-/****************************** */
-//ORDENAR por Año Antiguo-Reciente
-const ordersAncd = document.querySelector('.filters-year');
-ordersAncd.addEventListener('change', (event) =>{
-  let ordenarAsc = ordersAncd.value;
+//ORDENAR por Año Antiguo-Reciente****************************************
+const ordersAnRe = document.querySelector('.filters-year');
+ordersAnRe.addEventListener('change', (event) =>{
+  let ordenarAsc;
   if (event.target.value === "Antiguo"){
-    ordenarAsc = sortBy(data.films)
+    ordenarAsc = sortByAsc(data.films)
   }
   else {
-    ordenarAsc= sortBy(data.films)
+    ordenarAsc= sortByDesc(data.films)
   }
   containerFilms.innerHTML = "";
   ordenarAsc.forEach(film=>{

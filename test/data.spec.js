@@ -1,30 +1,26 @@
-import { filterByDirector,filterByProducer, orderAz, orderZa, sortBy } from '../src/data.js';
+import { filterByDirector,filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from '../src/data.js';
 
 const data = [
   {
     "title": "Castle in the Sky",
     "director": "Hayao Miyazaki",
-    "producer": "Isao Takahata",
     "release_date": "1986",
-    
   },
   {
     "title": "Grave of the Fireflies",
     "director": "Isao Takahata",
     "producer": "Toru Hara",
     "release_date": "1988",
-    
   },
-
   {
     "title": "Kiki's Delivery Service",
     "director": "Hayao Miyazaki",
     "release_date": "1989"
   },
   {
-  "title": "From Up on Poppy Hill",
-  "director": "Gorō Miyazaki",
-  "release_date": "2011"
+    "title": "From Up on Poppy Hill",
+    "director": "Gorō Miyazaki",
+    "release_date": "1990"
   }
 ]
 
@@ -40,7 +36,6 @@ describe(filterByDirector, () => {
   });
 });
 
-
 //*********funcion  filtrar por productor */
 describe(filterByProducer, () => {
   it('is a function', () => {
@@ -54,12 +49,10 @@ describe(filterByProducer, () => {
 });
 
 //*********funcion  ordenar de AZ */
-
 describe(orderAz, () => {
   it('is a function', () => {
     expect(typeof orderAz).toBe('function');
   });
-
   it('return peliculas ordenadas de A a Z', () => {
     let ordenadoAz = orderAz(data);
     expect(ordenadoAz[0].title).toBe('Castle in the Sky');
@@ -70,13 +63,11 @@ describe(orderAz, () => {
 });
 
 //*********funcion  ordenar de ZA */
-
 describe(orderZa, () => {
   it('is a function', () => {
     expect(typeof orderZa).toBe('function');
   });
-
-  it('return peliculas ordenadas de A a Z', () => {
+  it('return peliculas ordenadas de Z a A', () => {
     let ordenadoZa = orderZa(data);
     expect(ordenadoZa[0].title).toBe('Kiki\'s Delivery Service');
     expect(ordenadoZa[1].title).toBe('Grave of the Fireflies');
@@ -85,14 +76,13 @@ describe(orderZa, () => {
   });
 });
 
-//*********funcion  ordenar POR aÑO
-describe(sortBy, () => {
+//*********funcion  ordenar Antiguo**********************************
+describe(sortByAsc, () => {
   it('is a function', () => {
-    expect(typeof sortBy).toBe('function');
+    expect(typeof sortByAsc).toBe('function');
   });
-
-  it('return peliculas ordenadas Antiguo o Reciente', () => {
-    let ordenadoAño = sortBy(data,-1 );
+  it('return peliculas ordenadas Antiguo ', () => {
+    let ordenadoAño = sortByAsc(data);
     expect(ordenadoAño[0].title).toBe('Castle in the Sky');
     expect(ordenadoAño[1].title).toBe('Grave of the Fireflies');
     expect(ordenadoAño[2].title).toBe('Kiki\'s Delivery Service');
@@ -100,17 +90,16 @@ describe(sortBy, () => {
   });
 });
 
-//*********funcion  ordenar POR aÑO
-describe(sortBy, () => {
+//*********funcion  ordenar por Reciente******************************
+describe(sortByDesc, () => {
   it('is a function', () => {
-    expect(typeof sortBy).toBe('function');
+    expect(typeof sortByDesc).toBe('function');
   });
-
-  it('return peliculas ordenadas Antiguo o Reciente', () => {
-    let ordenadoAñod = sortBy(data,1);
-    expect(ordenadoAñod[0].title).toBe('From Up on Poppy Hill');
-    expect(ordenadoAñod[1].title).toBe('Kiki\'s Delivery Service');
-    expect(ordenadoAñod[2].title).toBe('Grave of the Fireflies');
-    expect(ordenadoAñod[3].title).toBe('Castle in the Sky');
+  it('return peliculas ordenadas Reciente', () => {
+    let ordenadoAñoD = sortByDesc(data);
+    expect(ordenadoAñoD[0].title).toBe('From Up on Poppy Hill');
+    expect(ordenadoAñoD[1].title).toBe('Kiki\'s Delivery Service');
+    expect(ordenadoAñoD[2].title).toBe('Grave of the Fireflies');
+    expect(ordenadoAñoD[3].title).toBe('Castle in the Sky');
   });
 });
