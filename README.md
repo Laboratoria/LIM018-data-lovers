@@ -79,6 +79,7 @@ Historias de usuario:
  - [✔️] Al seleccionar el campo debilidades y direccion asc, debe mostrarme los pokemones que tengan menos debilidades y los que tengan mas debilidades despues.
  - [✔️] Al seleccionar el campo debilidades y direccion desc, debe mostrarme los pokemones que tengan mas debilidades y los que tengan menos debilidades despues.
  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
