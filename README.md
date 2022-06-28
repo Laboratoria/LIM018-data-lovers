@@ -1,5 +1,101 @@
 # Data Lovers
+* Enlace al al producto final: https://camotito0.github.io/LIM018-data-lovers/src/
+* Enlace al figma: https://www.figma.com/file/1Bsw6VYn9GjVJxqxM0qm38/Pokemon-prototype?node-id=0%3A1
 
+![Desktop - 1](https://user-images.githubusercontent.com/105656069/176069200-7d53dd15-d65c-4ae8-8c52-0e1cc70f0b72.png)
+
+Título del proyecto: 
+* Data lovers - Pokedex
+
+¿A quien está dirigido el producto? 
+* Está a los maestros/entrenadores pokemones, que buscan informcación acerca de sus pokemones al momento de jugar.
+Imagen final del proyecto en responsive
+
+* Prototipo en mobile\
+![mobile_design_prototype](https://user-images.githubusercontent.com/105656069/176075889-6c0ed8e0-f9a6-4c81-89ee-4a60f1315582.png)
+
+* Prototipo en tablet\
+![tablet_design_prototype](https://user-images.githubusercontent.com/105656069/176076186-3a1efce3-69b6-42dc-a0af-11eee62f488b.png)
+
+* Prototipo en desktop\
+![desktop_design_prototype](https://user-images.githubusercontent.com/105656069/176076225-a188b251-dbbf-48cb-9d66-98683abc17c1.png)
+
+Investigación UX:
+* Los usuarios son los jugadores de pokemon go, los objetivos se relacionan a lo que al usuario le gustaría encontrar cuando entre a la página.
+  - [✔️] Filtrar los pokemones por: type, generation, egg y pokemon rarity
+  - [✔️] Ordenar a los pokemones de manera ASC - DESC - NAME y amount of WEAKNESSES.
+  - [✔️] El usuario tambien encontrará un input search donde podrá hacer la busqueda de un pokemon de manera más rapida y efectiva.
+  - [✔️] Tambien se encontrará la una vista de información detallada del pokemon, como: type, quick.move, special-attack, weaknesses, resistant to, etc.
+  - [✔️] En este sitio tambien puedes encontrar datos estadísticos que son de ayuda cuando el pokemon está en combate.
+    * STAB - Same Type Attack Bonus, se da si el tipo de pokemon y tipo de ataque coinciden el daño se aumenta en 20%
+    * DPS - de un ataque rápido o cargado es la medida que expresa cuánto daño realiza dicho ataque por segundo. Esta medida relativa nos permite saber qué ataque hará más daño a largo plazo en la batalla, pero tengan en cuenta que el DPS no contempla los bonos de clima o de efectividad/inefectividad contra el Pokémon rival dado que varían según la ocasión, por lo que deben combinar ese dato junto con las condiciones de la batalla.
+    * EPS - es una medida que se aplica solamente a los ataques. En términos simples, es la cantidad de “energía” que dicho ataque aporta para cargar la/s barra/s del ataque cargado. En resumen, un ataque con más EPS nos permitirá ejecutar el ataque cargado de nuestro Pokémon más rápidamente.
+   - [❌] Mostrar el top 10 de aparición.
+   - [❌] Mostar la evolución de los pokemones.
+
+* Primer prototipo en baja\
+![baja_fidelidad_wireframe](https://user-images.githubusercontent.com/105656069/176075918-901f08d8-3f9c-4286-b25e-1fa7f1088100.png)
+
+Feedback dado en sprints:
+- [✔️] Jerarquizar la infomación del pokemon.
+- [✔️] Agregar un filtro por pokemon rarity.
+- [✔️] Cambiar los colores de las card contenedoras.
+
+Historias de usuario:
+1. Figma Prototype #1
+ - [✔️] Hacer un prototipo básico en Figma de cómo se mostrará la información.
+ - [✔️] Hacer diseño responsive tablet.
+ - [✔️] Hacer diseño responsive mobile.\
+ 
+2. Mostrar la información básica de forma organizada #2
+* Como entrenador/maestro pokemon quiero ver la información básica de todos los pokemones para conocer sus características básicas
+  * Criterios de Aceptación:
+  - [✔️] Quiero que la información de un pokémon se muestre en una tarjeta.
+  - [✔️]  Quiero que en la tarjeta se muestre una imagen del pokemon.
+  - [✔️]  Quiero que en la tarjeta se muestre el nombre del pokémon al lado.
+  - [✔️]  Que tenga una descripción debajo del nombre del pokémon.
+ * Tareas:
+ - [✔️] Mostrar la data en la consola y ver cómo está estructurado.
+ - [✔️] Mostrar la data en el navegador.
+ - [✔️] Extraer el nombre y la imagen del pokémon de la data.
+ - [✔️] Hacer un título para mostrar el nombre del pokémon.
+ - [✔️] Hacer un párrafo donde contenga la descripción.
+ - [✔️] Hacer un div contenedor, de la img, nombre y descripción.
+ - [✔️] Hacer un div con una etiqueta img dentro.
+
+3. Ordenar por (data) #3
+* Yo como maestro pokemon quiero poder ordenar de forma asc y desc por nombre o debilidades de pokemon para ver en orden * alfabetico o saber que pokemones tienen mas o menos debilidades
+* Criterios de aceptacion:
+ - [✔️] Quiero poder ordenar por nombre de pokemon de forma asc.
+ - [✔️] Quiero poder ordenar por nombre de pokemon de forma desc.
+ - [✔️] Quisiera poder ordenar por la cantidad de debilidades que tiene un pokemon de forma asc.
+ - [✔️] Quisiera poder ordenar por la cantidad de debilidades que tienen un pokemon de forma desc.
+ - [✔️] Quiero poder ver la informacion ordenada en mi celular.
+ - [✔️] Quiero poder ver la informacion ordenada en mi tablet.
+ - [✔️] Quiero poder ver la informacion ordenada en mi computadora.
+* Tareas:
+ - [✔️] Implementar un selector con opciones de campo(nombre, debilidades).
+ - [✔️] Implementar un selector con opciones de direccion de ordenamiento(asc y desc).
+ - [✔️] Al seleccionar el campo nombre y direccion asc, debe mostrarme los pokemones que empiecen con a y sucesivamente hasta la z.
+ - [✔️] Al seleccionar el campo nombre y direccion desc, debe mostrarme los pokemones que empiecen con z y sucesivamente hasta la a.
+ - [✔️] Al seleccionar el campo debilidades y direccion asc, debe mostrarme los pokemones que tengan menos debilidades y los que tengan mas debilidades despues.
+ - [✔️] Al seleccionar el campo debilidades y direccion desc, debe mostrarme los pokemones que tengan mas debilidades y los que tengan menos debilidades despues.
+
+4. Filtrar datos por type, generation, etc #11
+* Yo como maestro pokemon quiero poder filtrar la data por type, generation, egg y pokemon rarity, para ver en orden los pokemos filtrados por type water, generation kanto, etc.
+* Criterios de aceptacion
+- [✔️] Quiero poder filtrar por type.
+- [✔️] Quiero poder filtrar según la generación del pokemon.
+- [✔️] Quiero filtrar por rareza de pokemon.
+* Tareas:
+- [✔️] Hacer funcionalidad para filtrar la data.
+- [✔️] Implementar la funcionalidad con el DOM.
+
+Integrantes 😊:
+* [Deleina Llamocca.](https://github.com/Deleina)
+* [Bella Aguirre.](https://github.com/Bellasacc) 
+* [Diana Llerena.](https://github.com/camotito0)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
