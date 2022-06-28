@@ -10,6 +10,7 @@ const btnpeliculas = document.getElementById("listaPeliculas");
 const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById('contenedorPaginas');
 const btnhome = document.getElementById("home");
+const contenedorHome = document.getElementById('contenedor-home');
 
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
