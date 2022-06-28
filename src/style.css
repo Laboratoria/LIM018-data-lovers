@@ -1,5 +1,4 @@
 #menuPrincipal {
-   
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -34,13 +33,95 @@ height: 10%;
 
 }
 #buscador{
-width: 325px;
+width: 40vh;
 height: 30px;
 font-size: 20px;
+background-image: url(./img_lupa.png);
+background-repeat: no-repeat;
+background-position: right;
+
 }
 .buscador{
     text-align: center;
 }
-.datosCuriosos{
-    background-color: antiquewhite;
+
+#main {
+    display: flex;
+    justify-content: space-around    
 }
+
+.datosCuriosos{
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    height: 0vh;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.muerteRick {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    height: 60vh;
+    font-size: 20px;
+    text-align: center;
+}
+
+#todosPersonajes p{
+   
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    color:white;
+    font-size: 2rem;
+    font-weight:bolder;  
+}
+
+.carrusel{
+    widht:90%;
+    max-width: 120em;
+    background-color: skyblue;
+}
+
+.carrusel .grande{
+    width: 200%;
+    background-color: yellow;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.carrusel .img{
+    width: calc(100% / 3);
+    background-color: green;
+}
+.carrusel .puntos{
+    width: 100%;
+    background-color: pink;
+    padding: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.carrusel .punto{
+    width: 2em;
+    height: 2em;
+    background-color: blueviolet;
+    margin
+
+}
+
+
