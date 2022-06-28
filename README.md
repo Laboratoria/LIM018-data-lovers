@@ -2,6 +2,27 @@
 
 ![Desktop - 1](https://user-images.githubusercontent.com/105656069/176069200-7d53dd15-d65c-4ae8-8c52-0e1cc70f0b72.png)
 
+Título del proyecto: 
+*Data lovers - Pokedex
+
+¿A quien está dirigido el producto? 
+* Está a los maestros/entrenadores pokemones, que buscan informcación acerca de sus pokemones al momento de jugar.
+Imagen final del proyecto en responsive
+
+* Prototipo en baja fidelidad
+![baja_fidelidad_wireframe](https://user-images.githubusercontent.com/105656069/176075918-901f08d8-3f9c-4286-b25e-1fa7f1088100.png)
+
+*Prototipo en mobile
+![mobile_design_prototype](https://user-images.githubusercontent.com/105656069/176075889-6c0ed8e0-f9a6-4c81-89ee-4a60f1315582.png)
+
+*Prototipo en tablet
+![tablet_design_prototype](https://user-images.githubusercontent.com/105656069/176076186-3a1efce3-69b6-42dc-a0af-11eee62f488b.png)
+
+*Prototipo en desktop
+![desktop_design_prototype](https://user-images.githubusercontent.com/105656069/176076225-a188b251-dbbf-48cb-9d66-98683abc17c1.png)
+
+Investigación UX:
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
