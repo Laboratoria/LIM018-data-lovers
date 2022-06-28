@@ -10,6 +10,7 @@ const btnpeliculas = document.getElementById("listaPeliculas");
 const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById('contenedorPaginas');
 const btnhome = document.getElementById("home");
+const containerhome = document.getElementById('containerhome')
 
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
@@ -71,6 +72,7 @@ const filtersProducer = document.getElementById("filtersProducer");
 //filtar data por director****************************************
 filtersDirector.addEventListener("change", () => {
   const myMovies =orderAz(filterByDirector(data.films,filtersDirector.value))
+  containerhome.className = "disabled";
   containerFilms.innerHTML = "";
   myMovies.forEach(film => {
     containerFilms.innerHTML += `<div class = "subContenedorDirector">
@@ -85,6 +87,7 @@ filtersDirector.addEventListener("change", () => {
 //filtar data por productor*****************************************
 filtersProducer.addEventListener("change", () => {
   const myMoviesPro =(filterByProducer(data.films,filtersProducer.value))
+  containerhome.className = "disabled";
   containerFilms.innerHTML = "";
   myMoviesPro.forEach(film => {
     containerFilms.innerHTML += `<div class = "subContenedorDirector">
@@ -109,9 +112,17 @@ ordersAz.addEventListener('change', (event) =>{
   else {
     ordenar= orderZa(data.films)
   }
+  containerhome.className = "disabled";
   containerFilms.innerHTML = "";
   ordenar.forEach(film=>{
-    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+    containerFilms.innerHTML += `<div class = "subContenedorDirector">
+    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
+    <p class="titleDirector"> ${film.title}</p>
+    <p class="parrafoDirector">Año:"${film.release_date}"</p>
+    <p class="parrafoDirector">Director:"${film.director}"</p>
+    <p class="parrafoDirector">Productor: "${film.producer}"</p>
+    </div>
+    </div> ` ;
   })
 })
 //ORDENAR por Año Antiguo-Reciente****************************************
@@ -124,8 +135,16 @@ ordersAnRe.addEventListener('change', (event) =>{
   else {
     ordenarAsc= sortByDesc(data.films)
   }
+  containerhome.className = "disabled";
   containerFilms.innerHTML = "";
   ordenarAsc.forEach(film=>{
-    containerFilms.innerHTML += `<img src="${film.poster}" alt="imagen" >`;
+    containerFilms.innerHTML += `<div class = "subContenedorDirector">
+    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
+    <p class="titleDirector"> ${film.title}</p>
+    <p class="parrafoDirector">Año:"${film.release_date}"</p>
+    <p class="parrafoDirector">Director:"${film.director}"</p>
+    <p class="parrafoDirector">Productor: "${film.producer}"</p>
+    </div>
+    </div> ` ;
   })
 })
