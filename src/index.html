@@ -12,19 +12,19 @@
 
 <body>
 
-  <header id="header" class="header-h">
+  <header id="header" class="header-h" name="header">
     <video id="videoportada" class="videoportada" src="/src/imagenes/AMV - Tribute to Hayao Miyazaki - Bestamvsofalltime Anime MV ♫.mp4" autoplay   controls ></video>
     <h1 id="header__h1"> GHIBLI WORLD<spam class="titulo"></spam> </h1>
     <img class ="imgportada" src="/src/imagenes/totoroblanco.png" alt="logoghibli"/>
     <button type="submit" id="listaPeliculas" class="lista-peliculas" >LEARN MORE</button>
   </header>
 
-  <main  id="contenedorPaginas" class="contenedor-paginas">
+  <main  id="contenedorPaginas" class="contenedor-paginas" name="header">
 
     <h2 id="peliculasAnimadas" class= "peliculas-animadas">PELICULAS ANIMADAS </h2>
     <div class="main__filtersAndCount">
       <div class="filters">
-        <button type ="menu" class="home">Home</button>
+        <button type ="menu" id="home" class="home">Home</button>
         <select id="filtersDirector" class="filters-director">
           <option selected value="all">Director</option>
           <option value="Hayao Miyazaki">Hayao Miyazaki</option>
@@ -36,7 +36,7 @@
         </select>
 
         <select id="filtersProducer" class="filters-producer">
-          <option selected value="all">Productor</option>
+          <option selected value="all">Producer</option>
           <option value="Isao Takahata">Isao Takahata</option>
           <option value="Toshio Suzuki">Toshio Suzuki</option>
           <option value="Toru Hara">Toru Hara</option>
@@ -45,11 +45,13 @@
         </select>
 
         <select id="filtersYear" class="filters-year">
+          <option selected value="all">By Year</option>
           <option value="Antiguo">Antiguo</option>
           <option value="Reciente">Reciente</option>
         </select>
 
         <select id="filtersAz" class="filters-Az">
+          <option selected value="all">By Title</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A </option>
         </select>

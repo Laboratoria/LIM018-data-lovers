@@ -21,7 +21,7 @@ export function orderAz (data){
     if (a.title > b.title){
       return 1;
     }
-    return 0;
+    
   })
 }
 
@@ -34,7 +34,7 @@ export function orderZa (data){
     if (a.title > b.title){
       return -1;
     }
-    return 0;
+    
   })
 }
 // ORDENAR POR AÑO ASCENDENTE

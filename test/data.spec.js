@@ -97,9 +97,9 @@ describe(sortByDesc, () => {
   });
   it('return peliculas ordenadas Reciente', () => {
     let ordenadoAñoD = sortByDesc(data);
-    expect(ordenadoAñoD[0].title).toBe('From Up on Poppy Hill');
-    expect(ordenadoAñoD[1].title).toBe('Kiki\'s Delivery Service');
-    expect(ordenadoAñoD[2].title).toBe('Grave of the Fireflies');
     expect(ordenadoAñoD[3].title).toBe('Castle in the Sky');
+    expect(ordenadoAñoD[2].title).toBe('Grave of the Fireflies');
+    expect(ordenadoAñoD[1].title).toBe('Kiki\'s Delivery Service');
+    expect(ordenadoAñoD[0].title).toBe('From Up on Poppy Hill');
   });
 });

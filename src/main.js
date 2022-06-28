@@ -10,6 +10,7 @@ import data from './data/ghibli/ghibli.js';
 const btnpeliculas = document.getElementById("listaPeliculas");
 const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById('contenedorPaginas');
+const btnhome = document.getElementById("home");
 
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
@@ -18,6 +19,12 @@ btnpeliculas.addEventListener("click", () => {
   videoportada.pause();
 });
 
+btnhome.addEventListener("click", () => {
+  header.className = "enabled";
+  contenedorPaginas.className = "disabled";
+  const videoportada = document.getElementById('videoportada');
+  videoportada.play();
+});
 
 //******************************************************************************
 //llamar data y mostrar catalogo
