@@ -61,7 +61,7 @@ Historias de usuario:
  - [✔️] Hacer un div contenedor, de la img, nombre y descripción.
  - [✔️] Hacer un div con una etiqueta img dentro.
 
-3. ordenar por (data) #3
+3. Ordenar por (data) #3
 * Yo como maestro pokemon quiero poder ordenar de forma asc y desc por nombre o debilidades de pokemon para ver en orden * alfabetico o saber que pokemones tienen mas o menos debilidades
 * Criterios de aceptacion:
  - [✔️] Quiero poder ordenar por nombre de pokemon de forma asc.
@@ -78,6 +78,16 @@ Historias de usuario:
  - [✔️] Al seleccionar el campo nombre y direccion desc, debe mostrarme los pokemones que empiecen con z y sucesivamente hasta la a.
  - [✔️] Al seleccionar el campo debilidades y direccion asc, debe mostrarme los pokemones que tengan menos debilidades y los que tengan mas debilidades despues.
  - [✔️] Al seleccionar el campo debilidades y direccion desc, debe mostrarme los pokemones que tengan mas debilidades y los que tengan menos debilidades despues.
+
+4. Filtrar datos por type, generation, etc #11
+* Yo como maestro pokemon quiero poder filtrar la data por type, generation, egg y pokemon rarity, para ver en orden los pokemos filtrados por type water, generation kanto, etc.
+* Criterios de aceptacion
+- [✔️] Quiero poder filtrar por type.
+- [✔️] Quiero poder filtrar según la generación del pokemon.
+- [✔️] Quiero filtrar por rareza de pokemon.
+* Tareas:
+- [✔️] Hacer funcionalidad para filtrar la data.
+- [✔️] Implementar la funcionalidad con el DOM.
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Índice
