@@ -8,7 +8,6 @@
 
 @font-face {
   font-family: Pokemon-Solid;
-  src: url(images/Pokemon-Hollow.ttf);
   src: url(images/Pokemon-Solid.ttf);
 }
 
@@ -248,16 +247,24 @@ h3 {
   margin: 0 6px;
 }
 
-
-.develop-info{
+.develop-info {
   display: flex;
   gap: 20px;
+}
+
+.develop-info p,a{
   font-family: Pokemon-Solid;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 35px;
   letter-spacing: 0.02em;
+  text-decoration: none;
+  color: white;
+}
+
+.develop-info a:hover {
+  color: #DEBF6C;
 }
 
 
@@ -565,6 +572,7 @@ td, th {
     flex-wrap: wrap;
     font-size: 12px;
     gap: 12px;
+    text-decoration: none;
   }
   .pokemon-name{
     text-align: center;
