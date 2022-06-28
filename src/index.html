@@ -22,8 +22,11 @@
   <main  id="contenedorPaginas" class="contenedor-paginas" name="header">
 
     <h2 id="peliculasAnimadas" class= "peliculas-animadas">PELICULAS ANIMADAS </h2>
-    <div class="main__filtersAndCount">
-      <div class="filters">
+
+
+
+      <div class="filters" id="filtrados">
+
         <button type ="menu" id="home" class="home">Home</button>
         <select id="filtersDirector" class="filters-director">
           <option selected value="all">Director</option>
@@ -55,8 +58,11 @@
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A </option>
         </select>
+        <div class="search">
+          <input type="search" placeholder="Search . . ." id="inputSearch" class="inputSearch">
+        </div>
       </div>
-    </div>
+
 
     <section class="contenedorHome" id="contenedor-home">
       <img src="/src/imagenes/giphy.gif" alt="totoro">
@@ -66,11 +72,21 @@
       </p>
     </section>
 
-    <div class="wrapper">
-     <div id="containerFilms" class="container-films">
-      <!--<img class="imgFondo" src="/src/imagenes/96165a2743102e382320a275b32af399.gif" alt="totoro"> -->
-     </div>
+    <div id="containerhome" class="containerhome">
+      <p>Studio Ghibli, Inc. (スタジオジブリ), is a Japanese animation film studio based in Koganei, Tokyo. They were founded by Isao Takahata, Hayao Miyazaki, Toshio Suzuki and Yasuyoshi Tokuma.
+        The studio is best known for its animated feature films, and has also produced several short subjects, TV commercials and a TV movie. It has also collaborated with video game studios on the visual development of several video games. Five of the studio's films are among the top ten highest-grossing anime films made in Japan. Spirited Away is second, grossing ¥31.68 billion in Japan and over $380 million worldwide, and Princess Mononoke is fourth, grossing ¥20.18 billion.
+      </p>
+      <div id="carrusel" class="carrusel">
+        <div class="atras-botones">&#60</div>
+        <div class="adelante-botones">&#62</div>
+        <img src="/src/imagenes/img1.jpg" alt="" id="imagen">
+      </div>
+    </div>
 
+    <div class="wrapper" >
+     <div id="containerFilms" class="container-films">
+
+     </div>
     </div>
 
   </main>
