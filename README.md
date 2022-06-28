@@ -1,4 +1,6 @@
 # Data Lovers
+* Enlace al al producto final: https://camotito0.github.io/LIM018-data-lovers/src/
+* Enlace al figma: https://www.figma.com/file/1Bsw6VYn9GjVJxqxM0qm38/Pokemon-prototype?node-id=0%3A1
 
 ![Desktop - 1](https://user-images.githubusercontent.com/105656069/176069200-7d53dd15-d65c-4ae8-8c52-0e1cc70f0b72.png)
 
@@ -25,9 +27,9 @@ Investigación UX:
   - [✔️] El usuario tambien encontrará un input search donde podrá hacer la busqueda de un pokemon de manera más rapida y efectiva.
   - [✔️] Tambien se encontrará la una vista de información detallada del pokemon, como: type, quick.move, special-attack, weaknesses, resistant to, etc.
   - [✔️] En este sitio tambien puedes encontrar datos estadísticos que son de ayuda cuando el pokemon está en combate.
-    * 1. STAB -> Same Type Attack Bonus, se da si el tipo de pokemon y tipo de ataque coinciden el daño se aumenta en 20%
-    * 2. DPS -> de un ataque rápido o cargado es la medida que expresa cuánto daño realiza dicho ataque por segundo. Esta medida relativa nos permite saber qué ataque hará más daño a largo plazo en la batalla, pero tengan en cuenta que el DPS no contempla los bonos de clima o de efectividad/inefectividad contra el Pokémon rival dado que varían según la ocasión, por lo que deben combinar ese dato junto con las condiciones de la batalla.
-    * 3. EPS -> es una medida que se aplica solamente a los ataques. En términos simples, es la cantidad de “energía” que dicho ataque aporta para cargar la/s barra/s del ataque cargado. En resumen, un ataque con más EPS nos permitirá ejecutar el ataque cargado de nuestro Pokémon más rápidamente.
+    * STAB - Same Type Attack Bonus, se da si el tipo de pokemon y tipo de ataque coinciden el daño se aumenta en 20%
+    * DPS - de un ataque rápido o cargado es la medida que expresa cuánto daño realiza dicho ataque por segundo. Esta medida relativa nos permite saber qué ataque hará más daño a largo plazo en la batalla, pero tengan en cuenta que el DPS no contempla los bonos de clima o de efectividad/inefectividad contra el Pokémon rival dado que varían según la ocasión, por lo que deben combinar ese dato junto con las condiciones de la batalla.
+    * EPS - es una medida que se aplica solamente a los ataques. En términos simples, es la cantidad de “energía” que dicho ataque aporta para cargar la/s barra/s del ataque cargado. En resumen, un ataque con más EPS nos permitirá ejecutar el ataque cargado de nuestro Pokémon más rápidamente.
    - [❌] Mostrar el top 10 de aparición.
    - [❌] Mostar la evolución de los pokemones.
 
