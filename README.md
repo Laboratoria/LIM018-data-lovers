@@ -90,7 +90,11 @@ Historias de usuario:
 * Tareas:
 - [✔️] Hacer funcionalidad para filtrar la data.
 - [✔️] Implementar la funcionalidad con el DOM.
- 
+
+Integrantes:
+* Deleina Llamocca.
+* Bella Aguirre.
+* Diana Llerena.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Índice
 
