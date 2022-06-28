@@ -91,10 +91,10 @@ Historias de usuario:
 - [✔️] Hacer funcionalidad para filtrar la data.
 - [✔️] Implementar la funcionalidad con el DOM.
 
-Integrantes:
-* Deleina Llamocca.
-* Bella Aguirre.
-* Diana Llerena.
+Integrantes 😊:
+* [Deleina Llamocca.](https://github.com/Deleina)
+* [Bella Aguirre.](https://github.com/Bellasacc) 
+* [Diana Llerena.](https://github.com/camotito0)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Índice
 
