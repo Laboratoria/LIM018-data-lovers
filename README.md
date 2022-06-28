@@ -1,5 +1,7 @@
 # Data Lovers
 
+![Desktop - 1](https://user-images.githubusercontent.com/105656069/176069200-7d53dd15-d65c-4ae8-8c52-0e1cc70f0b72.png)
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
@@ -621,4 +623,3 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
-![Desktop - 1](https://user-images.githubusercontent.com/105656069/176069200-7d53dd15-d65c-4ae8-8c52-0e1cc70f0b72.png)
