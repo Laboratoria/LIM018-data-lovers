@@ -21,7 +21,7 @@ export function orderAz (data){
     if (a.title > b.title){
       return 1;
     }
-    
+
   })
 }
 
@@ -34,7 +34,7 @@ export function orderZa (data){
     if (a.title > b.title){
       return -1;
     }
-    
+
   })
 }
 // ORDENAR POR AÑO ASCENDENTE
@@ -42,20 +42,32 @@ export function sortByAsc (data) {
   return data.sort(( a , b ) => {
    if (a.release_date > b.release_date){
      return 1;
-    } 
+    }
    if(a.release_date < b.release_date){
      return -1;
    }
-  }) 
+  })
 }
 // ORDENAR POR AÑO DESCENDENTE
 export function sortByDesc (data) {
   return data.sort(( a , b ) => {
    if (a.release_date < b.release_date){
      return 1;
-    } 
+    }
    if(a.release_date > b.release_date){
      return -1;
    }
-  }) 
+  })
 }
+
+// ****** BUSCAR ****
+
+export const searchData = (data, input) => {
+  let searchResults = [];
+  data.filter((x) => {
+    if (x.films.toLowerCase().startsWith(input)) {
+      searchResults.push(x);
+    }
+  });
+  return searchResults;
+};
