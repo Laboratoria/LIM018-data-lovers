@@ -18,9 +18,7 @@ export function orderAz (data){
     if (a.title < b.title){
       return -1;
     }
-    if (a.title > b.title){
-      return 1;
-    }
+
 
   })
 }
@@ -28,9 +26,7 @@ export function orderAz (data){
 // ORDENAR ZA
 export function orderZa (data){
   return data.sort(( a , b ) => {
-    if (a.title < b.title){
-      return 1;
-    }
+
     if (a.title > b.title){
       return -1;
     }
@@ -51,9 +47,7 @@ export function sortByAsc (data) {
 // ORDENAR POR AÑO DESCENDENTE
 export function sortByDesc (data) {
   return data.sort(( a , b ) => {
-   if (a.release_date < b.release_date){
-     return 1;
-    }
+
    if(a.release_date > b.release_date){
      return -1;
    }

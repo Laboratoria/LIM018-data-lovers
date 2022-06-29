@@ -48,7 +48,6 @@ const cajaFiltrado = (films) =>{
       </div>`;
   }
 };
-
 //******************************************************************************
 /*******************  FUNCIONALIDAD DEL BOTON BUSCAR  *********************/
 
@@ -138,3 +137,21 @@ ordersAnRe.addEventListener('change', (event) =>{
   containerFilms.innerHTML = "";
   cajaFiltrado(ordenarAsc)
 })
+
+//******************************************************************************
+/*******************  FUNCIONALIDAD DEL BOTON BUSCAR  *********************/
+
+
+//Traemos a la barra de búsqueda
+let searchBar = document.querySelector('#inputSearch');
+
+//Que la barra busque los pokémon al escribir
+searchBar.addEventListener("input", function (e) {
+  let searchingBar = e.target.value;
+  const searchedData = searchData(data.films, searchingBar);
+  if (searchedData.length === 0) {
+    alert("Sorry trainer, Pokemon doesn't exist");
+  } else {
+    cajaFiltrado(searchedData);
+  }
+});

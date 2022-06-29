@@ -1,3 +1,8 @@
+body { 
+  background-image: url("./imagenes/img6.jpg");
+  
+}
+
 *{
   padding: 0px;
   margin: 0px;
@@ -187,6 +192,7 @@ align-items: center;
 display: none;
 
 }
+
 /*.lista-peliculas {
   font-family: 'Barlow', cursive;
   align-items: center;
