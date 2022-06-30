@@ -54,6 +54,15 @@ export function sortByDesc (data) {
   })
 }
 
+/*-------------- filtro por film */
+
+/*export const filtredFilm = (data, film) => {
+  const filmSel = data.filter(element => element.id == film);
+
+  //return filmSel;
+}*/
+
+
 // ****** BUSCAR ****
 
 export const searchData = (data, input) => {

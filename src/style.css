@@ -1,6 +1,6 @@
-body { 
+body {
   background-image: url("./imagenes/img6.jpg");
-  
+
 }
 
 *{
@@ -20,9 +20,9 @@ padding: 0;
   justify-content: center;
 }
 
-/*@media screen and (max-width:500px){
+/*@media screen and (max-width:300px){
  .container-films{
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
   }
 }*/
 
@@ -234,7 +234,7 @@ display: none;
   margin-left: 8%;
   padding: 15px;
   border: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: #fffbfb65;
   border: #2fb1c2 2px solid;
   flex-wrap: wrap;
   justify-content: center;
@@ -267,6 +267,7 @@ display: none;
   border-radius: 20px;
   border: #CAF995 3px solid;
   margin: 10px;
+  background-color: #ffffffef;
 }
 
 .imgDirector{
@@ -282,7 +283,7 @@ display: none;
 }
 
 .parrafoDirector{
-  color: #929191;
+  color: #5e5e5e;
   font-size: 90%;
   margin: 2.5% 10%;
 }
