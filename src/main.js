@@ -22,7 +22,7 @@ selectPersonajes.addEventListener("change", function (event) {
         // para recorrer arrays
         personajes.forEach(function (personaje){
             
-            //personaje.name
+            personaje.name
 
             let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
             content.insertAdjacentHTML("beforeend", html)
