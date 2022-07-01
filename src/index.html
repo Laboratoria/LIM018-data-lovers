@@ -29,15 +29,6 @@
             </div>  
           </div>
 
-    <nav id="containerMenu">
-      <div id="menuPrincipal" class="desplegable">
-        <div>
-          <div class="buscador" >
-            <input id="buscador" type="search" placeholder="busca aqui a tu personaje favorito" />
-            <img src="img_lupa.png" alt="" class="lupa"> 
-          </div>  
-        </div>
-
         <div class="personajes">
           <select id="selectPersonajes" class="desplegable">
             <option value="" selected>Personajes</option>
@@ -89,17 +80,90 @@
             <option value="" selected>Especie</option>
             <option value="Humano">Humano</option>
             <option value="Alien">Alien</option>
-            <option value="Todos">Todos</option>
+            <option value="Vampiro">Vampiro</option>
+            <option value="Humanoide">Humanoide</option>
+            <option value="Robots">Robots</option>
+            <option value="Disease">Enfermedades</option>
+            <option value="Animal">Animales</option>
+            <option value="Cronenberg">Mutantes</option>
+            <option value="Mytholog">Mitologicos</option>
+            <option value="Parasite">Parasitos</option>
+            <option value="Poopybutthole">Poopybutthole</option>
           </select>
       </div>
-    </nav>
+    </nav> <br>
     
-    <main>
-      <div class="carrusel">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <p>imagenes aqui</p>
+    <main id="main">
+      <!-- HOME -->
+      <div id="page1" class="page active">
+        <div class="page1">
+          <aside class="datosCuriosos">
+            <h1>DATOS CURIOSOS</h1>
+            <h2>¿Por qué Rick eructa?</h2>
+            <p>Los eructos de Rick son 
+              su seña de identidad.
+               Para crearlos, el cocreador
+               Justin Roiland, quien le pone
+               voz (tanto a él como a Morty), bebe mucha agua. 
+              Sarah Chalke, la voz de Beth, puede eructar a su antojo y Roiland
+               ha confesado sentir envidia de su habilida</p>
+          </aside>
+    
+          <div class="carrusel">
+            <ul class="slider">
+              <li id="slide1"> 
+                <img src="reeel-1 (1).png"/>
+              </li>
+              <li id="slide2"> 
+                <img src="reel-2.png"/>
+              </li>
+              <li id="slide3"> 
+                <img src="reel-3.png"/>
+              </li>
+            </ul>
+            <ul class="menu">
+              <li>
+                <a href="#slide1">1</a>
+              </li>
+              <li>
+                <a href="#slide2">2</a>
+              </li>
+              <li>
+                <a href="#slide3">3</a>
+              </li>         
+            </ul>
+          </div>
+    
+          <aside class="muerteRick">
+            <h1>¿Quién mató a la mujer de Rick?</h1>
+            <p>Resulta que Rick era un científico que inventó una pistola de portales interdimensionales (hasta aquí todo bien). Enseguida, se peleó con su otro yo de otra dimensión y este arrojó una bomba por un portal que mató a su esposa Diane y a su pequeña hija Beth</p>
+          </aside>  
+        </div>
+      </div>
+
+      <!-- RESULTADOS DE BUSQUEDA -->
+      <div id="page2" class="page">
+        <div class="page2">
+          resultados busqueda
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas inventore modi quibusdam natus ad, quia porro! Explicabo natus corrupti ratione voluptatibus. Omnis architecto atque quibusdam nesciunt dicta, excepturi debitis.
+        </div>
+      </div>
+
+      <!-- PERSONAJES -->
+      <div id="page3" class="page">
+        <div class="page3">
+          personajes
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, pariatur. Quasi illo incidunt enim obcaecati ipsa. Enim, fugit. Omnis nobis dolorem minima, earum ex laudantium suscipit quas neque odit cupiditate.
+        </div>
+      </div>
+
+      <!-- ESPECIES -->
+      <div id="page4" class="page">
+        <div class="page4">
+          especies
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis id neque corporis. Id fugiat nihil accusantium, ipsum, iste debitis maxime esse quae suscipit omnis, dolorum temporibus? Officia quia quaerat repudiandae.
+        </div>
+        <div id="todoshumanos"> todoshumanos </div>
       </div>
       <aside class="datosCuriosos">
         <h1>DATOS CURIOSOS</h1>
@@ -116,8 +180,10 @@
       
     </main>
 
-    <footer>
+    <div id="todosPersonajes">
       <p>Todos los personajes de la serie: 493</p>
+    </div> 
+    <footer>
     </footer>
     <script src="main.js" type="module"></script>
   </body>

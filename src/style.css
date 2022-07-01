@@ -1,5 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(rickmorty.jpg);   
+    background-size: 100%;
+    background-position: flex; 
+    font-family: sans-serif;
+}
+
 #menuPrincipal {
-   
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -12,7 +20,7 @@
     align-items: center;
     width: 150px;
 }
-
+/*sgdf*/
 .name {
     display: flex;
     justify-content: center;
@@ -20,27 +28,153 @@
     height: 90%;
  }
 
-body {
-    margin: 0;
-    padding: 0;
-    background: url(rickmorty.jpg);   
-    background-size: 100%;
-    background-position: flex; 
-    font-family: sans-serif;
-}
 .lupa{
-width: 10%;
-height: 10%; 
-
+   width: 10%;
+   height: 10%;
 }
 #buscador{
-width: 325px;
-height: 30px;
-font-size: 20px;
+    border: 0;
+    width: 100%;
+    outline: none;
 }
 .buscador{
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.personajes {
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    stroke: 0;
+}
+
+.episodios {
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    stroke: 0;
+}
+
+.especie {
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    stroke: 0;
+}
+
+.datosCuriosos{
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    height: 0vh;
+    font-size: 20px;
+    color: white;
     text-align: center;
 }
-.datosCuriosos{
-    background-color: antiquewhite;
+
+
+.muerteRick {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    height: 62vh;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient(#e66465, #9198e5);
+ 
 }
+
+#todosPersonajes p{  
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    color:white;
+    font-size: 2rem;
+    font-weight:bolder;  
+}
+
+.carrusel{
+    margin: auto;
+    width: 800px;
+    padding: 30px;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.slider{
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+ul.slider li{
+    position: absolute;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    background-color: white;
+    transition: opacity .5s;
+}
+
+ul.slider li img{
+    width: 100%;
+    object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+ul.slider li:target{
+    opacity: 1;
+}
+
+.menu{
+    text-align: center;
+    margin: 20px;
+}
+
+.menu li{
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+}
+
+/* .page {
+    display: none;
+} */
+
+/* .page.active {
+    display: block;
+} */
+
+/* .page1 {
+    display: flex;
+    justify-content: space-around;
+} */
