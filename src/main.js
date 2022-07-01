@@ -6,20 +6,98 @@ const selectEspecie = document.getElementById("selectEspecie");
 // const content = document.getElementById("content")
 const personajes = data.results;
 
-//vota la data de los humanos
-// let todoshumanos=document.getElementById("todoshumanos");
-// for ( let i = 0 ; i < personajes.length ; i++){
-//     let especies =personajes[i].species;
-//         if (especies === 'Human'){
-//           const nodeEspecie = document.createElement("div");
-//           // nodeEspecie.innerHTML=personajes[i].name
-//           nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+//vota la data de las especies
+let todoshumanos=document.getElementById("todoshumanos");
+for ( let i = 0 ; i < personajes.length ; i++){
+    let especies =personajes[i].species;
+        if (especies === 'Human'){
+          const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
 
-//           todoshumanos.appendChild(nodeEspecie)
-                  
-//         }
-  
-//   }
+          todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'vampiros'){
+          const nodeEspecie = document.createElement("div");
+        // nodeEspecie.innerHTML=personajes[i].name
+        nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+
+          todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'Alien'){
+          const nodeEspecie = document.createElement("div");
+        // nodeEspecie.innerHTML=personajes[i].name
+        nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+        todoshumanos.appendChild(nodeEspecie)
+          }
+      
+        if(especies === 'Robot'){
+            const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+            }
+
+        if(especies === 'Disease'){
+              const nodeEspecie = document.createElement("div");
+            // nodeEspecie.innerHTML=personajes[i].name
+            nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+            todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'Cronenberg'){
+            const nodeEspecie = document.createElement("div");
+            // nodeEspecie.innerHTML=personajes[i].name
+            nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+            todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'Humanoide'){
+          const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'Parasite'){
+        const nodeEspecie = document.createElement("div");
+        // nodeEspecie.innerHTML=personajes[i].name
+        nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+        todoshumanos.appendChild(nodeEspecie)
+        }
+
+         if(especies === 'Poopybutthole'){
+          const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+        }
+
+         if(especies === 'Mytholog'){
+        const nodeEspecie = document.createElement("div");
+        // nodeEspecie.innerHTML=personajes[i].name
+        nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+        todoshumanos.appendChild(nodeEspecie)
+        }
+
+        if(especies === 'Animal'){
+          const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+        }
+
+
+          
+          
+
+
+
+    
+  }
+// todo los ALIENS
   // for ( let i = 0 ; i < personajes.length ; i++){
   //   let especies =personajes[i].species;
   //   console.log(personajes[i].species);
@@ -34,24 +112,23 @@ const personajes = data.results;
 // la informacion de lo que suecede en el evento
 
 
-selectPersonajes.addEventListener("change", function (event) {
-const opcionSeleccionada = event.target.value
-if (opcionSeleccionada == "ah") {
+// selectPersonajes.addEventListener("change", function (event) {
+// const opcionSeleccionada = event.target.value
+// if (opcionSeleccionada == "ah") {
 
-//  content.innerHTML = ""
-   nodeEspecie.innerHTML=personajes[i].name
-   opcionSeleccionada.appendChild(selectPersonajes)
+// //  content.innerHTML = ""
+//    nodeEspecie.innerHTML=personajes[i].name
+//    opcionSeleccionada.appendChild(selectPersonajes)
 
-//         // para recorrer arrays
-   personajes.forEach(function (personaje){
+// //         // para recorrer arrays
+//    personajes.forEach(function (personaje){
             
-personaje.name
+// personaje.name
 
- let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
- content.insertAdjacentHTML("beforeend", html)
+//  let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
+//  content.insertAdjacentHTML("beforeend", html)
 
             
-        })
-    }
+//         })
+//     }
 
-})
