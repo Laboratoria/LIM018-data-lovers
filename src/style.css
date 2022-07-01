@@ -20,7 +20,7 @@ body {
     align-items: center;
     width: 150px;
 }
-
+/*sgdf*/
 .name {
     display: flex;
     justify-content: center;
@@ -166,15 +166,15 @@ ul.slider li:target{
     border-radius: 100%;
 }
 
-.page {
+/* .page {
     display: none;
-}
+} */
 
-.page.active {
+/* .page.active {
     display: block;
-}
+} */
 
-.page1 {
+/* .page1 {
     display: flex;
     justify-content: space-around;
-}
+} */
