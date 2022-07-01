@@ -1,11 +1,14 @@
 // estas funciones son de ejemplo
 
-// export const example = () => {
-//   return 'example';
-// };
+export const filterPersonajes = (data ) => {
+    return data.filter(Element => Element.species= "Human"); 
 
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
+
+};
+
+ 
+export const anotherExample = () => {
+  return 'OMG';
+};
 
 

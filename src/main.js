@@ -1,22 +1,41 @@
 import data from './data/rickandmorty/rickandmorty.js';
+import { filterPersonajes } from  './data.js '
 
-const buscador = document.getElementById("buscador");
-const selectPersonajes = document.getElementById("selectPersonajes");
-const selectEspecie = document.getElementById("selectEspecie");
+// const selectPersonajes = document.querySelector(".personajes")
+// selectPersonajes.addEventListener("change", (event) => {
+// // const resultsPersonajes = document.querySelector(".results"); 
+// // results.data = event.target.value ;
+// const nodePersonajes = document.createElement("div");
+// nodePersonajes.innerHTML=personajes.name
+
+// })
+
 // const content = document.getElementById("content")
 const personajes = data.results;
-
+console.log (personajes);
 //vota la data de las especies
 let todoshumanos=document.getElementById("todoshumanos");
+function mostrarPersonajes( element){
+element.forEach(element => {  
+  const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${element.image}"/> <p>${element.name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+});
+
+} 
+mostrarPersonajes( filterPersonajes);
+
+
 for ( let i = 0 ; i < personajes.length ; i++){
     let especies =personajes[i].species;
-        if (especies === 'Human'){
-          const nodeEspecie = document.createElement("div");
-          // nodeEspecie.innerHTML=personajes[i].name
-          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+        // if (especies === 'Human'){
+        //   const nodeEspecie = document.createElement("div");
+        //   // nodeEspecie.innerHTML=personajes[i].name
+        //   nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
 
-          todoshumanos.appendChild(nodeEspecie)
-        }
+        //   todoshumanos.appendChild(nodeEspecie)
+        // }
 
         if(especies === 'vampiros'){
           const nodeEspecie = document.createElement("div");
@@ -88,14 +107,6 @@ for ( let i = 0 ; i < personajes.length ; i++){
           nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
           todoshumanos.appendChild(nodeEspecie)
         }
-
-
-          
-          
-
-
-
-    
   }
 // todo los ALIENS
   // for ( let i = 0 ; i < personajes.length ; i++){
