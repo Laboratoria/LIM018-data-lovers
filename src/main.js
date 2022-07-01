@@ -66,28 +66,28 @@ for ( let i = 0 ; i < personajes.length ; i++){
         // nodeEspecie.innerHTML=personajes[i].name
         nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
         todoshumanos.appendChild(nodeEspecie)
-         }
+        }
 
          if(especies === 'Poopybutthole'){
           const nodeEspecie = document.createElement("div");
           // nodeEspecie.innerHTML=personajes[i].name
           nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
           todoshumanos.appendChild(nodeEspecie)
-      }
+        }
 
          if(especies === 'Mytholog'){
         const nodeEspecie = document.createElement("div");
         // nodeEspecie.innerHTML=personajes[i].name
         nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
         todoshumanos.appendChild(nodeEspecie)
-      }
+        }
 
-      if(especies === 'Animal'){
-        const nodeEspecie = document.createElement("div");
-        // nodeEspecie.innerHTML=personajes[i].name
-        nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
-        todoshumanos.appendChild(nodeEspecie)
-      }
+        if(especies === 'Animal'){
+          const nodeEspecie = document.createElement("div");
+          // nodeEspecie.innerHTML=personajes[i].name
+          nodeEspecie.innerHTML =`<img src="${personajes[i].image}"/> <p>${personajes[i].name}</p>`;
+          todoshumanos.appendChild(nodeEspecie)
+        }
 
 
           
