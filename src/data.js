@@ -1,8 +1,5 @@
-// estas funciones son de ejemplo
-
-export const filterPersonajes = (data ) => {
-    return data.filter(Element => Element.species= "Human"); 
-
+export const filterEspecies = (datos, gato) => {
+  return  datos.filter(element => element.species== gato); 
 
 };
 
@@ -10,5 +7,3 @@ export const filterPersonajes = (data ) => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
-
