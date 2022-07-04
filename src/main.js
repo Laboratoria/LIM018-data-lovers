@@ -14,6 +14,7 @@ orderingNames.addEventListener("change", (event) => {
  todoshumanos.innerHTML="";
  const valueSelect = event.target.value;
  mostrarPersonajes(filtrarPersonajes(personajes,valueSelect));
+ 
 
 
 
