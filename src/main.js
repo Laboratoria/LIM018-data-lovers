@@ -8,8 +8,8 @@ const personajes = data.results;
 let todoshumanos=document.getElementById("todoshumanos");
 
 //select por especies
-const selectPersonajes = document.querySelector("#selectEspecie")
-selectPersonajes.addEventListener("change", (event) => {
+const selectEspecies = document.querySelector("#selectEspecie")
+selectEspecies.addEventListener("change", (event) => {
 
 todoshumanos.innerHTML="";
 const valueSelect=  event.target.value;
