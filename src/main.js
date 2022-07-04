@@ -1,20 +1,35 @@
 import data from './data/rickandmorty/rickandmorty.js';
 import { filterEspecies } from  './data.js '
 
+import {filtrarPersonajes} from './data.js'
+ 
 // Array de todos los personajes
 const personajes = data.results;
 
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
 
-//select por especies
-const selectPersonajes = document.querySelector("#selectEspecie")
-selectPersonajes.addEventListener("change", (event) => {
+const orderingNames = document.querySelector("#selectPersonajes");
+orderingNames.addEventListener("change", (event) => {
+ todoshumanos.innerHTML="";
+ const valueSelect = event.target.value;
+ mostrarPersonajes(filtrarPersonajes(personajes,valueSelect));
 
+
+
+
+
+})
+
+//select por especies
+const selectEspecie = document.querySelector("#selectEspecie")
+selectEspecie.addEventListener("change", (event) => {   
 todoshumanos.innerHTML="";
+// te entrega el valor que seleccionaste
 const valueSelect=  event.target.value;
 
 mostrarPersonajes(filterEspecies(personajes,valueSelect));
+
 
 })
 

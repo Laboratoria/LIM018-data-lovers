@@ -4,6 +4,7 @@ export const filterEspecies = (datos, gato) => {
 };
 
  
-export const anotherExample = () => {
-  return 'OMG';
+export const filtrarPersonajes = (datos ,nombre) => {
+
+  return datos.filter(e => e.name==nombre);
 };
