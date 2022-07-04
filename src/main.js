@@ -17,8 +17,6 @@ orderingNames.addEventListener("change", (event) => {
 
 
 
-
-
 })
 
 //select por especies
