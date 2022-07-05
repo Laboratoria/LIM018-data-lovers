@@ -90,11 +90,14 @@ header .lista-peliculas:hover{
 /*----------------------MAIN--------------------*/
 main h2{
   text-align: center;
-  font-size: 30px;
-  margin-bottom: 25px;
-  margin-top: 20px;
+  font-size: 280%;
+  margin-bottom: 1.5%;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 30%;
   font-family: 'Averia Serif Libre', cursive;
   width: 80%;
+  color: #0b2b81;
 }
 .contenedor-paginas {
   display: none;
@@ -116,7 +119,6 @@ main h2{
   justify-content: center;
   border-radius: 15px;
   max-width: 80%;
-
 }
 
 .filters-director {
@@ -124,7 +126,7 @@ main h2{
   border-radius: 5px;
   background-color: #CAF995;
   height: 30px;
-  font-size: 20px;
+  font-size: 130%;
   text-align: center;
   cursor: pointer;
 }
@@ -134,7 +136,7 @@ main h2{
   border-radius: 5px;
   background-color: #D1C4E9;
   height: 30px;
-  font-size: 20px;
+  font-size: 130%;
   text-align: center;
   cursor: pointer;
 }
@@ -144,7 +146,7 @@ main h2{
   border-radius: 5px;
   background-color: #C0CFFF;
   height: 30px;
-  font-size: 20px;
+  font-size: 130%;
   text-align: center;
   cursor: pointer;
 }
@@ -154,7 +156,7 @@ main h2{
   border-radius: 5px;
   background-color: #F8BBD0;
   height: 30px;
-  font-size: 20px;
+  font-size: 130%;
   text-align: center;
   cursor: pointer;
 }
@@ -163,13 +165,26 @@ main h2{
 .home{
   border-radius: 5px;
   margin: 0.7%;
-  width: 80px;
+  width: 10%;
   height: 30px;
   background-color: #F8BBD0;
   border-color: #929191 ;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 130%;
 }
+
+.buttonGraphic{
+  border-radius: 5px;
+  margin: 0.7%;
+  width: 15%;
+  height: 30px;
+  background-color: #faf097;
+  border-color: #929191 ;
+  cursor: pointer;
+  font-size: 130%;
+  cursor: pointer;
+}
+
 .inputSearch{
   display: flex;
   margin-bottom: 20px;
@@ -183,7 +198,7 @@ main h2{
   justify-content: center;
   border-radius: 15px;
   max-width: 80%;
-  font-size: 15px;
+  /*font-size: 15px;*/
 }
 
 main .contenedorHome{
@@ -222,7 +237,9 @@ display: none;
 .disabled {
   display: none;
 }
-
+.wrapper{
+  display: block;
+}
 .container-films{
   display: flex;
 }
@@ -298,4 +315,90 @@ display: none;
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
   background-color: #65bcc7;
+}*/
+
+.descripcion{
+  background-color: #2fb1c2;
+  width: 50px;
+  height: auto;
+}
+/*____________________ GRAFICOS____________________*/
+.box_graphic{
+  background-color: #ffffff6e;
+  width: 82%;
+  height: auto;
+  margin-right: 8%;
+  margin-left: 8%;
+  border-radius: 20px;
+  border: #2fb1c2 2px solid;
+  display: none;
+}
+.box_title_graphic{
+  display: flex;
+  justify-content: center;
+
+}
+.title_graphic{
+  padding-top: 2%;
+  color: #2fb1c2;
+  font-size: 300%;
+
+}
+
+.graphic{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img_graphic_box{
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.img_graphic{
+  width: 90%;
+}
+.graphic_canvas{
+  width: 500px;
+  background-color: #ffffff;
+  padding: 3%;
+  border-radius: 20px;
+  margin-bottom: 2%;
+}
+
+/* _______ CAMBIOS PARA CELULAR --- pantalla de maximo 576 px */
+@media screen and (max-width: 575.98px) {
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .graphic_canvas{
+    width: 320px;
+  }
+  /*.myChart{
+    height: 100px;
+  }*/
+}
+
+@media only screen and (max-width: 991.98px){
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  /*.graphic_canvas{
+    width: 450px;
+  }*/
+}
+
+footer{
+  background-color: #2fb1c2;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  display: none;
 }

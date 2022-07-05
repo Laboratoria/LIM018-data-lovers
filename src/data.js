@@ -12,6 +12,12 @@ export function filterByProducer (data, filtersProducer) {
   return data.filter(films => films.producer == filtersProducer);
 }
 
+/*-------------- filtro por film -----------------------------------*/
+
+export const filtredFilm = (data, cajapersonajes) => {
+  return  data.filter(films => films.id == cajapersonajes);
+}
+
 // ordenar AZ
 export function orderAz (data){
   return data.sort(( a , b ) => {
@@ -54,13 +60,12 @@ export function sortByDesc (data) {
   })
 }
 
-/*-------------- filtro por film */
+ // GRAFICOS
 
-/*export const filtredFilm = (data, film) => {
-  const filmSel = data.filter(element => element.id == film);
-
-  //return filmSel;
-}*/
+ export const compute = (data)=>{
+  let scoreCompute = data.filter(films => films.rt_score >= 96);
+  return scoreCompute;
+ }
 
 
 // ****** BUSCAR ****
