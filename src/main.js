@@ -1,17 +1,22 @@
 
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute} from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from './data.js';
 
-import data from './data/ghibli/ghibli.js';
+//import data from './data/ghibli/ghibli.js';
 
 const filtersDirector = document.getElementById("filtersDirector");
 const filtersProducer = document.getElementById("filtersProducer");
 const btnpeliculas = document.getElementById("listaPeliculas");
 const header = document.getElementById('header');
-const contenedorPaginas = document.getElementById('contenedorPaginas');
+const contenedorPaginas = document.getElementById("contenedorPaginas");
 const btnhome = document.getElementById("home");
-const containerFilms = document.getElementById('containerFilms')
+const containerFilms = document.getElementById('containerFilms');
+const descripcionPersonaje =document.getElementById('descripcion');
+const buttonGraphic = document.getElementById('buttonGraphic')
+const boxGraphic = document.getElementById('box_graphic')
+const footerr = document.getElementById('footer')
 
-/*********************************************************/
+
+
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
@@ -197,7 +202,7 @@ btnpeliculas.addEventListener("click", () => {
            const arrayResidents = location[i].residents;
            let arrayNamesResidents = arrayResidents.map((habitantes) => {
                if (habitantes === "TODO") {
-                   return "Todos los personajes";
+                   return "All residents";
                } else {
                    return habitantes.name;
                }
@@ -218,13 +223,13 @@ btnpeliculas.addEventListener("click", () => {
            let datePopupH5 = document.createElement('h5');
            datePopupH5.innerHTML = `${location[i].name}`;
            let datePopupClimate = document.createElement('p');
-           datePopupClimate.innerHTML = `<spam class="black">Clima:</spam> ${location[i].climate}`;
+           datePopupClimate.innerHTML = `<spam class="black">Climate:</spam> ${location[i].climate}`;
            let datePopupTerrain = document.createElement('p');
-           datePopupTerrain.innerHTML = `<spam class="black">Terreno:</spam> ${location[i].terrain}`;
+           datePopupTerrain.innerHTML = `<spam class="black">Terrain:</spam> ${location[i].terrain}`;
            let datePopupWater = document.createElement('p');
-           datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
+           datePopupWater.innerHTML = `<spam class="black">Surface_water:</spam> ${location[i].surface_water}`;
            let datePopupresidents = document.createElement('p');
-           datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${arrayNamesResidents}`;
+           datePopupresidents.innerHTML = `<spam class="black">Residents:</spam> ${arrayNamesResidents}`;
 
            let buttonClose = document.createElement('button');
            buttonClose.classList.add('btn__cerrar__popup');
@@ -275,17 +280,17 @@ btnpeliculas.addEventListener("click", () => {
       let datePopupH5 = document.createElement('h5');
       datePopupH5.innerHTML = `${vehicle[i].name}`;
       let datepopupDescripcion = document.createElement('p');
-      datepopupDescripcion.innerHTML = `<spam class="black">Descripción:</spam> ${vehicle[i].description}`;
+      datepopupDescripcion.innerHTML = `<spam class="black">Description:</spam> ${vehicle[i].description}`;
       let datePopupClass = document.createElement('p');
-      datePopupClass.innerHTML = `<spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}`;
+      datePopupClass.innerHTML = `<spam class="black">Vehicle Class:</spam> ${vehicle[i].vehicle_class}`;
       let datePopuplength = document.createElement('p');
       datePopuplength.innerHTML = `<spam class="black">Length:</spam> ${vehicle[i].length}`;
       let datePopupPiloto = document.createElement('p');
-      datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
+      datePopupPiloto.innerHTML = `<spam class="black">Pilot:</spam> ${vehicle[i].pilot.name}`;
 
       let buttonClose = document.createElement('button');
       buttonClose.classList.add('btn__cerrar__popup');
-      buttonClose.innerHTML = 'CERRAR';
+      buttonClose.innerHTML = 'CLOSE';
 
       divOtherSub.appendChild(movieVehicle);
       divOtherSub.appendChild(divPopupContainer);
@@ -414,15 +419,32 @@ ordersAnRe.addEventListener('change', (event) =>{
 
 
 /*------------------------------- BOTON DE GRAFICOS--------------------------- */
+/*
 const buttonGraphic = document.getElementById('buttonGraphic')
 const boxGraphic = document.getElementById('box_graphic')
-/*const footerr = document.getElementById('footer')*/
+/*const footerr = document.getElementById('footer')
 
 buttonGraphic.addEventListener('click', ()=>{
   containerFilms.className = "disabled";
   boxGraphic.className = "enabled";
 });
 // graficoss*****************
+const elementMovies = compute(data.films);
+
+let nameBestMovies = elementMovies.map((elem)=>{
+  let titleBestMovies = elem.title;
+  return titleBestMovies;
+})
+
+let scoreBestMovies = elementMovies.map((elem)=>{
+  let score = elem.rt_score;
+  return score;
+})
+
+  cajaFiltrado(ordenarAsc)
+})
+*/
+/* graficoss*****************
 const elementMovies = compute(data.films);
 
 let nameBestMovies = elementMovies.map((elem)=>{
@@ -470,7 +492,7 @@ const ctx = document.getElementById('myChart').getContext('2d');
       }
   }
 
-  })
+  })*/
 
 
 

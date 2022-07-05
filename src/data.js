@@ -12,25 +12,31 @@ export function filterByProducer (data, filtersProducer) {
   return data.filter(films => films.producer == filtersProducer);
 }
 
+/*-------------- filtro por film -----------------------------------*/
+
+export const filtredFilm = (data, cajapersonajes) => {
+  return  data.filter(films => films.id == cajapersonajes);
+}
+
 // ordenar AZ
 export function orderAz (data){
   return data.sort(( a , b ) => {
     if (a.title < b.title){
       return -1;
     }
-   
-    
+
+
   })
 }
 
 // ORDENAR ZA
 export function orderZa (data){
   return data.sort(( a , b ) => {
-    
+
     if (a.title > b.title){
       return -1;
     }
-    
+
   })
 }
 // ORDENAR POR AÑO ASCENDENTE
@@ -38,21 +44,22 @@ export function sortByAsc (data) {
   return data.sort(( a , b ) => {
    if (a.release_date > b.release_date){
      return 1;
-    } 
+    }
    if(a.release_date < b.release_date){
      return -1;
    }
-  }) 
+  })
 }
 // ORDENAR POR AÑO DESCENDENTE
 export function sortByDesc (data) {
   return data.sort(( a , b ) => {
-  
+
    if(a.release_date > b.release_date){
      return -1;
    }
   }) 
-}
+  }
+
 
  // GRAFICOS
 
@@ -73,3 +80,4 @@ export const searchData = (data, input) => {
   });
   return searchResults;
 };
+
