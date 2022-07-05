@@ -57,8 +57,9 @@ export function sortByDesc (data) {
    if(a.release_date > b.release_date){
      return -1;
    }
-  })
-}
+  }) 
+  }
+
 
  // GRAFICOS
 
@@ -79,3 +80,4 @@ export const searchData = (data, input) => {
   });
   return searchResults;
 };
+
