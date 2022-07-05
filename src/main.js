@@ -1,142 +1,402 @@
 
 import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from './data.js';
 
-import data from './data/ghibli/ghibli.js';
+//import data from './data/ghibli/ghibli.js';
 
-
-//************************************************************************************
-//mostrar pagina de bienvenida y boton peliculas
+const filtersDirector = document.getElementById("filtersDirector");
+const filtersProducer = document.getElementById("filtersProducer");
 const btnpeliculas = document.getElementById("listaPeliculas");
 const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById('contenedorPaginas');
 const btnhome = document.getElementById("home");
 const containerFilms = document.getElementById('containerFilms')
 
-
-
-
-header.className = "enabled";
-
+/*********************************************************/
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
-  
-  fetch ('./data/ghibli/ghibli.json')
- .then(response => response.json())
- .then(data => {
- let containerFilms =document.getElementById('containerFilms');
- data.films.forEach(film => {
-   containerFilms.innerHTML +=  `<div class = "subContenedorDirector">
-   <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
-   <p class="titleDirector"> ${film.title}</p>
-   <p class="parrafoDirector">Año:"${film.release_date}"</p>
-   <p class="parrafoDirector">Director:"${film.director}"</p>
-   <p class="parrafoDirector">Productor: "${film.producer}"</p>
-   </div>
-   </div> ` ;
- });
-}).catch(err =>console.log (err))
-});
-
-btnhome.addEventListener("click", () => {
-  header.className = "enabled";
-  contenedorPaginas.className = "disabled";
-  const videoportada = document.getElementById('videoportada');
-  videoportada.play();
-});
-
-/******   CREACIÓN DE CARD PARA CADA POSTER***** */
-
-/*const contenedorFilm = (films) =>{
-
-  for ( let i = 0 ; i < films.length; ++i){
-    document.querySelector(".container-films").innerHTML += `<div class="subContainerFilms">
-    <div id="${data[i].id}" class="containerImg">
-        <img src="${data[i].poster}">
-        <div class="descrpcion">
-        <p>${data[i].title}</p>
-        <p>${data[i].director}</p>
-        <p>${data[i].producer}</p>
-        <p>${data[i].release_date}</p>
-        </div>
-        </div>
-        </div>`;
-  }
-
-  document.querySelectorAll('.containerImg').forEach(item => {
-    item.addEventListener('click', () => {
-        let film_id = item.id;
-        modalDisplay(film_id);
-    })
-});
-};*/
-
-//******************************************************************************
-//llamar data y mostrar catalogo
-
-
-
-
-
-//***********************************************************
-const filtersDirector = document.getElementById("filtersDirector");
-const filtersProducer = document.getElementById("filtersProducer");
-//filtar data por director****************************************
-filtersDirector.addEventListener("change", () => {
-  const myMovies =orderAz(filterByDirector(data.films,filtersDirector.value))
-  containerFilms.innerHTML = "";
-  myMovies.forEach(film => {
-    containerFilms.innerHTML += `<div class = "subContenedorDirector">
-    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
-    <p class="titleDirector"> ${film.title}</p>
-    <p class="parrafoDirector">Año:"${film.release_date}"</p>
-    <p class="parrafoDirector">Director:"${film.director}"</p>
-    <p class="parrafoDirector">Productor: "${film.producer}"</p>
-    </div>
-    </div> ` ;
-  })})
-//filtar data por productor*****************************************
-filtersProducer.addEventListener("change", () => {
-  const myMoviesPro =(filterByProducer(data.films,filtersProducer.value))
-  containerFilms.innerHTML = "";
-  myMoviesPro.forEach(film => {
-    containerFilms.innerHTML += `<div class = "subContenedorDirector">
-    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
-    <p class="titleDirector"> ${film.title}</p>
-    <p class="parrafoDirector">Año:"${film.release_date}"</p>
-    <p class="parrafoDirector">Director:"${film.director}"</p>
-    <p class="parrafoDirector">Productor: "${film.producer}"</p>
-    </div>
-    </div> ` ;
-  })})
-
-/****************************** */
-//ORDENAR DE  A a la z
-
-const ordersAz = document.querySelector('.filters-Az');
-ordersAz.addEventListener('change', (event) =>{
-  let ordenar;
-  if (event.target.value === "A-Z"){
-    ordenar = orderAz(data.films)
-  }
-  else {
-    ordenar= orderZa(data.films)
-  }
-  containerFilms.innerHTML = "";
-  ordenar.forEach(film=>{
-    containerFilms.innerHTML += `<div class = "subContenedorDirector">
-    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
-    <p class="titleDirector"> ${film.title}</p>
-    <p class="parrafoDirector">Año:"${film.release_date}"</p>
-    <p class="parrafoDirector">Director:"${film.director}"</p>
-    <p class="parrafoDirector">Productor: "${film.producer}"</p>
-    </div>
-    </div> ` ;
   })
-})
-//ORDENAR por Año Antiguo-Reciente****************************************
+
+/*********************************************************/
+  btnhome.addEventListener("click", () => {
+    header.className = "enabled";
+    contenedorPaginas.className = "disabled";
+    const videoportada = document.getElementById('videoportada');
+    videoportada.play();
+  });
+
+ /*****  Div para contenido de cada pelicula FUNCION    *************/
+ /*const headerMain = document.getElementById('header')*/
+ const footerMain = document.getElementById('footer');
+ /*const containerMain = document.getElementById('maincontaniner');*/
+ const body = document.querySelector('body');
+ 
+ 
+ const newContainer = function (e) {
+  e.preventDefault;
+  containerFilms.innerHTML = "";
+  /*window.scroll(0, 0);
+  headerMain.classList.remove('header');
+  containerMain.style.display = 'none';*/
+
+/**********************************************/
+
+  let peliContainer = document.createElement("div");
+  peliContainer.classList.add('movie__container');
+  let sectionFilm = document.createElement("section");
+  sectionFilm.classList.add('movie__section');
+
+  sectionFilm.innerHTML =`<h3>${e.title}</h3>
+  <img class="imgDirector"src="${e.poster}" alt="imagen" >  
+  <p class="titleDirector"> ${e.title}</p>
+  <p class="parrafoDirector">Year:"${e.release_date}"</p>
+  <p class="parrafoDirector">Director:"${e.director}"</p>
+
+  <p class="parrafoDirector">Producer: "${e.producer}"</p> 
+  <a class="movie__sectionFilm__button" href="index.html">RETURN</a>` ;
+
+  /****************************************/
+  let tabContainer = document.createElement("section");
+  tabContainer.classList.add('movie__mainContent');
+
+/*****  DESCRIPCION  ***************************** */
+  let inputDescription = document.createElement('input');
+  let labelDescription = document.createElement('label');
+  let divDescription = document.createElement('div');
+  divDescription.classList.add('tab');
+
+  inputDescription.setAttribute("type", "radio");
+  inputDescription.setAttribute("name", "tabs");
+  inputDescription.setAttribute("id", "tabone");
+  inputDescription.setAttribute("checked", "checked");
+  labelDescription.setAttribute("for", "tabone");
+
+  labelDescription.innerHTML = `Description`;
+  divDescription.classList.add('movie__description')
+  divDescription.innerHTML = `<p>${e.description}</p>`;
+
+/*****  PERSONAJES ***************************** */
+  const characters = e.people;
+  let inputCharacters = document.createElement('input');
+  let labelCharacters = document.createElement('label');
+  let divCharacters = document.createElement('div'); 
+  divCharacters.classList.add('tab');
+
+  let divCharactersSub = document.createElement('div');
+  divCharactersSub.classList.add('movie__mainContent__card');
+
+  inputCharacters.setAttribute("type", "radio");
+  inputCharacters.setAttribute("name", "tabs");
+  inputCharacters.setAttribute("id", "tabtwo");
+  labelCharacters.setAttribute("for", "tabtwo");
+
+  labelCharacters.innerHTML = `Characters`;
+  let movieDiv = document.createElement('div');
+  movieDiv.classList.add('movie__div');
+
+  
+  for (let i = 0; i < characters.length; i++) {
+      movieDiv.innerHTML += `
+      <img class="movie__img" src="${characters[i].img}" alt="Imagen">`;
+
+      let movieImg = movieDiv.querySelector('.movie__img');
+
+      //modal : 
+      let divCharacters = document.createElement('div');
+      divCharacters.classList.add('overlay');
+      divCharacters.setAttribute('id', 'overlay');
+
+
+      let divPopupCharacters = document.createElement('div');
+      divPopupCharacters.classList.add('popup');
+      divPopupCharacters.setAttribute('id', 'popup');
+
+      let divPopupImgCharacters = document.createElement('img');
+      divPopupImgCharacters.setAttribute('src', characters[i].img);
+      divPopupImgCharacters.setAttribute('alt', "imagen  personaje");
+
+      let divPopupDescriptionChar = document.createElement('div');
+      divPopupDescriptionChar.classList.add('character__description');
+
+      let datePopupH5Char = document.createElement('h5');
+      datePopupH5Char.innerHTML = `${characters[i].name}`;
+      let datePopupAgeChar = document.createElement('p');
+      datePopupAgeChar.innerHTML = `<spam class="black">Age:</spam> ${characters[i].age}`;
+      let datePopupGenderChar = document.createElement('p');
+      datePopupGenderChar.innerHTML = `<spam class="black">Gender:</spam> ${characters[i].gender}`;
+      let datePopupEyeChar = document.createElement('p');
+      datePopupEyeChar.innerHTML = `<spam class="black">Eye color:</spam> ${characters[i].eye_color}`;
+      let datePopupHair = document.createElement('p');
+      datePopupHair.innerHTML = `<spam class="black">Hair_color:</spam> ${characters[i].hair_color}`;
+      let datePopupspecieChar = document.createElement('p');
+      datePopupspecieChar.innerHTML = `<spam class="black">Specie:</spam> ${characters[i].specie}`;
+
+      let buttonClose = document.createElement('button');
+      buttonClose.classList.add('btn__cerrar__popup');
+      buttonClose.innerHTML = 'CLOSE';
+
+      divCharactersSub.appendChild(movieImg);
+      divCharactersSub.appendChild(divCharacters);
+      divCharacters.appendChild(divPopupCharacters);
+      divPopupCharacters.appendChild(divPopupImgCharacters);
+      divPopupCharacters.appendChild(divPopupDescriptionChar);
+      divPopupDescriptionChar.appendChild(datePopupH5Char);
+      divPopupDescriptionChar.appendChild(datePopupAgeChar);
+      divPopupDescriptionChar.appendChild(datePopupGenderChar);
+      divPopupDescriptionChar.appendChild(datePopupEyeChar);
+      divPopupDescriptionChar.appendChild(datePopupHair);
+      divPopupDescriptionChar.appendChild(datePopupspecieChar);
+      divPopupDescriptionChar.appendChild(buttonClose);
+
+        //ABRIR Y CERRAR POP UP / MODAL
+        movieImg.addEventListener("click", function (e) {
+          e.preventDefault();
+          divCharacters.classList.add("active");
+          divPopupCharacters.classList.add("active");
+      });
+        buttonClose.addEventListener("click", function (e) {
+          e.preventDefault();
+          divCharacters.classList.remove("active");
+          divPopupCharacters.classList.remove("active");
+      });
+    }/*cierra for*/
+
+    /********************  Vehiculos y locación **************/
+
+    let location = e.locations;
+    let vehicle= e.vehicles;
+
+    let inputOther = document.createElement('input');
+    let labelOther = document.createElement('label');
+    let divOther = document.createElement('div');
+    let divOtherSub = document.createElement('div');
+
+    divOtherSub.classList.add('movie__mainContent__card');
+    divOther.classList.add('tab');
+    inputOther.setAttribute("type", "radio");
+    inputOther.setAttribute("name", "tabs");
+    inputOther.setAttribute("id", "tabthree");
+    labelOther.setAttribute("for", "tabthree");
+    labelOther.innerHTML = `Location and Vehicle`;
+
+ 
+  let movieDivLocation = document.createElement('div');
+  movieDivLocation.classList.add('movie__div');
+
+    if (location.length === 0 && vehicle.length === 0) {
+      divOtherSub.innerHTML = `<div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="Imagen no disponible"></div>`
+    } else {
+      for (let i = 0; i < location.length; i++) {
+          movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
+
+          let movieDivImg = movieDivLocation.querySelector('.movie__img');
+         
+           // residentes de locaciones
+           const arrayResidents = location[i].residents;
+           let arrayNamesResidents = arrayResidents.map((habitantes) => {
+               if (habitantes === "TODO") {
+                   return "Todos los personajes";
+               } else {
+                   return habitantes.name;
+               }
+           });
+           // POPUP / MODAL
+           let divPopupContainer = document.createElement('div');
+           divPopupContainer.classList.add('overlay');
+           divPopupContainer.setAttribute('id', 'overlay');
+           let divPopup = document.createElement('div');
+           divPopup.classList.add('popup');
+           divPopup.setAttribute('id', 'popup');
+           let divPopupImg = document.createElement('img');
+           divPopupImg.setAttribute('src', location[i].img);
+           divPopupImg.setAttribute('alt', "imagen del personaje");
+
+           let divPopupDescription = document.createElement('div');
+           divPopupDescription.classList.add('character__description');
+           let datePopupH5 = document.createElement('h5');
+           datePopupH5.innerHTML = `${location[i].name}`;
+           let datePopupClimate = document.createElement('p');
+           datePopupClimate.innerHTML = `<spam class="black">Clima:</spam> ${location[i].climate}`;
+           let datePopupTerrain = document.createElement('p');
+           datePopupTerrain.innerHTML = `<spam class="black">Terreno:</spam> ${location[i].terrain}`;
+           let datePopupWater = document.createElement('p');
+           datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
+           let datePopupresidents = document.createElement('p');
+           datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${arrayNamesResidents}`;
+
+           let buttonClose = document.createElement('button');
+           buttonClose.classList.add('btn__cerrar__popup');
+           buttonClose.innerHTML = 'CLOSE';
+
+           divOtherSub.appendChild(movieDivImg);
+           divOtherSub.appendChild(divPopupContainer);
+           divPopupContainer.appendChild(divPopup);
+           divPopup.appendChild(divPopupImg);
+           divPopup.appendChild(divPopupDescription);
+           divPopupDescription.appendChild(datePopupH5);
+           divPopupDescription.appendChild(datePopupClimate);
+           divPopupDescription.appendChild(datePopupTerrain);
+           divPopupDescription.appendChild(datePopupWater);
+           divPopupDescription.appendChild(datePopupresidents);
+           divPopupDescription.appendChild(buttonClose);
+           
+          //ABRIR Y CERRAR POPUP / MODAL
+          movieDivImg.addEventListener("click", function (e) {
+            e.preventDefault();
+            divPopupContainer.classList.add("active");
+            divPopup.classList.add("active");
+        });
+        buttonClose.addEventListener("click", function (e) {
+            e.preventDefault();
+            divPopupContainer.classList.remove("active");
+            divPopup.classList.remove("active");
+        });
+
+    }
+     for (let i = 0; i < vehicle.length; i++) {
+       movieDivLocation.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">`;
+
+       let movieVehicle = movieDivLocation.querySelector('.movie__img');   
+
+      // POPUP / MODAL
+      let divPopupContainer = document.createElement('div');
+      divPopupContainer.classList.add('overlay');
+      divPopupContainer.setAttribute('id', 'overlay');
+      let divPopup = document.createElement('div');
+      divPopup.classList.add('popup');
+      divPopup.setAttribute('id', 'popup');
+      let divPopupImg = document.createElement('img');
+      divPopupImg.setAttribute('src', vehicle[i].img);
+      divPopupImg.setAttribute('alt', "imagen del personaje");
+      let divPopupDescription = document.createElement('div');
+      divPopupDescription.classList.add('character__description');
+      let datePopupH5 = document.createElement('h5');
+      datePopupH5.innerHTML = `${vehicle[i].name}`;
+      let datepopupDescripcion = document.createElement('p');
+      datepopupDescripcion.innerHTML = `<spam class="black">Descripción:</spam> ${vehicle[i].description}`;
+      let datePopupClass = document.createElement('p');
+      datePopupClass.innerHTML = `<spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}`;
+      let datePopuplength = document.createElement('p');
+      datePopuplength.innerHTML = `<spam class="black">Length:</spam> ${vehicle[i].length}`;
+      let datePopupPiloto = document.createElement('p');
+      datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
+
+      let buttonClose = document.createElement('button');
+      buttonClose.classList.add('btn__cerrar__popup');
+      buttonClose.innerHTML = 'CERRAR';
+
+      divOtherSub.appendChild(movieVehicle);
+      divOtherSub.appendChild(divPopupContainer);
+      divPopupContainer.appendChild(divPopup);
+      divPopup.appendChild(divPopupImg);
+      divPopup.appendChild(divPopupDescription);
+      divPopupDescription.appendChild(datePopupH5);
+      divPopupDescription.appendChild(datepopupDescripcion);
+      divPopupDescription.appendChild(datePopupClass);
+      divPopupDescription.appendChild(datePopuplength);
+      divPopupDescription.appendChild(datePopupPiloto);
+      divPopupDescription.appendChild(buttonClose);
+
+      //ABRIR Y CERRAR POP UP / MODAL
+      movieVehicle.addEventListener("click", function (e) {
+          e.preventDefault();
+          divPopupContainer.classList.add("active");
+          divPopup.classList.add("active");
+      });
+      buttonClose.addEventListener("click", function (e) {
+          e.preventDefault();
+          divPopupContainer.classList.remove("active");
+          divPopup.classList.remove("active");
+      });
+
+    }
+    
+  }
+   // Despliega en la pantalla el contenedor del Main
+   containerFilms.appendChild(peliContainer);
+   // Despliega en la pantalla el contenedor del sectionFilm.
+   peliContainer.appendChild(sectionFilm);
+   // Despliega en la pantalla el contenedor donde iras las pestallas tab.
+   peliContainer.appendChild(tabContainer);
+   // Despliegue sección descripción:
+   tabContainer.appendChild(inputDescription);
+   tabContainer.appendChild(labelDescription);
+   tabContainer.appendChild(divDescription);
+   //Despliegue sección imagenes personajes:
+   tabContainer.appendChild(inputCharacters);
+   tabContainer.appendChild(labelCharacters);
+   tabContainer.appendChild(divCharacters);
+   //divCharacters.appendChild(divFilterAndCount);
+   divCharacters.appendChild(divCharactersSub);
+   //Despliegue sección vehiculos y locación:
+   tabContainer.appendChild(inputOther);
+   tabContainer.appendChild(labelOther);
+   tabContainer.appendChild(divOther);
+   divOther.appendChild(divOtherSub);
+   // Despliega el footer
+   body.appendChild(footerMain);
+}
+
+ 
+
+/***************** Div para cada pelicula *******************/
+
+  fetch ('./data/ghibli/ghibli.json')
+  .then(response => response.json())
+  .then(data => {
+   const dataFilms = data.films;
+   
+   const movie = (dataFilms) => {
+    dataFilms.forEach(film => {
+      const div = document.createElement('div');
+      div.classList.add('subContenedorPelicula');
+      div.innerHTML= `<img class="imgDirector"src="${film.poster}" alt="imagen" >  
+      <p class="titleDirector"> ${film.title}</p>
+      <p class="parrafoDirector">Year:"${film.release_date}"</p>
+      <p class="parrafoDirector">Director:"${film.director}"</p>
+      <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
+     
+      containerFilms.appendChild(div);
+  
+    /*****evento para cada pelicula */
+      div.addEventListener("click", () => {
+       newContainer(film);
+      });
+    });
+   };
+   movie(dataFilms);
+   
+   /**************Filtrar por Director******/
+   filtersDirector.addEventListener("change", () => {
+    const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
+    containerFilms.innerHTML = "";
+    movie(myMoviesDirec);
+    }),
+    
+    /**************Filtrar por Productor******/
+   filtersProducer.addEventListener("change", () => {
+    const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
+    containerFilms.innerHTML = "";
+    movie(myMoviesPro);
+    });
+    
+    /*******Ordenar A-Z********** */ 
+   const ordersAz = document.querySelector('.filters-Az');
+   ordersAz.addEventListener('change', (event) =>{
+   let ordenar;
+   if (event.target.value === "A-Z"){
+    ordenar = orderAz(data.films)
+   }
+   else {
+    ordenar= orderZa(data.films)
+   }
+   containerFilms.innerHTML = "";
+   movie(ordenar);
+   });
+
+/*******Ordenar Antiguo - Reciente ********** */
 const ordersAnRe = document.querySelector('.filters-year');
 ordersAnRe.addEventListener('change', (event) =>{
   let ordenarAsc;
@@ -147,45 +407,16 @@ ordersAnRe.addEventListener('change', (event) =>{
     ordenarAsc= sortByDesc(data.films)
   }
   containerFilms.innerHTML = "";
-  ordenarAsc.forEach(film=>{
-    containerFilms.innerHTML += `<div class = "subContenedorDirector">
-    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
-    <p class="titleDirector"> ${film.title}</p>
-    <p class="parrafoDirector">Año:"${film.release_date}"</p>
-    <p class="parrafoDirector">Director:"${film.director}"</p>
-    <p class="parrafoDirector">Productor: "${film.producer}"</p>
-    </div>
-    </div> ` ;
-  })
-})
+  movie(ordenarAsc);
+ })
+}) /*then*/
 
-//**********CRRUSEL************************
-/*const imgcarrusel = ['/src/imagenes/img1.jpg', '/src/imagenes/img2.jpg', '/src/imagenes/img3.jpg', '/src/imagenes/img4.jpg'],
-     cont = 0;
-    
-function carrusel(contenedor){
-  contenedor.addEventListener('click', e => {
-    let atras = contenedor.querySelector('.atras');
-        adelante = contenedor.querySelector('.adelante');
-        img = contenedor.querySelector('.imgcarrusel');
-        tgt = e.target;
 
-    if(tgt == atras){
-      if(cont > 0){
-        img.src = imagenes[cont - 1];
-        cont--;
-      } else {
-        img.src = imagenes[imagenes.length - 1];
-        cont = imagenes.length - 1;
-      }
-    } else if(tgt == adelante){
-      if(cont < imagenes.length - 1){
-        img.src = imagenes[cont + 1];
-        cont++;
-      } else {
-        img.src = imagenes[0];
-        cont = 0;
-      }
-  }}
-)
-}*/
+
+
+
+
+
+
+
+

@@ -43,3 +43,82 @@ contenedor.innerHTML+=card
 
 console.log(datadirector)
 })*/
+
+
+/********************************************************************* */
+
+
+/*//ORDENAR DE  A a la z
+
+const ordersAz = document.querySelector('.filters-Az');
+ordersAz.addEventListener('change', (event) =>{
+  let ordenar;
+  if (event.target.value === "A-Z"){
+    ordenar = orderAz(data.films)
+  }
+  else {
+    ordenar= orderZa(data.films)
+  }
+  containerFilms.innerHTML = "";
+  ordenar.forEach(film=>{
+    containerFilms.innerHTML += `<div class = "subContenedorDirector">
+    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
+    <p class="titleDirector"> ${film.title}</p>
+    <p class="parrafoDirector">Año:"${film.release_date}"</p>
+    <p class="parrafoDirector">Director:"${film.director}"</p>
+    <p class="parrafoDirector">Productor: "${film.producer}"</p>
+    </div>
+    </div> ` ;
+  })
+})*/
+
+//ORDENAR por Año Antiguo-Reciente****************************************
+/*const ordersAnRe = document.querySelector('.filters-year');
+ordersAnRe.addEventListener('change', (event) =>{
+  let ordenarAsc;
+  if (event.target.value === "Antiguo"){
+    ordenarAsc = sortByAsc(data.films)
+  }
+  else {
+    ordenarAsc= sortByDesc(data.films)
+  }
+  containerFilms.innerHTML = "";
+  ordenarAsc.forEach(film=>{
+    containerFilms.innerHTML += `<div class = "subContenedorDirector">
+    <img class="imgDirector"src="${film.poster}" alt="imagen" >  <div class = "directorDescripcion">
+    <p class="titleDirector"> ${film.title}</p>
+    <p class="parrafoDirector">Año:"${film.release_date}"</p>
+    <p class="parrafoDirector">Director:"${film.director}"</p>
+    <p class="parrafoDirector">Productor: "${film.producer}"</p>
+    </div>
+    </div> ` ;
+  })
+})*/
+
+
+
+/******   CREACIÓN DE CARD PARA CADA POSTER***** */
+
+/*const contenedorFilm = (films) =>{
+
+  for ( let i = 0 ; i < films.length; ++i){
+    document.querySelector(".container-films").innerHTML += `<div class="subContainerFilms">
+    <div id="${data[i].id}" class="containerImg">
+        <img src="${data[i].poster}">
+        <div class="descrpcion">
+        <p>${data[i].title}</p>
+        <p>${data[i].director}</p>
+        <p>${data[i].producer}</p>
+        <p>${data[i].release_date}</p>
+        </div>
+        </div>
+        </div>`;
+  }
+
+  document.querySelectorAll('.containerImg').forEach(item => {
+    item.addEventListener('click', () => {
+        let film_id = item.id;
+        modalDisplay(film_id);
+    })
+});
+};*/
