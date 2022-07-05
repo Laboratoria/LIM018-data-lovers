@@ -9,11 +9,6 @@ const personajes = data.results;
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
 
-<<<<<<< HEAD
-//select por especies
-const selectEspecies = document.querySelector("#selectEspecie")
-selectEspecies.addEventListener("change", (event) => {
-=======
 const orderingNames = document.querySelector("#selectPersonajes");
 orderingNames.addEventListener("change", (event) => {
  todoshumanos.innerHTML="";
