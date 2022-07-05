@@ -1,5 +1,5 @@
 
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, filtredFilm, compute } from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -18,13 +18,11 @@ const buttonGraphic = document.getElementById('buttonGraphic')
 const boxGraphic = document.getElementById('box_graphic')
 const footerr = document.getElementById('footer')
 
-header.className = "enabled";
 
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
   footerr.className = "enabled";
-  containerFilms.innerHTML = "";
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
   cajaFiltrado(todoFilm)
@@ -48,6 +46,7 @@ btnpeliculas.addEventListener("click", () => {
 btnhome.addEventListener("click", () => {
   header.className = "enabled";
   contenedorPaginas.className = "disabled";
+  footerr.className = "disabled";
   const videoportada = document.getElementById('videoportada');
   videoportada.play();
   boxGraphic.style.display = 'none';
@@ -57,9 +56,14 @@ btnhome.addEventListener("click", () => {
 /*------------------------------- BOTON DE GRAFICOS--------------------------- */
 
 buttonGraphic.addEventListener('click', ()=>{
-  containerFilms.className = "disabled";
-  boxGraphic.className = "enabled";
-});
+  containerFilms.className="disabled";
+  boxGraphic.className="enabled";
+
+// containerFilms.classList.remove("enabled");
+//boxGraphic.classList.add("enabled");
+// boxGraphic.classList.remove( "disabled");
+
+ });
 
 
 //******************************************************************************
@@ -69,9 +73,12 @@ const cajaFiltrado = (films) =>{
 
   for ( let i = 0 ; i < films.length; ++i){
 
-    document.querySelector(".container-films").innerHTML +=
-     `<div class = "subContenedorDirector">
-        <div id="${films[i].id}" class="containerImg">
+
+    const subContenedor = document.createElement("div")
+    subContenedor.classList.add("subContenedorDirector")
+    subContenedor.id= `${films[i].id} `
+    subContenedor.innerHTML =
+     `<div id="conteine" class="containerImg">
           <img class="imgDirector" src="${films[i].poster}">
           <div class = "directorDescripcion">
             <p class="titleDirector">${films[i].title}</p>
@@ -79,17 +86,14 @@ const cajaFiltrado = (films) =>{
             <p class="parrafoDirector">Producer: ${films[i].producer}</p>
             <p class="parrafoDirector">Year: ${films[i].release_date}</p>
           </div>
-        </div>
       </div>`;
+      document.querySelector(".container-films").appendChild(subContenedor)
 
-    const cajapersonajes= document.getElementById(films[i].id);
-
-    cajapersonajes.addEventListener('click',(e)=>{
-      //console.log(e)
-      console.log(cajapersonajes.value)
-      const descripcionBox = filtredFilm(todoFilm,cajapersonajes.value);
-        descripcionPersonaje.innerHTML = "";
-        descripcionBox.forEach(console.log(alert("pruebaa")));
+    subContenedor.addEventListener('click',(e)=>{
+      console.log('click')
+      //const descripcionBox = filtredFilm(todoFilm,cajapersonajes.value);
+        //descripcionPersonaje.innerHTML = "";
+        //descripcionBox.forEach(console.log(alert("pruebaa")));
         //filtradoPersonajes(descripcionBox)
         //descripcionBox.map( function(){
          // console.log(alert("hola"))};
@@ -171,7 +175,7 @@ let scoreBestMovies = elementMovies.map((elem)=>{
   let score = elem.rt_score;
   return score;
 })
-
+/*----------------------------*/
 
 const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
