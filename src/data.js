@@ -54,3 +54,22 @@ export function sortByDesc (data) {
   }) 
 }
 
+ // GRAFICOS
+
+ export const compute = (data)=>{
+  let scoreCompute = data.filter(films => films.rt_score >= 96);
+  return scoreCompute;
+ }
+
+
+// ****** BUSCAR ****
+
+export const searchData = (data, input) => {
+  let searchResults = [];
+  data.filter((x) => {
+    if (x.films.toLowerCase().startsWith(input)) {
+      searchResults.push(x);
+    }
+  });
+  return searchResults;
+};

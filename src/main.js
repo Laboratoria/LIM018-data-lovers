@@ -1,7 +1,7 @@
 
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute} from './data.js';
 
-//import data from './data/ghibli/ghibli.js';
+import data from './data/ghibli/ghibli.js';
 
 const filtersDirector = document.getElementById("filtersDirector");
 const filtersProducer = document.getElementById("filtersProducer");
@@ -411,6 +411,66 @@ ordersAnRe.addEventListener('change', (event) =>{
  })
 }) /*then*/
 
+
+
+/*------------------------------- BOTON DE GRAFICOS--------------------------- */
+const buttonGraphic = document.getElementById('buttonGraphic')
+const boxGraphic = document.getElementById('box_graphic')
+/*const footerr = document.getElementById('footer')*/
+
+buttonGraphic.addEventListener('click', ()=>{
+  containerFilms.className = "disabled";
+  boxGraphic.className = "enabled";
+});
+// graficoss*****************
+const elementMovies = compute(data.films);
+
+let nameBestMovies = elementMovies.map((elem)=>{
+  let titleBestMovies = elem.title;
+  return titleBestMovies;
+})
+
+let scoreBestMovies = elementMovies.map((elem)=>{
+  let score = elem.rt_score;
+  return score;
+})
+
+
+const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: nameBestMovies,  //eje en X
+      datasets: [{
+          label: 'score',   //eje en y
+          data: scoreBestMovies,
+          backgroundColor: [
+            "#665191",
+            "#a05195",
+            "#d45087",
+            "#f95d6a",
+            "#ff7c43",
+          ],
+          borderColor: [
+            "#665191",
+            "#a05195",
+            "#d45087",
+            "#f95d6a",
+            "#ff7c43",
+          ],
+          borderWidth: 3,
+          borderRadius: 1
+        }]
+    },
+    options: {
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      }
+  }
+
+  })
 
 
 

@@ -498,3 +498,83 @@ display: none;
 }
 
 
+/*____________________ GRAFICOS____________________*/
+.box_graphic{
+  background-color: #ffffff6e;
+  width: 82%;
+  height: auto;
+  margin-right: 8%;
+  margin-left: 8%;
+  border-radius: 20px;
+  border: #2fb1c2 2px solid;
+  display: none;
+}
+.box_title_graphic{
+  display: flex;
+  justify-content: center;
+
+}
+.title_graphic{
+  padding-top: 2%;
+  color: #2fb1c2;
+  font-size: 300%;
+
+}
+
+.graphic{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img_graphic_box{
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.img_graphic{
+  width: 90%;
+}
+.graphic_canvas{
+  width: 500px;
+  background-color: #ffffff;
+  padding: 3%;
+  border-radius: 20px;
+  margin-bottom: 2%;
+}
+
+/* _______ CAMBIOS PARA CELULAR --- pantalla de maximo 576 px */
+@media screen and (max-width: 575.98px) {
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .graphic_canvas{
+    width: 320px;
+  }
+  /*.myChart{
+    height: 100px;
+  }*/
+}
+
+@media only screen and (max-width: 991.98px){
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  /*.graphic_canvas{
+    width: 450px;
+  }*/
+}
+
+footer{
+  background-color: #2fb1c2;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  display: none;
+}
