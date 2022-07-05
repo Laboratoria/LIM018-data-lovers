@@ -5,6 +5,6 @@ export const filterEspecies = (datos, gato) => {
 
  
 export const filtrarPersonajes = (datos ,nombre) => {
-
-  return datos.filter(e => e.name==nombre);
+  return datos.sort(e.name[0]);
 };
+
