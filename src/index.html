@@ -22,8 +22,8 @@
   <main id ="maincontaniner" >
     <div id="contenedorPaginas" class="contenedor-paginas" >
 
-     <h2 id="peliculasAnimadas" class= "peliculas-animadas">PELICULAS ANIMADAS </h2>
-    
+     <h2 id="peliculasAnimadas" class= "peliculas-animadas">ANIMATED FILMS</h2>
+
 
       <div class="filters" id="filtrados">
         <button type ="menu" id="home" class="home">Home</button>
@@ -54,30 +54,41 @@
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A </option>
         </select>
-        <div class="search">
-          <input type="search" placeholder="Search . . ." id="inputSearch" class="inputSearch">
-        </div>
-    </div>
-       
-     <div class="infoForFilm">
-      <div id="imagenFilmSelec"></div>
-      <div id="tabsFilmSelec"></div>
 
-
-
+        <button type ="menu" id="buttonGraphic" class="buttonGraphic">Fun Facts</button>
+        <!--<div class="search">
+          <input type="search" id="inputSearch" class="inputSearch" placeholder="Search . . ." >
+        </div>-->
      </div>
-     <div class="wrapper" >
+
+     <div class="wrapper">
         <div id="containerFilms" class="container-films"></div>
+
+
       </div>
     </div>
-       
-    
-    
+
+    <!-- GRAFICO -->
+    <section class="box_graphic" id="box_graphic">
+      <div class="box_title_graphic">
+        <h2 class="title_graphic"> Las mejores 5 peliculas</h2>
+
+      </div>
+      <div class="graphic">
+        <div class="img_graphic_box">
+          <img class="img_graphic" src="/src/imagenes/giphy (1).gif" alt="toroto">
+        </div>
+        <div class="graphic_canvas">
+          <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 50vh; "></canvas>
+        </div>
+      </div>
+    </section>
   </main>
   <footer id="footer">
-    <p>Developed by Stefani and Denis</p>
+    <p>Copyright &copy; 2022 - by Denis and Stefani</p>
   </footer>
   <script src="main.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
 </body>
 
 </html>
