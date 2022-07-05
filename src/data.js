@@ -4,7 +4,16 @@ export const filterEspecies = (datos, gato) => {
 };
 
  
-export const filtrarPersonajes = (datos ,nombre) => {
+export const sort = (a, b) => {
+  if (a < b){
+return -1; 
 
-  return datos.filter(e => e.name==nombre);
+  }
+
+  if (a > b){
+    return 1; 
+  }
+  return 0 ;
 };
+
+
