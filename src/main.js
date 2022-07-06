@@ -1,6 +1,5 @@
-
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
-import data from './data/ghibli/ghibli.js';
+/*import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
+/import data from './data/ghibli/ghibli.js';
 
 const dataFilms = data.films;
 
@@ -12,35 +11,35 @@ const contenedorPaginas = document.getElementById("contenedorPaginas");
 const btnhome = document.getElementById("home");
 const containerFilms = document.getElementById('containerFilms');
 const buttonGraphic = document.getElementById('buttonGraphic');
-const boxGraphic = document.getElementById('box_graphic');
+const boxGraphic = document.getElementById('box_graphic'); */
 
 
 /* _____________    BOTON GO ______________ */
 
-btnpeliculas.addEventListener("click", () => {
+/*btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
   movie(dataFilms);
-  })
+  })*/
 
 /*_____________ BOTON HOME _________________*/
 
-  btnhome.addEventListener("click", () => {
+  /*btnhome.addEventListener("click", () => {
     header.className = "enabled";
     contenedorPaginas.className = "disabled";
     const videoportada = document.getElementById('videoportada');
     boxGraphic.className = "disabled"; /// se agrego aqui
     videoportada.play();
 
-  });
+  });*/
 
 
 /***************** Div para cada pelicula *******************/
 
 
-   const movie = (dataFilms) => {
+   /*const movie = (dataFilms) => {
     dataFilms.forEach(film => {
       const div = document.createElement('div');
       div.classList.add('subContenedorPelicula');
@@ -50,10 +49,10 @@ btnpeliculas.addEventListener("click", () => {
       <p class="parrafoDirector">Director:"${film.director}"</p>
       <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
 
-      containerFilms.appendChild(div);
+      containerFilms.appendChild(div);*/
 
     /*****evento para cada pelicula */
-      div.addEventListener("click", () => {
+     /* div.addEventListener("click", () => {
         alert ("FUNCIONAAA")
        //newContainer(film);
       });
@@ -63,24 +62,24 @@ btnpeliculas.addEventListener("click", () => {
    const newContainer = (dataFilms) => {
 
 
-   }
+   }*/
 
    /**************Filtrar por Director******/
-   filtersDirector.addEventListener("change", () => {
+   /*filtersDirector.addEventListener("change", () => {
     const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
     containerFilms.innerHTML = "";
     movie(myMoviesDirec);
-    }),
+    }),*/
 
     /**************Filtrar por Productor******/
-   filtersProducer.addEventListener("change", () => {
+   /*filtersProducer.addEventListener("change", () => {
     const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
     containerFilms.innerHTML = "";
     movie(myMoviesPro);
-    });
+    });*/
 
     /*******Ordenar A-Z********** */
-   const ordersAz = document.querySelector('.filters-Az');
+  /* const ordersAz = document.querySelector('.filters-Az');
    ordersAz.addEventListener('change', (event) =>{
    let ordenar;
    if (event.target.value === "A-Z"){
@@ -91,10 +90,10 @@ btnpeliculas.addEventListener("click", () => {
    }
    containerFilms.innerHTML = "";
    movie(ordenar);
-   });
+   });*/
 
 /*******Ordenar Antiguo - Reciente ********** */
-const ordersAnRe = document.querySelector('.filters-year');
+/*const ordersAnRe = document.querySelector('.filters-year');
 ordersAnRe.addEventListener('change', (event) =>{
   let ordenarAsc;
   if (event.target.value === "Antiguo"){
@@ -105,11 +104,14 @@ ordersAnRe.addEventListener('change', (event) =>{
   }
   containerFilms.innerHTML = "";
   movie(ordenarAsc);
- })
+ })*/
 
 
 
  const dtaguibli = data.films
+ const buttonGraphic = document.getElementById('buttonGraphic');
+const boxGraphic = document.getElementById('box_graphic');
+const containerFilms = document.getElementById('containerFilms');
 /*_______________funcionalidad de boton graphic ______________*/
 
 buttonGraphic.addEventListener('click', ()=>{
