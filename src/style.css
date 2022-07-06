@@ -148,7 +148,7 @@ h3 {
   margin: 60px;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 70px;
+  gap: 70px;
 }
 
 .title-pokemon {
