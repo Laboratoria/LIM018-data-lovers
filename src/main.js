@@ -1,5 +1,5 @@
-/*import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
-/import data from './data/ghibli/ghibli.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
+import data from './data/ghibli/ghibli.js';
 
 const dataFilms = data.films;
 
@@ -11,35 +11,36 @@ const contenedorPaginas = document.getElementById("contenedorPaginas");
 const btnhome = document.getElementById("home");
 const containerFilms = document.getElementById('containerFilms');
 const buttonGraphic = document.getElementById('buttonGraphic');
-const boxGraphic = document.getElementById('box_graphic'); */
+const boxGraphic = document.getElementById('box_graphic');
 
 
 /* _____________    BOTON GO ______________ */
 
-/*btnpeliculas.addEventListener("click", () => {
+btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
+  containerFilms.innerHTML = "";
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
   movie(dataFilms);
-  })*/
+  })
 
-/*_____________ BOTON HOME _________________*/
+/*_____________ BOTON HOME  - return _________________*/
 
-  /*btnhome.addEventListener("click", () => {
+  btnhome.addEventListener("click", () => {
     header.className = "enabled";
     contenedorPaginas.className = "disabled";
     const videoportada = document.getElementById('videoportada');
     boxGraphic.className = "disabled"; /// se agrego aqui
     videoportada.play();
 
-  });*/
+  });
 
 
 /***************** Div para cada pelicula *******************/
 
 
-   /*const movie = (dataFilms) => {
+   const movie = (dataFilms) => {
     dataFilms.forEach(film => {
       const div = document.createElement('div');
       div.classList.add('subContenedorPelicula');
@@ -49,37 +50,46 @@ const boxGraphic = document.getElementById('box_graphic'); */
       <p class="parrafoDirector">Director:"${film.director}"</p>
       <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
 
-      containerFilms.appendChild(div);*/
+      containerFilms.appendChild(div);
 
     /*****evento para cada pelicula */
-     /* div.addEventListener("click", () => {
+      div.addEventListener("click", () => {
         alert ("FUNCIONAAA")
-       //newContainer(film);
+       newContainer(film);
       });
     });
    };
 
-   const newContainer = (dataFilms) => {
+   const newContainer = (e) => {
+    containerFilms.innerHTML="";
 
+    /*_________ SECCION DE POSTER Y PARRAFOS _______ */
 
-   }*/
+    let sectionFilm = document.createElement("section");
+    sectionFilm.classList.add('movie_section');
+    containerFilms.appendChild(sectionFilm);
+
+    sectionFilm.innerHTML=`<h3>${e.title}</h3>
+    <img class='imgdirector' src='${e.poster}'/>`
+
+   }
 
    /**************Filtrar por Director******/
-   /*filtersDirector.addEventListener("change", () => {
+   filtersDirector.addEventListener("change", () => {
     const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
     containerFilms.innerHTML = "";
     movie(myMoviesDirec);
-    }),*/
+    }),
 
     /**************Filtrar por Productor******/
-   /*filtersProducer.addEventListener("change", () => {
+   filtersProducer.addEventListener("change", () => {
     const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
     containerFilms.innerHTML = "";
     movie(myMoviesPro);
-    });*/
+    });
 
     /*******Ordenar A-Z********** */
-  /* const ordersAz = document.querySelector('.filters-Az');
+  const ordersAz = document.querySelector('.filters-Az');
    ordersAz.addEventListener('change', (event) =>{
    let ordenar;
    if (event.target.value === "A-Z"){
@@ -90,10 +100,10 @@ const boxGraphic = document.getElementById('box_graphic'); */
    }
    containerFilms.innerHTML = "";
    movie(ordenar);
-   });*/
+   });
 
 /*******Ordenar Antiguo - Reciente ********** */
-/*const ordersAnRe = document.querySelector('.filters-year');
+const ordersAnRe = document.querySelector('.filters-year');
 ordersAnRe.addEventListener('change', (event) =>{
   let ordenarAsc;
   if (event.target.value === "Antiguo"){
@@ -104,14 +114,12 @@ ordersAnRe.addEventListener('change', (event) =>{
   }
   containerFilms.innerHTML = "";
   movie(ordenarAsc);
- })*/
+ })
 
 
 
  const dtaguibli = data.films
- const buttonGraphic = document.getElementById('buttonGraphic');
-const boxGraphic = document.getElementById('box_graphic');
-const containerFilms = document.getElementById('containerFilms');
+
 /*_______________funcionalidad de boton graphic ______________*/
 
 buttonGraphic.addEventListener('click', ()=>{
@@ -121,53 +129,51 @@ buttonGraphic.addEventListener('click', ()=>{
 
  /*________________ Graficos ___________________*/
 
-const elementMovies = compute(dtaguibli);
-        let nameBestMovies = elementMovies.map((element) => {
-            let titleBestMovies = element.title;
-            return titleBestMovies;
-        })
-        let scoreBestMovies = elementMovies.map((element) => {
-            let score = element.rt_score;
-            return score;
-        })
+const elementMovies = compute(dataFilms);
+  let nameBestMovies = elementMovies.map((element) => {
+    let titleBestMovies = element.title;
+    return titleBestMovies;
+  })
+  let scoreBestMovies = elementMovies.map((element) => {
+    let score = element.rt_score;
+    return score;
+  })
 
 
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: nameBestMovies,  //eje en X
-            datasets: [{
-                label: 'score',   //eje en y
-                data: scoreBestMovies,
-                backgroundColor: [
-                  "#665191",
-                  "#a05195",
-                  "#d45087",
-                  "#f95d6a",
-                  "#ff7c43",
-                ],
-                borderColor: [
-                  "#665191",
-                  "#a05195",
-                  "#d45087",
-                  "#f95d6a",
-                  "#ff7c43",
-                ],
-                borderWidth: 3,
-                borderRadius: 1
+const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: nameBestMovies,  //eje en X
+      datasets: [{
+        label: 'score',   //eje en y
+        data: scoreBestMovies,
+        backgroundColor: [
+          "#665191",
+          "#a05195",
+          "#d45087",
+          "#f95d6a",
+          "#ff7c43",
+          ],
+        borderColor: [
+          "#665191",
+          "#a05195",
+          "#d45087",
+          "#f95d6a",
+          "#ff7c43",
+          ],
+        borderWidth: 3,
+        borderRadius: 1
+      }]
 
-              }]
-
-          },
-          options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+        },
+        options: {
+        scales: {
+          y: {
+            beginAtZero: true
             }
+          }
         }
-
         })
 
 
