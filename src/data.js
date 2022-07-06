@@ -24,8 +24,6 @@ export function orderAz (data){
     if (a.title < b.title){
       return -1;
     }
-
-
   })
 }
 
@@ -57,7 +55,7 @@ export function sortByDesc (data) {
    if(a.release_date > b.release_date){
      return -1;
    }
-  }) 
+  })
   }
 
 

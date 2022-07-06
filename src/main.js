@@ -2,6 +2,8 @@
 import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+const dataFilms = data.films;
+
 const filtersDirector = document.getElementById("filtersDirector");
 const filtersProducer = document.getElementById("filtersProducer");
 const btnpeliculas = document.getElementById("listaPeliculas");
@@ -9,19 +11,22 @@ const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById("contenedorPaginas");
 const btnhome = document.getElementById("home");
 const containerFilms = document.getElementById('containerFilms');
-const buttonGraphic = document.getElementById('buttonGraphic')
-const boxGraphic = document.getElementById('box_graphic')
+const buttonGraphic = document.getElementById('buttonGraphic');
+const boxGraphic = document.getElementById('box_graphic');
 
 
+/* _____________    BOTON GO ______________ */
 
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
+  movie(dataFilms);
   })
 
-/*********************************************************/
+/*_____________ BOTON HOME _________________*/
+
   btnhome.addEventListener("click", () => {
     header.className = "enabled";
     contenedorPaginas.className = "disabled";
@@ -31,23 +36,157 @@ btnpeliculas.addEventListener("click", () => {
 
   });
 
- /*****  Div para contenido de cada pelicula FUNCION    *************/
- /*const headerMain = document.getElementById('header')*/
- const footerMain = document.getElementById('footer');
- /*const containerMain = document.getElementById('maincontaniner');*/
- const body = document.querySelector('body');
+
+/***************** Div para cada pelicula *******************/
 
 
- const newContainer = function (e) {
-  e.preventDefault;
+   const movie = (dataFilms) => {
+    dataFilms.forEach(film => {
+      const div = document.createElement('div');
+      div.classList.add('subContenedorPelicula');
+      div.innerHTML= `<img class="imgDirector"src="${film.poster}" alt="imagen" >
+      <p class="titleDirector"> ${film.title}</p>
+      <p class="parrafoDirector">Year:"${film.release_date}"</p>
+      <p class="parrafoDirector">Director:"${film.director}"</p>
+      <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
+
+      containerFilms.appendChild(div);
+
+    /*****evento para cada pelicula */
+      div.addEventListener("click", () => {
+        alert ("FUNCIONAAA")
+       //newContainer(film);
+      });
+    });
+   };
+
+   const newContainer = (dataFilms) => {
+
+
+   }
+
+   /**************Filtrar por Director******/
+   filtersDirector.addEventListener("change", () => {
+    const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
+    containerFilms.innerHTML = "";
+    movie(myMoviesDirec);
+    }),
+
+    /**************Filtrar por Productor******/
+   filtersProducer.addEventListener("change", () => {
+    const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
+    containerFilms.innerHTML = "";
+    movie(myMoviesPro);
+    });
+
+    /*******Ordenar A-Z********** */
+   const ordersAz = document.querySelector('.filters-Az');
+   ordersAz.addEventListener('change', (event) =>{
+   let ordenar;
+   if (event.target.value === "A-Z"){
+    ordenar = orderAz(data.films)
+   }
+   else {
+    ordenar= orderZa(data.films)
+   }
+   containerFilms.innerHTML = "";
+   movie(ordenar);
+   });
+
+/*******Ordenar Antiguo - Reciente ********** */
+const ordersAnRe = document.querySelector('.filters-year');
+ordersAnRe.addEventListener('change', (event) =>{
+  let ordenarAsc;
+  if (event.target.value === "Antiguo"){
+    ordenarAsc = sortByAsc(data.films)
+  }
+  else {
+    ordenarAsc= sortByDesc(data.films)
+  }
   containerFilms.innerHTML = "";
+  movie(ordenarAsc);
+ })
+
+
+
+ const dtaguibli = data.films
+/*_______________funcionalidad de boton graphic ______________*/
+
+buttonGraphic.addEventListener('click', ()=>{
+  containerFilms.className ="disabled";
+  boxGraphic.className = "enabled";
+})
+
+ /*________________ Graficos ___________________*/
+
+const elementMovies = compute(dtaguibli);
+        let nameBestMovies = elementMovies.map((element) => {
+            let titleBestMovies = element.title;
+            return titleBestMovies;
+        })
+        let scoreBestMovies = elementMovies.map((element) => {
+            let score = element.rt_score;
+            return score;
+        })
+
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: nameBestMovies,  //eje en X
+            datasets: [{
+                label: 'score',   //eje en y
+                data: scoreBestMovies,
+                backgroundColor: [
+                  "#665191",
+                  "#a05195",
+                  "#d45087",
+                  "#f95d6a",
+                  "#ff7c43",
+                ],
+                borderColor: [
+                  "#665191",
+                  "#a05195",
+                  "#d45087",
+                  "#f95d6a",
+                  "#ff7c43",
+                ],
+                borderWidth: 3,
+                borderRadius: 1
+
+              }]
+
+          },
+          options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+        })
+
+
+
+/*****  Div para contenido de cada pelicula FUNCION    *************/
+ /*const headerMain = document.getElementById('header')*/
+ //const footerMain = document.getElementById('footer');
+ /*const containerMain = document.getElementById('maincontaniner');*/
+ //const body = document.querySelector('body');
+
+
+ //const newContainer = function (e) {
+  //e//.preventDefault;
+  //containerFilms.innerHTML = "";
   /*window.scroll(0, 0);
   headerMain.classList.remove('header');
   containerMain.style.display = 'none';*/
 
 /**********************************************/
 
-  let peliContainer = document.createElement("div");
+ /* let peliContainer = document.createElement("div");
   peliContainer.classList.add('movie__container');
   let sectionFilm = document.createElement("section");
   sectionFilm.classList.add('movie__section');
@@ -59,14 +198,14 @@ btnpeliculas.addEventListener("click", () => {
   <p class="parrafoDirector">Director:"${e.director}"</p>
 
   <p class="parrafoDirector">Producer: "${e.producer}"</p>
-  <a class="movie__sectionFilm__button" href="index.html">RETURN</a>` ;
+  <a class="movie__sectionFilm__button" href="index.html">RETURN</a>` ;*/
 
   /****************************************/
-  let tabContainer = document.createElement("section");
-  tabContainer.classList.add('movie__mainContent');
+  /*let tabContainer = document.createElement("section");
+  tabContainer.classList.add('movie__mainContent');*/
 
 /*****  DESCRIPCION  ***************************** */
-  let inputDescription = document.createElement('input');
+  /*let inputDescription = document.createElement('input');
   let labelDescription = document.createElement('label');
   let divDescription = document.createElement('div');
   divDescription.classList.add('tab');
@@ -79,10 +218,10 @@ btnpeliculas.addEventListener("click", () => {
 
   labelDescription.innerHTML = `Description`;
   divDescription.classList.add('movie__description')
-  divDescription.innerHTML = `<p>${e.description}</p>`;
+  divDescription.innerHTML = `<p>${e.description}</p>`;*/
 
 /*****  PERSONAJES ***************************** */
-  const characters = e.people;
+ /* const characters = e.people;
   let inputCharacters = document.createElement('input');
   let labelCharacters = document.createElement('label');
   let divCharacters = document.createElement('div');
@@ -166,10 +305,10 @@ btnpeliculas.addEventListener("click", () => {
           divPopupCharacters.classList.remove("active");
       });
     }/*cierra for*/
-
+    /*
     /********************  Vehiculos y locación **************/
 
-    let location = e.locations;
+    /*let location = e.locations;
     let vehicle= e.vehicles;
 
     let inputOther = document.createElement('input');
@@ -190,7 +329,7 @@ btnpeliculas.addEventListener("click", () => {
   movieDivLocation.classList.add('movie__div');
 
     if (location.length === 0 && vehicle.length === 0) {
-      divOtherSub.innerHTML = `<div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="Imagen no disponible"></div>`
+      divOtherSub.innerHTML = `<div><img class="movie__img" src="/src/imagenes/giphy (1).gif" alt="Imagen no disponible"></div>`
     } else {
       for (let i = 0; i < location.length; i++) {
           movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
@@ -341,141 +480,4 @@ btnpeliculas.addEventListener("click", () => {
    divOther.appendChild(divOtherSub);
    // Despliega el footer
    body.appendChild(footerMain);
-}
-
-/***************** Div para cada pelicula *******************/
-
-  fetch ('./data/ghibli/ghibli.json')
-  .then(response => response.json())
-  .then(data => {
-   const dataFilms = data.films;
-
-   const movie = (dataFilms) => {
-    dataFilms.forEach(film => {
-      const div = document.createElement('div');
-      div.classList.add('subContenedorPelicula');
-      div.innerHTML= `<img class="imgDirector"src="${film.poster}" alt="imagen" >
-      <p class="titleDirector"> ${film.title}</p>
-      <p class="parrafoDirector">Year:"${film.release_date}"</p>
-      <p class="parrafoDirector">Director:"${film.director}"</p>
-      <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
-
-      containerFilms.appendChild(div);
-
-    /*****evento para cada pelicula */
-      div.addEventListener("click", () => {
-       newContainer(film);
-      });
-    });
-   };
-   movie(dataFilms);
-
-   /**************Filtrar por Director******/
-   filtersDirector.addEventListener("change", () => {
-    const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
-    containerFilms.innerHTML = "";
-    movie(myMoviesDirec);
-    }),
-
-    /**************Filtrar por Productor******/
-   filtersProducer.addEventListener("change", () => {
-    const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
-    containerFilms.innerHTML = "";
-    movie(myMoviesPro);
-    });
-
-    /*******Ordenar A-Z********** */
-   const ordersAz = document.querySelector('.filters-Az');
-   ordersAz.addEventListener('change', (event) =>{
-   let ordenar;
-   if (event.target.value === "A-Z"){
-    ordenar = orderAz(data.films)
-   }
-   else {
-    ordenar= orderZa(data.films)
-   }
-   containerFilms.innerHTML = "";
-   movie(ordenar);
-   });
-
-/*******Ordenar Antiguo - Reciente ********** */
-const ordersAnRe = document.querySelector('.filters-year');
-ordersAnRe.addEventListener('change', (event) =>{
-  let ordenarAsc;
-  if (event.target.value === "Antiguo"){
-    ordenarAsc = sortByAsc(data.films)
-  }
-  else {
-    ordenarAsc= sortByDesc(data.films)
-  }
-  containerFilms.innerHTML = "";
-  movie(ordenarAsc);
- })
-})
-
-
- const dtaguibli = data.films
-/*********** funcionalidad de boton graphic **************/
-
-buttonGraphic.addEventListener('click', ()=>{
-  containerFilms.className ="disabled";
-  boxGraphic.className = "enabled";
-})
-
- /************** Graficos ***************/
-
-const elementMovies = compute(dtaguibli);
-        let nameBestMovies = elementMovies.map((element) => {
-            let titleBestMovies = element.title;
-            return titleBestMovies;
-        })
-        let scoreBestMovies = elementMovies.map((element) => {
-            let score = element.rt_score;
-            return score;
-        })
-
-
-const ctx = document.getElementById('myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: nameBestMovies,  //eje en X
-      datasets: [{
-          label: 'score',   //eje en y
-          data: scoreBestMovies,
-          backgroundColor: [
-            "#665191",
-            "#a05195",
-            "#d45087",
-            "#f95d6a",
-            "#ff7c43",
-          ],
-          borderColor: [
-            "#665191",
-            "#a05195",
-            "#d45087",
-            "#f95d6a",
-            "#ff7c43",
-          ],
-          borderWidth: 3,
-          borderRadius: 1
-        }]
-    },
-    options: {
-      scales: {
-          y: {
-              beginAtZero: true
-          }
-      }
-  }
-
-  })
-
-
-
-
-
-
-
-
-
+}*/
