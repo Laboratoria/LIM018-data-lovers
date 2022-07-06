@@ -21,6 +21,7 @@ const footerr = document.getElementById('footer')
 btnpeliculas.addEventListener("click", () => {
   header.className = "disabled";
   contenedorPaginas.className = "enabled";
+  containerFilms.innerHTML = "";
   movie(dataFilms)
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
