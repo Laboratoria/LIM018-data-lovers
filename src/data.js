@@ -71,7 +71,7 @@ export function sortByDesc (data) {
 
 // ****** BUSCAR ****
 
-export const searchData = (data, input) => {
+/*export const searchData = (data, input) => {
   let searchResults = [];
   data.filter((x) => {
     if (x.films.toLowerCase().startsWith(input)) {
@@ -79,5 +79,5 @@ export const searchData = (data, input) => {
     }
   });
   return searchResults;
-};
+};*/
 

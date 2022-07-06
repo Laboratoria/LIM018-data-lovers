@@ -283,6 +283,7 @@ display: none;
   justify-content: center;
   border-radius: 15px;
   max-width: 80%;
+  background:rgb(232, 30, 30)
 
 }
 .movie__section {
@@ -317,7 +318,7 @@ display: none;
     height: 100%;
     flex: 60%;
     border: 10px;
-    background-color: rgb(251, 249, 249);
+    background-color: rgb(182, 238, 11);
     border: #2fb1c2 2px solid;
 }
 .movie__mainContent label {
@@ -326,7 +327,7 @@ display: none;
   font-size: 1.3em;
   border-left-style: solid;
   border-left-width: 3px;
-  box-shadow: 1px 3px 1px #2fb1c2;
+  box-shadow: 1px 3px 1px #d30d87;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -587,11 +588,57 @@ display: none;
   }*/
 }
 
-footer{
+/*footer{
   background-color: #2fb1c2;
   color: #ffffff;
   text-align: center;
   display: flex;
   align-items: flex-end;
   display: none;
+}*/
+
+/********** NUEVO CSS ****/
+.classbtn {
+  padding: 5px 20px;
+  margin-top: 20px;
+  color: rgb(21, 21, 27);
+  background: rgb(69, 201, 253);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgb(248, 248, 248);
+  font-size: 20px;
+  transition: .3s ease all;
+}
+
+.btn__container{
+
+  border: none;
+  height:50px;
+  font-size: 1.3em;
+  border-left-style: solid;
+  border-left-width: 3px;
+  box-shadow: 1px 3px 1px #d30d87;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 3px 25px;
+  text-align: center;
+  align-items: center;
+  color: rgb(5, 177, 160);
+}
+
+.containerSection {
+  display: flex;
+	flex-wrap: wrap; /* make sure it wraps*/
+    justify-content: space-between;
+    margin: 0 70px 0 30px;
+    height: 100%;
+    flex: 60%;
+    border: 10px;
+    background-color: rgb(182, 238, 11);
+    border: #2fb1c2 2px solid;
+}
+
+.divPersonaje {
+
 }
