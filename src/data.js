@@ -4,16 +4,27 @@ export const filterEspecies = (datos, gato) => {
 };
 
  
-export const sort = (a, b) => {
-  if (a < b){
-return -1; 
-
-  }
-
-  if (a > b){
-    return 1; 
-  }
-  return 0 ;
+export const ordeName = (data) => {
+  return data.sort(function (a,b) {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
 };
+
+export const filtrarBuscador = (persons,name)=>{
+ console.log(persons.filter(person =>person.name.startsWith(name)));
+
+};
+
+
+
+
+
 
 

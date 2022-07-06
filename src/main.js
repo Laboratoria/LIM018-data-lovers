@@ -1,32 +1,34 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterEspecies } from "./data.js";
+import { filterEspecies,ordeName,filtrarBuscador} from "./data.js";
 
 
 // Array de todos los personajes
 const personajes = data.results;
-console.log(personajes.filter(personaje => ["J","H", "P"].includes(personaje.name.charAt(0))).sort());
 
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
 
-// const orderingNames = document.querySelector("#selectPersonajes");
-// orderingNames.addEventListener("change", (event) => {
-//   todoshumanos.innerHTML = "";
-//   const valueSelect = event.target.value;
+//Filtrando personajes en la cajita busqueda
+const buscaNombre = document.querySelector('#buscador');
+buscaNombre.addEventListener("keyup",(e) => {
+// todoshumanos.innerHTML="";
+ let resultadoBusqueda= filtrarBuscador(personajes,e.target.value);
+data.results.resultadoBusqueda; 
+});
+// Ordenando alfabeticamente los personajes
+const selectPersonajes =document.querySelector("#selectPersonajes");
+selectPersonajes.addEventListener("change",(event) => {
+ todoshumanos.innerHTML = ""; 
+ const valueSelect = event.target.value;
+ if (valueSelect=="AZ"){
+   mostrarPersonajes(ordeName(personajes));
+ }
+ else if (valueSelect== "ZA"){
+  mostrarPersonajes(ordeName(personajes).reverse()); 
+ }
+ 
 
-//   orderingNames(filterEspecies(personajes, valueSelect));
-//   function orderingNames(personajes) {
-//     personajes.forEach((e) => {
-//       const nodePersonaje = document.createElement("div");
-//       // nodeEspecie.innerHTML=personajes[i].name
-//       nodePersonaje.innerHTML = `<img src="${e.image}"/> <p>${e.name}</p>`;
-//       todoshumanos.appendChild(nodePersonaje);
-//     });
-//   }
-
-// });
-
-           
+});
 
 //select por especies
 const selectEspecie = document.querySelector("#selectEspecie");
@@ -42,7 +44,6 @@ selectEspecie.addEventListener("change", (event) => {
 function mostrarPersonajes(personajes) {
   personajes.forEach((element) => {
     const nodeEspecie = document.createElement("div");
-    // nodeEspecie.innerHTML=personajes[i].name
     nodeEspecie.innerHTML = `<img src="${element.image}"/> <p>${element.name}</p>`;
     todoshumanos.appendChild(nodeEspecie);
   });
