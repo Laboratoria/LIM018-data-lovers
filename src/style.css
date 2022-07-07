@@ -1,5 +1,5 @@
-body { 
-  background-image: url("./imagenes/fondo2.jpg"); 
+body {
+  background-image: url("./imagenes/fondo2.jpg");
   /*margin: 0;*/
 }
 
@@ -22,7 +22,7 @@ padding: 0;
 /*-------------- HEADER---------*/
 header {
     text-align: center;
-    display: block;
+    /*display: block;*/
 }
 
 .videoportada{
@@ -191,7 +191,6 @@ main h3{
   cursor: pointer;
 }
 
-
 /************* CONTENEDOR DE FILMS  *********************/
 .contenedor-paginas {
   display: none;
@@ -203,12 +202,6 @@ main h3{
 
 .disabled {
   display: none;
-}
-.wrapper{
-  display: block;
-}
-.container-films{
-  display: flex;
 }
 
 .container-films {
@@ -226,6 +219,18 @@ main h3{
   border-radius: 15px;
   max-width: 80%;
 }
+@media screen and (max-width: 575.98px) {
+  .container-films{
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 991.98px){
+  .container-films{
+    flex-direction: column;
+  }
+}
+
 
 /*******************CONTENEDOR DE BLOQUE DIRECTOR ******************/
 
@@ -241,47 +246,6 @@ main h3{
   margin: 10px;
 }
 
-.movie__mainContent {
-	display: flex;
-	flex-wrap: wrap; /* make sure it wraps*/
-  justify-content: space-between;
-  margin: 0 70px 0 30px;
-  height: 100%;
-  flex: 60%;
-}
-/****************************************************************************/
-
-.movie__container{
-  display: flex;
-  margin-top: 3%;
-  align-items: row;
-  margin-bottom: 20px;
-  margin-right: 8%;
-  margin-left: 8%;
-  padding: 50px;
-  border: 3px;
-  justify-content: center;
-  border-radius: 15px;
-  max-width: 80%;
-  background:rgb(232, 30, 30)
-
-}
-.movie__section {
-  border-radius: 20px;
-  border: #CAF995 3px solid;
-  margin: 10px;
-  text-align: center;
-  background:rgb(251, 249, 249)
-}
-
-
-/*******************************/
-.movie__img{
-  border-radius: 15px;
-  border: #CAF995 3px solid;
-  margin: 10px;
-}
-
 .titleDirector{
   display: flex;
   justify-content: center;
@@ -294,7 +258,10 @@ main h3{
   margin: 2.5% 10%;
 }
 
+/***********
+
 /*____________________ GRAFICOS____________________*/
+
 .box_graphic{
   background-color: #ffffff6e;
   width: 82%;
@@ -373,50 +340,129 @@ main h3{
   display: flex;
   align-items: flex-end;
   display: none;
-}*/
 
 /********** NUEVO CSS ****/
-.classbtn {
-  padding: 5px 20px;
-  margin-top: 20px;
-  color: rgb(21, 21, 27);
-  background: rgb(69, 201, 253);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px rgb(248, 248, 248);
-  font-size: 20px;
-  transition: .3s ease all;
+
+
+
+/*_____ CONTENEDOR DE img*/
+.movie__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 80%;
+  border: #ffffff 3px solid;
+  border-radius: 20px;
+  }
+
+.movie_title{
+text-align: center;
+}
+.movie_img{
+justify-content: center;
+}
+.movie_description{
+flex-direction: column;
 }
 
-.btn__container{
 
-  border: none;
-  height:50px;
-  font-size: 1.3em;
-  border-left-style: solid;
-  border-left-width: 3px;
-  box-shadow: 1px 3px 1px #d30d87;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+
+/*______ CONTENEDOT DE DESCRIPCION Y BOTONES ****/
+.containerBtnDescripcion{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+/*_____CONTENEDOR DE BOTONES*/
+.btn__container{
+  height: 50px;
+  margin: 10px;
   padding: 3px 25px;
   text-align: center;
   align-items: center;
-  color: rgb(5, 177, 160);
+  border-bottom: #ffffff 2px solid;
 }
-
+/*_____BOTONES________*/
+.classbtn {
+  padding: 5px 20px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: rgb(21, 21, 27);
+  background: #7dcdf1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(34, 27, 27);
+  font-size: 20px;
+  transition: .3s ease all;
+  flex-wrap: wrap;
+  margin-left: 2%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+.classbtn:hover{
+background-color: #CAF995;
+}
+/*___CONTENEDOR DE DESCRIPCION*/
 .containerSection {
   display: flex;
 	flex-wrap: wrap; /* make sure it wraps*/
-    justify-content: space-between;
-    margin: 0 70px 0 30px;
-    height: 100%;
-    flex: 60%;
-    border: 10px;
-    background-color: rgb(182, 238, 11);
-    border: #2fb1c2 2px solid;
+  justify-content: space-around;
+  margin: 0 70px 0 30px;
+  flex: 60%;
+  border: 10px;
+  background-color: rgba(255, 255, 254, 0.884);
+  border: #2fb1c2 2px solid;
 }
 
-.divPersonaje {
-
+/* ______ para celular*/
+@media only screen and (max-width: 575.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 12px;
+    padding: 5px 13px;
+  }
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
 }
+/* ______ para tablet*/
+@media only screen and (max-width: 991.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
+}
+
+.containerSection_description{
+  margin: 15% 3%;
+  height: 30%;
+}
+
+.divPersonaje{
+  border: #F8BBD0 2px solid;
+  border-radius: 20px;
+  margin: 1%;
+}
+
