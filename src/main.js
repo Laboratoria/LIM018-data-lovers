@@ -1,68 +1,80 @@
-import data from './data/rickandmorty/rickandmorty.js';
-import { filterEspecies } from  './data.js '
 
-import {filtrarPersonajes} from './data.js'
- 
+import data from "./data/rickandmorty/rickandmorty.js";
+import { filterEspecies,ordeName,filtrarBuscador,filterid } from "./data.js";
+
+
 // Array de todos los personajes
 const personajes = data.results;
 
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
 
-const orderingNames = document.querySelector("#selectPersonajes");
-orderingNames.addEventListener("change", (event) => {
- todoshumanos.innerHTML="";
+// Creamos una funcion que muestre los personajes
+function mostrarPersonajes(personajes) {
+  personajes.forEach((element) => {
+    const nodeEspecie = document.createElement("div");
+    nodeEspecie.setAttribute("id" ,element.id);
+    nodeEspecie.addEventListener("click",openModal);
+    nodeEspecie.innerHTML = `<img src="${element.image}"/> <p>${element.name}</p>`;
+    todoshumanos.appendChild(nodeEspecie);
+
+  });
+}
+
+//Filtrando personajes en la cajita busqueda
+const buscaNombre = document.querySelector('#buscador');
+buscaNombre.addEventListener("keyup",(e) => {
+todoshumanos.innerHTML="";
+ let resultadoBusqueda= filtrarBuscador(personajes,e.target.value);
+  mostrarPersonajes(resultadoBusqueda);
+});
+// Ordenando alfabeticamente los personajes
+const selectPersonajes =document.querySelector("#selectPersonajes");
+selectPersonajes.addEventListener("change",(event) => {
+ todoshumanos.innerHTML = ""; 
  const valueSelect = event.target.value;
- mostrarPersonajes(filtrarPersonajes(personajes,valueSelect));
-
-
-
-})
+ if (valueSelect=="AZ"){
+   mostrarPersonajes(ordeName(personajes));
+ }
+ else if (valueSelect== "ZA"){
+  mostrarPersonajes(ordeName(personajes).reverse()); 
+ }
+});
 
 //select por especies
-const selectEspecie = document.querySelector("#selectEspecie")
-selectEspecie.addEventListener("change", (event) => {   
-todoshumanos.innerHTML="";
-// te entrega el valor que seleccionaste
-const valueSelect=  event.target.value;
+const selectEspecie = document.querySelector("#selectEspecie");
+selectEspecie.addEventListener("change", (event) => {
+  todoshumanos.innerHTML = "";
+  // te entrega el valor que seleccionaste
+  const valueSelect = event.target.value;
 
-mostrarPersonajes(filterEspecies(personajes,valueSelect));
-
-
-})
-
-// Creamos una funcion que muestre los personajes
- function mostrarPersonajes(personajes){
-  personajes.forEach(element => {  
-   const nodeEspecie = document.createElement("div");
-          // nodeEspecie.innerHTML=personajes[i].name
-          nodeEspecie.innerHTML =`<img src="${element.image}"/> <p>${element.name}</p>`;
-          todoshumanos.appendChild(nodeEspecie)
+  mostrarPersonajes(filterEspecies(personajes, valueSelect));
 });
-} 
 
+// ventana modal
+let modal = document.getElementById("myModal");
+function mostrarModal(personajes) {
+  personajes.forEach((element) => {
+    const mostrarModal = document.createElement("div");
+    mostrarModal.innerHTML= `<p> nombre : ${element.name}</p> <p>estatus : ${element.status} </p>`;
+    modal.appendChild(mostrarModal)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  });
+}
+var span = document.getElementsByClassName("close")[0];
+// Get the modal
+function openModal (){
+  const traeId = this.id; 
+ let modal = document.getElementById("myModal");
+ modal.innerHTML = "";
+  span.style.display= "block";
+  modal.style.display = "block";
+ 
+  mostrarModal(filterid(personajes,traeId))
+  
+ }
+// Get the <span> element that closes the modal
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  var modal = document.getElementById("myModal");  modal.style.display = "none";
+}
