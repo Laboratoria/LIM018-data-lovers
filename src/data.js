@@ -16,6 +16,7 @@ export const ordeName = (data) => {
     return 0;
   });
 };
+=======
 
 export const filtrarBuscador = (persons,name)=>{
 return (persons.filter(person =>person.name.startsWith(name)));
@@ -28,6 +29,8 @@ return modale ;
 
 
 
+ 
+export const filtrarPersonajes = (datos ,nombre) => {
 
-
-
+  return datos.filter(e => e.name==nombre);
+};

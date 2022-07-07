@@ -1,3 +1,4 @@
+
 import data from "./data/rickandmorty/rickandmorty.js";
 import { filterEspecies,ordeName,filtrarBuscador,filterid } from "./data.js";
 
@@ -7,6 +8,7 @@ const personajes = data.results;
 
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
+
 // Creamos una funcion que muestre los personajes
 function mostrarPersonajes(personajes) {
   personajes.forEach((element) => {
@@ -48,7 +50,6 @@ selectEspecie.addEventListener("change", (event) => {
 
   mostrarPersonajes(filterEspecies(personajes, valueSelect));
 });
-
 
 // ventana modal
 let modal = document.getElementById("myModal");
