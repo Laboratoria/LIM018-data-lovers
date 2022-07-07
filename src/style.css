@@ -1,5 +1,5 @@
-body { 
-  background-image: url("./imagenes/fondo2.jpg"); 
+body {
+  background-image: url("./imagenes/fondo2.jpg");
   /*margin: 0;*/
 }
 
@@ -22,7 +22,7 @@ padding: 0;
 /*-------------- HEADER---------*/
 header {
     text-align: center;
-    display: block;
+    /*display: block;*/
 }
 
 .videoportada{
@@ -191,7 +191,6 @@ main h3{
   cursor: pointer;
 }
 
-
 /************* CONTENEDOR DE FILMS  *********************/
 .contenedor-paginas {
   display: none;
@@ -204,11 +203,32 @@ main h3{
 .disabled {
   display: none;
 }
-.wrapper{
-  display: block;
-}
-.container-films{
+
+.container-films {
   display: flex;
+  align-items: row;
+  margin-bottom: 20px;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 15px;
+  border: 10px;
+  background-color: #fffbfb65;
+  border: #2fb1c2 2px solid;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 15px;
+  max-width: 80%;
+}
+@media screen and (max-width: 575.98px) {
+  .container-films{
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 991.98px){
+  .container-films{
+    flex-direction: column;
+  }
 }
 
 
@@ -226,33 +246,6 @@ main h3{
   margin: 10px;
 }
 
-/****************************************************************************/
-
-.movie__container{
-  display: flex;
-  margin-top: 3%;
-  align-items: row;
-  margin-bottom: 20px;
-  margin-right: 8%;
-  margin-left: 8%;
-  padding: 50px;
-  border: 3px;
-  justify-content: center;
-  border-radius: 15px;
-  max-width: 80%;
-  background:rgb(232, 30, 30)
-
-}
-
-
-
-/*******************************/
-.movie__img{
-  border-radius: 15px;
-  border: #e2531b 3px solid;
-  margin: 10px;
-}
-
 .titleDirector{
   display: flex;
   justify-content: center;
@@ -265,7 +258,10 @@ main h3{
   margin: 2.5% 10%;
 }
 
+/***********
+
 /*____________________ GRAFICOS____________________*/
+
 .box_graphic{
   background-color: #ffffff6e;
   width: 82%;
@@ -344,90 +340,130 @@ main h3{
   display: flex;
   align-items: flex-end;
   display: none;
-}*/
 
-/********** NUEVO CSS ********************************/
-.container-films {
-  display: flex;
-  align-items: row;
-  margin-bottom: 20px;
-  margin-right: 8%;
-  margin-left: 8%;
-  padding: 15px;
-  border: 10px;
-  background-color: #fffbfb65;
-  border: #2fb1c2 2px solid;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 15px;
-  max-width: 80%;
-}
-.todoFilms{
-  width: 95%;
-  height: 95%;
- /* display: flex;*/
-  /*align-items: row;*/
-  margin-right: 6%;
-  margin-left: 6%;
-  padding: 10px;
-  border: 10px;
-  background-color: #0ee92865;
-  border-radius: 15px;
-}
+/********** NUEVO CSS ****/
+
+
+
+/*_____ CONTENEDOR DE img*/
 .movie__section {
-  border-radius: 20px;
-  border: #f23315 3px solid;
-  margin: 10px;
-  background-color: #ffffffef;
-
-  width: 25%;
-  float: right;
-  left:0;
-  top: 10%;
-  border-radius: 20px;
-  justify-content: center;
-  text-align: center; 
-}
-.sectionInfoFilms{
-  justify-content: center;
-  width: 70%;
-  height: 70%;
   display: flex;
-  float: right;
-  right:0;
-  background-color: #b24d0565;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 80%;
+  border: #ffffff 3px solid;
+  border-radius: 20px;
+  }
+
+.movie_title{
+text-align: center;
+}
+.movie_img{
+justify-content: center;
+}
+.movie_description{
+flex-direction: column;
 }
 
-.btnContainer {
-  display: inline-block;
-  color: rgb(241, 17, 200);
-  width: 95%;
-  height: 10%;
-  /*float: row;
-  top:10%;*/
+
+
+/*______ CONTENEDOT DE DESCRIPCION Y BOTONES ****/
+.containerBtnDescripcion{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
-.containerSection {
- 
-  width: 50%;
-  height: 10%;
-  background-color: blue;
- 
+
+/*_____CONTENEDOR DE BOTONES*/
+.btn__container{
+  height: 50px;
+  margin: 10px;
+  padding: 3px 25px;
+  text-align: center;
+  align-items: center;
+  border-bottom: #ffffff 2px solid;
 }
+/*_____BOTONES________*/
 .classbtn {
   padding: 5px 20px;
-  margin-top: 20px;
-  color: rgb(19, 18, 18);
-  background: rgb(69, 201, 253);
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: rgb(21, 21, 27);
+  background: #7dcdf1;
   border: none;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px rgb(248, 248, 248);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(34, 27, 27);
   font-size: 20px;
   transition: .3s ease all;
+  flex-wrap: wrap;
+  margin-left: 2%;
+  margin-right: 2%;
+  cursor: pointer;
 }
-.divImag {
-  border-radius: 5px;
-  border: #29d9f1 3px solid;
-  margin: 5px;
-  background-color: #ffffffef;
+.classbtn:hover{
+background-color: #CAF995;
+}
+/*___CONTENEDOR DE DESCRIPCION*/
+.containerSection {
+  display: flex;
+	flex-wrap: wrap; /* make sure it wraps*/
+  justify-content: space-around;
+  margin: 0 70px 0 30px;
+  flex: 60%;
+  border: 10px;
+  background-color: rgba(255, 255, 254, 0.884);
+  border: #2fb1c2 2px solid;
 }
 
+/* ______ para celular*/
+@media only screen and (max-width: 575.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 12px;
+    padding: 5px 13px;
+  }
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
+}
+/* ______ para tablet*/
+@media only screen and (max-width: 991.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
+}
+
+.containerSection_description{
+  margin: 15% 3%;
+  height: 30%;
+}
+
+.divPersonaje{
+  border: #F8BBD0 2px solid;
+  border-radius: 20px;
+  margin: 1%;
+}
+
+/*bajar cambios*/
