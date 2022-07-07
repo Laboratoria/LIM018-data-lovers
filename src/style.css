@@ -464,5 +464,9 @@ background-color: #CAF995;
   border: #F8BBD0 2px solid;
   border-radius: 20px;
   margin: 1%;
+
 }
 
+.movie__imgPersonaje{
+  border-radius: 50%;
+}

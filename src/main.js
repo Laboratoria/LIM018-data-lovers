@@ -104,15 +104,15 @@ btnpeliculas.addEventListener("click", () => {
 
   for (let i = 0; i < characters.length; i++) {
     divPersonaje.innerHTML += `
-      <div class="divPersonaje_container>
-        <img class="movie__img" src="${characters[i].img}" alt="Imagen">
-        <p class="parrafoDirector">Name:"${characters[i].name}"</p>
-        <p class="parrafoDirector">Age:"${characters[i].age}"</p>
-        <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
-        <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
-        <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
-        <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
-      </div>`;
+        <div class="movie_img_container"><img class="movie__imgPersonaje" src="${characters[i].img}" alt="Imagen"></div>
+        <div class="divPersonaje_container_description">
+          <p class="parrafoDirector">Name:"${characters[i].name}"</p>
+          <p class="parrafoDirector">Age:"${characters[i].age}"</p>
+          <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
+          <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
+          <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
+          <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
+        </div>`;
     }
 
    })
