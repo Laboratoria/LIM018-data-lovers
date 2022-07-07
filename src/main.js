@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterEspecies,ordeName,filtrarBuscador} from "./data.js";
+import { filterEspecies,ordeName,filtrarBuscador,filterid } from "./data.js";
 
 
 // Array de todos los personajes
@@ -7,13 +7,24 @@ const personajes = data.results;
 
 //Captura la cajita del div llamado todos humanos
 let todoshumanos=document.getElementById("todoshumanos");
+// Creamos una funcion que muestre los personajes
+function mostrarPersonajes(personajes) {
+  personajes.forEach((element) => {
+    const nodeEspecie = document.createElement("div");
+    nodeEspecie.setAttribute("id" ,element.id);
+    nodeEspecie.addEventListener("click",openModal);
+    nodeEspecie.innerHTML = `<img src="${element.image}"/> <p>${element.name}</p>`;
+    todoshumanos.appendChild(nodeEspecie);
+
+  });
+}
 
 //Filtrando personajes en la cajita busqueda
 const buscaNombre = document.querySelector('#buscador');
 buscaNombre.addEventListener("keyup",(e) => {
-// todoshumanos.innerHTML="";
+todoshumanos.innerHTML="";
  let resultadoBusqueda= filtrarBuscador(personajes,e.target.value);
-data.results.resultadoBusqueda; 
+  mostrarPersonajes(resultadoBusqueda);
 });
 // Ordenando alfabeticamente los personajes
 const selectPersonajes =document.querySelector("#selectPersonajes");
@@ -26,8 +37,6 @@ selectPersonajes.addEventListener("change",(event) => {
  else if (valueSelect== "ZA"){
   mostrarPersonajes(ordeName(personajes).reverse()); 
  }
- 
-
 });
 
 //select por especies
@@ -40,11 +49,31 @@ selectEspecie.addEventListener("change", (event) => {
   mostrarPersonajes(filterEspecies(personajes, valueSelect));
 });
 
-// Creamos una funcion que muestre los personajes
-function mostrarPersonajes(personajes) {
+
+// ventana modal
+let modal = document.getElementById("myModal");
+function mostrarModal(personajes) {
   personajes.forEach((element) => {
-    const nodeEspecie = document.createElement("div");
-    nodeEspecie.innerHTML = `<img src="${element.image}"/> <p>${element.name}</p>`;
-    todoshumanos.appendChild(nodeEspecie);
+    const mostrarModal = document.createElement("div");
+    mostrarModal.innerHTML= `<p> nombre : ${element.name}</p> <p>estatus : ${element.status} </p>`;
+    modal.appendChild(mostrarModal)
+
   });
+}
+var span = document.getElementsByClassName("close")[0];
+// Get the modal
+function openModal (){
+  const traeId = this.id; 
+ let modal = document.getElementById("myModal");
+ modal.innerHTML = "";
+  span.style.display= "block";
+  modal.style.display = "block";
+ 
+  mostrarModal(filterid(personajes,traeId))
+  
+ }
+// Get the <span> element that closes the modal
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  var modal = document.getElementById("myModal");  modal.style.display = "none";
 }
