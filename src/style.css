@@ -229,8 +229,10 @@ main h3{
 /*******************CONTENEDOR DE BLOQUE DIRECTOR ******************/
 .subContenedorPelicula{
   border-radius: 20px;
+
   border: #CAF995 3px solid;
   margin: 1%;
+
   background-color: #ffffffef;
   width: 20.5%;
 }
