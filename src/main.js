@@ -280,6 +280,7 @@ grafico();
      return score;
  })
 
+
  const grafico = ()=>{
   const ctx = document.querySelector('.myChart').getContext('2d');
   const myChart = new Chart(ctx, {
