@@ -96,27 +96,27 @@ btnpeliculas.addEventListener("click", () => {
   btnCharacters.innerText = "Characters";
   btnContainer.appendChild(btnCharacters);
 
+  const containerPersonaje = (personajes)=>{
+    personajes.forEach(chracter =>{
+      const divPersonaje = document.createElement('div'); /*  se crea un div donde ira la foto del personaje y parrafos*/
+      divPersonaje.classList.add('divPersonaje')
+      divPersonaje.innerHTML =`
+      <div class="movie_img_container"><img class="movie__imgPersonaje" src="${chracter.img}" alt="Imagen"></div>
+      <div class="divPersonaje_container_description">
+        <p class="parrafoDirector">Name:"${chracter.name}"</p>
+        <p class="parrafoDirector">Age:"${chracter.age}"</p>
+        <p class="parrafoDirector">Year:"${chracter.gender}"</p>
+        <p class="parrafoDirector">Eyes color:"${chracter.eye_color}"</p>
+        <p class="parrafoDirector">Hair color: "${chracter.hair_color}"</p>
+        <p class="parrafoDirector">Specie: "${chracter.specie}"</p>
+      </div>`;
+      containerSection.appendChild(divPersonaje);
+    })
+  }
+
   btnCharacters.addEventListener("click", () => {   /** evento clik para jalar personajes alcontainer */
   containerSection.innerHTML = "";
-
-  const divPersonaje = document.createElement('div'); /*  se crea un div donde ira la foto del personaje y parrafos*/
-  divPersonaje.classList.add('divPersonaje')
-  containerSection.appendChild(divPersonaje);
-
-
-  for (let i = 0; i < characters.length; i++) {
-    divPersonaje.innerHTML += `
-        <div class="movie_img_container"><img class="movie__imgPersonaje" src="${characters[i].img}" alt="Imagen"></div>
-        <div class="divPersonaje_container_description">
-          <p class="parrafoDirector">Name:"${characters[i].name}"</p>
-          <p class="parrafoDirector">Age:"${characters[i].age}"</p>
-          <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
-          <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
-          <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
-          <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
-        </div>`;
-    }
-
+  containerPersonaje(characters);
    })
    /*************      locacion y vehiculos - denis  **************/
   const btnLocationVehicle= document.createElement("button");  /** boton de locacion y vehiculos */
@@ -130,25 +130,40 @@ btnpeliculas.addEventListener("click", () => {
   divLocyVeh.classList.add('divLocyVeh')
   containerSection.appendChild(divLocyVeh);
 
+  const vehiculos = (veh) =>{
+    veh.forEach(vehi =>{
+      const box_vehiculo = document.createElement('div');
+        box_vehiculo.classList.add('box_vehiculo');
+        box_vehiculo.innerHTML=`<img class="movie__img" src="${vehi.img}" alt="imagen de locaciones">
+        <p class="parrafoDirector">Climate:"${vehi.climate}"</p>
+        <p class="parrafoDirector">Terrain:"${vehi.terrain}"</p
+        <p class="parrafoDirector">Surface Water:"${vehi.surface_water}"</p>`
+    })
+  }
   btnLocationVehicle.addEventListener("click", () => {   /** evento clik para locacion y vehiculos */
   containerSection.innerHTML = "";
 
   if (location.length === 0  && vehicle.length === 0) {
-    containerSection.innerHTML = `<img class="movie__img" src=" " alt="Imagen no disponible">`;
+    containerSection.innerHTML = `
+    <div class="imgNoDisponible">
+    <p>NO LOCATIONS AND VEHICLE</p>
+    <img class="movie__img_nodisponible" src="/src/imagenes/totoroComp.gif" alt="Imagen no disponible">
+    </div>`;
   } else {
-    for (let i = 0; i < location.length; i++) {
-      containerSection.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
-      <p class="parrafoDirector">Climate:"${location[i].climate}"</p>
-      <p class="parrafoDirector">Terrain:"${location[i].terrain}"</p>
-      <p class="parrafoDirector">Surface Water:"${location[i].surface_water}"</p>`;
+    vehiculos(location)
+  //   for (let i = 0; i < location.length; i++) {
+  //     containerSection.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
+  //     <p class="parrafoDirector">Climate:"${location[i].climate}"</p>
+  //     <p class="parrafoDirector">Terrain:"${location[i].terrain}"</p
+  //     <p class="parrafoDirector">Surface Water:"${location[i].surface_water}"</p>`;
 
-  }}
-  for (let i = 0; i < vehicle.length; i++) {
-    containerSection.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
-      <p class="parrafoDirector">Description:"${vehicle[i].description}"</p>
-      <p class="parrafoDirector">Vehicle Class:"${vehicle[i].vehicle_class}"</p>
-      <p class="parrafoDirector">Length:"${vehicle[i].length}"</p>
-      <p class="parrafoDirector">Pilot Name:"${vehicle[i].pilot.name}"</p> `;
+  // }}
+  // for (let i = 0; i < vehicle.length; i++) {
+  //   containerSection.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
+  //     <p class="parrafoDirector">Description:"${vehicle[i].description}"</p>
+  //     <p class="parrafoDirector">Vehicle Class:"${vehicle[i].vehicle_class}"</p>
+  //     <p class="parrafoDirector">Length:"${vehicle[i].length}"</p>
+  //     <p class="parrafoDirector">Pilot Name:"${vehicle[i].pilot.name}"</p> `;
 
   }
 })
