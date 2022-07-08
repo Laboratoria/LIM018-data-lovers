@@ -13,7 +13,7 @@ const containerFilms = document.getElementById('containerFilms');
 
 //const descripcionPersonaje =document.getElementById('descripcion');
 const buttonGraphic = document.getElementById('buttonGraphic')
-const boxGraphic = document.getElementById('box_graphic')
+
 
 /* CLIK PARA EL BOTON GO DEL VIDEO */
 btnpeliculas.addEventListener("click", () => {
@@ -29,6 +29,7 @@ btnpeliculas.addEventListener("click", () => {
   btnhome.addEventListener("click", () => {
     header.className = "enabled";
     contenedorPaginas.className = "disabled";
+    location.reload(); //se agrego
     const videoportada = document.getElementById('videoportada');
     videoportada.play();
   });
@@ -60,7 +61,7 @@ btnpeliculas.addEventListener("click", () => {
     containerFilms.innerHTML = "";
     movie(dataFilms);
     })
-  /************ BOTON PARA AGRUPAR EL  DIV DEL COSTADO */
+  /************ PARA AGRUPAR EL  DIV DEL COSTADO */
 
   let containerBtnDescripcion = document.createElement("div");
   containerBtnDescripcion.classList.add('containerBtnDescripcion');
@@ -95,26 +96,27 @@ btnpeliculas.addEventListener("click", () => {
   btnCharacters.innerText = "Characters";
   btnContainer.appendChild(btnCharacters);
 
+  const containerPersonaje = (personajes)=>{
+    personajes.forEach(chracter =>{
+      const divPersonaje = document.createElement('div'); /*  se crea un div donde ira la foto del personaje y parrafos*/
+      divPersonaje.classList.add('divPersonaje')
+      divPersonaje.innerHTML =`
+      <div class="movie_img_container"><img class="movie__imgPersonaje" src="${chracter.img}" alt="Imagen"></div>
+      <div class="divPersonaje_container_description">
+        <p class="parrafoDirector">Name:"${chracter.name}"</p>
+        <p class="parrafoDirector">Age:"${chracter.age}"</p>
+        <p class="parrafoDirector">Year:"${chracter.gender}"</p>
+        <p class="parrafoDirector">Eyes color:"${chracter.eye_color}"</p>
+        <p class="parrafoDirector">Hair color: "${chracter.hair_color}"</p>
+        <p class="parrafoDirector">Specie: "${chracter.specie}"</p>
+      </div>`;
+      containerSection.appendChild(divPersonaje);
+    })
+  }
+
   btnCharacters.addEventListener("click", () => {   /** evento clik para jalar personajes alcontainer */
   containerSection.innerHTML = "";
-
-  const divPersonaje = document.createElement('div'); /*  se crea un div donde ira la foto del personaje y parrafos*/
-  divPersonaje.classList.add('divPersonaje')
-  containerSection.appendChild(divPersonaje);
-
-  for (let i = 0; i < characters.length; i++) {
-    divPersonaje.innerHTML += `
-        <div class="movie_img_container"><img class="movie__imgPersonaje" src="${characters[i].img}" alt="Imagen"></div>
-        <div class="divPersonaje_container_description">
-          <p class="parrafoDirector">Name:"${characters[i].name}"</p>
-          <p class="parrafoDirector">Age:"${characters[i].age}"</p>
-          <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
-          <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
-          <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
-          <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
-        </div>`;
-    }
-
+  containerPersonaje(characters);
    })
    /*************      locacion y vehiculos - denis  **************/
   const btnLocationVehicle= document.createElement("button");  /** boton de locacion y vehiculos */
@@ -128,25 +130,40 @@ btnpeliculas.addEventListener("click", () => {
   divLocyVeh.classList.add('divLocyVeh')
   containerSection.appendChild(divLocyVeh);
 
+  const vehiculos = (veh) =>{
+    veh.forEach(vehi =>{
+      const box_vehiculo = document.createElement('div');
+        box_vehiculo.classList.add('box_vehiculo');
+        box_vehiculo.innerHTML=`<img class="movie__img" src="${vehi.img}" alt="imagen de locaciones">
+        <p class="parrafoDirector">Climate:"${vehi.climate}"</p>
+        <p class="parrafoDirector">Terrain:"${vehi.terrain}"</p
+        <p class="parrafoDirector">Surface Water:"${vehi.surface_water}"</p>`
+    })
+  }
   btnLocationVehicle.addEventListener("click", () => {   /** evento clik para locacion y vehiculos */
   containerSection.innerHTML = "";
 
   if (location.length === 0  && vehicle.length === 0) {
-    containerSection.innerHTML = `<img class="movie__img" src=" " alt="Imagen no disponible">`;
+    containerSection.innerHTML = `
+    <div class="imgNoDisponible">
+    <p>NO LOCATIONS AND VEHICLE</p>
+    <img class="movie__img_nodisponible" src="/src/imagenes/totoroComp.gif" alt="Imagen no disponible">
+    </div>`;
   } else {
-    for (let i = 0; i < location.length; i++) {
-      containerSection.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
-      <p class="parrafoDirector">Climate:"${location[i].climate}"</p>
-      <p class="parrafoDirector">Terrain:"${location[i].terrain}"</p>
-      <p class="parrafoDirector">Surface Water:"${location[i].surface_water}"</p>`;
+    vehiculos(location)
+  //   for (let i = 0; i < location.length; i++) {
+  //     containerSection.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
+  //     <p class="parrafoDirector">Climate:"${location[i].climate}"</p>
+  //     <p class="parrafoDirector">Terrain:"${location[i].terrain}"</p
+  //     <p class="parrafoDirector">Surface Water:"${location[i].surface_water}"</p>`;
 
-  }}
-  for (let i = 0; i < vehicle.length; i++) {
-    containerSection.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
-      <p class="parrafoDirector">Description:"${vehicle[i].description}"</p>
-      <p class="parrafoDirector">Vehicle Class:"${vehicle[i].vehicle_class}"</p>
-      <p class="parrafoDirector">Length:"${vehicle[i].length}"</p>
-      <p class="parrafoDirector">Pilot Name:"${vehicle[i].pilot.name}"</p> `;
+  // }}
+  // for (let i = 0; i < vehicle.length; i++) {
+  //   containerSection.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
+  //     <p class="parrafoDirector">Description:"${vehicle[i].description}"</p>
+  //     <p class="parrafoDirector">Vehicle Class:"${vehicle[i].vehicle_class}"</p>
+  //     <p class="parrafoDirector">Length:"${vehicle[i].length}"</p>
+  //     <p class="parrafoDirector">Pilot Name:"${vehicle[i].pilot.name}"</p> `;
 
   }
 })
@@ -179,6 +196,7 @@ btnpeliculas.addEventListener("click", () => {
    /**************Filtrar por Director******/
    filtersDirector.addEventListener("change", () => {
     const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
+    //location.reload();
     containerFilms.innerHTML = "";
     movie(myMoviesDirec);
     }),
@@ -222,25 +240,48 @@ ordersAnRe.addEventListener('change', (event) =>{
 
 /*_______________funcionalidad de boton graphic ______________*/
 
+function prueba ( ){
+let box_graphic = document.createElement("div");
+  box_graphic.classList.add('box_graphic');
+
+  box_graphic.innerHTML =
+  `
+  <div class="box_title_graphic">
+      <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
+  </div>
+
+  <div class="graphic">
+    <div class="img_graphic_box">
+      <img class="img_graphic" src="/src/imagenes/giphy (2).gif" alt="toroto">
+    </div>
+
+    <div class="graphic_canvas">
+      <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 50vh; "></canvas>
+    </div>
+  </div>>
+  `;
+  containerFilms.appendChild(box_graphic);
+}
+
 buttonGraphic.addEventListener('click', ()=>{
-  containerFilms.className ="disabled";
-  boxGraphic.className = "enabled";
-})
+  containerFilms.innerHTML="";
+prueba();
+grafico();
+} )
 
  /*________________ Graficos ___________________*/
+ const elementMovies = compute(dataFilms);
+ let nameBestMovies = elementMovies.map((element) => {
+     let titleBestMovies = element.title;
+     return titleBestMovies;
+ })
+ let scoreBestMovies = elementMovies.map((element) => {
+     let score = element.rt_score;
+     return score;
+ })
 
-const elementMovies = compute(dataFilms);
-        let nameBestMovies = elementMovies.map((element) => {
-            let titleBestMovies = element.title;
-            return titleBestMovies;
-        })
-        let scoreBestMovies = elementMovies.map((element) => {
-            let score = element.rt_score;
-            return score;
-        })
-
-
-const ctx = document.getElementById('myChart').getContext('2d');
+ const grafico = ()=>{
+  const ctx = document.querySelector('.myChart').getContext('2d');
   const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -275,3 +316,4 @@ const ctx = document.getElementById('myChart').getContext('2d');
           }
         }
         })
+}
