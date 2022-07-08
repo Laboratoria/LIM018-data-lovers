@@ -96,18 +96,6 @@ main h3{
   text-align: center;
 }
 
-.titleDirector {
-  font-size: 10px;
-  align-items: center;
-  text-align: center;
-}
-
-.parrafoDirector {
-  font-size: 5px;
-  align-items: center;
-  text-align: start;
-}
-
 .contenedor-paginas {
   display: none;
   display: flex;
@@ -219,33 +207,40 @@ main h3{
   border-radius: 15px;
   max-width: 80%;
 }
+
 @media screen and (max-width: 575.98px) {
   .container-films{
     flex-direction: column;
+    align-items: center;
+  }
+  .subContenedorPelicula{
+    width: 60%;
   }
 }
 
 @media only screen and (max-width: 991.98px){
   .container-films{
     flex-direction: column;
+    align-items: center;
   }
 }
 
 
 /*******************CONTENEDOR DE BLOQUE DIRECTOR ******************/
-
 .subContenedorPelicula{
   border-radius: 20px;
-  border: #f23315 3px solid;
-  margin: 10px;
-  background-color: #ffffffef;
-}
 
+  border: #CAF995 3px solid;
+  margin: 1%;
+
+  background-color: #ffffffef;
+  width: 20.5%;
+}
 .imgDirector{
   border-radius: 15px;
   margin: 10px;
+  width: 90%;
 }
-
 .titleDirector{
   display: flex;
   justify-content: center;
@@ -258,6 +253,31 @@ main h3{
   margin: 2.5% 10%;
 }
 
+@media screen and (max-width: 575.98px) {
+  .subContenedorPelicula{
+    width: 60%;
+  }
+  .titleDirector{
+    font-size: 100%;
+  }
+
+  .parrafoDirector {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 991.98px){
+  .subContenedorPelicula{
+    width: 42%;
+  }
+  .parrafoDirector {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
 /***********
 
 /*____________________ GRAFICOS____________________*/
@@ -315,6 +335,7 @@ main h3{
   .graphic_canvas{
     width: 320px;
   }
+
   /*.myChart{
     height: 100px;
   }*/
@@ -438,6 +459,9 @@ background-color: #CAF995;
     font-size: 12px;
     padding: 5px 13px;
   }
+  .box_location .box_vehicle {
+    width: 90%;
+  }
   /*.btn__container{
     width: 100%;
   }
@@ -457,6 +481,7 @@ background-color: #CAF995;
     font-size: 16px;
     padding: 5px 8px;
   }
+
   /*.btn__container{
     width: 100%;
   }
@@ -469,7 +494,7 @@ background-color: #CAF995;
   margin: 15% 3%;
   height: 30%;
 }
-
+/*__PERSONAJES __*/
 .divPersonaje{
   border: #F8BBD0 2px solid;
   border-radius: 20px;
@@ -489,4 +514,38 @@ background-color: #CAF995;
   width: 90%;
   margin: 5% 5%;
 
+}
+
+/*__LOCACIONES y VEHICULOS__*/
+.box_location{
+  width: 20%;
+  border: #CAF995 2px solid;
+  font-size: 80%;
+  border-radius: 10%;
+  margin: 5% 0;
+}
+
+
+.img_location{
+  width: 90%;
+  margin: 5% ;
+  border-radius: 10%;
+}
+/*PARA CELULAR */
+@media only screen and (max-width: 575.98px){
+  .box_location{
+    width: 90%;
+  }
+  .img_location{
+    height: 300px;
+  }
+}
+/* PARA TABLET*/
+@media only screen and (max-width: 991.98px){
+  .box_location{
+    width: 90%;
+  }
+  .img_location{
+    height: 300px;
+  }
 }
