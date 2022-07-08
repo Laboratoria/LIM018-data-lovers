@@ -16,7 +16,6 @@ export const ordeName = (data) => {
     return 0;
   });
 };
-=======
 
 export const filtrarBuscador = (persons,name)=>{
 return (persons.filter(person =>person.name.startsWith(name)));

@@ -1,4 +1,3 @@
-
 import data from "./data/rickandmorty/rickandmorty.js";
 import { filterEspecies,ordeName,filtrarBuscador,filterid } from "./data.js";
 
@@ -53,28 +52,30 @@ selectEspecie.addEventListener("change", (event) => {
 
 // ventana modal
 let modal = document.getElementById("myModal");
+
 function mostrarModal(personajes) {
   personajes.forEach((element) => {
     const mostrarModal = document.createElement("div");
-    mostrarModal.innerHTML= `<p> nombre : ${element.name}</p> <p>estatus : ${element.status} </p>`;
+    mostrarModal.innerHTML= `<img src="${ element.image}"/> <p> Nombre: ${element.name}</p> <p>Estatus: ${element.status} </p> <p>Species: ${element.species} </p> <p>Type: ${element.type} </p> <p>Gender: ${element.gender} </p> 
+    <p> Episode: ${element.episode }</p>`;
     modal.appendChild(mostrarModal)
+    
 
   });
 }
-var span = document.getElementsByClassName("close")[0];
-// Get the modal
+
+// Get the moda
 function openModal (){
   const traeId = this.id; 
- let modal = document.getElementById("myModal");
- modal.innerHTML = "";
-  span.style.display= "block";
+  modal.innerHTML = "";
   modal.style.display = "block";
- 
+  
   mostrarModal(filterid(personajes,traeId))
   
- }
-// Get the <span> element that closes the modal
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  var modal = document.getElementById("myModal");  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  } 
 }
