@@ -13,7 +13,7 @@ const containerFilms = document.getElementById('containerFilms');
 
 //const descripcionPersonaje =document.getElementById('descripcion');
 const buttonGraphic = document.getElementById('buttonGraphic')
-const boxGraphic = document.getElementById('box_graphic')
+
 
 /* CLIK PARA EL BOTON GO DEL VIDEO */
 btnpeliculas.addEventListener("click", () => {
@@ -29,6 +29,7 @@ btnpeliculas.addEventListener("click", () => {
   btnhome.addEventListener("click", () => {
     header.className = "enabled";
     contenedorPaginas.className = "disabled";
+    location.reload(); //se agrego
     const videoportada = document.getElementById('videoportada');
     videoportada.play();
   });
@@ -60,7 +61,7 @@ btnpeliculas.addEventListener("click", () => {
     containerFilms.innerHTML = "";
     movie(dataFilms);
     })
-  /************ BOTON PARA AGRUPAR EL  DIV DEL COSTADO */
+  /************ PARA AGRUPAR EL  DIV DEL COSTADO */
 
   let containerBtnDescripcion = document.createElement("div");
   containerBtnDescripcion.classList.add('containerBtnDescripcion');
@@ -101,6 +102,7 @@ btnpeliculas.addEventListener("click", () => {
   const divPersonaje = document.createElement('div'); /*  se crea un div donde ira la foto del personaje y parrafos*/
   divPersonaje.classList.add('divPersonaje')
   containerSection.appendChild(divPersonaje);
+
 
   for (let i = 0; i < characters.length; i++) {
     divPersonaje.innerHTML += `
@@ -179,6 +181,7 @@ btnpeliculas.addEventListener("click", () => {
    /**************Filtrar por Director******/
    filtersDirector.addEventListener("change", () => {
     const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
+    //location.reload();
     containerFilms.innerHTML = "";
     movie(myMoviesDirec);
     }),
@@ -222,25 +225,48 @@ ordersAnRe.addEventListener('change', (event) =>{
 
 /*_______________funcionalidad de boton graphic ______________*/
 
+function prueba ( ){
+let box_graphic = document.createElement("div");
+  box_graphic.classList.add('box_graphic');
+
+  box_graphic.innerHTML =
+  `
+  <div class="box_title_graphic">
+      <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
+  </div>
+
+  <div class="graphic">
+    <div class="img_graphic_box">
+      <img class="img_graphic" src="/src/imagenes/giphy (2).gif" alt="toroto">
+    </div>
+
+    <div class="graphic_canvas">
+      <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 50vh; "></canvas>
+    </div>
+  </div>>
+  `;
+  containerFilms.appendChild(box_graphic);
+}
+
 buttonGraphic.addEventListener('click', ()=>{
-  containerFilms.className ="disabled";
-  boxGraphic.className = "enabled";
-})
+  containerFilms.innerHTML="";
+prueba();
+grafico();
+} )
 
  /*________________ Graficos ___________________*/
+ const elementMovies = compute(dataFilms);
+ let nameBestMovies = elementMovies.map((element) => {
+     let titleBestMovies = element.title;
+     return titleBestMovies;
+ })
+ let scoreBestMovies = elementMovies.map((element) => {
+     let score = element.rt_score;
+     return score;
+ })
 
-const elementMovies = compute(dataFilms);
-        let nameBestMovies = elementMovies.map((element) => {
-            let titleBestMovies = element.title;
-            return titleBestMovies;
-        })
-        let scoreBestMovies = elementMovies.map((element) => {
-            let score = element.rt_score;
-            return score;
-        })
-
-
-const ctx = document.getElementById('myChart').getContext('2d');
+ const grafico = ()=>{
+  const ctx = document.querySelector('.myChart').getContext('2d');
   const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -275,3 +301,4 @@ const ctx = document.getElementById('myChart').getContext('2d');
           }
         }
         })
+}
