@@ -41,24 +41,15 @@ btnpeliculas.addEventListener("click", () => {
   containerFilms.innerHTML = "";
 
 /******************* section donde ira el poster y unos parrafos  ******************* */
-let todoFilms = document.createElement("section");
-todoFilms.classList.add('todoFilms'); 
-containerFilms.appendChild(todoFilms);
-
-  let sectionInfoFilms = document.createElement("section");
-  sectionInfoFilms.classList.add('sectionInfoFilms'); /** pelicula ** */
-  todoFilms.appendChild(sectionInfoFilms);
-
   let sectionFilm = document.createElement("section");
   sectionFilm.classList.add('movie__section'); /** pelicula ** */
-  todoFilms.appendChild(sectionFilm);
+  containerFilms.appendChild(sectionFilm);
 
   sectionFilm.innerHTML =`<div class="movie_title"><h3>${e.title}</h3></div>
   <div class="movie_img"><img class="imgDirector"src="${e.poster}" alt="imagen"></div>
   <div class="movie_description"><p class="titleDirector"> ${e.title}</p>
   <p class="parrafoDirector">Year:"${e.release_date}"</p>
   <p class="parrafoDirector">Director:"${e.director}"</p>
-  <p class="parrafoDirector">Producer: "${e.producer}"</p>
   <p class="parrafoDirector">Producer: "${e.producer}"</p>
   </div> ` ;
 
@@ -81,8 +72,6 @@ containerFilms.appendChild(todoFilms);
   let btnContainer = document.createElement("section");/******container para botones : descripciojn, personajes, locacion y vehiculos*/
   btnContainer.classList.add('btn__container');
   containerBtnDescripcion.appendChild(btnContainer);
-
-
 
   let containerSection= document.createElement("section"); /** section donde ira decricopin y las imagenes de los personajes */
   containerSection.classList.add('containerSection');
@@ -115,15 +104,15 @@ containerFilms.appendChild(todoFilms);
 
   for (let i = 0; i < characters.length; i++) {
     divPersonaje.innerHTML += `
-      <div class="divPersonaje_container>
-        <img class="movie__img" src="${characters[i].img}" alt="Imagen">
-        <p class="parrafoDirector">Name:"${characters[i].name}"</p>
-        <p class="parrafoDirector">Age:"${characters[i].age}"</p>
-        <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
-        <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
-        <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
-        <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
-      </div>`;
+        <div class="movie_img_container"><img class="movie__imgPersonaje" src="${characters[i].img}" alt="Imagen"></div>
+        <div class="divPersonaje_container_description">
+          <p class="parrafoDirector">Name:"${characters[i].name}"</p>
+          <p class="parrafoDirector">Age:"${characters[i].age}"</p>
+          <p class="parrafoDirector">Year:"${characters[i].gender}"</p>
+          <p class="parrafoDirector">Director:"${characters[i].eye_color}"</p>
+          <p class="parrafoDirector">Producer: "${characters[i].hair_color}"</p>
+          <p class="parrafoDirector">Producer: "${characters[i].specie}"</p>
+        </div>`;
     }
 
    })
@@ -142,14 +131,14 @@ containerFilms.appendChild(todoFilms);
     containerSection.innerHTML = `<img class="movie__img" src=" " alt="Imagen no disponible">`;
   } else {
     for (let i = 0; i < location.length; i++) {
-      divImag.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
+      containerSection.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">
       <p class="parrafoDirector">Climate:"${location[i].climate}"</p>
       <p class="parrafoDirector">Terrain:"${location[i].terrain}"</p>
       <p class="parrafoDirector">Surface Water:"${location[i].surface_water}"</p>`;
 
   }}
   for (let i = 0; i < vehicle.length; i++) {
-    divImag.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
+    containerSection.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">
       <p class="parrafoDirector">Description:"${vehicle[i].description}"</p>
       <p class="parrafoDirector">Vehicle Class:"${vehicle[i].vehicle_class}"</p>
       <p class="parrafoDirector">Length:"${vehicle[i].length}"</p>
@@ -158,9 +147,7 @@ containerFilms.appendChild(todoFilms);
   }
 })
 }
- /*let containerBox = document.createElement("section");
-  containerBox.classList.add('containerBox');
-  //tabContainer.appendChild(btnContainer);
+
 /***************** Div para cada pelicula *******************/
 
    const movie = (dataFilms) => {
@@ -183,49 +170,30 @@ containerFilms.appendChild(todoFilms);
    };
    movie(dataFilms);
 
-   /**************Filtrar por Director******/
-   filtersDirector.addEventListener("change", () => {
-    const myMoviesDirec =(filterByDirector(data.films,filtersDirector.value));
-    containerFilms.innerHTML = "";
-    movie(myMoviesDirec);
-    }),
-
-    /**************Filtrar por Productor******/
-   filtersProducer.addEventListener("change", () => {
-    const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
-    containerFilms.innerHTML = "";
-    movie(myMoviesPro);
-    });
-
-    /*******Ordenar A-Z********** */
-   const ordersAz = document.querySelector('.filters-Az');
-   ordersAz.addEventListener('change', (event) =>{
-   let ordenar;
-   if (event.target.value === "A-Z"){
-    ordenar = orderAz(data.films)
-   }
-   else {
-    ordenar= orderZa(data.films)
-   }
-   containerFilms.innerHTML = "";
-   movie(ordenar);
-   });
-
-/*******Ordenar Antiguo - Reciente ********** */
-const ordersAnRe = document.querySelector('.filters-year');
-ordersAnRe.addEventListener('change', (event) =>{
-  let ordenarAsc;
-  if (event.target.value === "Antiguo"){
-    ordenarAsc = sortByAsc(data.films)
-  }
-  else {
-    ordenarAsc= sortByDesc(data.films)
-  }
-  containerFilms.innerHTML = "";
-  movie(ordenarAsc);
- })
-
-
+  /**--______________________________         Filtrar y Ordenar por Director   y Productor   ________________________________________*/
+      const totalEvent = (selectionFilm, filterBy) =>{
+      selectionFilm.addEventListener("change", () => {
+      const myMoviesDirec =(filterBy(data.films,selectionFilm.value));
+      containerFilms.innerHTML = "";
+      movie(myMoviesDirec);
+                           
+      const ordersAz = document.querySelector('.filters-Az');       /*********ordenar director de AZ - ZA  ***** */
+      ordersAz.addEventListener('change', (event) =>{
+      let ordenar; event.target.value === "A-Z" && selectionFilm.value !=0? ordenar = orderAz(myMoviesDirec):ordenar = orderZa(myMoviesDirec)
+      containerFilms.innerHTML = "";
+      movie(ordenar);
+      })
+                 
+      const ordersAnRe = document.querySelector('.filters-year');    /*********ordenar director de Antiguo  - Reciente  ***** */
+      ordersAnRe.addEventListener('change', (event) =>{
+      let ordenarAsc; event.target.value === "Antiguo" && selectionFilm.value !=0? ordenarAsc = sortByAsc(myMoviesDirec):ordenarAsc= sortByDesc(myMoviesDirec)
+     containerFilms.innerHTML = "";
+     movie(ordenarAsc);
+     })
+    })
+  } 
+  totalEvent (filtersDirector, filterByDirector)
+  totalEvent (filtersProducer, filterByProducer)
 
 /*_______________funcionalidad de boton graphic ______________*/
 
@@ -233,7 +201,6 @@ buttonGraphic.addEventListener('click', ()=>{
   containerFilms.className ="disabled";
   boxGraphic.className = "enabled";
 })
-
  /*________________ Graficos ___________________*/
 
 const elementMovies = compute(dataFilms);
@@ -245,7 +212,6 @@ const elementMovies = compute(dataFilms);
             let score = element.rt_score;
             return score;
         })
-
 
 const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
