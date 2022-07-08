@@ -196,27 +196,7 @@ ul.slider li:target{
     flex: flex-start;
     gap: 30px;
     flex-wrap: wrap;
+    font: white;
   }
-  /* Modal Content/Box */
-  /* .modal-content{
-    background-color: #fefefe;
-    margin: 15% auto; 15% from the top and centered
-    padding: 20px;
-    border: 1px solid rgb(201, 157, 12);
-    width: 80%; Could be more or less, depending on screen size
-  } */
+
   
-  /* The Close Button */ 
-   .close {
-    color: rgb(131, 9, 9);
-    float: right;
-    font-size: 300px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: rgb(26, 153, 79);
-    text-decoration: block;
-    cursor: pointer;
-  }
