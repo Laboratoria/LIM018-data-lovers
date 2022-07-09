@@ -227,85 +227,83 @@ btnpeliculas.addEventListener("click", () => {
   totalEvent (filtersDirector, filterByDirector)
   totalEvent (filtersProducer, filterByProducer)
 
-/*_______________funcionalidad de boton graphic ______________*/
+  /*______INSERTAR CONTENEDOR DEL GRAFICO  _____*/
 
-function prueba ( ){
-let box_graphic = document.createElement("div");
-  box_graphic.classList.add('box_graphic');
-
-  box_graphic.innerHTML =
-  `
-  <div class="box_title_graphic">
-      <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
-  </div>
-
-  <div class="graphic">
-    <div class="img_graphic_box">
-      <img class="img_graphic" src="/src/imagenes/giphy (2).gif" alt="toroto">
+  function prueba ( ){
+  let box_graphic = document.createElement("div");
+    box_graphic.classList.add('box_graphic');
+  
+    box_graphic.innerHTML =
+    `
+    <div class="box_title_graphic">
+        <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
     </div>
-
-    <div class="graphic_canvas">
-      <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 50vh; "></canvas>
-    </div>
-  </div>>
-  `;
-  containerFilms.appendChild(box_graphic);
-}
-
-buttonGraphic.addEventListener('click', ()=>{
-  containerFilms.className ="disabled";
-  boxGraphic.className = "enabled";
-})
- /*________________ Graficos ___________________*/
- const elementMovies = compute(dataFilms);
- let nameBestMovies = elementMovies.map((element) => {
-     let titleBestMovies = element.title;
-     return titleBestMovies;
- })
- let scoreBestMovies = elementMovies.map((element) => {
-     let score = element.rt_score;
-     return score;
- })
-
-
-const ctx = document.getElementById('myChart').getContext('2d');
-
- const grafico = ()=>{
-  const ctx = document.querySelector('.myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: nameBestMovies,  //eje en X
-      datasets: [{
-        label: 'score',   //eje en y
-        data: scoreBestMovies,
-        backgroundColor: [
-          "#665191",
-          "#a05195",
-          "#d45087",
-          "#f95d6a",
-          "#ff7c43",
-          ],
-        borderColor: [
-          "#665191",
-          "#a05195",
-          "#d45087",
-          "#f95d6a",
-          "#ff7c43",
-          ],
-        borderWidth: 3,
-        borderRadius: 1
-      }]
-
-        },
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true
-            }
-          }
-        }
-        })
-        
-
-        }
+  
+    <div class="graphic">
+      <div class="img_graphic_box">
+        <img class="img_graphic" src="/src/imagenes/giphy (2).gif" alt="toroto">
+      </div>
+  
+      <div class="graphic_canvas">
+        <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 65vh; "></canvas>
+      </div>
+    </div>>
+    `;
+    containerFilms.appendChild(box_graphic);
+  }
+  /*_____EJE "X" Y "Y" ________*/
+  const elementMovies = compute(dataFilms);
+  let nameBestMovies = elementMovies.map((element) => {
+      let titleBestMovies = element.title;
+      return titleBestMovies;
+  })
+  let scoreBestMovies = elementMovies.map((element) => {
+      let score = element.rt_score;
+      return score;
+  })
+  
+  /* ___ GRAFICO______ */
+  const grafico = ()=>{
+   const ctx = document.querySelector('.myChart').getContext('2d');
+   const myChart = new Chart(ctx, {
+     type: 'bar',
+     data: {
+       labels: nameBestMovies,  //eje en X
+       datasets: [{
+         label: 'score',   //eje en y
+         data: scoreBestMovies,
+         backgroundColor: [
+           "#665191",
+           "#a05195",
+           "#d45087",
+           "#f95d6a",
+           "#ff7c43",
+           ],
+         borderColor: [
+           "#665191",
+           "#a05195",
+           "#d45087",
+           "#f95d6a",
+           "#ff7c43",
+           ],
+         borderWidth: 3,
+         borderRadius: 1
+       }]
+  
+         },
+         options: {
+         scales: {
+           y: {
+             beginAtZero: true
+             }
+           }
+         }
+         })
+  }
+  
+  /*___ FUNCIONALIDAD DEL CLICK ___ */
+  buttonGraphic.addEventListener('click', ()=>{
+    containerFilms.innerHTML="";
+  prueba();
+  grafico();
+  } )
