@@ -229,10 +229,8 @@ main h3{
 /*******************CONTENEDOR DE BLOQUE DIRECTOR ******************/
 .subContenedorPelicula{
   border-radius: 20px;
-
   border: #CAF995 3px solid;
   margin: 1%;
-
   background-color: #ffffffef;
   width: 20.5%;
 }
@@ -283,13 +281,12 @@ main h3{
 /*____________________ GRAFICOS____________________*/
 
 .box_graphic{
-  background-color: #ffffff6e;
   width: 82%;
   height: auto;
   margin-right: 8%;
   margin-left: 8%;
   border-radius: 20px;
-  border: #2fb1c2 2px solid;
+  border: none;
 }
 .box_title_graphic{
   display: flex;
@@ -353,17 +350,15 @@ main h3{
   }*/
 }
 
-/*footer{
+footer{
   background-color: #2fb1c2;
   color: #ffffff;
   text-align: center;
   display: flex;
   align-items: flex-end;
   display: none;
-
+}
 /********** NUEVO CSS ****/
-
-
 
 /*_____ CONTENEDOR DE img*/
 .movie__section {

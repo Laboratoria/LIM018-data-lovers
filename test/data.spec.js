@@ -1,31 +1,26 @@
-import { filterByDirector,filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute} from '../src/data.js';
+import { filterByDirector,filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc} from '../src/data.js';
 
 const data = [
   {
     "title": "Castle in the Sky",
     "director": "Hayao Miyazaki",
     "release_date": "1986",
-    "rt_score": "93"
-
   },
   {
     "title": "Grave of the Fireflies",
     "director": "Isao Takahata",
     "producer": "Toru Hara",
     "release_date": "1988",
-    "rt_score": "98"
   },
   {
     "title": "Kiki's Delivery Service",
     "director": "Hayao Miyazaki",
-    "release_date": "1989",
-    "rt_score": "99"
+    "release_date": "1989"
   },
   {
     "title": "From Up on Poppy Hill",
     "director": "Gorō Miyazaki",
-    "release_date": "1990",
-    "rt_score": "97"
+    "release_date": "1990"
   }
 ]
 
@@ -95,7 +90,7 @@ describe(sortByAsc, () => {
   });
 });
 
-//*********funcion  ordenar por Reciente******************************/
+//*********funcion  ordenar por Reciente******************************
 describe(sortByDesc, () => {
   it('is a function', () => {
     expect(typeof sortByDesc).toBe('function');
@@ -106,21 +101,5 @@ describe(sortByDesc, () => {
     expect(ordenadoAñoD[2].title).toBe('Grave of the Fireflies');
     expect(ordenadoAñoD[1].title).toBe('Kiki\'s Delivery Service');
     expect(ordenadoAñoD[0].title).toBe('From Up on Poppy Hill');
-  });
-});
-
-//********* funcion  Compute ******************************
-describe(compute, () => {
-  it('is a function', () => {
-    expect(typeof compute).toBe('function');
-  });
-
-  it('return las peliculas con score >=', () => {
-    let computeScore = compute(data);
-    expect(computeScore[2].title).toBe('Grave of the Fireflies');
-    expect(computeScore[1].title).toBe('Kiki\'s Delivery Service');
-    expect(computeScore[0].title).toBe('From Up on Poppy Hill');
-    
-   
   });
 });
