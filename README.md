@@ -319,7 +319,7 @@ Yo como usuario me gustaria conocer estadisticas de  las mejores animaciones del
 ![Prototipo de Alja Fidelidad 6](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad60.jpeg?raw=true)
 
 
-#### Testeos de usabilidad
+#### TESTEOS DE USABILIDAD
 
 Durantre el proceso de diseño de la página web, se mostró a  usuarios para recibir feedback y hacer mejoras. También en cada sprint  del proyecto se recibió feedback de compañeras y coaches que nos permitieron testear la funcionalidad.
 
@@ -347,7 +347,7 @@ Las _pruebas unitarias_ dan una cobertura del 70% de _statements_
 (_ramas_) del archivo `src/data.js` que contiene las funciones y está detallado
 en la sección de [Consideraciones técnicas](#srcdatajs).
 
-![Tes Unitarios]()
+![Tes Unitarios](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/test-unitarios.jpeg?raw=true)
 
 ## 6. Hacker edition
 
