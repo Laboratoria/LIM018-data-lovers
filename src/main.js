@@ -51,33 +51,31 @@ selectEspecie.addEventListener("change", (event) => {
 });
 
 // ventana modal
-var span = document.getElementsByClassName("close")[0];
 let modal = document.getElementById("myModal");
+
 function mostrarModal(personajes) {
   personajes.forEach((element) => {
     const mostrarModal = document.createElement("div");
-    mostrarModal.innerHTML= `<p> nombre : ${element.name}</p> <p>estatus : ${element.status} </p>`;
+    mostrarModal.innerHTML= `<img src="${ element.image}"/> <p> Nombre: ${element.name}</p> <p>Estatus: ${element.status} </p> <p>Species: ${element.species} </p> <p>Type: ${element.type} </p> <p>Gender: ${element.gender} </p> 
+    <p> Episode: ${element.episode }</p>`;
     modal.appendChild(mostrarModal)
+    
 
   });
 }
-// Get the modal
+
+// Get the moda
 function openModal (){
   const traeId = this.id; 
- let modal = document.getElementById("myModal");
   modal.innerHTML = "";
-  span.style.display= "block";
   modal.style.display = "block";
- 
+  
   mostrarModal(filterid(personajes,traeId))
   
- }
-// Get the <span> element that closes the modal
-// When the user clicks on <span> (x), close the modal
+}
 
 window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      } 
-    }
-    
+  if (event.target == modal) {
+    modal.style.display = "none";
+  } 
+}

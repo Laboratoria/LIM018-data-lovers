@@ -2,7 +2,6 @@ export const filterEspecies = (datos, gato) => {
   return  datos.filter(element => element.species== gato); 
 
 };
-
  
 export const ordeName = (data) => {
   return data.sort(function (a,b) {
@@ -23,13 +22,12 @@ return (persons.filter(person =>person.name.startsWith(name)));
 
 export const filterid = (datos, id) => {
   const modale =  datos.filter(element => element.id == id); 
+
 return modale ;
 };
 
 
+// export const filtrarPersonajes = (datos ,nombre) => {
 
- 
-export const filtrarPersonajes = (datos ,nombre) => {
-
-  return datos.filter(e => e.name==nombre);
-};
+//   return datos.filter(e => e.name==nombre);
+// };

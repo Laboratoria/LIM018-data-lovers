@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick and Morty</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-      <header>
-        <div class="name">
-          <img
-            src="http://assets.stickpng.com/images/58f37720a4fa116215a9240f.png"
-             
-            />
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="name">
+      <img src="http://assets.stickpng.com/images/58f37720a4fa116215a9240f.png" />
+    </div>
+  </header>
+
+  <nav id="containerMenu">
+    <div id="menuPrincipal" class="desplegable">
+      <div>
+        <div class="buscador">
+          <input id="buscador" type="search" placeholder="busca aqui a tu personaje favorito" />
+          <img src="img_lupa.png" alt="lupa">
         </div>
-      </header>
+      </div>
 
-      <nav id="containerMenu">
-        <div id="menuPrincipal" class="desplegable">
-          <div>
-            <div class="buscador" >
-              <input id="buscador" type="search" placeholder="busca aqui a tu personaje favorito" />
-              <img src="img_lupa.png" alt="lupa">
-            </div> 
-            <div>
-              
-            </div>  
-          </div>
+      <div class="personajes">
+        <select id="selectPersonajes" class="desplegable">
+          <option value=" " selected>Personajes</option>
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
 
-        <div class="personajes">
-          <select id="selectPersonajes" class="desplegable">
-            <option value=" " selected>Personajes</option>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
-            
-          </select>
-        </div> 
-        <!-- Trigger/Open The Modal -->
-    <!-- <button id="myBtn">Open Modal</button> -->
-        <!-- ventana modal  -->
-        <div id="myModal" class="modal">
+        </select>
+      </div>
+      <!-- Trigger/Open The Modal -->
+      <!-- <button id="myBtn">Open Modal</button> -->
+      <!-- ventana modal  -->
+      <div id="myModal" class="modal">
 
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p> debe salir datos </p>
-          </div>
-        
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="letraModal"> debe salir datos </p>
         </div>
-        <div class="especie">
-          <select id="selectEspecie" class="desplegable">
-            <option value="" selected>Especie</option>
-            <option value="Human">Humanos</option>
-            <option value="Alien">Alien</option>
-            <option value="Vampire">Vampiro</option>
-            <option value="Humanoid">Humanoide</option>
-            <option value="Robot">Robots</option>
-            <option value="Disease">Enfermedades</option>
-            <option value="Animal">Animales</option>
-            <option value="Cronenberg">Mutantes</option>
-            <option value="Mytholog">Mitologicos</option>
-            <option value="Parasite">Parasitos</option>
-            <option value="Poopybutthole">Poopybutthole</option>
-          </select>
+
+      </div>
+      <div class="especie">
+        <select id="selectEspecie" class="desplegable">
+          <option value="" selected>Especie</option>
+          <option value="Human">Humanos</option>
+          <option value="Alien">Alien</option>
+          <option value="Vampire">Vampiro</option>
+          <option value="Humanoid">Humanoide</option>
+          <option value="Robot">Robots</option>
+          <option value="Disease">Enfermedades</option>
+          <option value="Animal">Animales</option>
+          <option value="Cronenberg">Mutantes</option>
+          <option value="Mytholog">Mitologicos</option>
+          <option value="Parasite">Parasitos</option>
+          <option value="Poopybutthole">Poopybutthole</option>
+        </select>
       </div>
       <div class="DatosEstadisticos">
         <select id="selectDatosEs" class="desplegable">
@@ -72,89 +68,86 @@
           <option value="Episodio-2">Episodio 2</option>
           <option value="Episodio-3">Episodio 3</option>
           <option value="Episodio-4">Episodio 4</option>
-       
+
         </select>
-      </div> 
-    </nav> <br>
-    <div class="results"></div>   
-    <main id="main">
-      <!-- HOME -->
-      <div id="page1" class="page active">
-        <div class="page1">
-          <aside class="datosCuriosos">
-            <h1> <strong >DATOS CURIOSOS </strong> </h1>
-            <h2> <em>¿Por qué Rick eructa?</em></h2>
-            <p>Los eructos de Rick son 
-              su seña de identidad.
-               Para crearlos, el cocreador
-               Justin Roiland, quien le pone
-               voz (tanto a él como a Morty), bebe mucha agua. 
-              Sarah Chalke, la voz de Beth, puede eructar a su antojo y Roiland
-               ha confesado sentir envidia de su habilida</p>
-          </aside>
-    
-          <div class="carrusel">
-            <ul class="slider">
-              <li id="slide1"> 
-                <img src="reeel-1 (1).png"/>
-              </li>
-              <li id="slide2"> 
-                <img src="reel-2.png"/>
-              </li>
-              <li id="slide3"> 
-                <img src="reel-3.png"/>
-              </li>
-            </ul>
-            <ul class="menu">
-              <li>
-                <a href="#slide1">1</a>
-              </li>
-              <li>
-                <a href="#slide2">2</a>
-              </li>
-              <li>
-                <a href="#slide3">3</a>
-              </li>         
-            </ul>
-          </div>
-    
-          <!-- <aside class="muerteRick">
+      </div>
+    </div>
+  </nav> <br>
+  <div class="results"></div>
+  <main id="main">
+    <!-- HOME -->
+    <div id="page1" class="page active">
+      <div class="page1">
+        <aside class="datosCuriosos">
+          <h1> <strong>DATOS CURIOSOS </strong> </h1>
+          <h2> <em>¿Por qué Rick eructa?</em></h2>
+          <p>Los eructos de Rick son
+            su seña de identidad.
+            Para crearlos, el cocreador
+            Justin Roiland, quien le pone
+            voz (tanto a él como a Morty), bebe mucha agua.
+            Sarah Chalke, la voz de Beth, puede eructar a su antojo y Roiland
+            ha confesado sentir envidia de su habilida</p>
+        </aside>
+
+        <div class="carrusel">
+          <ul class="slider">
+            <li id="slide1">
+              <img src="reeel-1 (1).png" />
+            </li>
+            <li id="slide2">
+              <img src="reel-2.png" />
+            </li>
+            <li id="slide3">
+              <img src="reel-3.png" />
+            </li>
+          </ul>
+          <ul class="menu">
+            <li>
+              <a href="#slide1">1</a>
+            </li>
+            <li>
+              <a href="#slide2">2</a>
+            </li>
+            <li>
+              <a href="#slide3">3</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <aside class="muerteRick">
             <h1>¿Quién mató a la mujer de Rick?</h1>
             <p>Resulta que Rick era un científico que inventó una pistola de portales interdimensionales (hasta aquí todo bien). Enseguida, se peleó con su otro yo de otra dimensión y este arrojó una bomba por un portal que mató a su esposa Diane y a su pequeña hija Beth</p>
           </aside>   -->
-        </div>
       </div>
+    </div>
 
-      <!-- RESULTADOS DE BUSQUEDA -->
-      <div id="page2" class="page">
-        <div class="page2">
-    
-        </div>
+    <!-- RESULTADOS DE BUSQUEDA -->
+    <div id="page2" class="page">
+      <div class="page2">
+
       </div>
+    </div>
 
-      <!-- PERSONAJES -->
-      <div id="page3" class="page">
-        <div class="page3">
-          
-        </div>
+    <!-- PERSONAJES -->
+    <div id="page3" class="page">
+      <div class="page3">
+
       </div>
+    </div>
 
-      <!-- ESPECIES -->
-      <div id="page4" class="page">
-        <div class="page4">
-         
-        </div>
-        <div id="todoshumanos"></div>
+    <!-- ESPECIES -->
+    <div id="page4" class="page">
+      <div class="page4">
+
       </div>
-    </main>
+      <div id="todoshumanos"></div>
+    </div>
+  </main>
 
-<!-- estadsticas de personajes  -->
-    <div id="characterStatistics">
-      <p>Todos los personajes de la serie: 493</p>
-    </div> 
+  <footer>
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
 
-    <footer>
-    </footer>
-    <script src="main.js" type="module"></script>
-  </body>
 </html>
