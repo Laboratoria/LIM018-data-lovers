@@ -22,12 +22,17 @@
   <main id ="maincontaniner" >
     <div id="contenedorPaginas" class="contenedor-paginas" >
 
-      <h2 id="peliculasAnimadas" class= "peliculas-animadas">ANIMATED FILMS </h2>
+      <div class="containertitulo">
+        <div class="subContainerTitulo"><img src="/src/imagenes/totoroTitulo-removebg-preview.png" alt="logoghibli"/></div>
+        <div class="subContainerTitulo"><h2 id="peliculasAnimadas" class= "peliculas-animadas">ANIMATED FILMS </h2></div>
+        <div class="subContainerTitulo"><img  src="/src/imagenes/totoroTitulo-removebg-preview.png" alt="logoghibli"/></div>
+      </div>
+
 
       <div class="filters" id="filtrados">
-        <button type ="menu" id="home" class="home">RETURN</button>
+        <button type ="menu" id="home" class="home">Return</button>
         <select id="filtersDirector" class="filters-director">
-          <option selected value="all">DIRECTOR</option>
+          <option selected value="all">Director</option>
           <option value="Hayao Miyazaki">Hayao Miyazaki</option>
           <option value="Gorō Miyazaki">Gorō Miyazaki</option>
           <option value="Isao Takahata">Isao Takahata</option>
@@ -36,7 +41,7 @@
           <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
         </select>
         <select id="filtersProducer" class="filters-producer">
-          <option selected value="all">PRODUCER</option>
+          <option selected value="all">Producer</option>
           <option value="Isao Takahata">Isao Takahata</option>
           <option value="Toshio Suzuki">Toshio Suzuki</option>
           <option value="Toru Hara">Toru Hara</option>
@@ -44,12 +49,12 @@
           <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
         </select>
         <select id="filtersYear" class="filters-year">
-          <option selected value="all">BY YEAR</option>
+          <option selected value="all">By year</option>
           <option value="Antiguo">Ancient</option>
           <option value="Reciente">Recent</option>
         </select>
         <select id="filtersAz" class="filters-Az">
-          <option selected value="all">BY TITLE</option>
+          <option selected value="all">By title</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A </option>
         </select>
@@ -68,7 +73,7 @@
     </div>
 
   </main>
-  <footer id="footer">
+  <footer class="footer">
     <p>Copyright &copy; 2022 - by Denis and Stefani</p>
   </footer>
   <script src="main.js" type="module"></script>

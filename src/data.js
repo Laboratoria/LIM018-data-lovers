@@ -14,9 +14,9 @@ export function filterByProducer (data, filtersProducer) {
 
 /*-------------- filtro por film -----------------------------------*/
 
-/*export const filtredFilm = (data, cajapersonajes) => {
+export const filtredFilm = (data, cajapersonajes) => {
   return  data.filter(films => films.id == cajapersonajes);
-}*/
+}
 
 // ordenar AZ
 export function orderAz (data){
@@ -69,7 +69,7 @@ export function sortByDesc (data) {
 
 // ****** BUSCAR ****
 
-export const searchData = (data, input) => {
+/*export const searchData = (data, input) => {
   let searchResults = [];
   data.filter((x) => {
     if (x.films.toLowerCase().startsWith(input)) {
@@ -77,5 +77,5 @@ export const searchData = (data, input) => {
     }
   });
   return searchResults;
-};
+};*/
 
