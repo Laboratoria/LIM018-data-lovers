@@ -14,7 +14,7 @@ const containerFilms = document.getElementById('containerFilms');
 //const boxGraphic = document.getElementById('box_graphic');
 
 //const descripcionPersonaje =document.getElementById('descripcion');
-const buttonGraphic = document.getElementById('buttonGraphic')
+
 
 
 /* CLIK PARA EL BOTON GO DEL VIDEO */
@@ -227,7 +227,12 @@ btnpeliculas.addEventListener("click", () => {
   totalEvent (filtersDirector, filterByDirector)
   totalEvent (filtersProducer, filterByProducer)
 
+ 
+ 
   /*______INSERTAR CONTENEDOR DEL GRAFICO  _____*/
+
+
+const buttonGraphic = document.getElementById('buttonGraphic')
 
   function prueba ( ){
   let box_graphic = document.createElement("div");
@@ -252,6 +257,7 @@ btnpeliculas.addEventListener("click", () => {
     containerFilms.appendChild(box_graphic);
   }
   /*_____EJE "X" Y "Y" ________*/
+  
   const elementMovies = compute(dataFilms);
   let nameBestMovies = elementMovies.map((element) => {
       let titleBestMovies = element.title;
@@ -262,7 +268,9 @@ btnpeliculas.addEventListener("click", () => {
       return score;
   })
   
+  
   /* ___ GRAFICO______ */
+  
   const grafico = ()=>{
    const ctx = document.querySelector('.myChart').getContext('2d');
    const myChart = new Chart(ctx, {
@@ -299,11 +307,14 @@ btnpeliculas.addEventListener("click", () => {
            }
          }
          })
-  }
+        }
+  
   
   /*___ FUNCIONALIDAD DEL CLICK ___ */
+  
   buttonGraphic.addEventListener('click', ()=>{
     containerFilms.innerHTML="";
   prueba();
   grafico();
   } )
+  

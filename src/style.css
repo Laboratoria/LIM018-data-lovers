@@ -78,12 +78,13 @@ header .lista-peliculas:hover{
 /*----------------------MAIN--------------------*/
 main h2{
   text-align: center;
+  align-items: center;
   font-size: 50px;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 25px;
   margin-top: 20px;
   font-family: 'Averia Serif Libre', cursive;
-  width: 80%;
+  width: 100%;
   color: #0b2b81;
 }
 

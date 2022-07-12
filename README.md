@@ -36,66 +36,31 @@ al lado derecho.
 
 ## 2. Resumen del proyecto
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+##  Studio Ghibli 
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+Studio Ghibli es un estudio de animación japonés, conocido por sus largometrajes animados como Mi vecino Totoro, El viaje de Chihiro o El castillo ambulante, entre otros grandes éxitos.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+Las animaciones tienen gran acogida a nivel mundial y algunas han recibido varias nominaciones y premios. De todo este fandom hay un grupo que desea poder interactuar y ver la información de las animaciones y sus personajes.
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+##  Hallazgos 
 
-Estos son datos que te proponemos:
+Para entender mejor qué información podrían necesitar nuestras usuarias, hicimos una rápida investigación (research) y estos son algunos de los hallazgos.
 
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
+ *Studio Ghibli tiene varias animaciones, para nuestras usuarias es importante saber cuántas y cuáles son.
+ *Las animaciones tienen directorxs y productorxs. Estxs son las mentes detrás de una gran animación. En Studio Ghibli hay directorxs y productorxs que han colaborado en la creación de más de una animación. Por ello, es importante para nuestra usuaria poder conocerlos y saber cuántas y cuáles son las animaciones a las que dieron "vida".
+ *Las animaciones tienen información relevante para nuestras usuarias, como descripción, fecha de lanzamiento, peso, director, productor y personajes.
+ *Cada animación tiene sus personajes, para nuestras usuarias es importante saber cuántos y cuáles son
+ *Los personajes tienen características únicas que la usuaria quiere saber, como nombre, edad, género, especie, etc.
+ *Las animaciones tienen locaciones y vehículos únicos en cada una. Para nuestras usuarias es importante saber cuáles son.
+ *Adicionalmente a esta información, para nuestras usuarias es importante poder ver los tipos de especies que hay en cada animación.
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
-
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
-
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](src/data/athletes/README.md)
-
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  En este set encontrarás una lista de las animaciones y sus personajes del
-  [Studio Ghibli](https://ghiblicollection.com/).
-  - [Investigación con seguidores de las animaciones del Studio Ghibli](src/data/ghibli/README.md)
-
-* [Harry Potter](src/data/harrypotter/harry.json).
-  En este set encontrarás una lista de los personajes,libros pociones
-  y hechizos de toda la saga de
-  [Harry Potter](https://harrypotter.fandom.com).
-  - [Investigación con seguidoras de Harry Potter](src/data/harrypotter/README.md)
-
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
 
 ## 3. Objetivos de aprendizaje
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+El objetivo principal de este proyecto es aprender a diseñar y construir una
+interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
+usuario necesita.
+
 
 ### HTML
 
@@ -289,11 +254,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 </p></details>
 
 ## 4. Consideraciones generales
-
 * Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
+* El proyecto será entregado subiendo tu código a GitHub 
+* Tiempo para completarlo: Referencia 4 semanas.
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
@@ -301,22 +264,34 @@ Los criterios para considerar que has completado este proyecto son:
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+Nuestra web muestra datos e información  de las películas animadas del Studio Ghibli, puediendo visualizarse y manipularse la informacion de las pelícuñas de diferentes directores y productores de mensionado estudio de producción.
+
+El objetivo de nuestra página es que los usuarios puedan filtrar las películas animadas por director o productor, así como poder ordenar alfabeticamente o por año la data ya filtrada. Para ello utilizamos una interfaz intuitiva y amigable para el usuario, ademas de ser responsive para distintos dispositivos.
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+HISTORIA DE USUARIO 1
+Yo como usuaria me gustaria ver las diferentes animaciones del Studio Ghibli, leer una breve descripcion de las peliculas, director y productor, año de lanzamiento, asi como tambien conocer a sus personajes, locacion y vehiculos de la historia. Tambien ordenar la informacion por nombre director y productor y poder orderlos alfabeticamente o por fecha.
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+---- Criterios de Aceptación 1 ----
+* El usuario debe poder filtrar por director y productor, y ordenar por año.
+* El usuario debe poder ver una descripcion de la pelicula y datos principales.
+* El usuario debe poder ordenar los resultados de A-Z o de Z -A en todos los campos.
+* El usuario debe poder ordenar los resultados por Reciente-Antiguo o Reciente-Antiguo.
 
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
+---- Definición de Terminado 1 ----
+* EL producto debe ser aprobado por los test.
+
+HISTORIA DE USUARIO 2
+Yo como usuario me gustaria conocer estadisticas de  las mejores animaciones del Studio Ghibli clasificandolas por los mejores rt score.
+
+---- Criterios de Aceptación 2 ----
+* El usuario debe poder generar un listado de cantidad de animaciones por director
+* El usuario debe poder visualizar un grafico de barras que muestre las 5 mejores peliculas animadas.
+
+---- Definición de Terminado 2 ----
+* EL producto debe ser aprobado por los test.
+
 
 ### Diseño de la Interfaz de Usuario
 
