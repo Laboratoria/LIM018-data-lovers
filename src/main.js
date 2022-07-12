@@ -10,7 +10,7 @@ const header = document.getElementById('header');
 const contenedorPaginas = document.getElementById("contenedorPaginas");
 const btnhome = document.getElementById("home");
 const containerFilms = document.getElementById('containerFilms');
-
+const footer = document.querySelector(".footer");
 //const descripcionPersonaje =document.getElementById('descripcion');
 const buttonGraphic = document.getElementById('buttonGraphic')
 
@@ -23,6 +23,7 @@ btnpeliculas.addEventListener("click", () => {
   movie(dataFilms)
   const videoportada = document.getElementById('videoportada');
   videoportada.pause();
+  footer.className = "enabled";
   })
 
 /*CLIK BOTON RETURN *************************/
@@ -32,6 +33,7 @@ btnpeliculas.addEventListener("click", () => {
     location.reload(); //se agrego
     const videoportada = document.getElementById('videoportada');
     videoportada.play();
+    footer.className = "disabled";
   });
 
  /*****  AL DAR CLIK A CADA PELI REALIZAR FUNCION  "newContainer"  **************/
@@ -182,7 +184,7 @@ btnpeliculas.addEventListener("click", () => {
       const div = document.createElement('div');
       div.classList.add('subContenedorPelicula');
       div.innerHTML= `<img class="imgDirector"src="${film.poster}" alt="imagen" >
-      <p class="titleDirector"> ${film.title}</p>
+      <p class="movie_title"> ${film.title}</p>
       <p class="parrafoDirector">Year:"${film.release_date}"</p>
       <p class="parrafoDirector">Director:"${film.director}"</p>
       <p class="parrafoDirector">Producer: "${film.producer}"</p> ` ;
@@ -204,7 +206,7 @@ btnpeliculas.addEventListener("click", () => {
     containerFilms.innerHTML = "";
     movie(myMoviesDirec);
     }),
-
+////////////////////////////////////////////////////////////////////////////////////////////////
     /**************Filtrar por Productor******/
    filtersProducer.addEventListener("change", () => {
     const myMoviesPro =(filterByProducer(data.films,filtersProducer.value));
@@ -244,19 +246,14 @@ ordersAnRe.addEventListener('change', (event) =>{
 
 /*_______________INSERTAR CONTENEDOR DEL GRAFICO  ______________*/
 
-function prueba ( ){
-let box_graphic = document.createElement("div");
-  box_graphic.classList.add('box_graphic');
+  function prueba ( ){
+  let box_graphic = document.createElement("div");
+    box_graphic.classList.add('box_graphic');
 
-  box_graphic.innerHTML =
-  `
-  <div class="box_title_graphic">
-      <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
-  </div>
-
-  <div class="graphic">
-    <div class="img_graphic_box">
-      <img class="img_graphic" src="/src/imagenes/giphy (2).gif" alt="toroto">
+    box_graphic.innerHTML =
+    `
+    <div class="box_title_graphic">
+        <h2 class="title_graphic"> TOP 5 BEST FILMS </h2>
     </div>
 
     <div class="graphic_canvas">
