@@ -255,7 +255,7 @@ usuario necesita.
 
 ## 4. Consideraciones generales
 * Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub 
+* El proyecto será entregado subiendo el código a GitHub 
 * Tiempo para completarlo: Referencia 4 semanas.
 
 ## 5. Criterios de aceptación mínimos del proyecto
@@ -297,78 +297,77 @@ Yo como usuario me gustaria conocer estadisticas de  las mejores animaciones del
 
 #### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+![Prototipo de Baja Fidelidad 1](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/baja-fidelidad11.jpeg?raw=true)
+
+![Prototipo de Baja Fidelidad 2](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/baja-fidelidad22.jpeg?raw=true)
+
+![Prototipo de Baja Fidelidad 3](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/baja-fidelidad33.jpeg?raw=true)
+
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
+![Prototipo de Alja Fidelidad 1](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad11.jpeg?raw=true)
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+![Prototipo de Alja Fidelidad 2](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad22.jpeg?raw=true)
+
+![Prototipo de Alja Fidelidad 3](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad33.jpeg?raw=true)
+
+![Prototipo de Alja Fidelidad 4](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad44.jpeg?raw=true)
+
+![Prototipo de Alja Fidelidad 5](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad55.jpeg?raw=true)
+
+![Prototipo de Alja Fidelidad 6](https://github.com/Denimarx/LIM018-data-lovers/blob/main/src/imagenes/alta-fidelidad60.jpeg?raw=true)
+
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Durantre el proceso de diseño de la página web, se mostró a  usuarios para recibir feedback y hacer mejoras. También en cada sprint  del proyecto se recibió feedback de compañeras y coaches que nos permitieron testear la funcionalidad.
+
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
+Luego de diseñar la interfaz de usuario se trabajó en su implementación.
 
-Como mínimo, tu implementación debe:
+Como mínimo, tu implementación permite:
 
 1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
    etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
+2. Al usuario interactuar para obtener la infomación que necesita.
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
    tamaños de pantallas: móviles, tablets y desktops.
 4. Que la interfaz siga los fundamentos de _visual design_.
 
 ### Pruebas unitarias
 
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
+El _boilerplate_ de este proyecto no incluía Pruebas Unitarias (_tests_), por ello se crearon las funciones encargadas de  _procesar_,
 _filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
+Las _pruebas unitarias_ dan una cobertura del 70% de _statements_
 (_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
+(_ramas_) del archivo `src/data.js` que contiene las funciones y está detallado
 en la sección de [Consideraciones técnicas](#srcdatajs).
+
+![Tes Unitarios]()
 
 ## 6. Hacker edition
 
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
+Las secciones llamadas _Hacker Edition_ son **opcionales**. 
 
 Features/características extra sugeridas:
 
-* En lugar de consumir la data estática brindada en este repositorio, puedes
+* En lugar de consumir la data estática brindada en este repositorio, se puede
   consumir la data de forma dinámica, cargando un archivo JSON por medio de
   `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
   de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
+* Agregarle a la interfaz de usuario implementada visualizaciones gráficas. Para
+  ello se recomienda explorar librerías de gráficas como
   [Chart.js](https://www.chartjs.org/)
   o [Google Charts](https://developers.google.com/chart/).
 * 100% Coverage
 
 ## 7. Consideraciones técnicas
 
-La lógica del proyecto debe estar implementada completamente en JavaScript
+La lógica del proyecto esta implementada completamente en JavaScript
 (ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
 frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
 con la excepción de librerías para hacer gráficas (charts); ver
@@ -416,44 +415,25 @@ directory: 7 file: 20
 
 ### `src/index.html`
 
-Como en el proyecto anterior, existe un archivo `index.html`. Como ya sabes,
-acá va la página que se mostrará al usuario. También nos sirve para indicar
+Contiene un archivo `index.html`,la página que se mostrará al usuario. También nos sirve para indicar
 qué scripts se usarán y unir todo lo que hemos hecho.
 
 ### `src/main.js`
 
-Recomendamos usar `src/main.js` para todo tu código que tenga que ver con
+Se recomienda usar `src/main.js` para todo tu código que tenga que ver con
 mostrar los datos en la pantalla. Con esto nos referimos básicamente a la
 interacción con el DOM. Operaciones como creación de nodos, registro de
 manejadores de eventos (_event listeners_ o _event handlers_), ....
 
-Esta no es la única forma de dividir tu código, puedes usar más archivos y
-carpetas, siempre y cuando la estructura sea clara para tus compañeras.
-
-En este archivo encontrarás una serie de _imports_ _comentados_. Para _cargar_
-las diferentes fuentes de datos tendrás que _descomentar_ la línea
-correspondiente.
-
-Por ejemplo, si "descomentamos" la siguiente línea:
-
-```js
-// import data from './data/lol/lol.js';
-```
-
-La línea quedaría así:
-
-```js
-import data from './data/lol/lol.js';
-```
-
-Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
+Esta no es la única forma de dividir el código, se puede usar más archivos y
+carpetas, siempre y cuando la estructura sea clara.
 
 ### `src/data.js`
 
 El corazón de este proyecto es la manipulación de datos a través de arreglos
 y objetos.
 
-Te recomendamos que este archivo contenga toda la funcionalidad que corresponda
+Este archivo contiene toda la funcionalidad que corresponde
 a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
 
 * `filterData(data, condition)`: esta función `filter` o filtrar recibiría la
@@ -471,8 +451,7 @@ a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
   cálculos estadísticos básicos para ser mostrados de acuerdo a la data
   proporcionada.
 
-Estos nombres de funciones y de parámetros son solamente referenciales, lo que
-decidas depende de tu propia implementación.
+Estos nombres de funciones y de parámetros son solamente referenciales, es decisión del equipo llegar a usarlas.
 
 Estas funciones deben ser [_puras_](https://medium.com/laboratoria-developers/introducci%C3%B3n-a-la-programaci%C3%B3n-funcional-en-javascript-parte-2-funciones-puras-b99e08c2895d)
 e independientes del DOM. Estas funciones serán después usadas desde el archivo
@@ -491,28 +470,28 @@ asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_A
 
 ### `test/data.spec.js`
 
-Tendrás también que completar las pruebas unitarias de las funciones
+Se debe completar las pruebas unitarias de las funciones
 implementadas en el archivo `data.js`.
 
 ## 8. Pistas, tips y lecturas complementarias
 
 ### Primeros pasos
 
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
+Antes de empezar a escribir código, se debe definir qué deberá hacer el producto
+en base al conocimiento que puedas obtener de tu usuario. Estas preguntas 
 pueden ayudar:
 
 * ¿Quiénes son los principales usuarios de producto?
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 * ¿Cuándo utilizan o utilizarían el producto?
-* Toda tu investigación previa debe tener como resultado todas las Historias
+* Toda investigación previa debe tener como resultado todas las Historias
   de Usuario de tu proyecto.
-* No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
+* No hacer los prototipos de alta fidelidad de todas las Historias. Comienza
   solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
   pistas en la guía de organización para el proyecto.
 
-Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
+Cuando se esté listo para codear, se sugiere empezar de esta manera:
 
 1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
    [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,

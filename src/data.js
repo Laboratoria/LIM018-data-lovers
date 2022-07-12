@@ -60,12 +60,12 @@ export function sortByDesc (data) {
 
 
  // GRAFICOS
-
+/*
  export const compute = (data)=>{
   let scoreCompute = data.filter(films => films.rt_score >= 96);
   return scoreCompute;
  }
-
+*/
 
 // ****** BUSCAR ****
 

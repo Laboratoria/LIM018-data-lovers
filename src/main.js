@@ -1,4 +1,4 @@
-import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, compute} from './data.js';
+import {filterByDirector, filterByProducer, orderAz, orderZa, sortByAsc, sortByDesc, /*compute*/} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 const dataFilms = data.films;
@@ -246,7 +246,7 @@ ordersAnRe.addEventListener('change', (event) =>{
 
 /*_______________INSERTAR CONTENEDOR DEL GRAFICO  ______________*/
 
-
+/*
 const buttonGraphic = document.getElementById('buttonGraphic')
 
   function prueba ( ){
@@ -266,7 +266,9 @@ const buttonGraphic = document.getElementById('buttonGraphic')
   `;
   containerFilms.appendChild(box_graphic);
 }
+*/
 /*________________EJE "X" Y "Y" ___________________*/
+/*
 const elementMovies = compute(dataFilms);
 let nameBestMovies = elementMovies.map((element) => {
     let titleBestMovies = element.title;
@@ -276,8 +278,9 @@ let scoreBestMovies = elementMovies.map((element) => {
     let score = element.rt_score;
     return score;
 })
-
+*/
 /* _________ GRAFICO______________ */
+/*
 const grafico = ()=>{
  const ctx = document.querySelector('.myChart').getContext('2d');
  const myChart = new Chart(ctx, {
@@ -315,12 +318,13 @@ const grafico = ()=>{
        }
        })
 }
-
+*/
 /*_________ FUNCIONALIDAD DEL CLICK _______ */
+/*
 buttonGraphic.addEventListener('click', ()=>{
   containerFilms.innerHTML="";
 prueba();
 grafico();
 } )
 
-
+*/
