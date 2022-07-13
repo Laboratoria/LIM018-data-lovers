@@ -1,36 +1,5 @@
 
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
-### user-centricity
-
-- [ ] **Diseñar un producto o servicio poniendo a la usuaria en el centro**
-
-### product-design
-
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
-
-- [ ] **Seguir los principios básicos de diseño visual**
-
-### research
-
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
-
-  <details><summary>Links</summary><p>
-
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
-</p></details>
-
-## 4. Consideraciones generales
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo el código a GitHub 
-* Tiempo para completarlo: Referencia 4 semanas.
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
-
 ### Definición del producto
 
 Nuestra web muestra datos e información  de las películas animadas del Studio Ghibli, puediendo visualizarse y manipularse la informacion de las pelícuñas de diferentes directores y productores de mensionado estudio de producción.
