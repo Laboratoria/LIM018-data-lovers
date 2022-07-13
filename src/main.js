@@ -56,7 +56,7 @@ let modal = document.getElementById("myModal");
 function mostrarModal(personajes) {
   personajes.forEach((element) => {
     const mostrarModal = document.createElement("div");
-    mostrarModal.innerHTML= `<img src="${ element.image}"/> <p> Nombre: ${element.name}</p> <p>Estatus: ${element.status} </p> <p>Species: ${element.species} </p> <p>Type: ${element.type} </p> <p>Gender: ${element.gender} </p> 
+    mostrarModal.innerHTML= ` <div class=imgModal> <img src="${ element.image}"/> <div class= edit > <p> Nombre: ${element.name}</p> <p>Estatus: ${element.status} </p> <p>Species: ${element.species} </p> <p>Type: ${element.type} </p> <p>Gender: ${element.gender} </p> 
     <p> Episode: ${element.episode }</p>`;
     modal.appendChild(mostrarModal)
     
