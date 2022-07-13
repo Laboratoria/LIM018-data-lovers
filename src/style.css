@@ -1,0 +1,584 @@
+body {
+  background-image: url("./imagenes/fondo2.jpg");
+  /*margin: 0;*/
+}
+
+html{
+  scroll-behavior: smooth;
+}
+/*******************/
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+*,*::after,*::before{
+box-sizing: inherit;
+margin: 0;
+padding: 0;
+}
+
+/*-------------- HEADER---------*/
+header {
+    text-align: center;
+    /*display: block;*/
+}
+
+.videoportada{
+  position: fixed;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left :50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+  background-color: #000000 ;
+}
+
+header h1 {
+    text-align: center;
+    padding: 40px;
+    font-size: 60px;
+    font-family: 'Averia Serif Libre', cursive;
+    color: #ffffff;
+  }
+
+.imgportada {
+    width: 205;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+header .lista-peliculas{
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 22px;
+  margin-bottom: 50px;
+  border: #ffffff 2px solid;
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+header .lista-peliculas:hover{
+  background-color: #94c6cc;
+  color: #ecd89d;
+}
+/*----------------------MAIN--------------------*/
+/*main h2{
+  text-align: center;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-family: 'Averia Serif Libre', cursive;
+  width: 100%;
+  color: #0b2b81;
+}
+*/
+.movie_title{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 8%;
+  margin-left: 8%;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contenedor-paginas {
+  display: none;
+  display: flex;
+}
+/*---------  Contenedor de botones Filtrar -------------*/
+.filters {
+  display: flex;
+  margin-bottom: 20px;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 10px;
+  border: 10px;
+  background-color: rgb(255, 255, 255);
+  border: #2fb1c2 2px solid;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 15px;
+  max-width: 80%;
+}
+
+.filters-director {
+  margin: 0.7%;
+  border-radius: 5px;
+  background-color: #CAF995;
+  height: 30px;
+  font-size: 130%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.filters-producer{
+  margin: 0.7%;
+  border-radius: 5px;
+  background-color: #D1C4E9;
+  height: 30px;
+  font-size: 130%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.filters-year{
+  margin: 0.7%;
+  border-radius: 5px;
+  background-color: #C0CFFF;
+  height: 30px;
+  font-size: 130%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.filters-Az{
+  margin: 0.7%;
+  border-radius: 5px;
+  background-color: #F8BBD0;
+  height: 30px;
+  font-size: 130%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.home{
+  border-radius: 5px;
+  margin: 0.7%;
+  width: 90px;
+  height: 30px;
+  background-color: #F8BBD0;
+  border-color: #929191 ;
+  cursor: pointer;
+  font-size: 130%;
+}
+
+.buttonGraphic{
+  border-radius: 5px;
+  margin: 0.7%;
+  width: 15%;
+  height: 30px;
+  background-color: #faf097;
+  border-color: #929191 ;
+  cursor: pointer;
+  font-size: 130%;
+  cursor: pointer;
+}
+
+/************* CONTENEDOR DE FILMS  *********************/
+.contenedor-paginas {
+  display: none;
+}
+
+.enabled {
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
+
+.container-films {
+  display: flex;
+  align-items: row;
+  margin-bottom: 20px;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 15px;
+  border: 10px;
+  background-color: #fffbfb65;
+  border: #2fb1c2 2px solid;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 15px;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 575.98px) {
+  .container-films{
+    flex-direction: column;
+    align-items: center;
+  }
+  .subContenedorPelicula{
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 991.98px){
+  .container-films{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/*******************CONTENEDOR DE BLOQUE DIRECTOR ******************/
+.subContenedorPelicula{
+  border-radius: 20px;
+  border: #CAF995 3px solid;
+  margin: 1%;
+  background-color: #ffffffef;
+  width: 20.5%;
+}
+.imgDirector{
+  border-radius: 15px;
+  margin: 10px;
+  width: 90%;
+}
+.titleDirector{
+  display: flex;
+  justify-content: center;
+  font-size: 120%;
+}
+
+.parrafoDirector{
+  color: #050505;
+  font-size: 90%;
+  margin: 2.5% 10%;
+}
+
+@media only screen and (max-width: 576px) {
+  .subContenedorPelicula{
+    width: 60%;
+    background-color: #d12f2f;
+  }
+  .titleDirector{
+    font-size: 100%;
+  }
+
+  .parrafoDirector {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 991.98px){
+  .subContenedorPelicula{
+    width: 42%;
+  }
+  .parrafoDirector {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/***********
+
+/*____________________ GRAFICOS____________________*/
+
+.box_graphic{
+  width: 82%;
+  height: auto;
+  margin-right: 8%;
+  margin-left: 8%;
+  border-radius: 20px;
+  border: none;
+}
+.box_title_graphic{
+  display: flex;
+  justify-content: center;
+
+}
+.title_graphic{
+  padding-top: 2%;
+  color: #2fb1c2;
+  font-size: 300%;
+
+}
+
+.graphic{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img_graphic_box{
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.img_graphic{
+  width: 90%;
+}
+.graphic_canvas{
+  width: 500px;
+  background-color: #ffffff;
+  padding: 3%;
+  border-radius: 20px;
+  margin-bottom: 2%;
+}
+
+/* _______ CAMBIOS PARA CELULAR --- pantalla de maximo 576 px */
+@media screen and (max-width: 575.98px) {
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .graphic_canvas{
+    width: 320px;
+  }
+
+  /*.myChart{
+    height: 100px;
+  }*/
+}
+
+@media only screen and (max-width: 991.98px){
+  .graphic{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  /*.graphic_canvas{
+    width: 450px;
+  }*/
+}
+
+
+/********** NUEVO CSS ****/
+
+/*_____ CONTENEDOR DE img*/
+.movie__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 80%;
+  border: #ffffff 3px solid;
+  border-radius: 20px;
+  }
+
+.movie_title{
+text-align: center;
+}
+.movie_img{
+justify-content: center;
+}
+.movie_description{
+flex-direction: column;
+}
+
+
+
+/*______ CONTENEDOT DE DESCRIPCION Y BOTONES ****/
+.containerBtnDescripcion{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+/*_____CONTENEDOR DE BOTONES*/
+.btn__container{
+  height: 50px;
+  margin: 10px;
+  padding: 3px 25px;
+  text-align: center;
+  align-items: center;
+  border-bottom: #ffffff 2px solid;
+}
+/*_____BOTONES________*/
+.classbtn {
+  padding: 5px 20px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: rgb(21, 21, 27);
+  background: #7dcdf1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(34, 27, 27);
+  font-size: 20px;
+  transition: .3s ease all;
+  flex-wrap: wrap;
+  margin-left: 2%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+.classbtn:hover{
+background-color: #CAF995;
+}
+/*___CONTENEDOR DE DESCRIPCION*/
+.containerSection {
+  display: flex;
+  align-items: center;
+  width: 95%;
+	flex-wrap: wrap; /* make sure it wraps*/
+  justify-content: space-around;
+  margin: 2%;
+  flex: 60%;
+  border: 10px;
+  background-color: rgba(255, 255, 254, 0.884);
+  border: #2fb1c2 2px solid;
+}
+/*____  CONTENEDOR IMG NO DISPONIBLE  ____*/
+.imgNoDisponible{
+  margin: 5% 10%;
+  width: 80%;
+}
+.movie__img_nodisponible{
+  width: 60%;
+  height: 70%;
+  margin-top: 10%;
+}
+/* ______ para celular*/
+@media only screen and (max-width: 575.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 12px;
+    padding: 5px 13px;
+  }
+  .box_location .box_vehicle {
+    width: 90%;
+  }
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
+}
+/* ______ para tablet*/
+@media only screen and (max-width: 991.98px) {
+  .movie__section{
+    width: 100%;
+  }
+  .containerBtnDescripcion{
+    width: 100%;
+  }
+  .classbtn{
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+
+  /*.btn__container{
+    width: 100%;
+  }
+  .containerSection{
+    width: 100%;
+  }*/
+}
+
+.containerSection_description{
+  margin: 15% 3%;
+  height: 30%;
+}
+/*__PERSONAJES __*/
+.divPersonaje{
+  border: #F8BBD0 4px solid;
+  border-radius: 20px;
+  margin: 2% 1.5%;
+  justify-content: center;
+  align-items: center;
+  /*cursor: pointer;*/
+  width: 20%;
+  height: 450px;
+  font-size: 92%;
+}
+
+.divPersonaje:hover{
+  box-shadow: 2px 2px 5px rgb(34, 27, 27);
+  border: #CAF995 4px solid;
+
+}
+.movie__imgPersonaje{
+  border-radius: 4%;
+  width: 90%;
+  margin: 5% 5%;
+
+}
+
+/*__LOCACIONES y VEHICULOS__*/
+.box_location{
+  width: 20%;
+  border: #CAF995 2px solid;
+  font-size: 80%;
+  border-radius: 10%;
+  margin: 5% 0;
+}
+
+
+.img_location{
+  width: 90%;
+  margin: 5% ;
+  border-radius: 10%;
+}
+/*PARA CELULAR */
+@media only screen and (max-width: 575.98px) {
+  .box_location{
+    width: 90%;
+  }
+  /*.divPersonaje{
+    width: 100%;
+  height: 500px;
+  background-color:#ecd89d;
+  }*/
+
+ .img_location{
+    height: 300px;
+  }
+}
+/* PARA TABLET*/
+@media only screen and (max-width: 991.98px){
+  .box_location{
+    width: 50%;
+  }
+  .divPersonaje{
+    width: 45%;
+  height: 550px;
+  }
+  /*.img_location{
+    height: 300px;
+  }*/
+}
+
+footer{
+  height: 40px;
+  background-color: #2fb1c2;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.containertitulo{
+  display: flex;
+  flex-direction: row;
+  background-color: #58cfdfb4;
+  height: 70px;
+  justify-content: center;
+  text-align: center;
+  font-size: 200%;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  margin-bottom: 1.5%;
+}
+
+.subContainerTitulo img{
+  height: 100%;
+  justify-content: space-between;
+
+}

@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2? family=Averia+Serif+Libre:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="header-h" name="header">
+    <video id="videoportada" class="videoportada" src="/src/imagenes/AMV - Tribute to Hayao Miyazaki - Bestamvsofalltime Anime MV ♫.mp4" autoplay   controls ></video>
+    <h1 id="header__h1"> GHIBLI WORLD<spam class="titulo"></spam> </h1>
+    <img class ="imgportada" src="/src/imagenes/totoroblanco.png" alt="logoghibli"/>
+    <button type="submit" id="listaPeliculas" class="lista-peliculas" >Go</button>
+  </header>
+
+  <main id ="maincontaniner" >
+    <div id="contenedorPaginas" class="contenedor-paginas" >
+
+      <div class="containertitulo">
+        <div class="subContainerTitulo"><img src="/src/imagenes/totoroTitulo-removebg-preview.png" alt="logoghibli"/></div>
+        <div class="subContainerTitulo"><h2 id="peliculasAnimadas" class= "peliculas-animadas">ANIMATED FILMS </h2></div>
+        <div class="subContainerTitulo"><img  src="/src/imagenes/totoroTitulo-removebg-preview.png" alt="logoghibli"/></div>
+      </div>
+
+
+      <div class="filters" id="filtrados">
+        <button type ="menu" id="home" class="home">Return</button>
+        <select id="filtersDirector" class="filters-director">
+          <option selected value="all">Director</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+          <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+        </select>
+        <select id="filtersProducer" class="filters-producer">
+          <option selected value="all">Producer</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Toshio Suzuki">Toshio Suzuki</option>
+          <option value="Toru Hara">Toru Hara</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+        </select>
+        <select id="filtersYear" class="filters-year">
+          <option selected value="all">By year</option>
+          <option value="Antiguo">Ancient</option>
+          <option value="Reciente">Recent</option>
+        </select>
+        <select id="filtersAz" class="filters-Az">
+          <option selected value="all">By title</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A </option>
+        </select>
+
+        <button type ="menu" id="buttonGraphic" class="buttonGraphic">Fun Facts</button>
+        <!--<div class="search">
+          <input type="search" id="inputSearch" class="inputSearch" placeholder="Search . . ." >
+        </div>-->
+      </div>
+
+      <div class="wrapper">
+        <div id="containerFilms" class="container-films"></div>
+      </div>
+
+
+    </div>
+
+  </main>
+  <footer class="footer">
+    <p>Copyright &copy; 2022 - by Denis and Stefani</p>
+  </footer>
+  <script src="main.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+</body>
+
 </html>
