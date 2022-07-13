@@ -1,5 +1,5 @@
 export const filterEspecies = (datos, gato) => {
-  return  datos.filter(element => element.species== gato); 
+  return  datos.filter(element => element.species=== gato); 
 
 };
  
@@ -11,7 +11,6 @@ export const ordeName = (data) => {
     if (a.name < b.name) {
       return -1;
     }
-    // a must be equal to b
     return 0;
   });
 };

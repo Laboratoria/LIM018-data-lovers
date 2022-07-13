@@ -1,8 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: url(rickmorty.jpg);   
+    background: url(rickmorty.jpg);     
     background-size: 100%;
     color: white;
     font-size: 25px;
@@ -162,13 +161,6 @@ ul.slider li:target{
     border-radius: 100%;
 }
 
-/* .page {
-    display: none;
-} 
-
-.page.active {
-    display: block;
-} */
 
 /* The Modal (background) */
 .modal {
@@ -205,4 +197,18 @@ ul.slider li:target{
     font-size: 20px;
   }
   
+ .edit {
+   
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    line-height:1px;
+    text-align: justify;
+    padding: 35px;
+}
  
+
+.imgModal{
+    display: flex;
+    justify-content: left;
+}
