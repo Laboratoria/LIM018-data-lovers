@@ -1,33 +1,67 @@
-import { filtrarBuscador } from '../src/data.js';
+import { ordeName } from '../src/data.js';
 
 
-// describe('filterEspecies', () => {
-//   it('deberia ser una funcion', () => {
-//     expect(typeof filterEspecies).toBe('function');
+// describe('filtrarBuscador', () => {
+//   it('should by a function', () => {
+//     expect(typeof filtrarBuscador).toBe('function');
 //   });
 
-//   it('retorna `los especies filtrados`', () => {
-//       const especie [
-//         {"species":"Human"},
-//          {"species": "Alien"},
-//          {"species": "Vampire"},
-//       ]
-//     expect(filterEspecies(especie,Human)).toBe([{"species":'Human'}]);
+//   it('returns buscar el personaje', () => {
+//     const character = [
+//       {name:"a"},
+//       {name:"b"},
+//       {name:"c"},
+//     ]
+ 
+//     expect(filtrarBuscador(character,"a")).toEqual([{name:'a'}]);
 //   });
 // });
 
 
-describe('filtrarBuscador', () => {
-  it('should by a function', () => {
-    expect(typeof filtrarBuscador).toBe('function');
+describe('ordeName', () => {
+
+  const dataExample = [
+    {name:"rick"}, 
+    {name:"morty"},
+    {name:"alexander"},
+    {name:"chris"}];
+
+  const dataExample2 = [
+    {name:"conroy"}, 
+    {name:"fido"},
+    {name:"doofus"},
+    {name:"morty"}];
+ 
+  it('is a function', () => {
+    expect(ordeName(dataExample)).toEqual([
+      {name:"alexander"}, 
+      {name:"chris"},
+      {name:"morty"},
+      {name:"rick"}     
+    ]);
+
+    expect(ordeName(dataExample2)).toEqual([
+        {name:"conroy"}, 
+        {name:"doofus"},
+        {name:"fido"},
+        {name:"morty"}     
+      ]);
+
+    // expect(ordeName(dataExample,'ZA')).toEqual([
+    //   {name:"rick"}, 
+    //   {name:"morty"},
+    //   {name:"chris"},
+    //   {name:"alexander"}     
+    // ]);
   });
 
-  it('returns buscar el personaje', () => {
-    const character = [
-      {"name":"a"},
-      {"name":"b"},
-      {"name":"c"},
-    ]
-    expect(filtrarBuscador(character,"a")).toBe([{"name":'a'}]);
-  });
+  // it('Debería retornar ["ada", "berta", "coni", "dora"] para ["berta", "coni", "ada", "dora"]', () => {
+  //   expect(ordeName(dataExample.name),"AZ").toEqual(["ada", "berta", "coni", "dora"]);
+  // });
+
+  // it('Debería retornar ["alexander" , "chris", "morty", "rick"] para ["rick", "morty", "alexander", "chris"]', () => {
+  //   expect(ordeName(dataExample2.name)).toEqual(["alexander" , "chris", "morty", "rick"]);
+  // });
 });
+
+

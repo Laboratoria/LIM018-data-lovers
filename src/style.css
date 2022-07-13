@@ -1,13 +1,13 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
     background: url(rickmorty.jpg);   
     background-size: 100%;
-    background-position: flex; 
-    font-family: sans-serif;
     color: white;
     font-size: 25px;
     text-align: center;
+    background-position: flex; 
 }
 
 #menuPrincipal {
