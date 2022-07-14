@@ -61,7 +61,7 @@ function mostrarModal(personajes) {
     <p> Episode: ${element.episode }</p> `;
     modal.appendChild(mostrarModal)
     
-  });
+    });
   }
 
 // Get the modal
@@ -69,19 +69,20 @@ function mostrarModal(personajes) {
     const traeId = this.id; 
     modal.innerHTML = "";
     modal.style.display = "block";
-
+    
     mostrarModal(filterid(personajes,traeId))
     event.stopPropagation()
+    console.log("funcionopewnmodal");
   }
 
-window.onclick = function(event) {
-  if(modal.style.display=="block"){
-    modal.style.display = "none";
+  window.onclick = function(event) {
+    console.log("cerrar",event,modal.style.display);
+    // if (event.target == modal) {
+      if(modal.style.display=="block"){
+        modal.style.display = "none";
+      }
+    // } 
   }
-
-  modal.style.display = "block";
-  event.stopPropagation()
-}
 
   // agregamos la linea de codigo para mostrar el mensaje de porcentajes cuando se haga click
   let humanos = filterEspecies(personajes, "Human").length;
@@ -116,14 +117,10 @@ estad.addEventListener("click", (event) => {
               label:"Estadistica de Personajes",
               backgroundcolor: "rgb(17, 208, 233)",
               borderColor: "rgb(255,159,64,1)",
-              data:[porcentageHuman, porcentageAlien, porcentageVampire, porcentageHuamanoid, porcentageRobot],
-              
+              data:[porcentageHuman, porcentageAlien, porcentageVampire, porcentageHuamanoid, porcentageRobot],     
             }
           ]
-        },
-        
+        },       
     })
     mostrarPersonajes(miCanvas); 
-
- 
   })
