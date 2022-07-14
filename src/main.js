@@ -10,8 +10,7 @@ let todoshumanos=document.getElementById("todoshumanos");
 
 // Creamos una funcion que muestre los personajes
 function mostrarPersonajes(personajes) {
-  let slido= document.getElementsByClassName("pagelido");
-  console.log(slido);
+  let slido= document.getElementsByClassName("pageslido");
  slido[0].style.display = "none";
   personajes.forEach((element) => {
     const nodeEspecie = document.createElement("div");
