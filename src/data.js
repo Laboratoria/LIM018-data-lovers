@@ -25,8 +25,6 @@ export const filterid = (datos, id) => {
 return modale ;
 };
 
-
-// export const filtrarPersonajes = (datos ,nombre) => {
-
-//   return datos.filter(e => e.name==nombre);
-// };
+export function computeStats (Personajes, species){
+  return parseFloat((species * 100 / Personajes).toFixed(2));
+}
