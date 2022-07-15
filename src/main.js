@@ -1,10 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-<<<<<<< HEAD
-import { filterEspecies,ordeName,filtrarBuscador,filterid} from "./data.js";
-
-=======
 import { filterEspecies, ordeName, filtrarBuscador, filterid, computeStats } from "./data.js";
->>>>>>> b6ebc18ceb21489710cb6a789ba8bde7e4a2d7f6
 
 // Array de todos los personajes
 const personajes = data.results;
@@ -15,11 +10,7 @@ let todoshumanos=document.getElementById("todoshumanos");
 // Creamos una funcion que muestre los personajes
 function mostrarPersonajes(personajes) {
   let slido= document.getElementsByClassName("pageslido");
-<<<<<<< HEAD
- slido[0].style.display = "none";
-=======
   slido[0].style.display = "none";
->>>>>>> b6ebc18ceb21489710cb6a789ba8bde7e4a2d7f6
   personajes.forEach((element) => {
     const nodeEspecie = document.createElement("div");
     nodeEspecie.setAttribute("id" ,element.id);
@@ -117,7 +108,7 @@ estad.addEventListener("click", (event) => {
   //mostrando el grafico de especies
   let miCanvas=document.getElementById("MyChart").getContext("2d");
     Chart.defaults.font.size = 30;
-      new Chart (miCanvas,{
+      new Chart(miCanvas,{
         type:"bar",
         data:{
           labels:["Humano", "Alien","Vampiro","Huamanoide","Robot"],
