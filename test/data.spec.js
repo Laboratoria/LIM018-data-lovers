@@ -19,7 +19,6 @@ const especiesData = [
  describe('filtradoPorEspecie', () => {
   it('filterEspecie', () => {
     const especies = [
-
       {
         name: "Rick Sanchez",
         status: "Alive",

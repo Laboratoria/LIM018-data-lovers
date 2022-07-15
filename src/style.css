@@ -213,3 +213,13 @@ ul.slider li:target{
     display: flex;
     justify-content: left;
 }
+
+#page4{
+    display:none;
+    margin:200px;
+    background-color: aliceblue;
+    width: 1000px;
+    height: 800px;
+
+
+}
