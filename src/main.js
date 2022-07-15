@@ -72,11 +72,10 @@ function mostrarModal(personajes) {
     
     mostrarModal(filterid(personajes,traeId))
     event.stopPropagation()
-    console.log("funcionopewnmodal");
+   
   }
 
   window.onclick = function(event) {
-    console.log("cerrar",event,modal.style.display);
     // if (event.target == modal) {
       if(modal.style.display=="block"){
         modal.style.display = "none";
