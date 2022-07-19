@@ -1,5 +1,6 @@
 import data from "./data/rickandmorty/rickandmorty.js";
 import { filterEspecies, ordeName, filtrarBuscador, filterid, computeStats } from "./data.js";
+import "./chart.js";
 
 // Array de todos los personajes
 const personajes = data.results;
@@ -20,19 +21,22 @@ function mostrarPersonajes(personajes) {
   });
   
 }
+//Para esconder las estadisticas cuando se escoja lo demas
+const pageEstadisticas=document.getElementById("page4");
 
 //Filtrando personajes en la cajita busqueda
 const buscaNombre = document.querySelector('#buscador');
 buscaNombre.addEventListener("keyup",(e) => {
 todoshumanos.innerHTML="";
  let resultadoBusqueda= filtrarBuscador(personajes,e.target.value);
-  mostrarPersonajes(resultadoBusqueda);
+ mostrarPersonajes(resultadoBusqueda)
 });
 // Ordenando alfabeticamente los personajes
 const selectPersonajes =document.querySelector("#selectPersonajes");
 selectPersonajes.addEventListener("change",(event) => {
  todoshumanos.innerHTML = ""; 
  const valueSelect = event.target.value;
+ pageEstadisticas.style.display= "none";
  if (valueSelect=="AZ"){
    mostrarPersonajes(ordeName(personajes));
  }
@@ -47,6 +51,8 @@ selectEspecie.addEventListener("change", (event) => {
   todoshumanos.innerHTML = "";
   // te entrega el valor que seleccionaste
   const valueSelect = event.target.value;
+  pageEstadisticas.style.display= "none";
+  
 
   mostrarPersonajes(filterEspecies(personajes, valueSelect));
 });
@@ -68,19 +74,17 @@ function mostrarModal(personajes) {
   function openModal (event){
     const traeId = this.id; 
     modal.innerHTML = "";
-    modal.style.display = "block";
+    modal.style.display = "bslock";
     
     mostrarModal(filterid(personajes,traeId))
     event.stopPropagation()
-   
   }
-
+  // eslint-disable-next-line
   window.onclick = function(event) {
-    // if (event.target == modal) {
       if(modal.style.display=="block"){
         modal.style.display = "none";
       }
-    // } 
+    
   }
 
   // agregamos la linea de codigo para mostrar el mensaje de porcentajes cuando se haga click
@@ -106,19 +110,36 @@ estad.addEventListener("click", (event) => {
     
   //mostrando el grafico de especies
   let miCanvas=document.getElementById("MyChart").getContext("2d");
-    Chart.defaults.font.size = 30;
-      new Chart(miCanvas,{
-        type:"bar",
+  // eslint-disable-next-line
+  Chart.defaults.font.size = 30;
+  // eslint-disable-next-line
+     new Chart (miCanvas,{
+        type:'pie',
         data:{
           labels:["Humano", "Alien","Vampiro","Huamanoide","Robot"],
           datasets:[
             {
               label:"Estadistica de Personajes",
-              backgroundcolor: "rgb(17, 208, 233)",
-              borderColor: "rgb(255,159,64,1)",
-              data:[porcentageHuman, porcentageAlien, porcentageVampire, porcentageHuamanoid, porcentageRobot],     
-            }
-          ]
+              backgroundColor: [
+              "rgba(255,99,64,0.5)",
+              "rgba(255,205,86,0.5)",
+              'rgba(75,192,192,0.5)',
+              'rgba(54,162,235,0.5)',
+              'rgba(153,102,255,0.5)'],
+              borderColor: [
+                'rgb(255,159,64)',
+                'rgba(255,205,86)',
+                'rgba(75,192,192)',
+                'rgba(54,162,235)',
+                'rgba(153,102,255)'],
+              data:[porcentageHuman, porcentageAlien, porcentageVampire, porcentageHuamanoid, porcentageRobot],
+              borderWidth: 1  ,
+              title: {
+                display: true,
+                text: 'Chart Title',
+              }
+            }]
+
         },       
     })
     mostrarPersonajes(miCanvas); 

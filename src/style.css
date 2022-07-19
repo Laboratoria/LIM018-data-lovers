@@ -21,9 +21,10 @@ body {
 .desplegable {
     font-size: 20px;
     align-items: center;
-    width: 150px;
+    width: 200px;
+    border-radius: 5px;
 }
-/*sgdf*/
+
 .name {
     display: flex;
     justify-content: center;
@@ -31,25 +32,30 @@ body {
     height: 90%;
  }
 
-.lupa{
-   width: 10%;
-   height: 10%;
+ .img-lupa{
+   width: auto;
+   height: 30px;
+ 
 }
 #buscador{
     border: 0;
-    width: 100%;
     outline: none;
+    font-size: 20px;
+    width: 250px;
 }
 .buscador{
     background: white;
     border-radius: 5px;
     display: flex;
-    align-items: center;
     padding: 8px;
+    width: 280px;
+    height: 25px;
+    justify-content: space-between;
+
 }
 
 .personajes {
-    background: white;
+    background: rgb(226, 228, 243, 0.5);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -57,17 +63,24 @@ body {
     stroke: 0;
 }
 
-.DatosEstadisticos {
-    background: white;
+.datosEstadisticos {
+    background: rgb(226, 228, 243, 0.5);;
     border-radius: 5px;
     display: flex;
     align-items: center;
     padding: 6px;
     stroke: 0;
+
+}
+
+#selectDatosEs {
+    font-size: 20px;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .especie {
-    background: white;
+    background:rgb(226, 228, 243, 0.5);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -83,6 +96,7 @@ body {
     font-size: 20px;
     color: white;
     text-align: center;
+    padding: 50px;
 }
 
 .datosCuriosos h1 {
@@ -101,9 +115,14 @@ body {
 }
 
 .carrusel{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
     margin: auto;
-    width: 800px;
+    width: 100%;
+    height: 700px;
     padding: 30px;
+    position: relative;
 }
 
 ul, li{
@@ -112,10 +131,15 @@ ul, li{
     list-style: none;
 }
 
+.slide-img{
+    width: 100%;
+    height: 100%;
+}
 ul.slider{
-    position: relative;
-    width: 800px;
-    height: 600px;
+    position: center;
+    /* width: 800px;
+    height: 600px; */
+
 }
 
 ul.slider li{
@@ -141,7 +165,8 @@ ul.slider li:target{
 }
 
 .menu{
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 20px;
 }
 
@@ -152,9 +177,10 @@ ul.slider li:target{
 
 .menu li a{
     display: inline-block;
+    justify-content: center;
     color: white;
     text-decoration: none;
-    background-color: grey;
+    background-color: rgba(215, 231, 248, 0.3);
     padding: 10px;
     width: 20px;
     height: 20px;
@@ -162,6 +188,10 @@ ul.slider li:target{
     border-radius: 100%;
 }
 
+.pageslido{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 /* The Modal (background) */
 .modal {
@@ -173,8 +203,9 @@ ul.slider li:target{
     width: 800px; /* Ancho completo */
     height:300px; /* Altura completa */
     overflow: auto; /* Habilite el desplazamiento si es necesario */
-    background-color: rgb(226, 228, 243); /* color de fondo */
-    background-color: rgba(234, 237, 243, 0.8); /* opacidad */
+    /* background-color:#0188A0; */
+   background-color: rgba(226, 228, 243, 0.8); /*  color de fondo */
+ 
     justify-content: center ;
     align-items: center;
     border-radius: 20px;
@@ -195,7 +226,8 @@ ul.slider li:target{
     gap: 30px;
     flex-wrap: wrap;
     align-content: center;
-    font-size: 20px;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 30px;
   }
   
  .edit {
@@ -216,10 +248,14 @@ ul.slider li:target{
 
 #page4{
     display:none;
-    margin:200px;
-    background-color: aliceblue;
+    margin: 200px;
+    background-color: rgba(215, 231, 248, 0.959);
     width: 1000px;
-    height: 800px;
+    height: 1000px;
+    border-radius: 50px;
+}
 
-
+.foot{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
 }

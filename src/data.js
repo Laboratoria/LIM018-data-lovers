@@ -6,11 +6,12 @@ export const ordeName = (data) => {
   return data.sort(function (a, b) {
     if (a.name > b.name) {
       return 1;
-    }
-    if (a.name < b.name) {
-      return -1;
-    }
-    return 0;
+    } else return -1
+    // else (a.name < b.name) {
+    //   return -1;
+
+    // }
+    // return 0;
   });
 };
 
@@ -24,6 +25,7 @@ export const filterid = (datos, id) => {
   return modale;
 };
 
-export function computeStats(numPersonajes, numEspecies) {
-  return parseFloat((numEspecies / numPersonajes).toFixed(2));
+export function computeStats (numPersonajes, numEspecies){
+  return parseFloat((numEspecies*100 / numPersonajes).toFixed(2));
 }
+
