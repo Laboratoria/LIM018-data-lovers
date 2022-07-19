@@ -1,4 +1,4 @@
-import {filterEspecies,filtrarBuscador,filterid,ordeName} from '../src/data.js';
+import {filterEspecies,filtrarBuscador,filterid,ordeName,computeStats} from '../src/data.js';
 
 const especiesData = [
   {
@@ -54,9 +54,9 @@ const filtrandoId = [
   })
 
   describe('filtrarBuscador', () => {
-    it('should by a function', () => {
-      expect(typeof filtrarBuscador).toBe('function');
-    });
+    // it('should by a function', () => {
+    //   expect(typeof filtrarBuscador).toBe('function');
+    // });
   
     it('returns buscar el personaje', () => {
       const character = [
@@ -102,3 +102,30 @@ const filtrandoId = [
     });
   
    });
+
+
+// describe('Sacando las Estadisticas de los personajes', ()=>{
+//   it('sacamos el porcentaje',() => {
+//     expect(computeStats(100,10)).toBe(0.1);
+
+//   });
+//   it('sacamos el porcentaje',() => {
+//     expect(computeStats(100,50)).toBe(0.5);
+
+//   })
+// })
+
+
+describe('computeStats',() => {
+  it('should by a function',() => {
+    expect (typeof computeStats).toBe('function');
+  });
+
+  it('should return a calculation',()=>{
+    expect(computeStats(100,25)).toBe(25)
+  })
+
+  it('should return a calculation',()=>{
+    expect(computeStats(100,48)).toBe(48)
+  })
+})

@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick and Morty</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&family=Londrina+Solid:wght@300&family=Pacifico&display=swap" rel="stylesheet">  
     <script src="chart.js"></script>
   </head>
 
@@ -21,7 +25,7 @@
         <div>
           <div class="buscador">
             <input id="buscador" type="search" placeholder="busca aqui a tu personaje favorito" />
-            <img src="img_lupa.png" alt="lupa" />
+            <img src="img_lupa.png" alt="lupa" class="img-lupa"/>
           </div>
         </div>
         <div class="personajes">
@@ -73,16 +77,15 @@
             </p>
           </aside>
 
-
           <div class="carrusel">
             <ul class="slider">
-              <li id="slide1">
+              <li id="slide1" class="slide-img">
                 <img src="reeel-1 (1).png" />
               </li>
-              <li id="slide2">
+              <li id="slide2" class="slide-img">
                 <img src="reel-2.png" />
               </li>
-              <li id="slide3">
+              <li id="slide3" class="slide-img">
                 <img src="reel-3.png" />
               </li>
             </ul>
@@ -118,10 +121,9 @@
         <canvas id="MyChart" width="400" height="300"></canvas>
       </div>
       <div id="todoshumanos"></div>
-      </div>
     </main>
 
-    <footer> By Diana, Roxana and Yurema </footer>
+    <footer class="foot"> By Diana, Roxana and Yurema </footer>
     <script src="main.js" type="module"></script>
   </body>
 
