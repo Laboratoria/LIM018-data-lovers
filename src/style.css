@@ -1,10 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(rickmorty.jpg);   
+    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(rickmorty.jpg);
     background-size: 100%;
     background-position: flex; 
     font-family: sans-serif;
+    color: white;
+    font-size: 25px;
+    text-align: center;
 }
 
 #menuPrincipal {
@@ -18,9 +21,10 @@ body {
 .desplegable {
     font-size: 20px;
     align-items: center;
-    width: 150px;
+    width: 200px;
+    border-radius: 5px;
 }
-/*sgdf*/
+
 .name {
     display: flex;
     justify-content: center;
@@ -28,25 +32,30 @@ body {
     height: 90%;
  }
 
-.lupa{
-   width: 10%;
-   height: 10%;
+ .img-lupa{
+   width: auto;
+   height: 30px;
+ 
 }
 #buscador{
     border: 0;
-    width: 100%;
     outline: none;
+    font-size: 20px;
+    width: 250px;
 }
 .buscador{
     background: white;
     border-radius: 5px;
     display: flex;
-    align-items: center;
     padding: 8px;
+    width: 280px;
+    height: 25px;
+    justify-content: space-between;
+
 }
 
 .personajes {
-    background: white;
+    background: rgb(226, 228, 243, 0.5);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -54,17 +63,24 @@ body {
     stroke: 0;
 }
 
-.DatosEstadisticos {
-    background: white;
+.datosEstadisticos {
+    background: rgb(226, 228, 243, 0.5);;
     border-radius: 5px;
     display: flex;
     align-items: center;
     padding: 6px;
     stroke: 0;
+
+}
+
+#selectDatosEs {
+    font-size: 20px;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .especie {
-    background: white;
+    background:rgb(226, 228, 243, 0.5);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -80,9 +96,7 @@ body {
     font-size: 20px;
     color: white;
     text-align: center;
-}
-.datosCurios p{
-
+    padding: 50px;
 }
 
 .datosCuriosos h1 {
@@ -96,15 +110,19 @@ body {
     font-size: 25px;
     display: flex;
     justify-content: center;
-    color:white;
     font-size: 2rem;
     font-weight:bolder;  
 }
 
 .carrusel{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
     margin: auto;
-    width: 800px;
+    width: 100%;
+    height: 700px;
     padding: 30px;
+    position: relative;
 }
 
 ul, li{
@@ -113,10 +131,15 @@ ul, li{
     list-style: none;
 }
 
+.slide-img{
+    width: 100%;
+    height: 100%;
+}
 ul.slider{
-    position: relative;
-    width: 800px;
-    height: 600px;
+    position: center;
+    /* width: 800px;
+    height: 600px; */
+
 }
 
 ul.slider li{
@@ -142,7 +165,8 @@ ul.slider li:target{
 }
 
 .menu{
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 20px;
 }
 
@@ -153,9 +177,10 @@ ul.slider li:target{
 
 .menu li a{
     display: inline-block;
+    justify-content: center;
     color: white;
     text-decoration: none;
-    background-color: grey;
+    background-color: rgba(215, 231, 248, 0.3);
     padding: 10px;
     width: 20px;
     height: 20px;
@@ -163,60 +188,74 @@ ul.slider li:target{
     border-radius: 100%;
 }
 
-/* .page {
-    display: none;
-} 
-
-.page.active {
-    display: block;
-} */
-
-
-
+.pageslido{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    /* z-index: 1; Sit on top */
+    display: none; /* Oculto por defecto */
+    position: fixed; /* permanece en su lugar */
+    z-index: 1;  /*model se posiciona forever delante  */
     left: 40;
     top: 20;
-    width: 800px; /* Full width */
-    height:300px; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(226, 228, 243); /* Fallback color */
-    background-color: rgb(219, 222, 230,0.8); /* Black w/ opacity */
+    width: 800px; /* Ancho completo */
+    height:300px; /* Altura completa */
+    overflow: auto; /* Habilite el desplazamiento si es necesario */
+    /* background-color:#0188A0; */
+   background-color: rgba(226, 228, 243, 0.8); /*  color de fondo */
+ 
     justify-content: center ;
     align-items: center;
     border-radius: 20px;
+    color: darkblue;
+    font-size: 18px;
+    }
+ 
+  .close #letraModal {
+    font-size: 15px;
+    color: blue;
+
   }
 
   #todoshumanos {
     display: flex; 
-    flex: flex-start;
+    margin: 50px;
+    justify-content: space-around;
     gap: 30px;
     flex-wrap: wrap;
-  }
-  /* Modal Content/Box */
-  /* .modal-content{
-    background-color: #fefefe;
-    margin: 15% auto; 15% from the top and centered
-    padding: 20px;
-    border: 1px solid rgb(201, 157, 12);
-    width: 80%; Could be more or less, depending on screen size
-  } */
-  
-  /* The Close Button */ 
-   .close {
-    color: rgb(131, 9, 9);
-    float: right;
-    font-size: 300px;
-    font-weight: bold;
+    align-content: center;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 30px;
   }
   
-  .close:hover,
-  .close:focus {
-    color: rgb(26, 153, 79);
-    text-decoration: block;
-    cursor: pointer;
-  }
+ .edit {
+   
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    line-height:1px;
+    text-align: justify;
+    padding: 35px;
+}
+ 
+
+.imgModal{
+    display: flex;
+    justify-content: left;
+}
+
+#page4{
+    display:none;
+    margin: 200px;
+    background-color: rgba(215, 231, 248, 0.959);
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50px;
+}
+
+.foot{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
