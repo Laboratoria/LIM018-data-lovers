@@ -7,10 +7,6 @@ export const ordeName = (data) => {
     if (a.name > b.name) {
       return 1;
     } else return -1
-    // else (a.name < b.name) {
-    //   return -1;
-
-    // }
     // return 0;
   });
 };
