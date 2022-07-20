@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&family=Londrina+Solid:wght@300&family=Pacifico&display=swap" rel="stylesheet">  
     <script src="chart.js"></script>
   </head>
@@ -31,8 +30,8 @@
         <div class="personajes">
           <select id="selectPersonajes" class="desplegable">
             <option value=" " selected>Personajes</option>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
+            <option value="AZ">ordenar A-Z</option>
+            <option value="ZA">ordenar Z-A</option>
           </select>
         </div>
         <!-- ventana modal  -->
@@ -105,22 +104,13 @@
         </div>
       </div>
 
-      <!-- RESULTADOS DE BUSQUEDA -->
-      <div id="page2" class="page">
-        <div class="page2"> </div>
-      </div>
-
-      <!-- PERSONAJES -->
-      <div id="page3" class="page">
-        <div class="page3"> </div>
-      </div>
-
-      <!-- ESPECIES -->
-
+        <!-- Div para mostrar todos los personajes -->
+      <div id="todoshumanos"></div>
+        <!-- Mostramos los graficos estadisticos -->
       <div id="page4">
         <canvas id="MyChart" width="400" height="300"></canvas>
       </div>
-      <div id="todoshumanos"></div>
+      
     </main>
 
     <footer class="foot"> By Diana, Roxana and Yurema </footer>

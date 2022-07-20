@@ -21,6 +21,8 @@ function mostrarPersonajes(personajes) {
   });
   
 }
+
+
 //Para esconder las estadisticas cuando se escoja lo demas
 const pageEstadisticas=document.getElementById("page4");
 
@@ -29,6 +31,7 @@ const buscaNombre = document.querySelector('#buscador');
 buscaNombre.addEventListener("keyup",(e) => {
 todoshumanos.innerHTML="";
  let resultadoBusqueda= filtrarBuscador(personajes,e.target.value);
+ pageEstadisticas.style.display= "none";
  mostrarPersonajes(resultadoBusqueda)
 });
 // Ordenando alfabeticamente los personajes
@@ -37,12 +40,12 @@ selectPersonajes.addEventListener("change",(event) => {
  todoshumanos.innerHTML = ""; 
  const valueSelect = event.target.value;
  pageEstadisticas.style.display= "none";
- if (valueSelect=="AZ"){
-   mostrarPersonajes(ordeName(personajes));
- }
- else if (valueSelect== "ZA"){
-  mostrarPersonajes(ordeName(personajes).reverse()); 
- }
+  if (valueSelect=="AZ"){
+    mostrarPersonajes(ordeName(personajes));
+  }
+  else if (valueSelect== "ZA"){
+    mostrarPersonajes(ordeName(personajes).reverse()); 
+  }
 });
 
 //select por especies
@@ -52,9 +55,7 @@ selectEspecie.addEventListener("change", (event) => {
   // te entrega el valor que seleccionaste
   const valueSelect = event.target.value;
   pageEstadisticas.style.display= "none";
-  
-
-  mostrarPersonajes(filterEspecies(personajes, valueSelect));
+   mostrarPersonajes(filterEspecies(personajes, valueSelect));
 });
 
 // ventana modal
@@ -79,14 +80,14 @@ function mostrarModal(personajes) {
     mostrarModal(filterid(personajes,traeId))
     event.stopPropagation()
   }
-  // eslint-disable-next-line
-  window.onclick = function(event) {
+ 
+  window.onclick = function( ) {
       if(modal.style.display=="block"){
         modal.style.display = "none";
       }
     
   }
-
+  // ejecutando las estadisticas
   // agregamos la linea de codigo para mostrar el mensaje de porcentajes cuando se haga click
   let humanos = filterEspecies(personajes, "Human").length;
   let alien = filterEspecies(personajes, "Alien").length;
@@ -128,16 +129,12 @@ estad.addEventListener("click", (event) => {
               'rgba(153,102,255,0.5)'],
               borderColor: [
                 'rgb(255,159,64)',
-                'rgba(255,205,86)',
-                'rgba(75,192,192)',
-                'rgba(54,162,235)',
-                'rgba(153,102,255)'],
+                'rgb(255,205,86)',
+                'rgb(75,192,192)',
+                'rgb(54,162,235)',
+                'rgb(153,102,255)'],
               data:[porcentageHuman, porcentageAlien, porcentageVampire, porcentageHuamanoid, porcentageRobot],
-              borderWidth: 1  ,
-              title: {
-                display: true,
-                text: 'Chart Title',
-              }
+              borderWidth: 1 ,
             }]
 
         },       
